@@ -1,0 +1,6 @@
+CREATE TABLE `sci_countrygroup` (
+  `COUNTRYGROUP_ID` bigint NOT NULL,
+  `COUNTRYGROUP_NAME` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `COUNTRYGROUP_STATUS` varchar(1) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  PRIMARY KEY (`COUNTRYGROUP_ID`)
+);

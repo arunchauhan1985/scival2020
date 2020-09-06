@@ -1,0 +1,8 @@
+D:\Work\Aptara\Scival\aptara.scival\obj\Debug\aptara.scival.csprojAssemblyReference.cache
+D:\Work\Aptara\Scival\aptara.scival\obj\Debug\aptara.scival.Choice.resources
+D:\Work\Aptara\Scival\aptara.scival\obj\Debug\aptara.scival.Login.resources
+D:\Work\Aptara\Scival\aptara.scival\obj\Debug\aptara.scival.Properties.Resources.resources
+D:\Work\Aptara\Scival\aptara.scival\obj\Debug\aptara.scival.TaskBoard.resources
+D:\Work\Aptara\Scival\aptara.scival\obj\Debug\aptara.scival.csproj.GenerateResource.cache
+D:\Work\Aptara\Scival\aptara.scival\obj\Debug\aptara.scival.csproj.CoreCompileInputs.cache
+D:\Work\Aptara\Scival\aptara.scival\obj\Debug\aptara.scival.WebWatcher.RtnReport.resources

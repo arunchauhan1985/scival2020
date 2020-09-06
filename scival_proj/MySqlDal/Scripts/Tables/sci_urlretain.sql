@@ -1,0 +1,9 @@
+CREATE TABLE `sci_urlretain` (
+  `ORGDBID` bigint NOT NULL,
+  `URL` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `MODULEID` bigint DEFAULT NULL,
+  `GROUPCOUNTER` bigint DEFAULT NULL,
+  `BATCH` bigint DEFAULT NULL,
+  `URLID` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`ORGDBID`)
+);

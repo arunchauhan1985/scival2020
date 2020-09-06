@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Elsevier shared Grant schema elements
+     Version 2.0.0r3
+    
+     Copyright © 2008-2014 Elsevier B.V.
+     This is open access material under the CC BY license (http://creativecommons.org/licenses/by/3.0/).
+-->
+<!-- 
+     Version 2.0.0r3  26 September 2014  [JMi]
+
+     Version 2.0.0r2  3 September 2014  [JMi]
+
+     Version 2.0.0r1  8 August  [JMi]
+
+     Version 1.4.0p1  29 January 2014  JMi
+
+     Version 1.4.0  17 January 2014  JMi
+     - Made element name of (new) type tns:StringWithLanguageType
+       and changed the occurrence indicator
+-->
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elsevier.com/xml/schema/grant/grant-2.0"
+    targetNamespace="http://www.elsevier.com/xml/schema/grant/grant-2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <include schemaLocation="common20.xsd"/>
+
+    <annotation>
+        <documentation> This schema represents many instances of funding programs within SciVal Funding. A funding program must belong to a funding
+            body. Author: Sanjeev Rao s.rao@paritycomputing.com </documentation>
+        <documentation> This version 1.2 of the schema updated by MRu, 30-Dec-10 </documentation>
+        <documentation>Further updates to 1.2 in February 2011 and July 2012 (JMi)</documentation>
+        <documentation>Version 1.4.0p1 (JMi, 29 January 2014)</documentation>
+    </annotation>
+
+    <element name="programs" type="tns:FundingPrograms"/>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="FundingPrograms">
+        <sequence>
+            <element name="program" type="tns:FundingProgramType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <annotation>
+        <documentation> This schema represents an instances of a funding program within the Grants Optimizer. A funding program must belong to a
+            funding body. Author: Sanjeev Rao s.rao@paritycomputing.com </documentation>
+    </annotation>
+    <complexType name="FundingProgramType">
+        <sequence>
+            <element name="fundedProgramsType" type="tns:FundedProgramsTypeType" nillable="true" minOccurs="0"/>
+            <element name="fundingBodyProgramIDs" type="tns:fundingBodyProgramID" maxOccurs="unbounded"/>
+            <element name="revisionHistory" type="tns:StatusAndRevisionHistoryType" nillable="true" minOccurs="0"/>
+            <element name="name" type="tns:StringWithLanguageType" maxOccurs="unbounded"/>
+            <element name="programStatus" type="tns:ProgramStatusType" default="active"/>
+            <element name="publicationDate" type="date" nillable="true" minOccurs="0"/>
+            <element name="startDate" type="date" nillable="true" minOccurs="0"/>
+            <element name="expirationDate" type="date" nillable="true" minOccurs="0"/>
+            <element name="about" type="tns:MiniRelatedItemsType" nillable="true" minOccurs="0"/>
+            <element name="appInfo" type="tns:MiniRelatedItemsType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="eligibilityDescription" type="string" nillable="true" minOccurs="0"/>
+            <element name="officers" type="tns:ContactListType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="classificationGroup" type="tns:ClassificationGroupType" nillable="true" minOccurs="0"/>
+            <element name="keywords" type="tns:KeywordsType" nillable="true" minOccurs="0"/>
+            <element name="contacts" type="tns:ContactListType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="relatedPrograms" type="tns:RelatedProgramsType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="relatedFundingBodies" type="tns:MicroRelatedFundingBodiesType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="relatedItems" type="tns:MiniRelatedItemsType" nillable="true" minOccurs="0"/>
+            <element name="awardStatistics" type="tns:AwardStatisticsType" nillable="true" minOccurs="0"/>
+        </sequence>
+        <attribute name="programID" type="integer" use="required"/>
+        <attribute name="trusting" type="boolean" use="optional"/>
+        <attribute name="collectionCode" type="string" use="optional"/>
+        <attribute name="hidden" type="boolean" default="false" use="optional"/>
+    </complexType>
+
+</schema>

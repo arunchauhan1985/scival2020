@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Elsevier MHub-GWH response schema
+     Version 2.0.0r3
+     
+     Copyright © 2012-2014 Elsevier B.V.
+     This is open access material under the CC BY license (http://creativecommons.org/licenses/by/3.0/).
+-->
+<!--
+     Version 2.0.0r3  26 September 2014  [JMi]
+
+     Version 2.0.0r2  3 September 2014  [JMi]
+
+     Version 2.0.0r1  8 August 2014  [JMi]
+
+     Version 1.4.0p1  29 January 2014  JMi
+
+	 Version 1.4.0  17 January 2014  JMi
+     - Using Grant 1.4 namespace
+	
+	 Version 1.0 GWH Dev team
+-->
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elsevier.com/xml/schema/grant/grant-2.0"
+	targetNamespace="http://www.elsevier.com/xml/schema/grant/grant-2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<element name="response" type="tns:responseType"/>
+	<!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+	<complexType name="responseType">
+		<sequence>
+			<element name="awards" type="tns:AwardsType"/>
+		</sequence>
+	</complexType>
+	<!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+	<complexType name="AwardsType">
+		<sequence>
+			<element name="award" type="tns:AwardType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+	<complexType name="AwardType">
+		<sequence>
+			<element name="awardees" type="tns:AwardeesType" nillable="true" minOccurs="0"/>
+		</sequence>
+		<attribute name="id" type="integer" use="required"/>
+		<attribute name="clientId" type="integer" use="required"/>
+		<attribute name="versionId" type="integer" use="required"/>
+		<attribute name="statusType" type="tns:StatusType" use="required"/>
+	</complexType>
+	<!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+	<complexType name="AwardeesType">
+		<sequence>
+			<element name="awardee" type="tns:AwardeeType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	<!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+	<complexType name="AwardeeType">
+		<attribute name="id" type="string" use="required"/>
+		<attribute name="ScopusAuthorID" type="integer" use="optional"/>
+		<attribute name="ScopusInstitutionID" type="integer" use="optional"/>
+	</complexType>
+	<!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+	<simpleType name="StatusType">
+		<restriction base="string">
+			<enumeration value="new"/>
+			<enumeration value="update"/>
+			<enumeration value="delete"/>
+		</restriction>
+	</simpleType>
+	<!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+
+</schema>

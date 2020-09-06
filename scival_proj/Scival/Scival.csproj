@@ -1,0 +1,962 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80E80344-AFFF-4A32-ACAC-007CC9FF7ED0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Scival</RootNamespace>
+    <AssemblyName>Scival</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>scival_1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="DAL">
+      <HintPath>..\packages\DAL\DAL.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.21\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.7.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.Formatting.Extension.5.2.3.0\lib\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.2.0.20126.16343\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.7.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Award\Amount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\Amount.Designer.cs">
+      <DependentUpon>Amount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\AwardBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\AwardBase.Designer.cs">
+      <DependentUpon>AwardBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Awardee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\Awardee.Designer.cs">
+      <DependentUpon>Awardee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\AwardLocation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\AwardLocation.Designer.cs">
+      <DependentUpon>AwardLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Awards.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Award\Awards.Designer.cs">
+      <DependentUpon>Awards.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Classification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\Classification.Designer.cs">
+      <DependentUpon>Classification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Contact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\Contact.Designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Funds.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\Funds.Designer.cs">
+      <DependentUpon>Funds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\PageURL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\PageURL.Designer.cs">
+      <DependentUpon>PageURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Publication.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\Publication.Designer.cs">
+      <DependentUpon>Publication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\RelaredOrg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\RelaredOrg.Designer.cs">
+      <DependentUpon>RelaredOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\RelatedItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\RelatedItems.Designer.cs">
+      <DependentUpon>RelatedItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\RelatedOpportunities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\RelatedOpportunities.Designer.cs">
+      <DependentUpon>RelatedOpportunities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\RelatedProgram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\RelatedProgram.Designer.cs">
+      <DependentUpon>RelatedProgram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Remarks_Pause.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Award\Remarks_Pause.Designer.cs">
+      <DependentUpon>Remarks_Pause.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Remarks_Pause_Logoff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Award\Remarks_Pause_Logoff.Designer.cs">
+      <DependentUpon>Remarks_Pause_Logoff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Remark_Exit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Award\Remark_Exit.Designer.cs">
+      <DependentUpon>Remark_Exit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\Remark_Stop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Award\Remark_Stop.Designer.cs">
+      <DependentUpon>Remark_Stop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Award\ScholarlyOutputType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Award\ScholarlyOutputType.Designer.cs">
+      <DependentUpon>ScholarlyOutputType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Choice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choice.Designer.cs">
+      <DependentUpon>Choice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Error\ErrorLog.cs" />
+    <Compile Include="FTP\FTPClass.cs" />
+    <Compile Include="FundingBody\AWARDSSOURCE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\AWARDSSOURCE.Designer.cs">
+      <DependentUpon>AWARDSSOURCE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\AwardStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\AwardStatistics.Designer.cs">
+      <DependentUpon>AwardStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\Classification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\Classification.Designer.cs">
+      <DependentUpon>Classification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\Contact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\Contact.Designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\EstablishmentInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\EstablishmentInfo.Designer.cs">
+      <DependentUpon>EstablishmentInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\FinancialInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\FinancialInfo.Designer.cs">
+      <DependentUpon>FinancialInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\FundedProgramType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\FundedProgramType.Designer.cs">
+      <DependentUpon>FundedProgramType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\FundingBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\FundingBase.Designer.cs">
+      <DependentUpon>FundingBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\FundingBody.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundingBody\FundingBody.Designer.cs">
+      <DependentUpon>FundingBody.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\fundingBodyDataSource.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\fundingBodyDataSource.Designer.cs">
+      <DependentUpon>fundingBodyDataSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\fundingbody_json.cs" />
+    <Compile Include="FundingBody\Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\OPPORTUNITIESSOURCE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\OPPORTUNITIESSOURCE.Designer.cs">
+      <DependentUpon>OPPORTUNITIESSOURCE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\PageURL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\PageURL.Designer.cs">
+      <DependentUpon>PageURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\publicationDataSource.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\publicationDataSource.Designer.cs">
+      <DependentUpon>publicationDataSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\RelaredOrg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FundingBody\RelaredOrg.Designer.cs">
+      <DependentUpon>RelaredOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\Remark_Exit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundingBody\Remark_Exit.Designer.cs">
+      <DependentUpon>Remark_Exit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\Remark_Pause.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundingBody\Remark_Pause.Designer.cs">
+      <DependentUpon>Remark_Pause.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\Remark_Pause_Logoff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundingBody\Remark_Pause_Logoff.Designer.cs">
+      <DependentUpon>Remark_Pause_Logoff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FundingBody\Remark_Stop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FundingBody\Remark_Stop.Designer.cs">
+      <DependentUpon>Remark_Stop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\ChangeHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\ChangeHistory.Designer.cs">
+      <DependentUpon>ChangeHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\Classification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\Classification.Designer.cs">
+      <DependentUpon>Classification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\Contact.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\Contact.Designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\CountryNotInList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opportunity\CountryNotInList.Designer.cs">
+      <DependentUpon>CountryNotInList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\EligibiltyClassification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\EligibiltyClassification.Designer.cs">
+      <DependentUpon>EligibiltyClassification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\EstimatedFunding.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\EstimatedFunding.Designer.cs">
+      <DependentUpon>EstimatedFunding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\Opportunity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opportunity\Opportunity.Designer.cs">
+      <DependentUpon>Opportunity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\OpportunityBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\OpportunityBase.Designer.cs">
+      <DependentUpon>OpportunityBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\OpportunityDates.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\OpportunityDates.Designer.cs">
+      <DependentUpon>OpportunityDates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\opportunityLocation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\opportunityLocation.Designer.cs">
+      <DependentUpon>opportunityLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\PageURL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\PageURL.Designer.cs">
+      <DependentUpon>PageURL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\RelaredOrg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\RelaredOrg.Designer.cs">
+      <DependentUpon>RelaredOrg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\RelatedOpportunities.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\RelatedOpportunities.Designer.cs">
+      <DependentUpon>RelatedOpportunities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\RemarkExit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opportunity\RemarkExit.Designer.cs">
+      <DependentUpon>RemarkExit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\RemarkPause.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opportunity\RemarkPause.Designer.cs">
+      <DependentUpon>RemarkPause.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\RemarksPauseLogOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opportunity\RemarksPauseLogOff.Designer.cs">
+      <DependentUpon>RemarksPauseLogOff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\RemarkStop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opportunity\RemarkStop.Designer.cs">
+      <DependentUpon>RemarkStop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Opportunity\SubjectMatter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Opportunity\SubjectMatter.Designer.cs">
+      <DependentUpon>SubjectMatter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharedObjects.cs" />
+    <Compile Include="TaskBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskBoard.Designer.cs">
+      <DependentUpon>TaskBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebWatcher\DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebWatcher\DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebWatcher\GroupDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebWatcher\GroupDetail.Designer.cs">
+      <DependentUpon>GroupDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebWatcher\Grouping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebWatcher\Grouping.Designer.cs">
+      <DependentUpon>Grouping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebWatcher\RtnAndDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebWatcher\RtnAndDelete.Designer.cs">
+      <DependentUpon>RtnAndDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebWatcher\RtnReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebWatcher\RtnReport.Designer.cs">
+      <DependentUpon>RtnReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XML\GenerateXML.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XML\GenerateXML.Designer.cs">
+      <DependentUpon>GenerateXML.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XML\ShowXml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XML\ShowXml.Designer.cs">
+      <DependentUpon>ShowXml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XML\XMLProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XML\XMLProcess.Designer.cs">
+      <DependentUpon>XMLProcess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XSD\Awards_11.Designer.cs" />
+    <EmbeddedResource Include="Choice.resx">
+      <DependentUpon>Choice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FundingBody\FundingBase.resx">
+      <DependentUpon>FundingBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FundingBody\FundingBody.resx">
+      <DependentUpon>FundingBody.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FundingBody\Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FundingBody\RelaredOrg.resx">
+      <DependentUpon>RelaredOrg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TaskBoard.resx">
+      <DependentUpon>TaskBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebWatcher\RtnReport.resx">
+      <DependentUpon>RtnReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XML\GenerateXML.resx">
+      <DependentUpon>GenerateXML.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XML\ShowXml.resx">
+      <DependentUpon>ShowXml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XML\XMLProcess.resx">
+      <DependentUpon>XMLProcess.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Images\Thumbs.db" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Thumbs.db" />
+    <None Include="XSD\Awards.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\Awards1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\awards20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\awards30.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\Awards_1.xsc">
+      <DependentUpon>Awards_1.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\Awards_1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\Awards_1.xss">
+      <DependentUpon>Awards_1.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\common20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\FundingBodies.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\FundingBodies.xsx">
+      <DependentUpon>FundingBodies.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\FundingBodies1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\FundingBodies2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\FundingBodies2.xsx">
+      <DependentUpon>FundingBodies2.xsd</DependentUpon>
+    </None>
+    <None Include="XSD\fundingBodies20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\gwhmhub-request.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\gwhmhub-response.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\Opportunities.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\Opportunities1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\opportunities20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\programs20.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XSD\vssver2.scc" />
+    <None Include="XSD\xml.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\add.png" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\ajax-loaderold.gif" />
+    <Content Include="Images\aptara_logo.png" />
+    <Content Include="Images\aptara_logo1.jpg" />
+    <Content Include="Images\arrow.gif" />
+    <Content Include="Images\assignment.png" />
+    <Content Include="Images\Assign_hover.png" />
+    <Content Include="Images\Assign_normal.png" />
+    <Content Include="Images\award_active.jpg" />
+    <Content Include="Images\award_hover.jpg" />
+    <Content Include="Images\award_normal.jpg" />
+    <Content Include="Images\AW_New.png" />
+    <Content Include="Images\AW_QA.png" />
+    <Content Include="Images\AW_Update.png" />
+    <Content Include="Images\Banner-Right.jpg" />
+    <Content Include="Images\below_bar.png" />
+    <Content Include="Images\browse_hover.png" />
+    <Content Include="Images\browse_normal.png" />
+    <Content Include="Images\BTexit.Image.png" />
+    <Content Include="Images\btnAwrdDash.BackgroundImage.png" />
+    <Content Include="Images\btnoppDash.BackgroundImage.png" />
+    <Content Include="Images\BT_Login.Image.png" />
+    <Content Include="Images\button1.BackgroundImage.png" />
+    <Content Include="Images\calender.jpg" />
+    <Content Include="Images\Cancel_hover.png" />
+    <Content Include="Images\Cancel_normal.png" />
+    <Content Include="Images\checkmark.png" />
+    <Content Include="Images\clearsearch_hover.png" />
+    <Content Include="Images\clearsearch_normal.png" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\Collection.png" />
+    <Content Include="Images\collections.png" />
+    <Content Include="Images\correction.png" />
+    <Content Include="Images\cross.png" />
+    <Content Include="Images\Delivery.jpg" />
+    <Content Include="Images\delivery.png" />
+    <Content Include="Images\deliverypanel.jpg" />
+    <Content Include="Images\delivery_active.jpg" />
+    <Content Include="Images\delivery_hover.jpg" />
+    <Content Include="Images\delivery_normal.jpg" />
+    <Content Include="Images\dialog_step_bg_grd.png" />
+    <Content Include="Images\dialog_top_bg_grd.png" />
+    <Content Include="Images\elsevior_skival_logo.jpg" />
+    <Content Include="Images\Expiry-Check.png" />
+    <Content Include="Images\Expiry.png" />
+    <Content Include="Images\expiry_active.jpg" />
+    <Content Include="Images\expiry_hover.jpg" />
+    <Content Include="Images\expiry_normal.jpg" />
+    <Content Include="Images\export.png" />
+    <Content Include="Images\exportcsv.png" />
+    <Content Include="Images\exportexcel.png" />
+    <Content Include="Images\exportexcelfile.png" />
+    <Content Include="Images\FB_New.png" />
+    <Content Include="Images\FB_QA.png" />
+    <Content Include="Images\FB_Update.png" />
+    <Content Include="Images\flow_new_1.png" />
+    <Content Include="Images\flow_new_2.png" />
+    <Content Include="Images\flow_new_3.png" />
+    <Content Include="Images\funding_body_active.jpg" />
+    <Content Include="Images\funding_body_hover.jpg" />
+    <Content Include="Images\funding_body_normal.jpg" />
+    <Content Include="Images\Genrate-XML.png" />
+    <Content Include="Images\genxml_active.jpg" />
+    <Content Include="Images\genxml_hover.jpg" />
+    <Content Include="Images\genxml_normal.jpg" />
+    <Content Include="Images\gray_b.png" />
+    <Content Include="Images\header_bg.png" />
+    <Content Include="Images\header_bg1.jpg" />
+    <Content Include="Images\header_bgbottom.jpg" />
+    <Content Include="Images\import.png" />
+    <Content Include="Images\job_entry.png" />
+    <Content Include="Images\login_bg2.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\minus.gif" />
+    <Content Include="Images\Newscival.jpg" />
+    <Content Include="Images\new_active.jpg" />
+    <Content Include="Images\new_hover.jpg" />
+    <Content Include="Images\new_normal.jpg" />
+    <Content Include="Images\ok_hover.png" />
+    <Content Include="Images\ok_normal.png" />
+    <Content Include="Images\open.png" />
+    <Content Include="Images\opportunities_active.jpg" />
+    <Content Include="Images\opportunities_hover.jpg" />
+    <Content Include="Images\opportunities_normal.jpg" />
+    <Content Include="Images\OPP_Expiry.png" />
+    <Content Include="Images\OPP_New.png" />
+    <Content Include="Images\OPP_QA.png" />
+    <Content Include="Images\OPP_Update.png" />
+    <Content Include="Images\page_bg.gif" />
+    <Content Include="Images\plus.gif" />
+    <Content Include="Images\pop_innerbg.png" />
+    <Content Include="Images\QAscival.jpg" />
+    <Content Include="Images\qa_active.jpg" />
+    <Content Include="Images\qa_hover.jpg" />
+    <Content Include="Images\qa_normal.jpg" />
+    <Content Include="Images\QC.png" />
+    <Content Include="Images\Quality-Check.png" />
+    <Content Include="Images\Redeliver.png" />
+    <Content Include="Images\reports.png" />
+    <Content Include="Images\Save_hover.png" />
+    <Content Include="Images\Save_normal.png" />
+    <Content Include="Images\sci-cms_logo.ico" />
+    <Content Include="Images\sci-cms_logo.png" />
+    <Content Include="Images\scival_1.ico" />
+    <Content Include="Images\scival_bg.jpg" />
+    <Content Include="Images\slider.png" />
+    <Content Include="Images\slider_old.png" />
+    <Content Include="Images\table_head_grd.png" />
+    <Content Include="Images\tabs_dashboard_sprite.jpg" />
+    <Content Include="Images\uninstall.ico" />
+    <Content Include="Images\Update.png" />
+    <Content Include="Images\updatescival.jpg" />
+    <Content Include="Images\update_active.jpg" />
+    <Content Include="Images\update_hover.jpg" />
+    <Content Include="Images\update_normal.jpg" />
+    <Content Include="Images\urlname.jpg" />
+    <Content Include="Resources\add.png" />
+    <Content Include="Resources\ajax-loader.gif" />
+    <Content Include="Resources\ajax-loaderold.gif" />
+    <Content Include="Resources\aptara_logo.png" />
+    <Content Include="Resources\aptara_logo1.jpg" />
+    <Content Include="Resources\arrow.gif" />
+    <Content Include="Resources\assignment.png" />
+    <Content Include="Resources\Assign_hover.png" />
+    <Content Include="Resources\Assign_normal.png" />
+    <Content Include="Resources\award_active.jpg" />
+    <Content Include="Resources\award_hover.jpg" />
+    <Content Include="Resources\award_normal.jpg" />
+    <Content Include="Resources\AW_New.png" />
+    <Content Include="Resources\AW_QA.png" />
+    <Content Include="Resources\AW_Update.png" />
+    <Content Include="Resources\Banner-Right.jpg" />
+    <Content Include="Resources\below_bar.png" />
+    <Content Include="Resources\browse_hover.png" />
+    <Content Include="Resources\browse_normal.png" />
+    <Content Include="Resources\btnAwrdDash.BackgroundImage.png" />
+    <Content Include="Resources\btnoppDash.BackgroundImage.png" />
+    <Content Include="Resources\button1.BackgroundImage.png" />
+    <Content Include="Resources\calender.jpg" />
+    <Content Include="Resources\Cancel_hover.png" />
+    <Content Include="Resources\Cancel_normal.png" />
+    <Content Include="Resources\checkmark.png" />
+    <Content Include="Resources\clearsearch_hover.png" />
+    <Content Include="Resources\clearsearch_normal.png" />
+    <Content Include="Resources\close.png" />
+    <Content Include="Resources\Collection.png" />
+    <Content Include="Resources\collections.png" />
+    <Content Include="Resources\correction.png" />
+    <Content Include="Resources\cross.png" />
+    <Content Include="Resources\Delivery.jpg" />
+    <Content Include="Resources\delivery.png" />
+    <Content Include="Resources\deliverypanel.jpg" />
+    <Content Include="Resources\delivery_active.jpg" />
+    <Content Include="Resources\delivery_hover.jpg" />
+    <Content Include="Resources\delivery_normal.jpg" />
+    <Content Include="Resources\dialog_step_bg_grd.png" />
+    <Content Include="Resources\dialog_top_bg_grd.png" />
+    <Content Include="Resources\elsevior_skival_logo.jpg" />
+    <Content Include="Resources\Expiry-Check.png" />
+    <Content Include="Resources\Expiry.png" />
+    <Content Include="Resources\expiry_active.jpg" />
+    <Content Include="Resources\expiry_hover.jpg" />
+    <Content Include="Resources\expiry_normal.jpg" />
+    <Content Include="Resources\export.png" />
+    <Content Include="Resources\exportcsv.png" />
+    <Content Include="Resources\exportexcel.png" />
+    <Content Include="Resources\exportexcelfile.png" />
+    <Content Include="Resources\FB_New.png" />
+    <Content Include="Resources\FB_QA.png" />
+    <Content Include="Resources\FB_Update.png" />
+    <Content Include="Resources\flow_new_1.png" />
+    <Content Include="Resources\flow_new_2.png" />
+    <Content Include="Resources\flow_new_3.png" />
+    <Content Include="Resources\funding_body_active.jpg" />
+    <Content Include="Resources\funding_body_hover.jpg" />
+    <Content Include="Resources\funding_body_normal.jpg" />
+    <Content Include="Resources\Genrate-XML.png" />
+    <Content Include="Resources\genxml_active.jpg" />
+    <Content Include="Resources\genxml_hover.jpg" />
+    <Content Include="Resources\genxml_normal.jpg" />
+    <Content Include="Resources\gray_b.png" />
+    <Content Include="Resources\header_bg.png" />
+    <Content Include="Resources\header_bg1.jpg" />
+    <Content Include="Resources\header_bgbottom.jpg" />
+    <Content Include="Resources\import.png" />
+    <Content Include="Resources\job_entry.png" />
+    <Content Include="Resources\login_bg2.jpg" />
+    <Content Include="Resources\logo.png" />
+    <Content Include="Resources\minus.gif" />
+    <Content Include="Resources\Newscival.jpg" />
+    <Content Include="Resources\new_active.jpg" />
+    <Content Include="Resources\new_hover.jpg" />
+    <Content Include="Resources\new_normal.jpg" />
+    <Content Include="Resources\ok_hover.png" />
+    <Content Include="Resources\ok_normal.png" />
+    <Content Include="Resources\open.png" />
+    <Content Include="Resources\opportunities_active.jpg" />
+    <Content Include="Resources\opportunities_hover.jpg" />
+    <Content Include="Resources\opportunities_normal.jpg" />
+    <Content Include="Resources\OPP_Expiry.png" />
+    <Content Include="Resources\OPP_New.png" />
+    <Content Include="Resources\OPP_QA.png" />
+    <Content Include="Resources\OPP_Update.png" />
+    <Content Include="Resources\page_bg.gif" />
+    <Content Include="Resources\plus.gif" />
+    <Content Include="Resources\pop_innerbg.png" />
+    <Content Include="Resources\QAscival.jpg" />
+    <Content Include="Resources\qa_active.jpg" />
+    <Content Include="Resources\qa_hover.jpg" />
+    <Content Include="Resources\qa_normal.jpg" />
+    <Content Include="Resources\QC.png" />
+    <Content Include="Resources\Quality-Check.png" />
+    <Content Include="Resources\Redeliver.png" />
+    <Content Include="Resources\reports.png" />
+    <Content Include="Resources\Save_hover.png" />
+    <Content Include="Resources\Save_normal.png" />
+    <Content Include="Resources\sci-cms_logo.ico" />
+    <Content Include="Resources\sci-cms_logo.png" />
+    <Content Include="Resources\scival_1.ico" />
+    <Content Include="Resources\slider.png" />
+    <Content Include="Resources\slider_old.png" />
+    <Content Include="Resources\table_head_grd.png" />
+    <Content Include="Resources\tabs_dashboard_sprite.jpg" />
+    <Content Include="Resources\uninstall.ico" />
+    <Content Include="Resources\Update.png" />
+    <Content Include="Resources\updatescival.jpg" />
+    <Content Include="Resources\update_active.jpg" />
+    <Content Include="Resources\update_hover.jpg" />
+    <Content Include="Resources\update_normal.jpg" />
+    <Content Include="Resources\urlname.jpg" />
+    <Content Include="scival_1.ico" />
+    <None Include="Resources\BTexit.Image.png" />
+    <None Include="Resources\BT_Login.Image.png" />
+    <None Include="Resources\scival_bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MySqlDal\MySqlDal.csproj">
+      <Project>{9126c3f5-81f3-4e7d-bb5b-9c8abb072873}</Project>
+      <Name>MySqlDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ScivalApiCall\ScivalApiCall.csproj">
+      <Project>{f29cd826-4cad-471d-b6e3-6019e3312d11}</Project>
+      <Name>ScivalApiCall</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

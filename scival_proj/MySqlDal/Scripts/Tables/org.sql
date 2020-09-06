@@ -1,0 +1,10 @@
+CREATE TABLE `org` (
+  `ORGDBID` bigint NOT NULL,
+  `RELTYPE` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `ORG_TEXT` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `RELATEDORGS_ID` bigint DEFAULT NULL,
+  `LANG` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `AFFLIATION_ID` bigint DEFAULT NULL,
+  PRIMARY KEY (`ORGDBID`),
+  KEY `IND_SCI_ORG` (`RELATEDORGS_ID`)
+);

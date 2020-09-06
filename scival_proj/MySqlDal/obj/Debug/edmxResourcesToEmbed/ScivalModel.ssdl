@@ -1,0 +1,2186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScivalModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="about">
+    <Key>
+      <PropertyRef Name="ABOUT_ID" />
+    </Key>
+    <Property Name="ABOUT_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="COUNTRYTEST" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="ROOM" Type="varchar" MaxLength="2000" />
+    <Property Name="STREET" Type="varchar" MaxLength="2000" />
+    <Property Name="CITY" Type="varchar" MaxLength="2000" />
+    <Property Name="STATE" Type="varchar" MaxLength="2000" />
+    <Property Name="POSTALCODE" Type="varchar" MaxLength="2000" />
+    <Property Name="CONTACT_ID" Type="bigint" />
+    <Property Name="AWARDMANAGER_ID" Type="bigint" />
+    <Property Name="AFFILIATION_ID" Type="bigint" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="amount">
+    <Key>
+      <PropertyRef Name="AMOUNT_TEXT" />
+      <PropertyRef Name="AWARD_ID" />
+    </Key>
+    <Property Name="CURRENCY" Type="varchar" MaxLength="2000" />
+    <Property Name="AMOUNT_TEXT" Type="bigint" Nullable="false" />
+    <Property Name="AWARD_ID" Type="bigint" Nullable="false" />
+    <Property Name="AWARDEE_ID" Type="bigint" />
+    <Property Name="CREATE_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="award">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODYAWARDID" Type="varchar" MaxLength="200" />
+    <Property Name="TYPE" Type="varchar" MaxLength="200" />
+    <Property Name="TRUSTING" Type="varchar" MaxLength="200" />
+    <Property Name="COLLECTIONCODE" Type="varchar" MaxLength="200" />
+    <Property Name="HIDDEN" Type="varchar" MaxLength="200" />
+    <Property Name="NAME" Type="varchar" MaxLength="200" />
+    <Property Name="STARTDATE" Type="date" />
+    <Property Name="LASTAMENDEDDATE" Type="date" />
+    <Property Name="ENDDATE" Type="date" />
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="ABSTRACT" Type="blob" />
+    <Property Name="RECORDSOURCE" Type="varchar" MaxLength="200" />
+    <Property Name="AWARDNOTICEDATE" Type="date" />
+    <Property Name="APTARAIDENTIFIER" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="award_location">
+    <Key>
+      <PropertyRef Name="LOCATION_ID" />
+    </Key>
+    <Property Name="LOCATION_ID" Type="bigint" Nullable="false" />
+    <Property Name="COUNTRYTEST" Type="varchar" MaxLength="2000" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="2000" />
+    <Property Name="ROOM" Type="varchar" MaxLength="2000" />
+    <Property Name="STREET" Type="varchar" MaxLength="2000" />
+    <Property Name="CITY" Type="varchar" MaxLength="2000" />
+    <Property Name="STATE" Type="varchar" MaxLength="2000" />
+    <Property Name="POSTALCODE" Type="varchar" MaxLength="2000" />
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="award_master">
+    <Key>
+      <PropertyRef Name="AWARDID" />
+    </Key>
+    <Property Name="AWARDID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODYID" Type="bigint" />
+    <Property Name="AWARDNAME" Type="varchar" MaxLength="2000" />
+    <Property Name="URL" Type="varchar" MaxLength="2000" />
+    <Property Name="CREATEDDATE" Type="datetime" Precision="0" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CYCLECOMPLETIONDATE" Type="datetime" Precision="0" />
+    <Property Name="CYCLECOMPLETEDBY" Type="bigint" />
+    <Property Name="LASTUPDATEDBY" Type="bigint" />
+    <Property Name="CYCLE" Type="bigint" />
+    <Property Name="STATUSCODE" Type="bigint" />
+    <Property Name="RUSH" Type="bigint" />
+    <Property Name="RUSHBY" Type="bigint" />
+    <Property Name="ALLOCATIONMODE" Type="varchar" MaxLength="2000" />
+    <Property Name="ISAUTOMATED" Type="bigint" />
+    <Property Name="ISOUTOFCMS" Type="bigint" />
+    <Property Name="OUTOFCMSCOMPLETIONDATE" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="award_tables">
+    <Key>
+      <PropertyRef Name="KEY" />
+    </Key>
+    <Property Name="NAME" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="SEQUENCE" Type="bigint" Nullable="false" />
+    <Property Name="KEY" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="PAGENAME" Type="varchar" MaxLength="2000" />
+    <Property Name="MAPTABLE" Type="varchar" MaxLength="2000" />
+    <Property Name="FLAG" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="awardceiling">
+    <Key>
+      <PropertyRef Name="AWARDCEILING_TEXT" />
+    </Key>
+    <Property Name="CURRENCY" Type="varchar" MaxLength="2000" />
+    <Property Name="AWARDCEILING_TEXT" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="awardees">
+    <Key>
+      <PropertyRef Name="AWARDEES_ID" />
+    </Key>
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="AWARDEES_ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="awardfloor">
+    <Key>
+      <PropertyRef Name="CURRENCY" />
+      <PropertyRef Name="OPPORTUNITY_ID" />
+    </Key>
+    <Property Name="CURRENCY" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="ESTIMATEDFUNDING_TEXT" Type="varchar" MaxLength="1000" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="awardmanagers">
+    <Key>
+      <PropertyRef Name="AWARDMANAGERS_ID" />
+    </Key>
+    <Property Name="AWARDMANAGERS_ID" Type="bigint" Nullable="false" />
+    <Property Name="AWARD_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="change">
+    <Key>
+      <PropertyRef Name="CHANGE_ID" />
+    </Key>
+    <Property Name="TYPE" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="POSTDATE" Type="datetime" Precision="0" />
+    <Property Name="VERSION" Type="bigint" Nullable="false" />
+    <Property Name="CHANGE_TEXT" Type="varchar" MaxLength="4000" />
+    <Property Name="CHANGEHISTORY_ID" Type="bigint" />
+    <Property Name="POSTDATE_IS_SAVE" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="CHANGE_ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="changehistory">
+    <Key>
+      <PropertyRef Name="CHANGEHISTORY_ID" />
+    </Key>
+    <Property Name="CHANGEHISTORY_ID" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="classification">
+    <Key>
+      <PropertyRef Name="CLASSIFICATIONS_ID" />
+    </Key>
+    <Property Name="FREQUENCY" Type="bigint" Nullable="false" />
+    <Property Name="CODE" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CLASSIFICATION_TEXT" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CLASSIFICATIONS_ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="classificationgroup">
+    <Key>
+      <PropertyRef Name="CLASSIFICATIONGROUP_ID" />
+    </Key>
+    <Property Name="CLASSIFICATIONGROUP_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="classifications">
+    <Key>
+      <PropertyRef Name="CLASSIFICATIONS_ID" />
+    </Key>
+    <Property Name="TYPE" Type="varchar" MaxLength="2000" />
+    <Property Name="CLASSIFICATIONS_ID" Type="bigint" Nullable="false" />
+    <Property Name="CLASSIFICATIONGROUP_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="contactinfo">
+    <Key>
+      <PropertyRef Name="CONTACTINFO_ID" />
+    </Key>
+    <Property Name="CONTACTINFO_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="contactname">
+    <Key>
+      <PropertyRef Name="CONTACT_ID" />
+    </Key>
+    <Property Name="PREFIX" Type="varchar" MaxLength="2000" />
+    <Property Name="GIVENNAME" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="MIDDLENAME" Type="varchar" MaxLength="2000" />
+    <Property Name="SURNAME" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="SUFFIX" Type="varchar" MaxLength="2000" />
+    <Property Name="CONTACT_ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contacts">
+    <Key>
+      <PropertyRef Name="CONTACTS_ID" />
+    </Key>
+    <Property Name="CONTACTS_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="createddate">
+    <Key>
+      <PropertyRef Name="VERSION" />
+    </Key>
+    <Property Name="VERSION" Type="bigint" Nullable="false" />
+    <Property Name="CREATEDDATE_TEXT" Type="datetime" Precision="0" />
+    <Property Name="REVISIONHISTORY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="eligibilityclassification">
+    <Key>
+      <PropertyRef Name="ELIGIBILITYCLASSIFICATION_ID" />
+    </Key>
+    <Property Name="TYPE" Type="varchar" MaxLength="2000" />
+    <Property Name="ID" Type="varchar" MaxLength="2000" />
+    <Property Name="ELIGIBILITYCLASSIFICATION_TEXT" Type="varchar" MaxLength="2000" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="REGION_SPECIFIC_ID" Type="bigint" />
+    <Property Name="ELIGIBILITYCLASSIFICATION_ID" Type="bigint" Nullable="false" />
+    <Property Name="LANG" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="eligibilitydescription">
+    <Key>
+      <PropertyRef Name="ELIGIBILITYDESCRIPTION_ID" />
+    </Key>
+    <Property Name="ELIGIBILITYDESCRIPTION_ID" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="establishmentinfo">
+    <Key>
+      <PropertyRef Name="FUNDINGBODY_ID" />
+    </Key>
+    <Property Name="ESTABLISHMENTDATE" Type="varchar" MaxLength="2000" />
+    <Property Name="ESTABLISHMENTCITY" Type="varchar" MaxLength="2000" />
+    <Property Name="ESTABLISHMENTSTATE" Type="varchar" MaxLength="2000" />
+    <Property Name="ESTABLISHMENTCOUNTRYCODE" Type="varchar" MaxLength="2000" />
+    <Property Name="ESTABLISHMENTDESCRIPTION" Type="blob" />
+    <Property Name="FUNDINGBODY_ID" Type="decimal" Precision="20" Scale="0" Nullable="false" />
+    <Property Name="LANG" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="estimatedamountdescription">
+    <Key>
+      <PropertyRef Name="ESTIMATEDAMOUNTDESCRIPTION_ID" />
+    </Key>
+    <Property Name="ESTIMATEDAMOUNTDESCRIPTION_ID" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="estimatedfunding">
+    <Key>
+      <PropertyRef Name="OPPORTUNITY_ID" />
+    </Key>
+    <Property Name="CURRENCY" Type="varchar" MaxLength="2000" />
+    <Property Name="ESTIMATEDFUNDING_TEXT" Type="varchar" MaxLength="2000" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" Nullable="false" />
+    <Property Name="AMOUNT_DESCRIPTION" Type="varchar" MaxLength="3000" />
+  </EntityType>
+  <EntityType Name="fbprogress">
+    <Key>
+      <PropertyRef Name="FUNDINGBODY_ID" />
+    </Key>
+    <Property Name="FUNDINGBODY_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODYNAME" Type="varchar" MaxLength="2000" />
+    <Property Name="FBUPDATE" Type="datetime" Precision="0" />
+    <Property Name="FBSTATUS" Type="varchar" MaxLength="200" />
+    <Property Name="OPUPDATE" Type="datetime" Precision="0" />
+    <Property Name="OPSTATUS" Type="varchar" MaxLength="200" />
+    <Property Name="AWUPDATE" Type="datetime" Precision="0" />
+    <Property Name="AWSTATUS" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="fundedprogramstypes">
+    <Key>
+      <PropertyRef Name="FUNDEDPROGRAMSTYPES_ID" />
+    </Key>
+    <Property Name="FUNDEDPROGRAMSTYPES_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="fundedprojectdetail">
+    <Key>
+      <PropertyRef Name="FUND_ID" />
+    </Key>
+    <Property Name="FUND_ID" Type="bigint" Nullable="false" />
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="ACRONYM" Type="varchar" MaxLength="200" />
+    <Property Name="BUDGET_AMOUNT" Type="bigint" />
+    <Property Name="BUDGET_CURRENCY" Type="varchar" MaxLength="200" />
+    <Property Name="ENDDATE" Type="date" />
+    <Property Name="FUNDINGBODYPROJECTID" Type="varchar" MaxLength="200" />
+    <Property Name="STARTDATE" Type="date" />
+    <Property Name="STATUS" Type="varchar" MaxLength="200" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="20" />
+    <Property Name="LOCALITY" Type="varchar" MaxLength="200" />
+    <Property Name="POSTALCODE" Type="varchar" MaxLength="200" />
+    <Property Name="REGION" Type="varchar" MaxLength="200" />
+    <Property Name="STREET" Type="varchar" MaxLength="200" />
+    <Property Name="POSTOFFICEBOXNUMBER" Type="varchar" MaxLength="200" />
+    <Property Name="LINK" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="fundedsubproject">
+    <Key>
+      <PropertyRef Name="FUND_ID" />
+    </Key>
+    <Property Name="SUBFUND_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUND_ID" Type="bigint" Nullable="false" />
+    <Property Name="AWARD_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODYPROJECTID" Type="varchar" MaxLength="2000" />
+    <Property Name="AMOUNT" Type="bigint" />
+    <Property Name="CURRENCY" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="fundingbody">
+    <Key>
+      <PropertyRef Name="FUNDINGBODY_ID" />
+    </Key>
+    <Property Name="FUNDINGBODY_ID" Type="bigint" Nullable="false" />
+    <Property Name="ORGDBID" Type="int" />
+    <Property Name="TYPE" Type="varchar" MaxLength="200" />
+    <Property Name="TRUSTING" Type="varchar" MaxLength="200" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="200" />
+    <Property Name="STATE" Type="varchar" MaxLength="200" />
+    <Property Name="COLLECTIONCODE" Type="varchar" MaxLength="200" />
+    <Property Name="HIDDEN" Type="varchar" MaxLength="200" />
+    <Property Name="CANONICALNAME" Type="blob" />
+    <Property Name="PREFERREDORGNAME" Type="blob" />
+    <Property Name="CONTEXTNAME" Type="blob" />
+    <Property Name="ABBREVNAME" Type="blob" />
+    <Property Name="ELIGIBILITYDESCRIPTION" Type="blob" />
+    <Property Name="RECORDSOURCE" Type="varchar" MaxLength="200" />
+    <Property Name="AWARDSUCCESRATE" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="COMMENT_DESC" Type="blob" />
+    <Property Name="DEFUNCT" Type="varchar" MaxLength="200" />
+    <Property Name="CROSSREFID" Type="varchar" MaxLength="200" />
+    <Property Name="EXTENDEDRECORD" Type="varchar" MaxLength="200" />
+    <Property Name="CAPTUREAWARDS" Type="varchar" MaxLength="200" />
+    <Property Name="CAPTUREOPPORTUNITIES" Type="varchar" MaxLength="200" />
+    <Property Name="TIERINFO" Type="varchar" MaxLength="200" />
+    <Property Name="AWARDSSUPPLIER" Type="varchar" MaxLength="200" />
+    <Property Name="OPPORTUNITIESSUPPLIER" Type="varchar" MaxLength="200" />
+    <Property Name="AWARDSFREQUENCY" Type="varchar" MaxLength="200" />
+    <Property Name="OPPORTUNITIESFREQUENCY" Type="varchar" MaxLength="200" />
+    <Property Name="PROFIT" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="fundingbody_master">
+    <Key>
+      <PropertyRef Name="FUNDINGBODY_ID" />
+    </Key>
+    <Property Name="FUNDINGBODY_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODYNAME" Type="varchar" MaxLength="2000" />
+    <Property Name="URL" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CREATEDDATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CYCLECOMPLETIONDATE" Type="datetime" Precision="0" />
+    <Property Name="CYCLECOMPLETEDBY" Type="bigint" />
+    <Property Name="LASTUPDATEDDATE" Type="datetime" Precision="0" />
+    <Property Name="LASTUPDATEDBY" Type="bigint" />
+    <Property Name="CYCLE" Type="bigint" />
+    <Property Name="STATUSCODE" Type="bigint" />
+    <Property Name="RUSH" Type="bigint" />
+    <Property Name="RUSHBY" Type="bigint" />
+    <Property Name="ALLOCATIONMODE" Type="varchar" MaxLength="2000" />
+    <Property Name="ISOPORTUNITY" Type="varchar" MaxLength="2000" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="2000" />
+    <Property Name="DUEDATE" Type="datetime" Precision="0" />
+    <Property Name="ISVIEWED" Type="varchar" MaxLength="1" />
+    <Property Name="BATCHNO" Type="bigint" />
+    <Property Name="BATCHRECIEVEDATE" Type="datetime" Precision="0" />
+    <Property Name="SUBTYPE" Type="varchar" MaxLength="2000" />
+    <Property Name="HIDDEN_FLAG" Type="bigint" />
+  </EntityType>
+  <EntityType Name="fundingbodyamount">
+    <Key>
+      <PropertyRef Name="AMOUNT" />
+      <PropertyRef Name="RELEATEDFUNDINGBODIES_ID" />
+    </Key>
+    <Property Name="AMOUNT" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+    <Property Name="CURRENCY" Type="varchar" MaxLength="50" />
+    <Property Name="RELEATEDFUNDINGBODIES_ID" Type="bigint" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="fundingpolicy">
+    <Key>
+      <PropertyRef Name="FUNDINGPOLICY_ID" />
+    </Key>
+    <Property Name="FUNDINGPOLICY_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="installment">
+    <Key>
+      <PropertyRef Name="INSTALLMENTANDAMOUNT_ID" />
+    </Key>
+    <Property Name="INSTALLMENTANDAMOUNT_ID" Type="bigint" Nullable="false" />
+    <Property Name="INSTALLMENTSTART_DATE" Type="datetime" Precision="0" />
+    <Property Name="INSTALLMENTEND_DATE" Type="datetime" Precision="0" />
+    <Property Name="AMOUNT" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CURRENCY" Type="varchar" MaxLength="50" />
+    <Property Name="CREATED_DATE" Type="datetime" Precision="0" />
+    <Property Name="SEQUENCE_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="instalmentandamount">
+    <Key>
+      <PropertyRef Name="INSTALLMENTANDAMOUNT_ID" />
+    </Key>
+    <Property Name="INSTALLMENTANDAMOUNT_ID" Type="bigint" Nullable="false" />
+    <Property Name="AWARD_ID" Type="bigint" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="ITEM_ID" />
+    </Key>
+    <Property Name="RELTYPE" Type="varchar" MaxLength="2000" />
+    <Property Name="DESCRIPTION" Type="blob" />
+    <Property Name="ITEM_ID" Type="decimal" Precision="20" Scale="0" Nullable="false" />
+    <Property Name="GEOSCOPE_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="APPINFO_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="ABOUT_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="RELATEDITEMS_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="SYNOPSIS_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="SUBJECTMATTER_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="LANG" Type="varchar" MaxLength="50" />
+    <Property Name="FUNDINGPOLICY_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="ELIGIBILITYDESCRIPTION_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="ESTIMATEDAMOUNTDESCRIPTION_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="LIMITEDSUBMISSIONDESC_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="CREATED_DATE" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="keyword">
+    <Key>
+      <PropertyRef Name="KEYWORDS_ID" />
+    </Key>
+    <Property Name="KEYWORD_COLUMN" Type="varchar" MaxLength="2000" />
+    <Property Name="KEYWORDS_ID" Type="bigint" Nullable="false" />
+    <Property Name="LANG" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="keywords">
+    <Key>
+      <PropertyRef Name="KEYWORDS_ID" />
+    </Key>
+    <Property Name="KEYWORDS_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="AWARD_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="limitedsubmissiondescription">
+    <Key>
+      <PropertyRef Name="LIMITEDSUBMISSIONDESC_ID" />
+    </Key>
+    <Property Name="LIMITEDSUBMISSIONDESC_ID" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="link">
+    <Key>
+      <PropertyRef Name="ITEM_ID" />
+    </Key>
+    <Property Name="URL" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="LINK_TEXT" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="ITEM_ID" Type="bigint" Nullable="false" />
+    <Property Name="AWARDSTATISTICS_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="opp_subjectmatter">
+    <Key>
+      <PropertyRef Name="SUBJECTMATTER_ID" />
+    </Key>
+    <Property Name="SUBJECTMATTER_ID" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="opportunity_location">
+    <Key>
+      <PropertyRef Name="LOCATION_ID" />
+    </Key>
+    <Property Name="LOCATION_ID" Type="bigint" Nullable="false" />
+    <Property Name="COUNTRY" Type="varchar" MaxLength="2000" />
+    <Property Name="ROOM" Type="varchar" MaxLength="2000" />
+    <Property Name="STREET" Type="varchar" MaxLength="2000" />
+    <Property Name="CITY" Type="varchar" MaxLength="2000" />
+    <Property Name="STATE" Type="varchar" MaxLength="2000" />
+    <Property Name="POSTALCODE" Type="varchar" MaxLength="2000" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="opportunity_master">
+    <Key>
+      <PropertyRef Name="OPPORTUNITYID" />
+    </Key>
+    <Property Name="OPPORTUNITYID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODYID" Type="bigint" />
+    <Property Name="OPPORTUNITYNAME" Type="varchar" MaxLength="2000" />
+    <Property Name="URL" Type="varchar" MaxLength="2000" />
+    <Property Name="CREATEDDATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="CYCLECOMPLETIONDATE" Type="datetime" Precision="0" />
+    <Property Name="CYCLECOMPLETEDBY" Type="bigint" />
+    <Property Name="LASTUPDATEDDATE" Type="datetime" Precision="0" />
+    <Property Name="LASTUPDATEDBY" Type="bigint" />
+    <Property Name="CYCLE" Type="bigint" />
+    <Property Name="STATUSCODE" Type="bigint" />
+    <Property Name="RUSH" Type="bigint" />
+    <Property Name="RUSHBY" Type="bigint" />
+    <Property Name="ALLOCATIONMODE" Type="varchar" MaxLength="2000" />
+    <Property Name="ISAUTOMATED" Type="bigint" />
+  </EntityType>
+  <EntityType Name="oppotunity">
+    <Key>
+      <PropertyRef Name="OPPORTUNITY_ID" />
+    </Key>
+    <Property Name="OPPORTUNITY_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODYOPPORTUNITYID" Type="varchar" MaxLength="200" />
+    <Property Name="LIMITEDSUBMISSION" Type="varchar" MaxLength="200" />
+    <Property Name="TRUSTING" Type="varchar" MaxLength="200" />
+    <Property Name="NEWINVESTIGATOR" Type="varchar" MaxLength="200" />
+    <Property Name="COLLECTIONCODE" Type="varchar" MaxLength="200" />
+    <Property Name="HIDDEN" Type="varchar" MaxLength="200" />
+    <Property Name="NAME" Type="varchar" MaxLength="200" />
+    <Property Name="LOIDATE" Type="date" />
+    <Property Name="DUEDATE" Type="date" />
+    <Property Name="ELIGIBILITYCATEGORY" Type="varchar" MaxLength="200" />
+    <Property Name="LINKTOFULLTEXT" Type="varchar" MaxLength="200" />
+    <Property Name="FIRSTPOSTDATE" Type="date" />
+    <Property Name="LASTMODIFIEDPOSTDATE" Type="date" />
+    <Property Name="OPPORTUNITYSTATUS" Type="varchar" MaxLength="200" />
+    <Property Name="NUMBEROFAWARDS" Type="bigint" />
+    <Property Name="DURATION" Type="varchar" MaxLength="200" />
+    <Property Name="LIMITEDSUBMISSIONDESCRIPTION" Type="varchar" MaxLength="200" />
+    <Property Name="RAWTEXT" Type="blob" />
+    <Property Name="ELIGIBILITYDESCRIPTION" Type="blob" />
+    <Property Name="DUEDATEDESCRIPTION" Type="blob" />
+    <Property Name="ID" Type="bigint" />
+    <Property Name="RECORDSOURCE" Type="varchar" MaxLength="200" />
+    <Property Name="EXPIRATIONDATE" Type="date" />
+    <Property Name="DATE_FLAG" Type="bigint" />
+    <Property Name="LOI_MANDATORY" Type="varchar" MaxLength="200" />
+    <Property Name="REPEATINGOPPORTUNITY" Type="varchar" MaxLength="200" />
+    <Property Name="PREPROPOSALMANDATORY" Type="varchar" MaxLength="200" />
+    <Property Name="LANG" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="org">
+    <Key>
+      <PropertyRef Name="ORGDBID" />
+    </Key>
+    <Property Name="ORGDBID" Type="bigint" Nullable="false" />
+    <Property Name="RELTYPE" Type="varchar" MaxLength="2000" />
+    <Property Name="ORG_TEXT" Type="varchar" MaxLength="2000" />
+    <Property Name="RELATEDORGS_ID" Type="bigint" />
+    <Property Name="LANG" Type="varchar" MaxLength="50" />
+    <Property Name="AFFLIATION_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="publicationdata">
+    <Key>
+      <PropertyRef Name="PUBLICATION_ID" />
+    </Key>
+    <Property Name="PUBLICATION_ID" Type="decimal" Precision="20" Scale="0" Nullable="false" />
+    <Property Name="AWARD_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="INGESTIONID" Type="varchar" MaxLength="2000" />
+    <Property Name="PUBLICATIONOUTPUTID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="PUBLISHEDDATE" Type="date" />
+    <Property Name="CREATEDON" Type="date" />
+    <Property Name="LASTUPDATEON" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="PUBLICATION_AUTHOR" Type="varchar" MaxLength="2000" />
+    <Property Name="JOURNAL_IDENTIFIER" Type="varchar" MaxLength="2000" />
+    <Property Name="PUBLICATION_URL" Type="varchar" MaxLength="2000" />
+    <Property Name="FUNDINGBODYPROJECTID" Type="varchar" MaxLength="1000" />
+    <Property Name="PUB_DESCRIPTION" Type="blob" />
+    <Property Name="BULKAWID" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="recurring">
+    <Key>
+      <PropertyRef Name="REC_ID" />
+    </Key>
+    <Property Name="REC_ID" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" Nullable="false" />
+    <Property Name="RECURRING_STATUS" Type="varchar" MaxLength="6" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="REC_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="relatedfundingbodies">
+    <Key>
+      <PropertyRef Name="RELATEDORGSSS_ID" />
+    </Key>
+    <Property Name="HIERARCHY" Type="varchar" MaxLength="100" />
+    <Property Name="RELEATEDFUNDINGBODIES_ID" Type="bigint" />
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="RELATEDORGSSS_ID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="relateditems">
+    <Key>
+      <PropertyRef Name="RELATEDITEMS_ID" />
+    </Key>
+    <Property Name="RELATEDITEMS_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="AWARD_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="relatedorgs">
+    <Key>
+      <PropertyRef Name="RELATEDORGS_ID" />
+    </Key>
+    <Property Name="HIERARCHY" Type="varchar" MaxLength="2000" />
+    <Property Name="RELATEDORGS_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="relatedprograms">
+    <Key>
+      <PropertyRef Name="RELATEDPROGRAMS_ID" />
+    </Key>
+    <Property Name="HIERARCHY" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="RELATEDPROGRAMS_ID" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="AWARD_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="researchoutcome">
+    <Key>
+      <PropertyRef Name="RESEARCHOUTCOME_ID" />
+    </Key>
+    <Property Name="RESEARCHOUTCOME_ID" Type="bigint" Nullable="false" />
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="revisionhistory">
+    <Key>
+      <PropertyRef Name="REVISIONHISTORY_ID" />
+    </Key>
+    <Property Name="STATUS" Type="varchar" MaxLength="2000" />
+    <Property Name="REVISIONHISTORY_ID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="AWARD_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sci_asjcdescription">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="2000" />
+    <Property Name="DETAIL" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="sci_binaryrelationtype">
+    <Key>
+      <PropertyRef Name="VALUE" />
+    </Key>
+    <Property Name="VALUE" Type="varchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_classificationstypetype">
+    <Key>
+      <PropertyRef Name="VALUE" />
+    </Key>
+    <Property Name="VALUE" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_column_master">
+    <Key>
+      <PropertyRef Name="COLUMN_ID" />
+    </Key>
+    <Property Name="COLUMN_ID" Type="bigint" Nullable="false" />
+    <Property Name="COLUMN_NAME" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="sci_countries">
+    <Key>
+      <PropertyRef Name="COUNTRY_ID" />
+    </Key>
+    <Property Name="COUNTRY_ID" Type="bigint" Nullable="false" />
+    <Property Name="COUNTRYGROUP_ID" Type="bigint" />
+    <Property Name="COUNTRY_NAME" Type="varchar" MaxLength="2000" />
+    <Property Name="COUNTRY_CODE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sci_countrycodes">
+    <Key>
+      <PropertyRef Name="COUNTRYID" />
+    </Key>
+    <Property Name="COUNTRYID" Type="bigint" Nullable="false" />
+    <Property Name="NAME" Type="varchar" MaxLength="2000" />
+    <Property Name="LCODE" Type="varchar" MaxLength="2000" />
+    <Property Name="SCODE" Type="varchar" MaxLength="2000" />
+    <Property Name="REGION" Type="varchar" MaxLength="200" />
+    <Property Name="SUBREGION" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="sci_countrygroup">
+    <Key>
+      <PropertyRef Name="COUNTRYGROUP_ID" />
+    </Key>
+    <Property Name="COUNTRYGROUP_ID" Type="bigint" Nullable="false" />
+    <Property Name="COUNTRYGROUP_NAME" Type="varchar" MaxLength="2000" />
+    <Property Name="COUNTRYGROUP_STATUS" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="sci_currencytype">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="VALUE" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="sci_defaulttemplate">
+    <Key>
+      <PropertyRef Name="TEMPLATEID" />
+    </Key>
+    <Property Name="MODULEID" Type="bigint" Nullable="false" />
+    <Property Name="TEMPLATEID" Type="bigint" Nullable="false" />
+    <Property Name="ACTIVE" Type="bigint" Nullable="false" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="UPDATEDDATE" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="sci_expire_alert">
+    <Key>
+      <PropertyRef Name="OPPORTUNITYID" />
+    </Key>
+    <Property Name="OPPORTUNITYID" Type="bigint" Nullable="false" />
+    <Property Name="DUEDATE" Type="datetime" Precision="0" />
+    <Property Name="CREATEDDATE" Type="datetime" Precision="0" />
+    <Property Name="FLAG" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sci_expired_opplist">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="MODULENAME" Type="varchar" MaxLength="11" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="OPPNAME" Type="varchar" MaxLength="2000" />
+    <Property Name="FUNDINGBODYNAME" Type="varchar" MaxLength="4000" />
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="TASKNAME" Type="varchar" MaxLength="6" />
+    <Property Name="TASKID" Type="bigint" />
+    <Property Name="CYCLE" Type="bigint" />
+    <Property Name="DUEDATE" Type="datetime" Precision="0" />
+    <Property Name="CID" Type="bigint" />
+    <Property Name="LOGDATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="FLAG" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="sci_fundedprogramstypelist">
+    <Key>
+      <PropertyRef Name="TYPEID" />
+    </Key>
+    <Property Name="TYPEID" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="FUNDEDPROGRAMTYPESTEXT" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="sci_group_url_detail">
+    <Key>
+      <PropertyRef Name="GROUP_ID" />
+    </Key>
+    <Property Name="GROUP_ID" Type="bigint" Nullable="false" />
+    <Property Name="URL_NUMBER" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="sci_groupurl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="URLID" Type="blob" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="CREATEDATE" Type="date" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="BATCH" Type="bigint" />
+    <Property Name="GROUP_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sci_language_detail">
+    <Key>
+      <PropertyRef Name="TRAN_ID" />
+    </Key>
+    <Property Name="TRAN_ID" Type="decimal" Precision="20" Scale="0" Nullable="false" />
+    <Property Name="SCIVAL_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="COLUMN_DESC" Type="blob" />
+    <Property Name="COLUMN_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="MODULEID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="LANGUAGE_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="TRAN_TYPE_ID" Type="decimal" Precision="20" Scale="0" />
+    <Property Name="CREATED_DATE" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="sci_language_master">
+    <Key>
+      <PropertyRef Name="LANGUAGE_ID" />
+    </Key>
+    <Property Name="LANGUAGE_ID" Type="bigint" Nullable="false" />
+    <Property Name="LANGUAGE_GROUP_ID" Type="bigint" />
+    <Property Name="LANGUAGE_NAME" Type="varchar" MaxLength="200" />
+    <Property Name="LANGUAGE_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="CODE_LENGTH" Type="bigint" />
+    <Property Name="PRIORITY" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="sci_modules">
+    <Key>
+      <PropertyRef Name="MODULEID" />
+    </Key>
+    <Property Name="MODULEID" Type="bigint" Nullable="false" />
+    <Property Name="MODULENAME" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="sci_moduletaskconfig">
+    <Key>
+      <PropertyRef Name="MODULEID" />
+      <PropertyRef Name="TASKID" />
+    </Key>
+    <Property Name="MODULEID" Type="bigint" Nullable="false" />
+    <Property Name="TASKID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_opp_loi_duedate_detail">
+    <Key>
+      <PropertyRef Name="O_ID" />
+    </Key>
+    <Property Name="O_ID" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="LOI_DUE_DATE" Type="date" />
+    <Property Name="DATE_TYPE" Type="int" />
+    <Property Name="SEQUENCE_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="date" />
+    <Property Name="DATE_REMARKS" Type="varchar" MaxLength="200" />
+    <Property Name="LANG" Type="varchar" MaxLength="200" />
+    <Property Name="URL" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="sci_related_opportunity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="REL_OPP_ID" Type="bigint" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="RELATED_OPP_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="OPPORTUNITYNAME" Type="varchar" MaxLength="2000" />
+    <Property Name="RELAION_NAME" Type="varchar" MaxLength="1000" />
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="DESCRIPTION" Type="varchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="sci_related_orgs_vendor">
+    <Key>
+      <PropertyRef Name="REL_ORGS_VENDORID" />
+    </Key>
+    <Property Name="REL_ORGS_VENDORID" Type="bigint" Nullable="false" />
+    <Property Name="VENDOR_ID" Type="bigint" />
+    <Property Name="VENDOR_FUNDINGBODY_NAME" Type="varchar" MaxLength="2000" />
+    <Property Name="CREATED_DATE" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="sci_scholarly_output">
+    <Key>
+      <PropertyRef Name="SCHOLARLY_ID" />
+    </Key>
+    <Property Name="SCHOLARLY_ID" Type="bigint" Nullable="false" />
+    <Property Name="OUTPUT_ITEM_TYPE" Type="bigint" />
+    <Property Name="ITEM_TYPE_TYPE" Type="bigint" />
+    <Property Name="RELATION_TYPE" Type="bigint" />
+    <Property Name="ITEM_TYPE_TEXT" Type="varchar" MaxLength="3000" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="AWARD_ID" Type="bigint" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="sci_statecodes">
+    <Key>
+      <PropertyRef Name="STATEID" />
+    </Key>
+    <Property Name="STATEID" Type="bigint" Nullable="false" />
+    <Property Name="COUNTRYID" Type="bigint" />
+    <Property Name="NAME" Type="varchar" MaxLength="2000" />
+    <Property Name="CODE" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="sci_tasks">
+    <Key>
+      <PropertyRef Name="TASKID" />
+    </Key>
+    <Property Name="TASKID" Type="bigint" Nullable="false" />
+    <Property Name="TASKNAME" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="sci_timesheet">
+    <Key>
+      <PropertyRef Name="TRANSITIONALID" />
+    </Key>
+    <Property Name="TRANSITIONALID" Type="bigint" Nullable="false" />
+    <Property Name="WORKFLOWID" Type="bigint" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="ID" Type="bigint" />
+    <Property Name="TASKID" Type="bigint" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="CYCLEID" Type="bigint" />
+    <Property Name="STATUSCODE" Type="bigint" />
+    <Property Name="STARTDATE" Type="datetime" Precision="0" />
+    <Property Name="ENDDATE" Type="datetime" Precision="0" />
+    <Property Name="IDLETIME" Type="bigint" />
+    <Property Name="ISERROR" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="sci_timesheetremarks">
+    <Key>
+      <PropertyRef Name="TRANSITIONALID" />
+    </Key>
+    <Property Name="WORKFLOWID" Type="bigint" />
+    <Property Name="TRANSITIONALID" Type="bigint" Nullable="false" />
+    <Property Name="STATUSCODE" Type="bigint" />
+    <Property Name="REMARKS" Type="varchar" MaxLength="4000" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="sci_tran_type_master">
+    <Key>
+      <PropertyRef Name="TRAN_TYPE_ID" />
+    </Key>
+    <Property Name="TRAN_TYPE_ID" Type="bigint" Nullable="false" />
+    <Property Name="TRAN_NAME" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="sci_typeidvalues">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="VALUE" Type="varchar" MaxLength="2000" />
+    <Property Name="TYPE" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_urlmaster">
+    <Key>
+      <PropertyRef Name="URLID" />
+    </Key>
+    <Property Name="ORGDBID" Type="bigint" />
+    <Property Name="URLID" Type="bigint" Nullable="false" />
+    <Property Name="URL" Type="varchar" MaxLength="2000" />
+    <Property Name="STATUS" Type="bigint" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="RETAIN_DELETEBY" Type="bigint" />
+    <Property Name="LASTUPDATEDBY" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="datetime" Precision="0" />
+    <Property Name="RETAIN_DELETEDATE" Type="datetime" Precision="0" />
+    <Property Name="LASTUPDATEDDATE" Type="datetime" Precision="0" />
+    <Property Name="BATCH" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sci_urlretain">
+    <Key>
+      <PropertyRef Name="ORGDBID" />
+    </Key>
+    <Property Name="ORGDBID" Type="bigint" Nullable="false" />
+    <Property Name="URL" Type="varchar" MaxLength="2000" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="GROUPCOUNTER" Type="bigint" />
+    <Property Name="BATCH" Type="bigint" />
+    <Property Name="URLID" Type="varchar" MaxLength="2000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_urls">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="PAGENAME" Type="varchar" MaxLength="2000" />
+    <Property Name="URL" Type="varchar" MaxLength="2000" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="ISACTIVE" Type="varchar" MaxLength="1" />
+    <Property Name="DELETEDBY" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sci_userlog">
+    <Key>
+      <PropertyRef Name="WORKFLOWID" />
+    </Key>
+    <Property Name="WORKFLOWID" Type="bigint" Nullable="false" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="ID" Type="bigint" />
+    <Property Name="CYCLEID" Type="bigint" />
+    <Property Name="PAGENAME" Type="varchar" MaxLength="2000" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="CREATEDDATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="ACTION" Type="varchar" MaxLength="2000" />
+  </EntityType>
+  <EntityType Name="sci_usermaster">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="USERNAME" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="2000" />
+    <Property Name="NAME" Type="varchar" MaxLength="2000" />
+    <Property Name="EMPCODE" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="CONTACTNO" Type="varchar" MaxLength="2000" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="2000" />
+    <Property Name="ISACTIVE" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="CREATEDDATE" Type="datetime" Precision="0" Nullable="false" />
+    <Property Name="CREADTEDBY" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_usertask">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="TASKID" />
+      <PropertyRef Name="MODULEID" />
+    </Key>
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="TASKID" Type="bigint" Nullable="false" />
+    <Property Name="MODULEID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_version">
+    <Key>
+      <PropertyRef Name="VERSION_ID" />
+    </Key>
+    <Property Name="VERSION_ID" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="RELEASE_DATE" Type="datetime" Precision="0" />
+  </EntityType>
+  <EntityType Name="sci_workflow">
+    <Key>
+      <PropertyRef Name="WORKFLOWID" />
+    </Key>
+    <Property Name="WORKFLOWID" Type="bigint" Nullable="false" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="ID" Type="bigint" />
+    <Property Name="CYCLE" Type="bigint" />
+    <Property Name="TEMPLATEID" Type="bigint" />
+    <Property Name="TASKID" Type="bigint" />
+    <Property Name="SEQUENCE" Type="bigint" />
+    <Property Name="STARTDATE" Type="datetime" Precision="0" />
+    <Property Name="STARTBY" Type="bigint" />
+    <Property Name="COMPLETEDDATE" Type="datetime" Precision="0" />
+    <Property Name="COMPLETEDBY" Type="bigint" />
+    <Property Name="CREATEDBY" Type="bigint" />
+    <Property Name="ASSIGNBY" Type="bigint" />
+    <Property Name="ASSIGNDATE" Type="datetime" Precision="0" />
+    <Property Name="STATUSID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sci_workflowtemplate">
+    <Key>
+      <PropertyRef Name="TEMPLATEID" />
+    </Key>
+    <Property Name="TEMPLATEID" Type="bigint" Nullable="false" />
+    <Property Name="TASKID" Type="bigint" />
+    <Property Name="SEQUENCE" Type="bigint" />
+  </EntityType>
+  <EntityType Name="sci_xml_limits">
+    <Key>
+      <PropertyRef Name="NAME" />
+    </Key>
+    <Property Name="NAME" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="LIMITS" Type="bigint" />
+  </EntityType>
+  <EntityType Name="subtype">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="SUBTYPE_TEXT" Type="varchar" MaxLength="2000" />
+    <Property Name="FUNDINGBODY_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="synopsis">
+    <Key>
+      <PropertyRef Name="SYNOPSIS_ID" />
+    </Key>
+    <Property Name="SYNOPSIS_ID" Type="bigint" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="bigint" />
+    <Property Name="RELATEDITEMS_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="temp_scivalurl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="URL" Type="varchar" MaxLength="4000" />
+  </EntityType>
+  <EntityType Name="temptable_subregion">
+    <Key>
+      <PropertyRef Name="REGION" />
+    </Key>
+    <Property Name="COUNTRYNAME" Type="varchar" MaxLength="200" />
+    <Property Name="ALPHA_2" Type="varchar" MaxLength="20" />
+    <Property Name="ALPHA_3" Type="varchar" MaxLength="20" />
+    <Property Name="REGION" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="SUBREGION" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="totalamount">
+    <Key>
+      <PropertyRef Name="INSTALLMENTANDAMOUNT_ID" />
+    </Key>
+    <Property Name="INSTALLMENTANDAMOUNT_ID" Type="bigint" Nullable="false" />
+    <Property Name="AMOUNT" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="CURRENCY" Type="varchar" MaxLength="50" />
+    <Property Name="CREATED_DATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="totalfunding">
+    <Key>
+      <PropertyRef Name="TOTALFUNDING_TEXT" />
+    </Key>
+    <Property Name="CURRENCY" Type="varchar" MaxLength="2000" />
+    <Property Name="TOTALFUNDING_TEXT" Type="bigint" Nullable="false" />
+    <Property Name="AWARDSTATISTICS_ID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tracking_award">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="bigint" Nullable="false" />
+    <Property Name="WORKFLOWID" Type="bigint" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="PAGENAME" Type="varchar" MaxLength="2000" />
+    <Property Name="AWARDID" Type="bigint" />
+    <Property Name="TRACKINGDATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="STOP_STATUS" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tracking_fb">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="bigint" Nullable="false" />
+    <Property Name="WORKFLOWID" Type="bigint" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="PAGENAME" Type="varchar" MaxLength="2000" />
+    <Property Name="FUNDINGBODYID" Type="bigint" />
+    <Property Name="TRACKINGDATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="STOP_STATUS" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tracking_log">
+    <Key>
+      <PropertyRef Name="TLOGID" />
+    </Key>
+    <Property Name="TLOGID" Type="bigint" Nullable="false" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="TASKID" Type="bigint" />
+    <Property Name="SEQUENCE" Type="bigint" />
+    <Property Name="STARTDATE" Type="datetime" Precision="0" />
+    <Property Name="STARTBY" Type="bigint" />
+    <Property Name="COMPLETEDDATE" Type="datetime" Precision="0" />
+    <Property Name="COMPLETEDBY" Type="bigint" />
+    <Property Name="STATUSID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tracking_opp">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="bigint" Nullable="false" />
+    <Property Name="WORKFLOWID" Type="bigint" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="PAGENAME" Type="varchar" MaxLength="2000" />
+    <Property Name="OPPORTUNITYID" Type="bigint" />
+    <Property Name="TRACKINGDATE" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="STOP_STATUS" Type="bigint" />
+  </EntityType>
+  <EntityType Name="userassignment">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="bigint" Nullable="false" />
+    <Property Name="FUNDINGBODYID" Type="bigint" />
+    <Property Name="MODULEID" Type="bigint" />
+    <Property Name="TASKID" Type="bigint" />
+    <Property Name="USERID" Type="bigint" />
+    <Property Name="ASSIGNEDBY" Type="bigint" />
+    <Property Name="ASSIGNDATE" Type="datetime" Precision="0" />
+    <Property Name="CYCLE" Type="bigint" />
+    <Property Name="OPPORTUNITYID" Type="bigint" />
+    <Property Name="AWARDID" Type="bigint" />
+  </EntityType>
+  <Function Name="asjc_description_prc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival" />
+  <Function Name="awardssource_dml_prc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_status" Type="varchar" Mode="In" />
+    <Parameter Name="p_lastvisited" Type="datetime" Mode="In" />
+    <Parameter Name="p_Workflow_id" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_award_source_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="awardssource_dml_prc_5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_status" Type="varchar" Mode="In" />
+    <Parameter Name="p_lastvisited" Type="datetime" Mode="In" />
+    <Parameter Name="p_Workflow_id" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="p_name" Type="longtext" Mode="In" />
+    <Parameter Name="p_Frequency" Type="varchar" Mode="In" />
+    <Parameter Name="p_date_captureStart" Type="datetime" Mode="In" />
+    <Parameter Name="p_date_captureEnd" Type="datetime" Mode="In" />
+    <Parameter Name="p_Comment" Type="longtext" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_award_source_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="dummy_tasklist_new" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="pUserId" Type="int" Mode="In" />
+    <Parameter Name="pModuleId" Type="int" Mode="In" />
+    <Parameter Name="pTaskId" Type="int" Mode="In" />
+    <Parameter Name="pCycle" Type="int" Mode="In" />
+    <Parameter Name="pAllocation" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fundingbodysource_dml_prc_5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_status" Type="varchar" Mode="In" />
+    <Parameter Name="p_Workflow_id" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="p_name" Type="longtext" Mode="In" />
+    <Parameter Name="p_Frequency" Type="varchar" Mode="In" />
+    <Parameter Name="p_date_captureStart" Type="datetime" Mode="In" />
+    <Parameter Name="p_date_captureEnd" Type="datetime" Mode="In" />
+    <Parameter Name="p_Comment" Type="longtext" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_opp_source_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="get_funding_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WFID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Get_GroupCountries_prc1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_countrygroupid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="get_opportunity_dateins_data5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="LoadLanguageData" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival" />
+  <Function Name="opportunitiessource_dml_prc_5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_status" Type="varchar" Mode="In" />
+    <Parameter Name="p_Workflow_id" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="p_name" Type="longtext" Mode="In" />
+    <Parameter Name="p_Frequency" Type="varchar" Mode="In" />
+    <Parameter Name="p_date_captureStart" Type="datetime" Mode="In" />
+    <Parameter Name="p_date_captureEnd" Type="datetime" Mode="In" />
+    <Parameter Name="p_Comment" Type="longtext" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_opp_source_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="opportunity_location_insupdel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_country" Type="varchar" Mode="In" />
+    <Parameter Name="p_room" Type="varchar" Mode="In" />
+    <Parameter Name="p_street" Type="varchar" Mode="In" />
+    <Parameter Name="p_city" Type="varchar" Mode="In" />
+    <Parameter Name="p_state" Type="varchar" Mode="In" />
+    <Parameter Name="p_postalcode" Type="varchar" Mode="In" />
+    <Parameter Name="p_location_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="opportunity_location_insup_DEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_DELETEGROUPID" Type="int" Mode="In" />
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_country" Type="varchar" Mode="In" />
+    <Parameter Name="p_room" Type="varchar" Mode="In" />
+    <Parameter Name="p_street" Type="varchar" Mode="In" />
+    <Parameter Name="p_city" Type="varchar" Mode="In" />
+    <Parameter Name="p_state" Type="varchar" Mode="In" />
+    <Parameter Name="p_postalcode" Type="varchar" Mode="In" />
+    <Parameter Name="p_location_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="opportunity_location_list" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="opprotunity_loi_status" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="publicationsource_dml_prc_5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_status" Type="varchar" Mode="In" />
+    <Parameter Name="p_Workflow_id" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="p_name" Type="longtext" Mode="In" />
+    <Parameter Name="p_Frequency" Type="varchar" Mode="In" />
+    <Parameter Name="p_date_captureStart" Type="datetime" Mode="In" />
+    <Parameter Name="p_date_captureEnd" Type="datetime" Mode="In" />
+    <Parameter Name="p_Comment" Type="longtext" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_opp_source_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="save_funding_prc3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_fundingBodyProjectId_f" Type="varchar" Mode="In" />
+    <Parameter Name="P_Amount_f" Type="double" Mode="In" />
+    <Parameter Name="P_ddlCurrency_f" Type="varchar" Mode="In" />
+    <Parameter Name="P_fundingBodyProjectId_h" Type="varchar" Mode="In" />
+    <Parameter Name="P_Amount_h" Type="double" Mode="In" />
+    <Parameter Name="P_ddlCurrency_h" Type="varchar" Mode="In" />
+    <Parameter Name="P_acronym" Type="varchar" Mode="In" />
+    <Parameter Name="P_SrtDate" Type="datetime" Mode="In" />
+    <Parameter Name="P_EndDateDate" Type="datetime" Mode="In" />
+    <Parameter Name="P_Status" Type="varchar" Mode="In" />
+    <Parameter Name="P_link" Type="varchar" Mode="In" />
+    <Parameter Name="P_postofficeboxn" Type="varchar" Mode="In" />
+    <Parameter Name="P_Street" Type="varchar" Mode="In" />
+    <Parameter Name="P_locality" Type="varchar" Mode="In" />
+    <Parameter Name="P_region" Type="varchar" Mode="In" />
+    <Parameter Name="P_PostalCode" Type="varchar" Mode="In" />
+    <Parameter Name="P_COUNTRY" Type="varchar" Mode="In" />
+    <Parameter Name="P_COLUMN_DESC" Type="varchar" Mode="In" />
+    <Parameter Name="P_LANGUAGE_NAME" Type="varchar" Mode="In" />
+    <Parameter Name="P_COLUMN_ID" Type="int" Mode="In" />
+    <Parameter Name="P_TRAN_TYPE_ID" Type="int" Mode="In" />
+    <Parameter Name="P_WFID" Type="int" Mode="In" />
+    <Parameter Name="P_pagemode" Type="int" Mode="In" />
+    <Parameter Name="P_mode" Type="int" Mode="In" />
+    <Parameter Name="P_SEQUENCE_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sciFundedProgramType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_id" Type="varchar" Mode="In" />
+    <Parameter Name="p_typeid" Type="varchar" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_oldtypeid" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sciFundedProgramType_win" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_id" Type="varchar" Mode="In" />
+    <Parameter Name="p_typeid" Type="varchar" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_oldtypeid" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_auto_lead_relorgs_prc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_id" Type="int" Mode="In" />
+    <Parameter Name="p_moduleid" Type="int" Mode="In" />
+    <Parameter Name="p_flag" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_awardstatisticsinsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_currency" Type="varchar" Mode="In" />
+    <Parameter Name="p_totalfunding_text" Type="varchar" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_link_text" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_AWARDSTATISTICSlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_ADDRESSINSDEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_AFFILIATION_ID_IN" Type="int" Mode="In" />
+    <Parameter Name="P_FLAG_IN" Type="int" Mode="In" />
+    <Parameter Name="P_COUNTRY_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_ROOM_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_STREET_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITY_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_STATE_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_POSTALCODE_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_OLD_COUNTRY_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_OLD_ROOM_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_OLD_STREET_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_OLD_CITY_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_OLD_STATE_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_OLD_POSTALCODE_IN" Type="varchar" Mode="In" />
+    <Parameter Name="P_STATUS_OUT" Type="int" Mode="Out" />
+    <Parameter Name="P_ERROR_OUT" Type="varchar" Mode="Out" />
+  </Function>
+  <Function Name="SCI_AW_ADDRESSLIST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_AFFILIATION_ID_IN" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_AWARDEEINSDEL_41" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_INSDEL" Type="int" Mode="In" />
+    <Parameter Name="P_TYPE" Type="varchar" Mode="In" />
+    <Parameter Name="P_SCOPUSAUTHORID" Type="int" Mode="In" />
+    <Parameter Name="P_externalRes_Id" Type="varchar" Mode="In" />
+    <Parameter Name="P_ORCID" Type="varchar" Mode="In" />
+    <Parameter Name="P_INDEXEDNAME" Type="varchar" Mode="In" />
+    <Parameter Name="P_GIVENNAME" Type="varchar" Mode="In" />
+    <Parameter Name="P_INITIALS" Type="varchar" Mode="In" />
+    <Parameter Name="P_SURNAME" Type="varchar" Mode="In" />
+    <Parameter Name="p_AWARDEE_ID" Type="int" Mode="In" />
+    <Parameter Name="p_currency" Type="varchar" Mode="In" />
+    <Parameter Name="p_amount" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_AWARDEEINSDEL_50" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_INSDEL" Type="int" Mode="In" />
+    <Parameter Name="P_TYPE" Type="varchar" Mode="In" />
+    <Parameter Name="P_SCOPUSAUTHORID" Type="int" Mode="In" />
+    <Parameter Name="P_externalRes_Id" Type="varchar" Mode="In" />
+    <Parameter Name="P_ORCID" Type="varchar" Mode="In" />
+    <Parameter Name="P_INDEXEDNAME" Type="varchar" Mode="In" />
+    <Parameter Name="P_GIVENNAME" Type="varchar" Mode="In" />
+    <Parameter Name="P_INITIALS" Type="varchar" Mode="In" />
+    <Parameter Name="P_SURNAME" Type="varchar" Mode="In" />
+    <Parameter Name="p_AWARDEE_ID" Type="int" Mode="In" />
+    <Parameter Name="p_currency" Type="varchar" Mode="In" />
+    <Parameter Name="p_amount" Type="int" Mode="In" />
+    <Parameter Name="P_link" Type="varchar" Mode="In" />
+    <Parameter Name="P_DUNS" Type="varchar" Mode="In" />
+    <Parameter Name="P_ROR" Type="varchar" Mode="In" />
+    <Parameter Name="P_WIKIDATA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_Aw_awardeelist50" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_aw_awexist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_fundingbodyid" Type="int" Mode="In" />
+    <Parameter Name="p_taskid" Type="int" Mode="In" />
+    <Parameter Name="p_updateflag" Type="int" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_AWNEW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_FUNDINGBODYID" Type="int" Mode="In" />
+    <Parameter Name="P_USERID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_aw_awradins50" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_FUNDINGBODYAWARDID" Type="varchar" Mode="In" />
+    <Parameter Name="p_TYPE" Type="varchar" Mode="In" />
+    <Parameter Name="p_TRUSTING" Type="varchar" Mode="In" />
+    <Parameter Name="p_COLLECTIONCODE" Type="varchar" Mode="In" />
+    <Parameter Name="p_HIDDEN" Type="varchar" Mode="In" />
+    <Parameter Name="p_NAME" Type="varchar" Mode="In" />
+    <Parameter Name="p_STARTDATE" Type="datetime" Mode="In" />
+    <Parameter Name="p_LASTAMENDEDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="p_ENDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="p_ABSTRACT" Type="varchar" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_recordsource" Type="varchar" Mode="In" />
+    <Parameter Name="p_AwardNoticeDate" Type="datetime" Mode="In" />
+    <Parameter Name="p_PublishedDate" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_FAXINSDEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_AFFILIATIONID" Type="int" Mode="In" />
+    <Parameter Name="P_INSDEL" Type="int" Mode="In" />
+    <Parameter Name="P_FAX" Type="varchar" Mode="In" />
+    <Parameter Name="X_FAX" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_faxlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_AFFILIATIONID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_INSTITUTIONINSDEL41" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_AWARDEEID" Type="int" Mode="In" />
+    <Parameter Name="P_INSDEL" Type="int" Mode="In" />
+    <Parameter Name="P_SCOPUSINSTITUTIONID" Type="int" Mode="In" />
+    <Parameter Name="P_ORG" Type="varchar" Mode="In" />
+    <Parameter Name="P_DEPT" Type="varchar" Mode="In" />
+    <Parameter Name="P_STARTDATE" Type="datetime" Mode="In" />
+    <Parameter Name="P_ENDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="P_EMAIL" Type="varchar" Mode="In" />
+    <Parameter Name="P_WEBPAGE" Type="varchar" Mode="In" />
+    <Parameter Name="P_EXTAFFI_Id" Type="varchar" Mode="In" />
+    <Parameter Name="P_AFFILIATION_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_INSTITUTIONINSDEL50" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_AWARDEEID" Type="int" Mode="In" />
+    <Parameter Name="P_INSDEL" Type="int" Mode="In" />
+    <Parameter Name="P_SCOPUSINSTITUTIONID" Type="int" Mode="In" />
+    <Parameter Name="P_ORG" Type="varchar" Mode="In" />
+    <Parameter Name="P_DEPT" Type="varchar" Mode="In" />
+    <Parameter Name="P_STARTDATE" Type="datetime" Mode="In" />
+    <Parameter Name="P_ENDDATE" Type="datetime" Mode="In" />
+    <Parameter Name="P_EMAIL" Type="varchar" Mode="In" />
+    <Parameter Name="P_WEBPAGE" Type="varchar" Mode="In" />
+    <Parameter Name="P_EXTAFFI_Id" Type="varchar" Mode="In" />
+    <Parameter Name="P_awardeePersonId" Type="varchar" Mode="In" />
+    <Parameter Name="P_familyName" Type="varchar" Mode="In" />
+    <Parameter Name="P_fundingBodyPersonId" Type="varchar" Mode="In" />
+    <Parameter Name="P_givenName" Type="varchar" Mode="In" />
+    <Parameter Name="P_ORCID" Type="varchar" Mode="In" />
+    <Parameter Name="P_initials" Type="varchar" Mode="In" />
+    <Parameter Name="P_role" Type="varchar" Mode="In" />
+    <Parameter Name="P_name" Type="varchar" Mode="In" />
+    <Parameter Name="P_AFFILIATION_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_INSTITUTIONLIST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_AWARDEEID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_aw_managerlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_aw_QCcheckxml50_4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_tran_type_id" Type="int" Mode="In" />
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_aw_research_output" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_TELINSDEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_AFFILIATIONID" Type="int" Mode="In" />
+    <Parameter Name="P_INSDEL" Type="int" Mode="In" />
+    <Parameter Name="P_TELEPHONE" Type="varchar" Mode="In" />
+    <Parameter Name="X_TELEPHONE" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SCI_AW_TELlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_AFFILIATIONID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_CheckOppStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_WorkflowID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_check_award_duplicate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+    <Parameter Name="p_transitionalid" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_QueryMode" Type="int" Mode="In" />
+    <Parameter Name="p_TaskName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_classificationinsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_type" Type="varchar" Mode="In" />
+    <Parameter Name="p_FREQUENCY" Type="int" Mode="In" />
+    <Parameter Name="p_CODE" Type="varchar" Mode="In" />
+    <Parameter Name="p_CLASSIFICATION_TEXT" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_classificationlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_CLASSIFICATIONUPDEL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_INSDEL" Type="int" Mode="In" />
+    <Parameter Name="P_TYPE" Type="varchar" Mode="In" />
+    <Parameter Name="P_FREQUENCY" Type="int" Mode="In" />
+    <Parameter Name="P_CODE" Type="varchar" Mode="In" />
+    <Parameter Name="P_CLASSIFICATION_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_CLASSIFICATIONS_ID" Type="varchar" Mode="In" />
+    <Parameter Name="O_FREQUENCY" Type="int" Mode="In" />
+    <Parameter Name="O_CODE" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_contactinsert_s2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_contactid" Type="int" Mode="In" />
+    <Parameter Name="p_type" Type="varchar" Mode="In" />
+    <Parameter Name="p_title" Type="varchar" Mode="In" />
+    <Parameter Name="p_telephone" Type="varchar" Mode="In" />
+    <Parameter Name="p_fax" Type="varchar" Mode="In" />
+    <Parameter Name="p_email" Type="varchar" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_website_text" Type="varchar" Mode="In" />
+    <Parameter Name="p_country" Type="varchar" Mode="In" />
+    <Parameter Name="p_room" Type="varchar" Mode="In" />
+    <Parameter Name="p_street" Type="varchar" Mode="In" />
+    <Parameter Name="p_state" Type="varchar" Mode="In" />
+    <Parameter Name="p_city" Type="varchar" Mode="In" />
+    <Parameter Name="p_postalcode" Type="varchar" Mode="In" />
+    <Parameter Name="p_prefix" Type="varchar" Mode="In" />
+    <Parameter Name="p_givenname" Type="varchar" Mode="In" />
+    <Parameter Name="p_middlename" Type="varchar" Mode="In" />
+    <Parameter Name="p_surname" Type="varchar" Mode="In" />
+    <Parameter Name="p_suffix" Type="varchar" Mode="In" />
+    <Parameter Name="p_LANG" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_contactlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_CURRENCYTYPElist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival" />
+  <Function Name="sci_establishmentinsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_ESTABLISHMENTDATE" Type="varchar" Mode="In" />
+    <Parameter Name="p_ESTABLISHMENTCITY" Type="varchar" Mode="In" />
+    <Parameter Name="p_ESTABLISHMENTSTATE" Type="varchar" Mode="In" />
+    <Parameter Name="p_ESTABLISHMENTCOUNTRYCODE" Type="varchar" Mode="In" />
+    <Parameter Name="p_ESTABLISHMENTDESCRIPTION" Type="varchar" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_establishmentlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_expiredetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="pUserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_fiscalclosedate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+    <Parameter Name="p_FINANCIALINFO_ID" Type="int" Mode="In" />
+    <Parameter Name="p_fiscalclosedate_column" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sci_FundedProgramTypelist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_fundingbase_41" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_FUNDINGBODYID" Type="int" Mode="InOut" />
+    <Parameter Name="p_ORGDBID" Type="int" Mode="In" />
+    <Parameter Name="p_TYPE" Type="varchar" Mode="In" />
+    <Parameter Name="p_TRUSTING" Type="varchar" Mode="In" />
+    <Parameter Name="p_COUNTRY" Type="varchar" Mode="In" />
+    <Parameter Name="p_STATE" Type="varchar" Mode="In" />
+    <Parameter Name="p_COLLECTIONCODE" Type="varchar" Mode="In" />
+    <Parameter Name="p_HIDDEN" Type="varchar" Mode="In" />
+    <Parameter Name="p_CANONICALNAME" Type="longtext" Mode="In" />
+    <Parameter Name="p_PREFERREDORGNAME" Type="longtext" Mode="In" />
+    <Parameter Name="p_CONTEXTNAME" Type="longtext" Mode="In" />
+    <Parameter Name="p_ABBREVNAME" Type="longtext" Mode="In" />
+    <Parameter Name="p_ELIGIBILITYDESCRIPTION" Type="longtext" Mode="In" />
+    <Parameter Name="p_IDsubtypeid" Type="longtext" Mode="In" />
+    <Parameter Name="p_SUBTYPE_TEXT" Type="longtext" Mode="In" />
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+    <Parameter Name="p_projectname" Type="varchar" Mode="In" />
+    <Parameter Name="p_recordsource" Type="varchar" Mode="In" />
+    <Parameter Name="p_awardsuccesrate" Type="double" Mode="In" />
+    <Parameter Name="p_comment_desc" Type="longtext" Mode="In" />
+    <Parameter Name="p_defunct" Type="varchar" Mode="In" />
+    <Parameter Name="p_crossrefid" Type="varchar" Mode="In" />
+    <Parameter Name="P_extendedRecord" Type="varchar" Mode="In" />
+    <Parameter Name="p_capop" Type="varchar" Mode="In" />
+    <Parameter Name="p_oppsup" Type="varchar" Mode="In" />
+    <Parameter Name="p_CapAwards" Type="varchar" Mode="In" />
+    <Parameter Name="p_AwardsSup" Type="varchar" Mode="In" />
+    <Parameter Name="p_tierinfo" Type="varchar" Mode="In" />
+    <Parameter Name="p_profit" Type="varchar" Mode="In" />
+    <Parameter Name="p_oppFrequency" Type="varchar" Mode="In" />
+    <Parameter Name="p_awFrequency" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_fundingbodyurlinsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="pOrgDbId" Type="int" Mode="In" />
+    <Parameter Name="pUserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_getfiscalclosedate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_GetHiddenStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_WorkId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_GetLanguageDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_langLength" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_GETOPPORTUNITYDATES_5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_gettaxids" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_gettaxidtype" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival" />
+  <Function Name="sci_GetWorkFlowDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_WorkflowId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_INDELIGIBILITY_DML_PRC23MA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_NOT_SPECIFIED" Type="varchar" Mode="In" />
+    <Parameter Name="P_DEGREE" Type="varchar" Mode="In" />
+    <Parameter Name="P_GRADUATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_NEWFACULTY" Type="varchar" Mode="In" />
+    <Parameter Name="P_UNDERGRADUATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_NORESTRICTION" Type="varchar" Mode="In" />
+    <Parameter Name="P_COUNTRY" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITIZENSHIP_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Type="int" Mode="In" />
+    <Parameter Name="P_INDIVIDUALELIGIBILITY_ID" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="P_MODE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_INDELIGIBILITY_DML_PRC24Ap" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_NOT_SPECIFIED" Type="varchar" Mode="In" />
+    <Parameter Name="P_DEGREE" Type="varchar" Mode="In" />
+    <Parameter Name="P_GRADUATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_NEWFACULTY" Type="varchar" Mode="In" />
+    <Parameter Name="P_UNDERGRADUATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_NORESTRICTION" Type="varchar" Mode="In" />
+    <Parameter Name="P_COUNTRY" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITIZENSHIP_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Type="int" Mode="In" />
+    <Parameter Name="P_INDIVIDUALELIGIBILITY_ID" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="P_MODE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_INDELIGIBILITY_DML_PRC_s" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_DELETEGROUPID" Type="int" Mode="In" />
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_NOT_SPECIFIED" Type="varchar" Mode="In" />
+    <Parameter Name="P_DEGREE" Type="varchar" Mode="In" />
+    <Parameter Name="P_GRADUATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_NEWFACULTY" Type="varchar" Mode="In" />
+    <Parameter Name="P_UNDERGRADUATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_NORESTRICTION" Type="varchar" Mode="In" />
+    <Parameter Name="P_COUNTRY" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITIZENSHIP_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Type="int" Mode="In" />
+    <Parameter Name="P_INDIVIDUALELIGIBILITY_ID" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="P_MODE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_inserttimesheet41" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_iteminserttemp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_itemid" Type="int" Mode="In" />
+    <Parameter Name="p_RELTYPE" Type="varchar" Mode="In" />
+    <Parameter Name="p_DESCRIPTION" Type="varchar" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_urltext" Type="varchar" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_iteminserttemp5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_itemid" Type="int" Mode="In" />
+    <Parameter Name="p_RELTYPE" Type="varchar" Mode="In" />
+    <Parameter Name="p_DESCRIPTION" Type="varchar" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_urltext" Type="varchar" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_itemlist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_itemlist5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_language_detail_dml_prc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="tran_id_in" Type="int" Mode="In" />
+    <Parameter Name="scival_id_in" Type="int" Mode="In" />
+    <Parameter Name="column_desc_in" Type="varchar" Mode="In" />
+    <Parameter Name="column_id_in" Type="int" Mode="In" />
+    <Parameter Name="moduleid_in" Type="varchar" Mode="In" />
+    <Parameter Name="language_id_in" Type="int" Mode="In" />
+    <Parameter Name="tran_type_id_in" Type="int" Mode="In" />
+    <Parameter Name="flag_in" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_LIMITEDSUBMISSION_DML_PRC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_NOT_SPECIFIED" Type="varchar" Mode="In" />
+    <Parameter Name="P_DISABILITIES" Type="varchar" Mode="In" />
+    <Parameter Name="P_INVITATIONONLY" Type="varchar" Mode="In" />
+    <Parameter Name="P_MEMBERONLY" Type="varchar" Mode="In" />
+    <Parameter Name="P_NOMINATIONONLY" Type="varchar" Mode="In" />
+    <Parameter Name="P_MINORTIES" Type="varchar" Mode="In" />
+    <Parameter Name="P_WOMEN" Type="varchar" Mode="In" />
+    <Parameter Name="P_NUMBEROFAPPLICANTSALLOWED" Type="int" Mode="In" />
+    <Parameter Name="P_LIMITEDSUBMISSION_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Type="int" Mode="In" />
+    <Parameter Name="P_RESTRICTIONS_ID" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="P_MODE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_managerinsdel_1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_contactid" Type="int" Mode="In" />
+    <Parameter Name="p_type" Type="varchar" Mode="In" />
+    <Parameter Name="p_title" Type="varchar" Mode="In" />
+    <Parameter Name="p_telephone" Type="varchar" Mode="In" />
+    <Parameter Name="p_fax" Type="varchar" Mode="In" />
+    <Parameter Name="p_email" Type="varchar" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_website_text" Type="varchar" Mode="In" />
+    <Parameter Name="p_MANAGERID" Type="int" Mode="In" />
+    <Parameter Name="p_country" Type="varchar" Mode="In" />
+    <Parameter Name="p_room" Type="varchar" Mode="In" />
+    <Parameter Name="p_street" Type="varchar" Mode="In" />
+    <Parameter Name="p_state" Type="varchar" Mode="In" />
+    <Parameter Name="p_city" Type="varchar" Mode="In" />
+    <Parameter Name="p_postalcode" Type="varchar" Mode="In" />
+    <Parameter Name="p_prefix" Type="varchar" Mode="In" />
+    <Parameter Name="p_givenname" Type="varchar" Mode="In" />
+    <Parameter Name="p_middlename" Type="varchar" Mode="In" />
+    <Parameter Name="p_surname" Type="varchar" Mode="In" />
+    <Parameter Name="p_suffix" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_mandatory_section" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_opaw_tasklist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="pUserId" Type="bigint" Mode="In" />
+    <Parameter Name="pModuleId" Type="bigint" Mode="In" />
+    <Parameter Name="pTaskId" Type="bigint" Mode="In" />
+    <Parameter Name="pAllocation" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sci_op_changehistoryins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_opportunity_id" Type="int" Mode="In" />
+    <Parameter Name="p_TYPE" Type="varchar" Mode="In" />
+    <Parameter Name="p_POSTDATE" Type="datetime" Mode="In" />
+    <Parameter Name="p_CHANGE_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_change_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_changehistorylist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_delete_date_prc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="p_date_type" Type="int" Mode="In" />
+    <Parameter Name="p_sequence_id" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_eclassificationins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_TYPE" Type="varchar" Mode="In" />
+    <Parameter Name="p_ID" Type="varchar" Mode="In" />
+    <Parameter Name="p_ELIGIBLECLASSIFICATION_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="n_TYPE" Type="varchar" Mode="In" />
+    <Parameter Name="n_ID" Type="varchar" Mode="In" />
+    <Parameter Name="n_ELIGIBLECLASSIFICATION_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_COUNTRY_CODE" Type="varchar" Mode="In" />
+    <Parameter Name="P_STATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITY" Type="varchar" Mode="In" />
+    <Parameter Name="p_region_specific_id" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_OP_ECLASSIFICATIONLIST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_eligibilitylist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_OP_estfundingins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_currency" Type="varchar" Mode="In" />
+    <Parameter Name="p_amount" Type="varchar" Mode="In" />
+    <Parameter Name="p_amount_description" Type="varchar" Mode="In" />
+    <Parameter Name="p_total_amount" Type="double" Mode="In" />
+    <Parameter Name="p_startdate" Type="datetime" Mode="In" />
+    <Parameter Name="p_enddate" Type="datetime" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_url_text" Type="varchar" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="PAGE_MODE" Type="int" Mode="In" />
+    <Parameter Name="p_SEQUENCE_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_OP_ESTFUNDINGINS_y" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_currency" Type="varchar" Mode="In" />
+    <Parameter Name="p_amount" Type="varchar" Mode="In" />
+    <Parameter Name="p_amount_description" Type="varchar" Mode="In" />
+    <Parameter Name="p_total_amount" Type="double" Mode="In" />
+    <Parameter Name="p_startdate" Type="datetime" Mode="In" />
+    <Parameter Name="p_enddate" Type="datetime" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_url_text" Type="varchar" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="PAGE_MODE" Type="int" Mode="In" />
+    <Parameter Name="p_SEQUENCE_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_estfundinglist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="page_mode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_opexist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_FUNDINGBODYID" Type="int" Mode="In" />
+    <Parameter Name="p_taskid" Type="int" Mode="In" />
+    <Parameter Name="p_updateflag" Type="int" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_OP_OPNEW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_FUNDINGBODYID" Type="int" Mode="In" />
+    <Parameter Name="P_USERID" Type="int" Mode="In" />
+    <Parameter Name="x_WORKFLOWID" Type="int" Mode="Out" />
+  </Function>
+  <Function Name="SCI_OP_OPPORTUNITYINS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_FUNDINGBODYOPPORTUNITYID" Type="varchar" Mode="In" />
+    <Parameter Name="P_LIMITEDSUBMISSION" Type="varchar" Mode="In" />
+    <Parameter Name="P_TRUSTING" Type="varchar" Mode="In" />
+    <Parameter Name="P_COLLECTIONCODE" Type="varchar" Mode="In" />
+    <Parameter Name="P_HIDDEN" Type="varchar" Mode="In" />
+    <Parameter Name="P_NAME" Type="varchar" Mode="In" />
+    <Parameter Name="P_DUEDATEDESCRIPTION" Type="longtext" Mode="In" />
+    <Parameter Name="P_ELIGIBILITYDESCRIPTION" Type="longtext" Mode="In" />
+    <Parameter Name="P_ELIGIBILITYCATEGORY" Type="varchar" Mode="In" />
+    <Parameter Name="P_LINKTOFULLTEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_OPPORTUNITYSTATUS" Type="varchar" Mode="In" />
+    <Parameter Name="P_NUMBEROFAWARDS" Type="int" Mode="In" />
+    <Parameter Name="P_DURATION" Type="varchar" Mode="In" />
+    <Parameter Name="P_LIMITEDSUBMISSIONDESCRIPTION" Type="varchar" Mode="In" />
+    <Parameter Name="P_RAWTEXT" Type="longtext" Mode="In" />
+    <Parameter Name="p_id" Type="varchar" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_recordsource" Type="varchar" Mode="In" />
+    <Parameter Name="p_loi_mandatory" Type="varchar" Mode="In" />
+    <Parameter Name="p_preProposalMandatory" Type="varchar" Mode="In" />
+    <Parameter Name="p_repeatingOpportunity" Type="varchar" Mode="In" />
+    <Parameter Name="p_langRSource" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_op_opportunity_dateins_50" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_date" Type="datetime" Mode="In" />
+    <Parameter Name="P_date_type" Type="int" Mode="In" />
+    <Parameter Name="P_date_sequence" Type="int" Mode="In" />
+    <Parameter Name="p_date_remarks" Type="longtext" Mode="In" />
+    <Parameter Name="p_date_Lang" Type="varchar" Mode="In" />
+    <Parameter Name="p_URL" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SCI_OP_OPPORTUNITY_date_del" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_QCcheck_final_S50_Final" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_tran_type_id" Type="int" Mode="In" />
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_recurringIns" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="p_recurring" Type="varchar" Mode="In" />
+    <Parameter Name="P_UserID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_relatedopplist_prc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_OP_RELATEDORGLIST_y" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_relatedprogeam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_op_relatedprogeamins" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_id" Type="int" Mode="In" />
+    <Parameter Name="p_HIERARCHY" Type="varchar" Mode="In" />
+    <Parameter Name="p_RELATEDPROGRAMTEXT" Type="varchar" Mode="In" />
+    <Parameter Name="p_RELTYPE" Type="varchar" Mode="In" />
+    <Parameter Name="x_id" Type="int" Mode="In" />
+    <Parameter Name="x_RELTYPE" Type="varchar" Mode="In" />
+    <Parameter Name="x_RELATEDPROGRAMTEXT" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SCI_OP_RELORGINS_yy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_amount" Type="double" Mode="In" />
+    <Parameter Name="p_currency" Type="varchar" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_HIERARCHY" Type="varchar" Mode="In" />
+    <Parameter Name="p_orgdbid" Type="varchar" Mode="In" />
+    <Parameter Name="p_RELTYPE" Type="varchar" Mode="In" />
+    <Parameter Name="p_relatedorgsid" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SCI_ORGNELIGIBILITYY_DML_23MAY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_NOT_SPECIFIED" Type="varchar" Mode="In" />
+    <Parameter Name="P_ACADEMIC" Type="varchar" Mode="In" />
+    <Parameter Name="P_COMMERCIAL" Type="varchar" Mode="In" />
+    <Parameter Name="P_GOVERNMENT" Type="varchar" Mode="In" />
+    <Parameter Name="P_NONPROFIT" Type="varchar" Mode="In" />
+    <Parameter Name="P_SME" Type="varchar" Mode="In" />
+    <Parameter Name="P_NORESTRICTION" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITY" Type="varchar" Mode="In" />
+    <Parameter Name="P_STATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_COUNTRY" Type="varchar" Mode="In" />
+    <Parameter Name="P_REGIONSPECIFIC_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITIZENSHIP_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Type="int" Mode="In" />
+    <Parameter Name="P_ORGANIZATIONELIGIBILITY_ID" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="P_MODE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_ORGNELIGIBILITYY_DML_25APR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_NOT_SPECIFIED" Type="varchar" Mode="In" />
+    <Parameter Name="P_ACADEMIC" Type="varchar" Mode="In" />
+    <Parameter Name="P_COMMERCIAL" Type="varchar" Mode="In" />
+    <Parameter Name="P_GOVERNMENT" Type="varchar" Mode="In" />
+    <Parameter Name="P_NONPROFIT" Type="varchar" Mode="In" />
+    <Parameter Name="P_SME" Type="varchar" Mode="In" />
+    <Parameter Name="P_NORESTRICTION" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITY" Type="varchar" Mode="In" />
+    <Parameter Name="P_STATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_COUNTRY" Type="varchar" Mode="In" />
+    <Parameter Name="P_REGIONSPECIFIC_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITIZENSHIP_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Type="int" Mode="In" />
+    <Parameter Name="P_ORGANIZATIONELIGIBILITY_ID" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="P_MODE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_ORGNELIGIBILITYY_DML_S" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_DELETEGROUPID" Type="int" Mode="In" />
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_NOT_SPECIFIED" Type="varchar" Mode="In" />
+    <Parameter Name="P_ACADEMIC" Type="varchar" Mode="In" />
+    <Parameter Name="P_COMMERCIAL" Type="varchar" Mode="In" />
+    <Parameter Name="P_GOVERNMENT" Type="varchar" Mode="In" />
+    <Parameter Name="P_NONPROFIT" Type="varchar" Mode="In" />
+    <Parameter Name="P_SME" Type="varchar" Mode="In" />
+    <Parameter Name="P_NORESTRICTION" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITY" Type="varchar" Mode="In" />
+    <Parameter Name="P_STATE" Type="varchar" Mode="In" />
+    <Parameter Name="P_COUNTRY" Type="varchar" Mode="In" />
+    <Parameter Name="P_REGIONSPECIFIC_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_CITIZENSHIP_TEXT" Type="varchar" Mode="In" />
+    <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Type="int" Mode="In" />
+    <Parameter Name="P_ORGANIZATIONELIGIBILITY_ID" Type="int" Mode="In" />
+    <Parameter Name="p_lang" Type="varchar" Mode="In" />
+    <Parameter Name="P_MODE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_pageurls" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_pagename" Type="varchar" Mode="In" />
+    <Parameter Name="p_url" Type="varchar" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_PROC_AWARDBASE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SCI_PROC_AWARDPROGRESS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_proc_backtask" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_USERID" Type="int" Mode="In" />
+    <Parameter Name="P_ID" Type="int" Mode="In" />
+    <Parameter Name="P_moduleid" Type="int" Mode="In" />
+    <Parameter Name="P_taskid" Type="int" Mode="In" />
+    <Parameter Name="P_CYCLE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_proc_dummy_tasklist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="pUserId" Type="bigint" Mode="In" />
+    <Parameter Name="pModuleId" Type="bigint" Mode="In" />
+    <Parameter Name="pTaskId" Type="bigint" Mode="In" />
+    <Parameter Name="pAllocation" Type="bigint" Mode="In" />
+    <Parameter Name="pCycle" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sci_proc_fundingbodyprogres_S5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_proc_gettaskforuser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="USER_ID" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sci_proc_tasklist_new" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+    <Parameter Name="P_moduleid" Type="int" Mode="In" />
+    <Parameter Name="P_taskid" Type="int" Mode="In" />
+    <Parameter Name="P_CYCLE" Type="int" Mode="In" />
+    <Parameter Name="P_ALLOCATION" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_proc_updateexpirealert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival" />
+  <Function Name="sci_Publication_out_insupdel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_publication_ID" Type="int" Mode="In" />
+    <Parameter Name="p_FundingBodyProjectId" Type="varchar" Mode="In" />
+    <Parameter Name="p_PublishedDate" Type="datetime" Mode="In" />
+    <Parameter Name="p_PublicationURL" Type="varchar" Mode="In" />
+    <Parameter Name="p_PublicationOutputId" Type="int" Mode="In" />
+    <Parameter Name="p_IngestionId" Type="varchar" Mode="In" />
+    <Parameter Name="p_JournalTitle" Type="varchar" Mode="In" />
+    <Parameter Name="p_Journalidentifier" Type="varchar" Mode="In" />
+    <Parameter Name="p_Authors" Type="varchar" Mode="In" />
+    <Parameter Name="p_Description" Type="longtext" Mode="In" />
+  </Function>
+  <Function Name="sci_relatedorglist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_relatedorgsinsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_HIERARCHY" Type="varchar" Mode="In" />
+    <Parameter Name="p_orgdbid" Type="varchar" Mode="In" />
+    <Parameter Name="p_RELTYPE" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_related_vendor_dml_prc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_rel_orgs_vendorid" Type="int" Mode="In" />
+    <Parameter Name="p_vendor_id" Type="int" Mode="In" />
+    <Parameter Name="p_vendor_fundingbody_name" Type="varchar" Mode="In" />
+    <Parameter Name="p_mode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_rel_opportunity_dml_prc5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_oppdbid" Type="varchar" Mode="In" />
+    <Parameter Name="p_RELTYPE" Type="int" Mode="In" />
+    <Parameter Name="p_Desc" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_taxids" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_insdel" Type="int" Mode="In" />
+    <Parameter Name="p_type" Type="varchar" Mode="In" />
+    <Parameter Name="p_taxids_text" Type="varchar" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+    <Parameter Name="p_FINANCIALINFO_ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_timesheetstop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+    <Parameter Name="p_transitionalid" Type="int" Mode="In" />
+    <Parameter Name="p_mode" Type="int" Mode="In" />
+    <Parameter Name="p_remarks" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_timesheetstopcontinue_QA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+    <Parameter Name="p_transitionalid" Type="int" Mode="In" />
+    <Parameter Name="p_remarks" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sci_timesheetstoP_CONTINUE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_userid" Type="int" Mode="In" />
+    <Parameter Name="p_transitionalid" Type="int" Mode="In" />
+    <Parameter Name="p_remarks" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SCI_TrackUnstoppedFbAwardOpp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+    <Parameter Name="P_USERID" Type="int" Mode="In" />
+    <Parameter Name="P_PAGENAME" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SCI_UPD_OPP_DATE_FLG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="P_WORKFLOWID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sci_urllinks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="scival">
+    <Parameter Name="p_workflowid" Type="int" Mode="In" />
+    <Parameter Name="p_pagename" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="ScivalModelStoreContainer">
+    <EntitySet Name="about" EntityType="Self.about" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="address" EntityType="Self.address" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="amount" EntityType="Self.amount" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="award" EntityType="Self.award" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="award_location" EntityType="Self.award_location" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="award_master" EntityType="Self.award_master" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="award_tables" EntityType="Self.award_tables" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="awardceiling" EntityType="Self.awardceiling" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="awardees" EntityType="Self.awardees" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="awardfloor" EntityType="Self.awardfloor" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="awardmanagers" EntityType="Self.awardmanagers" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="change" EntityType="Self.change" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="changehistory" EntityType="Self.changehistory" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="classification" EntityType="Self.classification" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="classificationgroup" EntityType="Self.classificationgroup" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="classifications" EntityType="Self.classifications" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="contactinfo" EntityType="Self.contactinfo" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="contactname" EntityType="Self.contactname" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="contacts" EntityType="Self.contacts" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="createddate" EntityType="Self.createddate" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="eligibilityclassification" EntityType="Self.eligibilityclassification" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="eligibilitydescription" EntityType="Self.eligibilitydescription" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="establishmentinfo" EntityType="Self.establishmentinfo" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="estimatedamountdescription" EntityType="Self.estimatedamountdescription" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="estimatedfunding" EntityType="Self.estimatedfunding" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="fbprogress" EntityType="Self.fbprogress" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="fundedprogramstypes" EntityType="Self.fundedprogramstypes" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="fundedprojectdetail" EntityType="Self.fundedprojectdetail" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="fundedsubproject" EntityType="Self.fundedsubproject" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="fundingbody" EntityType="Self.fundingbody" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="fundingbody_master" EntityType="Self.fundingbody_master" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="fundingbodyamount" EntityType="Self.fundingbodyamount" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="fundingpolicy" EntityType="Self.fundingpolicy" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="installment" EntityType="Self.installment" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="instalmentandamount" EntityType="Self.instalmentandamount" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="item" EntityType="Self.item" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="keyword" EntityType="Self.keyword" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="keywords" EntityType="Self.keywords" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="limitedsubmissiondescription" EntityType="Self.limitedsubmissiondescription" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="link" EntityType="Self.link" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="opp_subjectmatter" EntityType="Self.opp_subjectmatter" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="opportunity_location" EntityType="Self.opportunity_location" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="opportunity_master" EntityType="Self.opportunity_master" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="oppotunity" EntityType="Self.oppotunity" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="org" EntityType="Self.org" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="publicationdata" EntityType="Self.publicationdata" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="recurring" EntityType="Self.recurring" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="relatedfundingbodies" EntityType="Self.relatedfundingbodies" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="relateditems" EntityType="Self.relateditems" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="relatedorgs" EntityType="Self.relatedorgs" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="relatedprograms" EntityType="Self.relatedprograms" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="researchoutcome" EntityType="Self.researchoutcome" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="revisionhistory" EntityType="Self.revisionhistory" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_asjcdescription" EntityType="Self.sci_asjcdescription" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_binaryrelationtype" EntityType="Self.sci_binaryrelationtype" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_classificationstypetype" EntityType="Self.sci_classificationstypetype" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_column_master" EntityType="Self.sci_column_master" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_countries" EntityType="Self.sci_countries" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_countrycodes" EntityType="Self.sci_countrycodes" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_countrygroup" EntityType="Self.sci_countrygroup" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_currencytype" EntityType="Self.sci_currencytype" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_defaulttemplate" EntityType="Self.sci_defaulttemplate" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_expire_alert" EntityType="Self.sci_expire_alert" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_expired_opplist" EntityType="Self.sci_expired_opplist" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_fundedprogramstypelist" EntityType="Self.sci_fundedprogramstypelist" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_group_url_detail" EntityType="Self.sci_group_url_detail" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_groupurl" EntityType="Self.sci_groupurl" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_language_detail" EntityType="Self.sci_language_detail" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_language_master" EntityType="Self.sci_language_master" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_modules" EntityType="Self.sci_modules" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_moduletaskconfig" EntityType="Self.sci_moduletaskconfig" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_opp_loi_duedate_detail" EntityType="Self.sci_opp_loi_duedate_detail" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_related_opportunity" EntityType="Self.sci_related_opportunity" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_related_orgs_vendor" EntityType="Self.sci_related_orgs_vendor" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_scholarly_output" EntityType="Self.sci_scholarly_output" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_statecodes" EntityType="Self.sci_statecodes" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_tasks" EntityType="Self.sci_tasks" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_timesheet" EntityType="Self.sci_timesheet" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_timesheetremarks" EntityType="Self.sci_timesheetremarks" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_tran_type_master" EntityType="Self.sci_tran_type_master" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_typeidvalues" EntityType="Self.sci_typeidvalues" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_urlmaster" EntityType="Self.sci_urlmaster" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_urlretain" EntityType="Self.sci_urlretain" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_urls" EntityType="Self.sci_urls" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_userlog" EntityType="Self.sci_userlog" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_usermaster" EntityType="Self.sci_usermaster" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_usertask" EntityType="Self.sci_usertask" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_version" EntityType="Self.sci_version" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_workflow" EntityType="Self.sci_workflow" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_workflowtemplate" EntityType="Self.sci_workflowtemplate" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="sci_xml_limits" EntityType="Self.sci_xml_limits" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="subtype" EntityType="Self.subtype" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="synopsis" EntityType="Self.synopsis" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="temp_scivalurl" EntityType="Self.temp_scivalurl" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="temptable_subregion" EntityType="Self.temptable_subregion" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="totalamount" EntityType="Self.totalamount" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="totalfunding" EntityType="Self.totalfunding" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="tracking_award" EntityType="Self.tracking_award" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="tracking_fb" EntityType="Self.tracking_fb" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="tracking_log" EntityType="Self.tracking_log" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="tracking_opp" EntityType="Self.tracking_opp" Schema="scival" store:Type="Tables" />
+    <EntitySet Name="userassignment" EntityType="Self.userassignment" Schema="scival" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

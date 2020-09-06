@@ -1,0 +1,5 @@
+CREATE TABLE `awardmanagers` (
+  `AWARDMANAGERS_ID` bigint NOT NULL,
+  `AWARD_ID` bigint DEFAULT NULL,
+  PRIMARY KEY (`AWARDMANAGERS_ID`)
+);

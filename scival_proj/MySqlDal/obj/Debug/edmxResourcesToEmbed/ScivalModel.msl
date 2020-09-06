@@ -1,0 +1,1377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ScivalModelStoreContainer" CdmEntityContainer="ScivalEntities">
+    <EntitySetMapping Name="award_master">
+      <EntityTypeMapping TypeName="ScivalModel.award_master">
+        <MappingFragment StoreEntitySet="award_master">
+          <ScalarProperty Name="AWARDID" ColumnName="AWARDID" />
+          <ScalarProperty Name="FUNDINGBODYID" ColumnName="FUNDINGBODYID" />
+          <ScalarProperty Name="AWARDNAME" ColumnName="AWARDNAME" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CYCLECOMPLETIONDATE" ColumnName="CYCLECOMPLETIONDATE" />
+          <ScalarProperty Name="CYCLECOMPLETEDBY" ColumnName="CYCLECOMPLETEDBY" />
+          <ScalarProperty Name="LASTUPDATEDBY" ColumnName="LASTUPDATEDBY" />
+          <ScalarProperty Name="CYCLE" ColumnName="CYCLE" />
+          <ScalarProperty Name="STATUSCODE" ColumnName="STATUSCODE" />
+          <ScalarProperty Name="RUSH" ColumnName="RUSH" />
+          <ScalarProperty Name="RUSHBY" ColumnName="RUSHBY" />
+          <ScalarProperty Name="ALLOCATIONMODE" ColumnName="ALLOCATIONMODE" />
+          <ScalarProperty Name="ISAUTOMATED" ColumnName="ISAUTOMATED" />
+          <ScalarProperty Name="ISOUTOFCMS" ColumnName="ISOUTOFCMS" />
+          <ScalarProperty Name="OUTOFCMSCOMPLETIONDATE" ColumnName="OUTOFCMSCOMPLETIONDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fundingbody_master">
+      <EntityTypeMapping TypeName="ScivalModel.fundingbody_master">
+        <MappingFragment StoreEntitySet="fundingbody_master">
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="FUNDINGBODYNAME" ColumnName="FUNDINGBODYNAME" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CYCLECOMPLETIONDATE" ColumnName="CYCLECOMPLETIONDATE" />
+          <ScalarProperty Name="CYCLECOMPLETEDBY" ColumnName="CYCLECOMPLETEDBY" />
+          <ScalarProperty Name="LASTUPDATEDDATE" ColumnName="LASTUPDATEDDATE" />
+          <ScalarProperty Name="LASTUPDATEDBY" ColumnName="LASTUPDATEDBY" />
+          <ScalarProperty Name="CYCLE" ColumnName="CYCLE" />
+          <ScalarProperty Name="STATUSCODE" ColumnName="STATUSCODE" />
+          <ScalarProperty Name="RUSH" ColumnName="RUSH" />
+          <ScalarProperty Name="RUSHBY" ColumnName="RUSHBY" />
+          <ScalarProperty Name="ALLOCATIONMODE" ColumnName="ALLOCATIONMODE" />
+          <ScalarProperty Name="ISOPORTUNITY" ColumnName="ISOPORTUNITY" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="DUEDATE" ColumnName="DUEDATE" />
+          <ScalarProperty Name="ISVIEWED" ColumnName="ISVIEWED" />
+          <ScalarProperty Name="BATCHNO" ColumnName="BATCHNO" />
+          <ScalarProperty Name="BATCHRECIEVEDATE" ColumnName="BATCHRECIEVEDATE" />
+          <ScalarProperty Name="SUBTYPE" ColumnName="SUBTYPE" />
+          <ScalarProperty Name="HIDDEN_FLAG" ColumnName="HIDDEN_FLAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="oppotunities">
+      <EntityTypeMapping TypeName="ScivalModel.oppotunity">
+        <MappingFragment StoreEntitySet="oppotunity">
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="PREPROPOSALMANDATORY" ColumnName="PREPROPOSALMANDATORY" />
+          <ScalarProperty Name="REPEATINGOPPORTUNITY" ColumnName="REPEATINGOPPORTUNITY" />
+          <ScalarProperty Name="LOI_MANDATORY" ColumnName="LOI_MANDATORY" />
+          <ScalarProperty Name="DATE_FLAG" ColumnName="DATE_FLAG" />
+          <ScalarProperty Name="EXPIRATIONDATE" ColumnName="EXPIRATIONDATE" />
+          <ScalarProperty Name="RECORDSOURCE" ColumnName="RECORDSOURCE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DUEDATEDESCRIPTION" ColumnName="DUEDATEDESCRIPTION" />
+          <ScalarProperty Name="ELIGIBILITYDESCRIPTION" ColumnName="ELIGIBILITYDESCRIPTION" />
+          <ScalarProperty Name="RAWTEXT" ColumnName="RAWTEXT" />
+          <ScalarProperty Name="LIMITEDSUBMISSIONDESCRIPTION" ColumnName="LIMITEDSUBMISSIONDESCRIPTION" />
+          <ScalarProperty Name="DURATION" ColumnName="DURATION" />
+          <ScalarProperty Name="NUMBEROFAWARDS" ColumnName="NUMBEROFAWARDS" />
+          <ScalarProperty Name="LASTMODIFIEDPOSTDATE" ColumnName="LASTMODIFIEDPOSTDATE" />
+          <ScalarProperty Name="FIRSTPOSTDATE" ColumnName="FIRSTPOSTDATE" />
+          <ScalarProperty Name="LINKTOFULLTEXT" ColumnName="LINKTOFULLTEXT" />
+          <ScalarProperty Name="ELIGIBILITYCATEGORY" ColumnName="ELIGIBILITYCATEGORY" />
+          <ScalarProperty Name="DUEDATE" ColumnName="DUEDATE" />
+          <ScalarProperty Name="LOIDATE" ColumnName="LOIDATE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="HIDDEN" ColumnName="HIDDEN" />
+          <ScalarProperty Name="COLLECTIONCODE" ColumnName="COLLECTIONCODE" />
+          <ScalarProperty Name="NEWINVESTIGATOR" ColumnName="NEWINVESTIGATOR" />
+          <ScalarProperty Name="TRUSTING" ColumnName="TRUSTING" />
+          <ScalarProperty Name="LIMITEDSUBMISSION" ColumnName="LIMITEDSUBMISSION" />
+          <ScalarProperty Name="FUNDINGBODYOPPORTUNITYID" ColumnName="FUNDINGBODYOPPORTUNITYID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="OPPORTUNITYSTATUS" ColumnName="OPPORTUNITYSTATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_modules">
+      <EntityTypeMapping TypeName="ScivalModel.sci_modules">
+        <MappingFragment StoreEntitySet="sci_modules">
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="MODULENAME" ColumnName="MODULENAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_opp_loi_duedate_detail">
+      <EntityTypeMapping TypeName="ScivalModel.sci_opp_loi_duedate_detail">
+        <MappingFragment StoreEntitySet="sci_opp_loi_duedate_detail">
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="O_ID" ColumnName="O_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="LOI_DUE_DATE" ColumnName="LOI_DUE_DATE" />
+          <ScalarProperty Name="DATE_TYPE" ColumnName="DATE_TYPE" />
+          <ScalarProperty Name="SEQUENCE_ID" ColumnName="SEQUENCE_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="DATE_REMARKS" ColumnName="DATE_REMARKS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_tasks">
+      <EntityTypeMapping TypeName="ScivalModel.sci_tasks">
+        <MappingFragment StoreEntitySet="sci_tasks">
+          <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+          <ScalarProperty Name="TASKNAME" ColumnName="TASKNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_usermaster">
+      <EntityTypeMapping TypeName="ScivalModel.sci_usermaster">
+        <MappingFragment StoreEntitySet="sci_usermaster">
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="EMPCODE" ColumnName="EMPCODE" />
+          <ScalarProperty Name="CONTACTNO" ColumnName="CONTACTNO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="CREADTEDBY" ColumnName="CREADTEDBY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_version">
+      <EntityTypeMapping TypeName="ScivalModel.sci_version">
+        <MappingFragment StoreEntitySet="sci_version">
+          <ScalarProperty Name="VERSION_ID" ColumnName="VERSION_ID" />
+          <ScalarProperty Name="RELEASE_DATE" ColumnName="RELEASE_DATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_workflow">
+      <EntityTypeMapping TypeName="ScivalModel.sci_workflow">
+        <MappingFragment StoreEntitySet="sci_workflow">
+          <ScalarProperty Name="WORKFLOWID" ColumnName="WORKFLOWID" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CYCLE" ColumnName="CYCLE" />
+          <ScalarProperty Name="TEMPLATEID" ColumnName="TEMPLATEID" />
+          <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+          <ScalarProperty Name="SEQUENCE" ColumnName="SEQUENCE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="STARTBY" ColumnName="STARTBY" />
+          <ScalarProperty Name="COMPLETEDDATE" ColumnName="COMPLETEDDATE" />
+          <ScalarProperty Name="COMPLETEDBY" ColumnName="COMPLETEDBY" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="ASSIGNBY" ColumnName="ASSIGNBY" />
+          <ScalarProperty Name="ASSIGNDATE" ColumnName="ASSIGNDATE" />
+          <ScalarProperty Name="STATUSID" ColumnName="STATUSID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="opportunity_master">
+      <EntityTypeMapping TypeName="ScivalModel.opportunity_master">
+        <MappingFragment StoreEntitySet="opportunity_master">
+          <ScalarProperty Name="ISAUTOMATED" ColumnName="ISAUTOMATED" />
+          <ScalarProperty Name="ALLOCATIONMODE" ColumnName="ALLOCATIONMODE" />
+          <ScalarProperty Name="RUSHBY" ColumnName="RUSHBY" />
+          <ScalarProperty Name="RUSH" ColumnName="RUSH" />
+          <ScalarProperty Name="STATUSCODE" ColumnName="STATUSCODE" />
+          <ScalarProperty Name="CYCLE" ColumnName="CYCLE" />
+          <ScalarProperty Name="LASTUPDATEDBY" ColumnName="LASTUPDATEDBY" />
+          <ScalarProperty Name="LASTUPDATEDDATE" ColumnName="LASTUPDATEDDATE" />
+          <ScalarProperty Name="CYCLECOMPLETEDBY" ColumnName="CYCLECOMPLETEDBY" />
+          <ScalarProperty Name="CYCLECOMPLETIONDATE" ColumnName="CYCLECOMPLETIONDATE" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="OPPORTUNITYNAME" ColumnName="OPPORTUNITYNAME" />
+          <ScalarProperty Name="FUNDINGBODYID" ColumnName="FUNDINGBODYID" />
+          <ScalarProperty Name="OPPORTUNITYID" ColumnName="OPPORTUNITYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_expire_alert">
+      <EntityTypeMapping TypeName="ScivalModel.sci_expire_alert">
+        <MappingFragment StoreEntitySet="sci_expire_alert">
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="DUEDATE" ColumnName="DUEDATE" />
+          <ScalarProperty Name="OPPORTUNITYID" ColumnName="OPPORTUNITYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_moduletaskconfig">
+      <EntityTypeMapping TypeName="ScivalModel.sci_moduletaskconfig">
+        <MappingFragment StoreEntitySet="sci_moduletaskconfig">
+          <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_usertask">
+      <EntityTypeMapping TypeName="ScivalModel.sci_usertask">
+        <MappingFragment StoreEntitySet="sci_usertask">
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userassignments">
+      <EntityTypeMapping TypeName="ScivalModel.userassignment">
+        <MappingFragment StoreEntitySet="userassignment">
+          <ScalarProperty Name="AWARDID" ColumnName="AWARDID" />
+          <ScalarProperty Name="OPPORTUNITYID" ColumnName="OPPORTUNITYID" />
+          <ScalarProperty Name="CYCLE" ColumnName="CYCLE" />
+          <ScalarProperty Name="ASSIGNDATE" ColumnName="ASSIGNDATE" />
+          <ScalarProperty Name="ASSIGNEDBY" ColumnName="ASSIGNEDBY" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="FUNDINGBODYID" ColumnName="FUNDINGBODYID" />
+          <ScalarProperty Name="AID" ColumnName="AID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fundingbodies">
+      <EntityTypeMapping TypeName="ScivalModel.fundingbody">
+        <MappingFragment StoreEntitySet="fundingbody">
+          <ScalarProperty Name="PROFIT" ColumnName="PROFIT" />
+          <ScalarProperty Name="OPPORTUNITIESFREQUENCY" ColumnName="OPPORTUNITIESFREQUENCY" />
+          <ScalarProperty Name="AWARDSFREQUENCY" ColumnName="AWARDSFREQUENCY" />
+          <ScalarProperty Name="OPPORTUNITIESSUPPLIER" ColumnName="OPPORTUNITIESSUPPLIER" />
+          <ScalarProperty Name="AWARDSSUPPLIER" ColumnName="AWARDSSUPPLIER" />
+          <ScalarProperty Name="TIERINFO" ColumnName="TIERINFO" />
+          <ScalarProperty Name="CAPTUREOPPORTUNITIES" ColumnName="CAPTUREOPPORTUNITIES" />
+          <ScalarProperty Name="CAPTUREAWARDS" ColumnName="CAPTUREAWARDS" />
+          <ScalarProperty Name="EXTENDEDRECORD" ColumnName="EXTENDEDRECORD" />
+          <ScalarProperty Name="CROSSREFID" ColumnName="CROSSREFID" />
+          <ScalarProperty Name="DEFUNCT" ColumnName="DEFUNCT" />
+          <ScalarProperty Name="COMMENT_DESC" ColumnName="COMMENT_DESC" />
+          <ScalarProperty Name="AWARDSUCCESRATE" ColumnName="AWARDSUCCESRATE" />
+          <ScalarProperty Name="RECORDSOURCE" ColumnName="RECORDSOURCE" />
+          <ScalarProperty Name="ELIGIBILITYDESCRIPTION" ColumnName="ELIGIBILITYDESCRIPTION" />
+          <ScalarProperty Name="ABBREVNAME" ColumnName="ABBREVNAME" />
+          <ScalarProperty Name="CONTEXTNAME" ColumnName="CONTEXTNAME" />
+          <ScalarProperty Name="PREFERREDORGNAME" ColumnName="PREFERREDORGNAME" />
+          <ScalarProperty Name="CANONICALNAME" ColumnName="CANONICALNAME" />
+          <ScalarProperty Name="HIDDEN" ColumnName="HIDDEN" />
+          <ScalarProperty Name="COLLECTIONCODE" ColumnName="COLLECTIONCODE" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="TRUSTING" ColumnName="TRUSTING" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="ORGDBID" ColumnName="ORGDBID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sci_fundingbodyurlinsert" FunctionName="ScivalModel.Store.sci_fundingbodyurlinsert" />
+    <EntitySetMapping Name="sci_urlretain">
+      <EntityTypeMapping TypeName="ScivalModel.sci_urlretain">
+        <MappingFragment StoreEntitySet="sci_urlretain">
+          <ScalarProperty Name="URLID" ColumnName="URLID" />
+          <ScalarProperty Name="BATCH" ColumnName="BATCH" />
+          <ScalarProperty Name="GROUPCOUNTER" ColumnName="GROUPCOUNTER" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="ORGDBID" ColumnName="ORGDBID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_urls">
+      <EntityTypeMapping TypeName="ScivalModel.sci_urls">
+        <MappingFragment StoreEntitySet="sci_urls">
+          <ScalarProperty Name="DELETEDBY" ColumnName="DELETEDBY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="PAGENAME" ColumnName="PAGENAME" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_groupurl">
+      <EntityTypeMapping TypeName="ScivalModel.sci_groupurl">
+        <MappingFragment StoreEntitySet="sci_groupurl">
+          <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+          <ScalarProperty Name="BATCH" ColumnName="BATCH" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="URLID" ColumnName="URLID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="awards">
+      <EntityTypeMapping TypeName="ScivalModel.award">
+        <MappingFragment StoreEntitySet="award">
+          <ScalarProperty Name="APTARAIDENTIFIER" ColumnName="APTARAIDENTIFIER" />
+          <ScalarProperty Name="AWARDNOTICEDATE" ColumnName="AWARDNOTICEDATE" />
+          <ScalarProperty Name="RECORDSOURCE" ColumnName="RECORDSOURCE" />
+          <ScalarProperty Name="ABSTRACT" ColumnName="ABSTRACT" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="LASTAMENDEDDATE" ColumnName="LASTAMENDEDDATE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="HIDDEN" ColumnName="HIDDEN" />
+          <ScalarProperty Name="COLLECTIONCODE" ColumnName="COLLECTIONCODE" />
+          <ScalarProperty Name="TRUSTING" ColumnName="TRUSTING" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="FUNDINGBODYAWARDID" ColumnName="FUNDINGBODYAWARDID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="abouts">
+      <EntityTypeMapping TypeName="ScivalModel.about">
+        <MappingFragment StoreEntitySet="about">
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="ABOUT_ID" ColumnName="ABOUT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="classificationgroups">
+      <EntityTypeMapping TypeName="ScivalModel.classificationgroup">
+        <MappingFragment StoreEntitySet="classificationgroup">
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="CLASSIFICATIONGROUP_ID" ColumnName="CLASSIFICATIONGROUP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contactinfoes">
+      <EntityTypeMapping TypeName="ScivalModel.contactinfo">
+        <MappingFragment StoreEntitySet="contactinfo">
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="CONTACTINFO_ID" ColumnName="CONTACTINFO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="ScivalModel.contact">
+        <MappingFragment StoreEntitySet="contacts">
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="CONTACTS_ID" ColumnName="CONTACTS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fundedprogramstypes">
+      <EntityTypeMapping TypeName="ScivalModel.fundedprogramstype">
+        <MappingFragment StoreEntitySet="fundedprogramstypes">
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="FUNDEDPROGRAMSTYPES_ID" ColumnName="FUNDEDPROGRAMSTYPES_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relatedorgs">
+      <EntityTypeMapping TypeName="ScivalModel.relatedorg">
+        <MappingFragment StoreEntitySet="relatedorgs">
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="RELATEDORGS_ID" ColumnName="RELATEDORGS_ID" />
+          <ScalarProperty Name="HIERARCHY" ColumnName="HIERARCHY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fundingpolicies">
+      <EntityTypeMapping TypeName="ScivalModel.fundingpolicy">
+        <MappingFragment StoreEntitySet="fundingpolicy">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="FUNDINGPOLICY_ID" ColumnName="FUNDINGPOLICY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_expired_opplist">
+      <EntityTypeMapping TypeName="ScivalModel.sci_expired_opplist">
+        <MappingFragment StoreEntitySet="sci_expired_opplist">
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="LOGDATE" ColumnName="LOGDATE" />
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="DUEDATE" ColumnName="DUEDATE" />
+          <ScalarProperty Name="CYCLE" ColumnName="CYCLE" />
+          <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+          <ScalarProperty Name="TASKNAME" ColumnName="TASKNAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FUNDINGBODYNAME" ColumnName="FUNDINGBODYNAME" />
+          <ScalarProperty Name="OPPNAME" ColumnName="OPPNAME" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="MODULENAME" ColumnName="MODULENAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_urlmaster">
+      <EntityTypeMapping TypeName="ScivalModel.sci_urlmaster">
+        <MappingFragment StoreEntitySet="sci_urlmaster">
+          <ScalarProperty Name="BATCH" ColumnName="BATCH" />
+          <ScalarProperty Name="LASTUPDATEDDATE" ColumnName="LASTUPDATEDDATE" />
+          <ScalarProperty Name="RETAIN_DELETEDATE" ColumnName="RETAIN_DELETEDATE" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="LASTUPDATEDBY" ColumnName="LASTUPDATEDBY" />
+          <ScalarProperty Name="RETAIN_DELETEBY" ColumnName="RETAIN_DELETEBY" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="URLID" ColumnName="URLID" />
+          <ScalarProperty Name="ORGDBID" ColumnName="ORGDBID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temp_scivalurl">
+      <EntityTypeMapping TypeName="ScivalModel.temp_scivalurl">
+        <MappingFragment StoreEntitySet="temp_scivalurl">
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="dummy_tasklist_new" FunctionName="ScivalModel.Store.dummy_tasklist_new" />
+    <FunctionImportMapping FunctionImportName="sci_aw_awexist" FunctionName="ScivalModel.Store.sci_aw_awexist" />
+    <FunctionImportMapping FunctionImportName="sci_expiredetail" FunctionName="ScivalModel.Store.sci_expiredetail" />
+    <FunctionImportMapping FunctionImportName="sci_opaw_tasklist1" FunctionName="ScivalModel.Store.sci_opaw_tasklist" />
+    <FunctionImportMapping FunctionImportName="sci_op_opexist" FunctionName="ScivalModel.Store.sci_op_opexist" />
+    <FunctionImportMapping FunctionImportName="sci_proc_backtask" FunctionName="ScivalModel.Store.sci_proc_backtask" />
+    <FunctionImportMapping FunctionImportName="sci_proc_dummy_tasklist" FunctionName="ScivalModel.Store.sci_proc_dummy_tasklist" />
+    <FunctionImportMapping FunctionImportName="sci_proc_gettaskforuser1" FunctionName="ScivalModel.Store.sci_proc_gettaskforuser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScivalModel.sci_proc_gettaskforuser1_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sci_proc_tasklist_new" FunctionName="ScivalModel.Store.sci_proc_tasklist_new" />
+    <FunctionImportMapping FunctionImportName="sci_proc_updateexpirealert1" FunctionName="ScivalModel.Store.sci_proc_updateexpirealert" />
+    <EntitySetMapping Name="sci_defaulttemplate">
+      <EntityTypeMapping TypeName="ScivalModel.sci_defaulttemplate">
+        <MappingFragment StoreEntitySet="sci_defaulttemplate">
+          <ScalarProperty Name="UPDATEDDATE" ColumnName="UPDATEDDATE" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+          <ScalarProperty Name="TEMPLATEID" ColumnName="TEMPLATEID" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_workflowtemplate">
+      <EntityTypeMapping TypeName="ScivalModel.sci_workflowtemplate">
+        <MappingFragment StoreEntitySet="sci_workflowtemplate">
+          <ScalarProperty Name="SEQUENCE" ColumnName="SEQUENCE" />
+          <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+          <ScalarProperty Name="TEMPLATEID" ColumnName="TEMPLATEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="changehistories">
+      <EntityTypeMapping TypeName="ScivalModel.changehistory">
+        <MappingFragment StoreEntitySet="changehistory">
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="CHANGEHISTORY_ID" ColumnName="CHANGEHISTORY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_related_opportunity">
+      <EntityTypeMapping TypeName="ScivalModel.sci_related_opportunity">
+        <MappingFragment StoreEntitySet="sci_related_opportunity">
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RELAION_NAME" ColumnName="RELAION_NAME" />
+          <ScalarProperty Name="OPPORTUNITYNAME" ColumnName="OPPORTUNITYNAME" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="RELATED_OPP_ID" ColumnName="RELATED_OPP_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="REL_OPP_ID" ColumnName="REL_OPP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="synopses">
+      <EntityTypeMapping TypeName="ScivalModel.synopsis">
+        <MappingFragment StoreEntitySet="synopsis">
+          <ScalarProperty Name="RELATEDITEMS_ID" ColumnName="RELATEDITEMS_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="SYNOPSIS_ID" ColumnName="SYNOPSIS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="opp_subjectmatter">
+      <EntityTypeMapping TypeName="ScivalModel.opp_subjectmatter">
+        <MappingFragment StoreEntitySet="opp_subjectmatter">
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="SUBJECTMATTER_ID" ColumnName="SUBJECTMATTER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="awardceilings">
+      <EntityTypeMapping TypeName="ScivalModel.awardceiling">
+        <MappingFragment StoreEntitySet="awardceiling">
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="AWARDCEILING_TEXT" ColumnName="AWARDCEILING_TEXT" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eligibilityclassifications">
+      <EntityTypeMapping TypeName="ScivalModel.eligibilityclassification">
+        <MappingFragment StoreEntitySet="eligibilityclassification">
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="ELIGIBILITYCLASSIFICATION_ID" ColumnName="ELIGIBILITYCLASSIFICATION_ID" />
+          <ScalarProperty Name="REGION_SPECIFIC_ID" ColumnName="REGION_SPECIFIC_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="ELIGIBILITYCLASSIFICATION_TEXT" ColumnName="ELIGIBILITYCLASSIFICATION_TEXT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="eligibilitydescriptions">
+      <EntityTypeMapping TypeName="ScivalModel.eligibilitydescription">
+        <MappingFragment StoreEntitySet="eligibilitydescription">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="ELIGIBILITYDESCRIPTION_ID" ColumnName="ELIGIBILITYDESCRIPTION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estimatedamountdescriptions">
+      <EntityTypeMapping TypeName="ScivalModel.estimatedamountdescription">
+        <MappingFragment StoreEntitySet="estimatedamountdescription">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="ESTIMATEDAMOUNTDESCRIPTION_ID" ColumnName="ESTIMATEDAMOUNTDESCRIPTION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estimatedfundings">
+      <EntityTypeMapping TypeName="ScivalModel.estimatedfunding">
+        <MappingFragment StoreEntitySet="estimatedfunding">
+          <ScalarProperty Name="AMOUNT_DESCRIPTION" ColumnName="AMOUNT_DESCRIPTION" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="ESTIMATEDFUNDING_TEXT" ColumnName="ESTIMATEDFUNDING_TEXT" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="limitedsubmissiondescriptions">
+      <EntityTypeMapping TypeName="ScivalModel.limitedsubmissiondescription">
+        <MappingFragment StoreEntitySet="limitedsubmissiondescription">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="LIMITEDSUBMISSIONDESC_ID" ColumnName="LIMITEDSUBMISSIONDESC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="opportunity_location">
+      <EntityTypeMapping TypeName="ScivalModel.opportunity_location">
+        <MappingFragment StoreEntitySet="opportunity_location">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="POSTALCODE" ColumnName="POSTALCODE" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="ROOM" ColumnName="ROOM" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_timesheetremarks">
+      <EntityTypeMapping TypeName="ScivalModel.sci_timesheetremarks">
+        <MappingFragment StoreEntitySet="sci_timesheetremarks">
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="STATUSCODE" ColumnName="STATUSCODE" />
+          <ScalarProperty Name="TRANSITIONALID" ColumnName="TRANSITIONALID" />
+          <ScalarProperty Name="WORKFLOWID" ColumnName="WORKFLOWID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_timesheet">
+      <EntityTypeMapping TypeName="ScivalModel.sci_timesheet">
+        <MappingFragment StoreEntitySet="sci_timesheet">
+          <ScalarProperty Name="ISERROR" ColumnName="ISERROR" />
+          <ScalarProperty Name="IDLETIME" ColumnName="IDLETIME" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="STATUSCODE" ColumnName="STATUSCODE" />
+          <ScalarProperty Name="CYCLEID" ColumnName="CYCLEID" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="WORKFLOWID" ColumnName="WORKFLOWID" />
+          <ScalarProperty Name="TRANSITIONALID" ColumnName="TRANSITIONALID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="awardees">
+      <EntityTypeMapping TypeName="ScivalModel.awardee">
+        <MappingFragment StoreEntitySet="awardees">
+          <ScalarProperty Name="AWARDEES_ID" ColumnName="AWARDEES_ID" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="awardmanagers">
+      <EntityTypeMapping TypeName="ScivalModel.awardmanager">
+        <MappingFragment StoreEntitySet="awardmanagers">
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="AWARDMANAGERS_ID" ColumnName="AWARDMANAGERS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relateditems">
+      <EntityTypeMapping TypeName="ScivalModel.relateditem">
+        <MappingFragment StoreEntitySet="relateditems">
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="RELATEDITEMS_ID" ColumnName="RELATEDITEMS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relatedprograms">
+      <EntityTypeMapping TypeName="ScivalModel.relatedprogram">
+        <MappingFragment StoreEntitySet="relatedprograms">
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="RELATEDPROGRAMS_ID" ColumnName="RELATEDPROGRAMS_ID" />
+          <ScalarProperty Name="HIERARCHY" ColumnName="HIERARCHY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_scholarly_output">
+      <EntityTypeMapping TypeName="ScivalModel.sci_scholarly_output">
+        <MappingFragment StoreEntitySet="sci_scholarly_output">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="ITEM_TYPE_TEXT" ColumnName="ITEM_TYPE_TEXT" />
+          <ScalarProperty Name="RELATION_TYPE" ColumnName="RELATION_TYPE" />
+          <ScalarProperty Name="ITEM_TYPE_TYPE" ColumnName="ITEM_TYPE_TYPE" />
+          <ScalarProperty Name="OUTPUT_ITEM_TYPE" ColumnName="OUTPUT_ITEM_TYPE" />
+          <ScalarProperty Name="SCHOLARLY_ID" ColumnName="SCHOLARLY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="amounts">
+      <EntityTypeMapping TypeName="ScivalModel.amount">
+        <MappingFragment StoreEntitySet="amount">
+          <ScalarProperty Name="CREATE_DATE" ColumnName="CREATE_DATE" />
+          <ScalarProperty Name="AWARDEE_ID" ColumnName="AWARDEE_ID" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="AMOUNT_TEXT" ColumnName="AMOUNT_TEXT" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="award_location">
+      <EntityTypeMapping TypeName="ScivalModel.award_location">
+        <MappingFragment StoreEntitySet="award_location">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="POSTALCODE" ColumnName="POSTALCODE" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="ROOM" ColumnName="ROOM" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="COUNTRYTEST" ColumnName="COUNTRYTEST" />
+          <ScalarProperty Name="LOCATION_ID" ColumnName="LOCATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="classifications">
+      <EntityTypeMapping TypeName="ScivalModel.classification">
+        <MappingFragment StoreEntitySet="classifications">
+          <ScalarProperty Name="CLASSIFICATIONGROUP_ID" ColumnName="CLASSIFICATIONGROUP_ID" />
+          <ScalarProperty Name="CLASSIFICATIONS_ID" ColumnName="CLASSIFICATIONS_ID" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fundedprojectdetails">
+      <EntityTypeMapping TypeName="ScivalModel.fundedprojectdetail">
+        <MappingFragment StoreEntitySet="fundedprojectdetail">
+          <ScalarProperty Name="LINK" ColumnName="LINK" />
+          <ScalarProperty Name="POSTOFFICEBOXNUMBER" ColumnName="POSTOFFICEBOXNUMBER" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="REGION" ColumnName="REGION" />
+          <ScalarProperty Name="POSTALCODE" ColumnName="POSTALCODE" />
+          <ScalarProperty Name="LOCALITY" ColumnName="LOCALITY" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="FUNDINGBODYPROJECTID" ColumnName="FUNDINGBODYPROJECTID" />
+          <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+          <ScalarProperty Name="BUDGET_CURRENCY" ColumnName="BUDGET_CURRENCY" />
+          <ScalarProperty Name="BUDGET_AMOUNT" ColumnName="BUDGET_AMOUNT" />
+          <ScalarProperty Name="ACRONYM" ColumnName="ACRONYM" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="FUND_ID" ColumnName="FUND_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="instalmentandamounts">
+      <EntityTypeMapping TypeName="ScivalModel.instalmentandamount">
+        <MappingFragment StoreEntitySet="instalmentandamount">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="INSTALLMENTANDAMOUNT_ID" ColumnName="INSTALLMENTANDAMOUNT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="keywords">
+      <EntityTypeMapping TypeName="ScivalModel.keyword">
+        <MappingFragment StoreEntitySet="keywords">
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="KEYWORDS_ID" ColumnName="KEYWORDS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="researchoutcomes">
+      <EntityTypeMapping TypeName="ScivalModel.researchoutcome">
+        <MappingFragment StoreEntitySet="researchoutcome">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="RESEARCHOUTCOME_ID" ColumnName="RESEARCHOUTCOME_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="revisionhistories">
+      <EntityTypeMapping TypeName="ScivalModel.revisionhistory">
+        <MappingFragment StoreEntitySet="revisionhistory">
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="REVISIONHISTORY_ID" ColumnName="REVISIONHISTORY_ID" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_asjcdescription">
+      <EntityTypeMapping TypeName="ScivalModel.sci_asjcdescription">
+        <MappingFragment StoreEntitySet="sci_asjcdescription">
+          <ScalarProperty Name="DETAIL" ColumnName="DETAIL" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_countrycodes">
+      <EntityTypeMapping TypeName="ScivalModel.sci_countrycodes">
+        <MappingFragment StoreEntitySet="sci_countrycodes">
+          <ScalarProperty Name="SUBREGION" ColumnName="SUBREGION" />
+          <ScalarProperty Name="REGION" ColumnName="REGION" />
+          <ScalarProperty Name="SCODE" ColumnName="SCODE" />
+          <ScalarProperty Name="LCODE" ColumnName="LCODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_language_master">
+      <EntityTypeMapping TypeName="ScivalModel.sci_language_master">
+        <MappingFragment StoreEntitySet="sci_language_master">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="PRIORITY" ColumnName="PRIORITY" />
+          <ScalarProperty Name="CODE_LENGTH" ColumnName="CODE_LENGTH" />
+          <ScalarProperty Name="LANGUAGE_CODE" ColumnName="LANGUAGE_CODE" />
+          <ScalarProperty Name="LANGUAGE_NAME" ColumnName="LANGUAGE_NAME" />
+          <ScalarProperty Name="LANGUAGE_GROUP_ID" ColumnName="LANGUAGE_GROUP_ID" />
+          <ScalarProperty Name="LANGUAGE_ID" ColumnName="LANGUAGE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_statecodes">
+      <EntityTypeMapping TypeName="ScivalModel.sci_statecodes">
+        <MappingFragment StoreEntitySet="sci_statecodes">
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="classifications1">
+      <EntityTypeMapping TypeName="ScivalModel.classification1">
+        <MappingFragment StoreEntitySet="classification">
+          <ScalarProperty Name="CLASSIFICATIONS_ID" ColumnName="CLASSIFICATIONS_ID" />
+          <ScalarProperty Name="CLASSIFICATION_TEXT" ColumnName="CLASSIFICATION_TEXT" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+          <ScalarProperty Name="FREQUENCY" ColumnName="FREQUENCY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fundedsubprojects">
+      <EntityTypeMapping TypeName="ScivalModel.fundedsubproject">
+        <MappingFragment StoreEntitySet="fundedsubproject">
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="FUNDINGBODYPROJECTID" ColumnName="FUNDINGBODYPROJECTID" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="FUND_ID" ColumnName="FUND_ID" />
+          <ScalarProperty Name="SUBFUND_ID" ColumnName="SUBFUND_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="links">
+      <EntityTypeMapping TypeName="ScivalModel.link">
+        <MappingFragment StoreEntitySet="link">
+          <ScalarProperty Name="AWARDSTATISTICS_ID" ColumnName="AWARDSTATISTICS_ID" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="LINK_TEXT" ColumnName="LINK_TEXT" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relatedfundingbodies">
+      <EntityTypeMapping TypeName="ScivalModel.relatedfundingbody">
+        <MappingFragment StoreEntitySet="relatedfundingbodies">
+          <ScalarProperty Name="RELATEDORGSSS_ID" ColumnName="RELATEDORGSSS_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="RELEATEDFUNDINGBODIES_ID" ColumnName="RELEATEDFUNDINGBODIES_ID" />
+          <ScalarProperty Name="HIERARCHY" ColumnName="HIERARCHY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="awardfloors">
+      <EntityTypeMapping TypeName="ScivalModel.awardfloor">
+        <MappingFragment StoreEntitySet="awardfloor">
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="ESTIMATEDFUNDING_TEXT" ColumnName="ESTIMATEDFUNDING_TEXT" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fundingbodyamounts">
+      <EntityTypeMapping TypeName="ScivalModel.fundingbodyamount">
+        <MappingFragment StoreEntitySet="fundingbodyamount">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="RELEATEDFUNDINGBODIES_ID" ColumnName="RELEATEDFUNDINGBODIES_ID" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="installments">
+      <EntityTypeMapping TypeName="ScivalModel.installment">
+        <MappingFragment StoreEntitySet="installment">
+          <ScalarProperty Name="SEQUENCE_ID" ColumnName="SEQUENCE_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="INSTALLMENTEND_DATE" ColumnName="INSTALLMENTEND_DATE" />
+          <ScalarProperty Name="INSTALLMENTSTART_DATE" ColumnName="INSTALLMENTSTART_DATE" />
+          <ScalarProperty Name="INSTALLMENTANDAMOUNT_ID" ColumnName="INSTALLMENTANDAMOUNT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="keyword1">
+      <EntityTypeMapping TypeName="ScivalModel.keyword1">
+        <MappingFragment StoreEntitySet="keyword">
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="KEYWORDS_ID" ColumnName="KEYWORDS_ID" />
+          <ScalarProperty Name="KEYWORD_COLUMN" ColumnName="KEYWORD_COLUMN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orgs">
+      <EntityTypeMapping TypeName="ScivalModel.org">
+        <MappingFragment StoreEntitySet="org">
+          <ScalarProperty Name="AFFLIATION_ID" ColumnName="AFFLIATION_ID" />
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="RELATEDORGS_ID" ColumnName="RELATEDORGS_ID" />
+          <ScalarProperty Name="ORG_TEXT" ColumnName="ORG_TEXT" />
+          <ScalarProperty Name="RELTYPE" ColumnName="RELTYPE" />
+          <ScalarProperty Name="ORGDBID" ColumnName="ORGDBID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_currencytype">
+      <EntityTypeMapping TypeName="ScivalModel.sci_currencytype">
+        <MappingFragment StoreEntitySet="sci_currencytype">
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+          <ScalarProperty Name="CODE" ColumnName="CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="totalamounts">
+      <EntityTypeMapping TypeName="ScivalModel.totalamount">
+        <MappingFragment StoreEntitySet="totalamount">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+          <ScalarProperty Name="INSTALLMENTANDAMOUNT_ID" ColumnName="INSTALLMENTANDAMOUNT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tracking_award">
+      <EntityTypeMapping TypeName="ScivalModel.tracking_award">
+        <MappingFragment StoreEntitySet="tracking_award">
+          <ScalarProperty Name="STOP_STATUS" ColumnName="STOP_STATUS" />
+          <ScalarProperty Name="TRACKINGDATE" ColumnName="TRACKINGDATE" />
+          <ScalarProperty Name="AWARDID" ColumnName="AWARDID" />
+          <ScalarProperty Name="PAGENAME" ColumnName="PAGENAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="WORKFLOWID" ColumnName="WORKFLOWID" />
+          <ScalarProperty Name="TID" ColumnName="TID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tracking_fb">
+      <EntityTypeMapping TypeName="ScivalModel.tracking_fb">
+        <MappingFragment StoreEntitySet="tracking_fb">
+          <ScalarProperty Name="STOP_STATUS" ColumnName="STOP_STATUS" />
+          <ScalarProperty Name="TRACKINGDATE" ColumnName="TRACKINGDATE" />
+          <ScalarProperty Name="FUNDINGBODYID" ColumnName="FUNDINGBODYID" />
+          <ScalarProperty Name="PAGENAME" ColumnName="PAGENAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="WORKFLOWID" ColumnName="WORKFLOWID" />
+          <ScalarProperty Name="TID" ColumnName="TID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tracking_log">
+      <EntityTypeMapping TypeName="ScivalModel.tracking_log">
+        <MappingFragment StoreEntitySet="tracking_log">
+          <ScalarProperty Name="STATUSID" ColumnName="STATUSID" />
+          <ScalarProperty Name="COMPLETEDBY" ColumnName="COMPLETEDBY" />
+          <ScalarProperty Name="COMPLETEDDATE" ColumnName="COMPLETEDDATE" />
+          <ScalarProperty Name="STARTBY" ColumnName="STARTBY" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+          <ScalarProperty Name="SEQUENCE" ColumnName="SEQUENCE" />
+          <ScalarProperty Name="TASKID" ColumnName="TASKID" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="TLOGID" ColumnName="TLOGID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tracking_opp">
+      <EntityTypeMapping TypeName="ScivalModel.tracking_opp">
+        <MappingFragment StoreEntitySet="tracking_opp">
+          <ScalarProperty Name="STOP_STATUS" ColumnName="STOP_STATUS" />
+          <ScalarProperty Name="TRACKINGDATE" ColumnName="TRACKINGDATE" />
+          <ScalarProperty Name="OPPORTUNITYID" ColumnName="OPPORTUNITYID" />
+          <ScalarProperty Name="PAGENAME" ColumnName="PAGENAME" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="WORKFLOWID" ColumnName="WORKFLOWID" />
+          <ScalarProperty Name="TID" ColumnName="TID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="establishmentinfoes">
+      <EntityTypeMapping TypeName="ScivalModel.establishmentinfo">
+        <MappingFragment StoreEntitySet="establishmentinfo">
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="ESTABLISHMENTDESCRIPTION" ColumnName="ESTABLISHMENTDESCRIPTION" />
+          <ScalarProperty Name="ESTABLISHMENTCOUNTRYCODE" ColumnName="ESTABLISHMENTCOUNTRYCODE" />
+          <ScalarProperty Name="ESTABLISHMENTSTATE" ColumnName="ESTABLISHMENTSTATE" />
+          <ScalarProperty Name="ESTABLISHMENTCITY" ColumnName="ESTABLISHMENTCITY" />
+          <ScalarProperty Name="ESTABLISHMENTDATE" ColumnName="ESTABLISHMENTDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="items">
+      <EntityTypeMapping TypeName="ScivalModel.item">
+        <MappingFragment StoreEntitySet="item">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="LIMITEDSUBMISSIONDESC_ID" ColumnName="LIMITEDSUBMISSIONDESC_ID" />
+          <ScalarProperty Name="ESTIMATEDAMOUNTDESCRIPTION_ID" ColumnName="ESTIMATEDAMOUNTDESCRIPTION_ID" />
+          <ScalarProperty Name="ELIGIBILITYDESCRIPTION_ID" ColumnName="ELIGIBILITYDESCRIPTION_ID" />
+          <ScalarProperty Name="FUNDINGPOLICY_ID" ColumnName="FUNDINGPOLICY_ID" />
+          <ScalarProperty Name="LANG" ColumnName="LANG" />
+          <ScalarProperty Name="SUBJECTMATTER_ID" ColumnName="SUBJECTMATTER_ID" />
+          <ScalarProperty Name="SYNOPSIS_ID" ColumnName="SYNOPSIS_ID" />
+          <ScalarProperty Name="RELATEDITEMS_ID" ColumnName="RELATEDITEMS_ID" />
+          <ScalarProperty Name="ABOUT_ID" ColumnName="ABOUT_ID" />
+          <ScalarProperty Name="APPINFO_ID" ColumnName="APPINFO_ID" />
+          <ScalarProperty Name="GEOSCOPE_ID" ColumnName="GEOSCOPE_ID" />
+          <ScalarProperty Name="ITEM_ID" ColumnName="ITEM_ID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="RELTYPE" ColumnName="RELTYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="publicationdatas">
+      <EntityTypeMapping TypeName="ScivalModel.publicationdata">
+        <MappingFragment StoreEntitySet="publicationdata">
+          <ScalarProperty Name="BULKAWID" ColumnName="BULKAWID" />
+          <ScalarProperty Name="PUB_DESCRIPTION" ColumnName="PUB_DESCRIPTION" />
+          <ScalarProperty Name="FUNDINGBODYPROJECTID" ColumnName="FUNDINGBODYPROJECTID" />
+          <ScalarProperty Name="PUBLICATION_URL" ColumnName="PUBLICATION_URL" />
+          <ScalarProperty Name="JOURNAL_IDENTIFIER" ColumnName="JOURNAL_IDENTIFIER" />
+          <ScalarProperty Name="PUBLICATION_AUTHOR" ColumnName="PUBLICATION_AUTHOR" />
+          <ScalarProperty Name="LASTUPDATEON" ColumnName="LASTUPDATEON" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="PUBLISHEDDATE" ColumnName="PUBLISHEDDATE" />
+          <ScalarProperty Name="PUBLICATIONOUTPUTID" ColumnName="PUBLICATIONOUTPUTID" />
+          <ScalarProperty Name="INGESTIONID" ColumnName="INGESTIONID" />
+          <ScalarProperty Name="AWARD_ID" ColumnName="AWARD_ID" />
+          <ScalarProperty Name="PUBLICATION_ID" ColumnName="PUBLICATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_language_detail">
+      <EntityTypeMapping TypeName="ScivalModel.sci_language_detail">
+        <MappingFragment StoreEntitySet="sci_language_detail">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="TRAN_TYPE_ID" ColumnName="TRAN_TYPE_ID" />
+          <ScalarProperty Name="LANGUAGE_ID" ColumnName="LANGUAGE_ID" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="COLUMN_ID" ColumnName="COLUMN_ID" />
+          <ScalarProperty Name="COLUMN_DESC" ColumnName="COLUMN_DESC" />
+          <ScalarProperty Name="SCIVAL_ID" ColumnName="SCIVAL_ID" />
+          <ScalarProperty Name="TRAN_ID" ColumnName="TRAN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_group_url_detail">
+      <EntityTypeMapping TypeName="ScivalModel.sci_group_url_detail">
+        <MappingFragment StoreEntitySet="sci_group_url_detail">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="URL_NUMBER" ColumnName="URL_NUMBER" />
+          <ScalarProperty Name="GROUP_ID" ColumnName="GROUP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="createddates">
+      <EntityTypeMapping TypeName="ScivalModel.createddate">
+        <MappingFragment StoreEntitySet="createddate">
+          <ScalarProperty Name="REVISIONHISTORY_ID" ColumnName="REVISIONHISTORY_ID" />
+          <ScalarProperty Name="CREATEDDATE_TEXT" ColumnName="CREATEDDATE_TEXT" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fbprogresses">
+      <EntityTypeMapping TypeName="ScivalModel.fbprogress">
+        <MappingFragment StoreEntitySet="fbprogress">
+          <ScalarProperty Name="AWSTATUS" ColumnName="AWSTATUS" />
+          <ScalarProperty Name="AWUPDATE" ColumnName="AWUPDATE" />
+          <ScalarProperty Name="OPSTATUS" ColumnName="OPSTATUS" />
+          <ScalarProperty Name="OPUPDATE" ColumnName="OPUPDATE" />
+          <ScalarProperty Name="FBSTATUS" ColumnName="FBSTATUS" />
+          <ScalarProperty Name="FBUPDATE" ColumnName="FBUPDATE" />
+          <ScalarProperty Name="FUNDINGBODYNAME" ColumnName="FUNDINGBODYNAME" />
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subtypes">
+      <EntityTypeMapping TypeName="ScivalModel.subtype">
+        <MappingFragment StoreEntitySet="subtype">
+          <ScalarProperty Name="FUNDINGBODY_ID" ColumnName="FUNDINGBODY_ID" />
+          <ScalarProperty Name="SUBTYPE_TEXT" ColumnName="SUBTYPE_TEXT" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="temptable_subregion">
+      <EntityTypeMapping TypeName="ScivalModel.temptable_subregion">
+        <MappingFragment StoreEntitySet="temptable_subregion">
+          <ScalarProperty Name="SUBREGION" ColumnName="SUBREGION" />
+          <ScalarProperty Name="REGION" ColumnName="REGION" />
+          <ScalarProperty Name="ALPHA_3" ColumnName="ALPHA_3" />
+          <ScalarProperty Name="ALPHA_2" ColumnName="ALPHA_2" />
+          <ScalarProperty Name="COUNTRYNAME" ColumnName="COUNTRYNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_fundedprogramstypelist">
+      <EntityTypeMapping TypeName="ScivalModel.sci_fundedprogramstypelist">
+        <MappingFragment StoreEntitySet="sci_fundedprogramstypelist">
+          <ScalarProperty Name="FUNDEDPROGRAMTYPESTEXT" ColumnName="FUNDEDPROGRAMTYPESTEXT" />
+          <ScalarProperty Name="TYPEID" ColumnName="TYPEID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_related_orgs_vendor">
+      <EntityTypeMapping TypeName="ScivalModel.sci_related_orgs_vendor">
+        <MappingFragment StoreEntitySet="sci_related_orgs_vendor">
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="VENDOR_FUNDINGBODY_NAME" ColumnName="VENDOR_FUNDINGBODY_NAME" />
+          <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+          <ScalarProperty Name="REL_ORGS_VENDORID" ColumnName="REL_ORGS_VENDORID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_userlog">
+      <EntityTypeMapping TypeName="ScivalModel.sci_userlog">
+        <MappingFragment StoreEntitySet="sci_userlog">
+          <ScalarProperty Name="ACTION" ColumnName="ACTION" />
+          <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="PAGENAME" ColumnName="PAGENAME" />
+          <ScalarProperty Name="CYCLEID" ColumnName="CYCLEID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MODULEID" ColumnName="MODULEID" />
+          <ScalarProperty Name="WORKFLOWID" ColumnName="WORKFLOWID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_xml_limits">
+      <EntityTypeMapping TypeName="ScivalModel.sci_xml_limits">
+        <MappingFragment StoreEntitySet="sci_xml_limits">
+          <ScalarProperty Name="LIMITS" ColumnName="LIMITS" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="changes">
+      <EntityTypeMapping TypeName="ScivalModel.change">
+        <MappingFragment StoreEntitySet="change">
+          <ScalarProperty Name="CHANGE_ID" ColumnName="CHANGE_ID" />
+          <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+          <ScalarProperty Name="POSTDATE_IS_SAVE" ColumnName="POSTDATE_IS_SAVE" />
+          <ScalarProperty Name="CHANGEHISTORY_ID" ColumnName="CHANGEHISTORY_ID" />
+          <ScalarProperty Name="CHANGE_TEXT" ColumnName="CHANGE_TEXT" />
+          <ScalarProperty Name="VERSION" ColumnName="VERSION" />
+          <ScalarProperty Name="POSTDATE" ColumnName="POSTDATE" />
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sci_op_changehistorylist" FunctionName="ScivalModel.Store.sci_op_changehistorylist" />
+    <EntitySetMapping Name="addresses">
+      <EntityTypeMapping TypeName="ScivalModel.address">
+        <MappingFragment StoreEntitySet="address">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AFFILIATION_ID" ColumnName="AFFILIATION_ID" />
+          <ScalarProperty Name="AWARDMANAGER_ID" ColumnName="AWARDMANAGER_ID" />
+          <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+          <ScalarProperty Name="POSTALCODE" ColumnName="POSTALCODE" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="STREET" ColumnName="STREET" />
+          <ScalarProperty Name="ROOM" ColumnName="ROOM" />
+          <ScalarProperty Name="COUNTRYTEST" ColumnName="COUNTRYTEST" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="totalfundings">
+      <EntityTypeMapping TypeName="ScivalModel.totalfunding">
+        <MappingFragment StoreEntitySet="totalfunding">
+          <ScalarProperty Name="AWARDSTATISTICS_ID" ColumnName="AWARDSTATISTICS_ID" />
+          <ScalarProperty Name="TOTALFUNDING_TEXT" ColumnName="TOTALFUNDING_TEXT" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sci_op_changehistoryins" FunctionName="ScivalModel.Store.sci_op_changehistoryins" />
+    <FunctionImportMapping FunctionImportName="SCI_TrackUnstoppedFbAwardOpp" FunctionName="ScivalModel.Store.SCI_TrackUnstoppedFbAwardOpp" />
+    <EntitySetMapping Name="sci_classificationstypetype">
+      <EntityTypeMapping TypeName="ScivalModel.sci_classificationstypetype">
+        <MappingFragment StoreEntitySet="sci_classificationstypetype">
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sci_classificationlist" FunctionName="ScivalModel.Store.sci_classificationlist" />
+    <FunctionImportMapping FunctionImportName="SCI_CLASSIFICATIONUPDEL" FunctionName="ScivalModel.Store.SCI_CLASSIFICATIONUPDEL" />
+    <EntitySetMapping Name="contactnames">
+      <EntityTypeMapping TypeName="ScivalModel.contactname">
+        <MappingFragment StoreEntitySet="contactname">
+          <ScalarProperty Name="CONTACT_ID" ColumnName="CONTACT_ID" />
+          <ScalarProperty Name="SUFFIX" ColumnName="SUFFIX" />
+          <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+          <ScalarProperty Name="MIDDLENAME" ColumnName="MIDDLENAME" />
+          <ScalarProperty Name="GIVENNAME" ColumnName="GIVENNAME" />
+          <ScalarProperty Name="PREFIX" ColumnName="PREFIX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sci_contactinsert_s2" FunctionName="ScivalModel.Store.sci_contactinsert_s2" />
+    <FunctionImportMapping FunctionImportName="sci_contactlist" FunctionName="ScivalModel.Store.sci_contactlist" />
+    <FunctionImportMapping FunctionImportName="sci_iteminserttemp5" FunctionName="ScivalModel.Store.sci_iteminserttemp5" />
+    <FunctionImportMapping FunctionImportName="sci_itemlist5" FunctionName="ScivalModel.Store.sci_itemlist5" />
+    <FunctionImportMapping FunctionImportName="SCI_OP_estfundingins" FunctionName="ScivalModel.Store.SCI_OP_estfundingins" />
+    <FunctionImportMapping FunctionImportName="sci_op_estfundinglist" FunctionName="ScivalModel.Store.sci_op_estfundinglist" />
+    <EntitySetMapping Name="sci_binaryrelationtype">
+      <EntityTypeMapping TypeName="ScivalModel.sci_binaryrelationtype">
+        <MappingFragment StoreEntitySet="sci_binaryrelationtype">
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_countries">
+      <EntityTypeMapping TypeName="ScivalModel.sci_countries">
+        <MappingFragment StoreEntitySet="sci_countries">
+          <ScalarProperty Name="COUNTRY_CODE" ColumnName="COUNTRY_CODE" />
+          <ScalarProperty Name="COUNTRY_NAME" ColumnName="COUNTRY_NAME" />
+          <ScalarProperty Name="COUNTRYGROUP_ID" ColumnName="COUNTRYGROUP_ID" />
+          <ScalarProperty Name="COUNTRY_ID" ColumnName="COUNTRY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_countrygroup">
+      <EntityTypeMapping TypeName="ScivalModel.sci_countrygroup">
+        <MappingFragment StoreEntitySet="sci_countrygroup">
+          <ScalarProperty Name="COUNTRYGROUP_STATUS" ColumnName="COUNTRYGROUP_STATUS" />
+          <ScalarProperty Name="COUNTRYGROUP_NAME" ColumnName="COUNTRYGROUP_NAME" />
+          <ScalarProperty Name="COUNTRYGROUP_ID" ColumnName="COUNTRYGROUP_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SCI_INDELIGIBILITY_DML_PRC23MA" FunctionName="ScivalModel.Store.SCI_INDELIGIBILITY_DML_PRC23MA" />
+    <FunctionImportMapping FunctionImportName="SCI_INDELIGIBILITY_DML_PRC24Ap" FunctionName="ScivalModel.Store.SCI_INDELIGIBILITY_DML_PRC24Ap" />
+    <FunctionImportMapping FunctionImportName="SCI_INDELIGIBILITY_DML_PRC_s" FunctionName="ScivalModel.Store.SCI_INDELIGIBILITY_DML_PRC_s" />
+    <FunctionImportMapping FunctionImportName="SCI_LIMITEDSUBMISSION_DML_PRC" FunctionName="ScivalModel.Store.SCI_LIMITEDSUBMISSION_DML_PRC" />
+    <FunctionImportMapping FunctionImportName="sci_op_eclassificationins" FunctionName="ScivalModel.Store.sci_op_eclassificationins" />
+    <FunctionImportMapping FunctionImportName="SCI_OP_ECLASSIFICATIONLIST" FunctionName="ScivalModel.Store.SCI_OP_ECLASSIFICATIONLIST" />
+    <FunctionImportMapping FunctionImportName="sci_op_eligibilitylist" FunctionName="ScivalModel.Store.sci_op_eligibilitylist" />
+    <FunctionImportMapping FunctionImportName="SCI_ORGNELIGIBILITYY_DML_23MAY" FunctionName="ScivalModel.Store.SCI_ORGNELIGIBILITYY_DML_23MAY" />
+    <FunctionImportMapping FunctionImportName="SCI_ORGNELIGIBILITYY_DML_25APR" FunctionName="ScivalModel.Store.SCI_ORGNELIGIBILITYY_DML_25APR" />
+    <FunctionImportMapping FunctionImportName="SCI_ORGNELIGIBILITYY_DML_S" FunctionName="ScivalModel.Store.SCI_ORGNELIGIBILITYY_DML_S" />
+    <EntitySetMapping Name="sci_typeidvalues">
+      <EntityTypeMapping TypeName="ScivalModel.sci_typeidvalues">
+        <MappingFragment StoreEntitySet="sci_typeidvalues">
+          <ScalarProperty Name="TYPE" ColumnName="TYPE" />
+          <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="award_tables">
+      <EntityTypeMapping TypeName="ScivalModel.award_tables">
+        <MappingFragment StoreEntitySet="award_tables">
+          <ScalarProperty Name="FLAG" ColumnName="FLAG" />
+          <ScalarProperty Name="MAPTABLE" ColumnName="MAPTABLE" />
+          <ScalarProperty Name="PAGENAME" ColumnName="PAGENAME" />
+          <ScalarProperty Name="KEY" ColumnName="KEY" />
+          <ScalarProperty Name="SEQUENCE" ColumnName="SEQUENCE" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="recurrings">
+      <EntityTypeMapping TypeName="ScivalModel.recurring">
+        <MappingFragment StoreEntitySet="recurring">
+          <ScalarProperty Name="REC_DATE" ColumnName="REC_DATE" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="RECURRING_STATUS" ColumnName="RECURRING_STATUS" />
+          <ScalarProperty Name="OPPORTUNITY_ID" ColumnName="OPPORTUNITY_ID" />
+          <ScalarProperty Name="REC_ID" ColumnName="REC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_column_master">
+      <EntityTypeMapping TypeName="ScivalModel.sci_column_master">
+        <MappingFragment StoreEntitySet="sci_column_master">
+          <ScalarProperty Name="COLUMN_NAME" ColumnName="COLUMN_NAME" />
+          <ScalarProperty Name="COLUMN_ID" ColumnName="COLUMN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sci_tran_type_master">
+      <EntityTypeMapping TypeName="ScivalModel.sci_tran_type_master">
+        <MappingFragment StoreEntitySet="sci_tran_type_master">
+          <ScalarProperty Name="TRAN_NAME" ColumnName="TRAN_NAME" />
+          <ScalarProperty Name="TRAN_TYPE_ID" ColumnName="TRAN_TYPE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="LoadLanguageData" FunctionName="ScivalModel.Store.LoadLanguageData" />
+    <FunctionImportMapping FunctionImportName="opprotunity_loi_status" FunctionName="ScivalModel.Store.opprotunity_loi_status" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_AWNEW" FunctionName="ScivalModel.Store.SCI_AW_AWNEW" />
+    <FunctionImportMapping FunctionImportName="sci_inserttimesheet41" FunctionName="ScivalModel.Store.sci_inserttimesheet41" />
+    <FunctionImportMapping FunctionImportName="SCI_OP_OPNEW" FunctionName="ScivalModel.Store.SCI_OP_OPNEW" />
+    <FunctionImportMapping FunctionImportName="SCI_OP_OPPORTUNITYINS" FunctionName="ScivalModel.Store.SCI_OP_OPPORTUNITYINS" />
+    <FunctionImportMapping FunctionImportName="sci_op_relatedopplist_prc" FunctionName="ScivalModel.Store.sci_op_relatedopplist_prc" />
+    <FunctionImportMapping FunctionImportName="sci_pageurls" FunctionName="ScivalModel.Store.sci_pageurls" />
+    <FunctionImportMapping FunctionImportName="sci_rel_opportunity_dml_prc5" FunctionName="ScivalModel.Store.sci_rel_opportunity_dml_prc5" />
+    <FunctionImportMapping FunctionImportName="sci_timesheetstop" FunctionName="ScivalModel.Store.sci_timesheetstop" />
+    <FunctionImportMapping FunctionImportName="sci_timesheetstopcontinue_QA" FunctionName="ScivalModel.Store.sci_timesheetstopcontinue_QA" />
+    <FunctionImportMapping FunctionImportName="sci_timesheetstoP_CONTINUE" FunctionName="ScivalModel.Store.sci_timesheetstoP_CONTINUE" />
+    <FunctionImportMapping FunctionImportName="asjc_description_prc" FunctionName="ScivalModel.Store.asjc_description_prc">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScivalModel.asjc_description_prc_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="awardssource_dml_prc" FunctionName="ScivalModel.Store.awardssource_dml_prc" />
+    <FunctionImportMapping FunctionImportName="awardssource_dml_prc_5" FunctionName="ScivalModel.Store.awardssource_dml_prc_5" />
+    <FunctionImportMapping FunctionImportName="fundingbodysource_dml_prc_5" FunctionName="ScivalModel.Store.fundingbodysource_dml_prc_5" />
+    <FunctionImportMapping FunctionImportName="get_funding_details" FunctionName="ScivalModel.Store.get_funding_details" />
+    <FunctionImportMapping FunctionImportName="Get_GroupCountries_prc1" FunctionName="ScivalModel.Store.Get_GroupCountries_prc1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScivalModel.Get_GroupCountries_prc1_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="get_opportunity_dateins_data5" FunctionName="ScivalModel.Store.get_opportunity_dateins_data5" />
+    <FunctionImportMapping FunctionImportName="opportunitiessource_dml_prc_5" FunctionName="ScivalModel.Store.opportunitiessource_dml_prc_5" />
+    <FunctionImportMapping FunctionImportName="opportunity_location_insupdel" FunctionName="ScivalModel.Store.opportunity_location_insupdel" />
+    <FunctionImportMapping FunctionImportName="opportunity_location_insup_DEL" FunctionName="ScivalModel.Store.opportunity_location_insup_DEL" />
+    <FunctionImportMapping FunctionImportName="opportunity_location_list" FunctionName="ScivalModel.Store.opportunity_location_list" />
+    <FunctionImportMapping FunctionImportName="publicationsource_dml_prc_5" FunctionName="ScivalModel.Store.publicationsource_dml_prc_5" />
+    <FunctionImportMapping FunctionImportName="save_funding_prc3" FunctionName="ScivalModel.Store.save_funding_prc3" />
+    <FunctionImportMapping FunctionImportName="sciFundedProgramType" FunctionName="ScivalModel.Store.sciFundedProgramType" />
+    <FunctionImportMapping FunctionImportName="sciFundedProgramType_win" FunctionName="ScivalModel.Store.sciFundedProgramType_win" />
+    <FunctionImportMapping FunctionImportName="sci_auto_lead_relorgs_prc" FunctionName="ScivalModel.Store.sci_auto_lead_relorgs_prc" />
+    <FunctionImportMapping FunctionImportName="sci_awardstatisticsinsert" FunctionName="ScivalModel.Store.sci_awardstatisticsinsert" />
+    <FunctionImportMapping FunctionImportName="sci_AWARDSTATISTICSlist" FunctionName="ScivalModel.Store.sci_AWARDSTATISTICSlist" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_ADDRESSINSDEL" FunctionName="ScivalModel.Store.SCI_AW_ADDRESSINSDEL" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_ADDRESSLIST" FunctionName="ScivalModel.Store.SCI_AW_ADDRESSLIST" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_AWARDEEINSDEL_41" FunctionName="ScivalModel.Store.SCI_AW_AWARDEEINSDEL_41" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_AWARDEEINSDEL_50" FunctionName="ScivalModel.Store.SCI_AW_AWARDEEINSDEL_50" />
+    <FunctionImportMapping FunctionImportName="sci_Aw_awardeelist50" FunctionName="ScivalModel.Store.sci_Aw_awardeelist50" />
+    <FunctionImportMapping FunctionImportName="sci_aw_awradins50" FunctionName="ScivalModel.Store.sci_aw_awradins50" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_FAXINSDEL" FunctionName="ScivalModel.Store.SCI_AW_FAXINSDEL" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_faxlist" FunctionName="ScivalModel.Store.SCI_AW_faxlist" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_INSTITUTIONINSDEL41" FunctionName="ScivalModel.Store.SCI_AW_INSTITUTIONINSDEL41" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_INSTITUTIONINSDEL50" FunctionName="ScivalModel.Store.SCI_AW_INSTITUTIONINSDEL50" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_INSTITUTIONLIST" FunctionName="ScivalModel.Store.SCI_AW_INSTITUTIONLIST" />
+    <FunctionImportMapping FunctionImportName="sci_aw_managerlist" FunctionName="ScivalModel.Store.sci_aw_managerlist" />
+    <FunctionImportMapping FunctionImportName="sci_aw_QCcheckxml50_4" FunctionName="ScivalModel.Store.sci_aw_QCcheckxml50_4" />
+    <FunctionImportMapping FunctionImportName="sci_aw_research_output" FunctionName="ScivalModel.Store.sci_aw_research_output" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_TELINSDEL" FunctionName="ScivalModel.Store.SCI_AW_TELINSDEL" />
+    <FunctionImportMapping FunctionImportName="SCI_AW_TELlist" FunctionName="ScivalModel.Store.SCI_AW_TELlist" />
+    <FunctionImportMapping FunctionImportName="sci_CheckOppStatus" FunctionName="ScivalModel.Store.sci_CheckOppStatus" />
+    <FunctionImportMapping FunctionImportName="sci_check_award_duplicate" FunctionName="ScivalModel.Store.sci_check_award_duplicate" />
+    <FunctionImportMapping FunctionImportName="sci_classificationinsert" FunctionName="ScivalModel.Store.sci_classificationinsert" />
+    <FunctionImportMapping FunctionImportName="SCI_CURRENCYTYPElist" FunctionName="ScivalModel.Store.SCI_CURRENCYTYPElist" />
+    <FunctionImportMapping FunctionImportName="sci_establishmentinsert" FunctionName="ScivalModel.Store.sci_establishmentinsert" />
+    <FunctionImportMapping FunctionImportName="sci_establishmentlist" FunctionName="ScivalModel.Store.sci_establishmentlist" />
+    <FunctionImportMapping FunctionImportName="sci_fiscalclosedate" FunctionName="ScivalModel.Store.sci_fiscalclosedate" />
+    <FunctionImportMapping FunctionImportName="sci_FundedProgramTypelist" FunctionName="ScivalModel.Store.sci_FundedProgramTypelist" />
+    <FunctionImportMapping FunctionImportName="sci_fundingbase_41" FunctionName="ScivalModel.Store.sci_fundingbase_41" />
+    <FunctionImportMapping FunctionImportName="sci_getfiscalclosedate" FunctionName="ScivalModel.Store.sci_getfiscalclosedate" />
+    <FunctionImportMapping FunctionImportName="sci_GetHiddenStatus" FunctionName="ScivalModel.Store.sci_GetHiddenStatus" />
+    <FunctionImportMapping FunctionImportName="sci_GetLanguageDetails" FunctionName="ScivalModel.Store.sci_GetLanguageDetails" />
+    <FunctionImportMapping FunctionImportName="SCI_GETOPPORTUNITYDATES_5" FunctionName="ScivalModel.Store.SCI_GETOPPORTUNITYDATES_5" />
+    <FunctionImportMapping FunctionImportName="sci_gettaxids" FunctionName="ScivalModel.Store.sci_gettaxids" />
+    <FunctionImportMapping FunctionImportName="sci_gettaxidtype" FunctionName="ScivalModel.Store.sci_gettaxidtype" />
+    <FunctionImportMapping FunctionImportName="sci_GetWorkFlowDetails" FunctionName="ScivalModel.Store.sci_GetWorkFlowDetails" />
+    <FunctionImportMapping FunctionImportName="sci_iteminserttemp" FunctionName="ScivalModel.Store.sci_iteminserttemp" />
+    <FunctionImportMapping FunctionImportName="sci_itemlist" FunctionName="ScivalModel.Store.sci_itemlist" />
+    <FunctionImportMapping FunctionImportName="sci_language_detail_dml_prc" FunctionName="ScivalModel.Store.sci_language_detail_dml_prc" />
+    <FunctionImportMapping FunctionImportName="sci_managerinsdel_1" FunctionName="ScivalModel.Store.sci_managerinsdel_1" />
+    <FunctionImportMapping FunctionImportName="sci_mandatory_section" FunctionName="ScivalModel.Store.sci_mandatory_section" />
+    <FunctionImportMapping FunctionImportName="sci_op_delete_date_prc" FunctionName="ScivalModel.Store.sci_op_delete_date_prc" />
+    <FunctionImportMapping FunctionImportName="SCI_OP_ESTFUNDINGINS_y" FunctionName="ScivalModel.Store.SCI_OP_ESTFUNDINGINS_y" />
+    <FunctionImportMapping FunctionImportName="sci_op_opportunity_dateins_50" FunctionName="ScivalModel.Store.sci_op_opportunity_dateins_50" />
+    <FunctionImportMapping FunctionImportName="SCI_OP_OPPORTUNITY_date_del" FunctionName="ScivalModel.Store.SCI_OP_OPPORTUNITY_date_del" />
+    <FunctionImportMapping FunctionImportName="sci_op_QCcheck_final_S50_Final" FunctionName="ScivalModel.Store.sci_op_QCcheck_final_S50_Final" />
+    <FunctionImportMapping FunctionImportName="sci_op_recurringIns" FunctionName="ScivalModel.Store.sci_op_recurringIns" />
+    <FunctionImportMapping FunctionImportName="SCI_OP_RELATEDORGLIST_y" FunctionName="ScivalModel.Store.SCI_OP_RELATEDORGLIST_y" />
+    <FunctionImportMapping FunctionImportName="sci_op_relatedprogeam" FunctionName="ScivalModel.Store.sci_op_relatedprogeam" />
+    <FunctionImportMapping FunctionImportName="sci_op_relatedprogeamins" FunctionName="ScivalModel.Store.sci_op_relatedprogeamins" />
+    <FunctionImportMapping FunctionImportName="SCI_OP_RELORGINS_yy" FunctionName="ScivalModel.Store.SCI_OP_RELORGINS_yy" />
+    <FunctionImportMapping FunctionImportName="SCI_PROC_AWARDBASE" FunctionName="ScivalModel.Store.SCI_PROC_AWARDBASE" />
+    <FunctionImportMapping FunctionImportName="SCI_PROC_AWARDPROGRESS" FunctionName="ScivalModel.Store.SCI_PROC_AWARDPROGRESS" />
+    <FunctionImportMapping FunctionImportName="sci_proc_fundingbodyprogres_S5" FunctionName="ScivalModel.Store.sci_proc_fundingbodyprogres_S5" />
+    <FunctionImportMapping FunctionImportName="sci_Publication_out_insupdel" FunctionName="ScivalModel.Store.sci_Publication_out_insupdel" />
+    <FunctionImportMapping FunctionImportName="sci_relatedorglist" FunctionName="ScivalModel.Store.sci_relatedorglist" />
+    <FunctionImportMapping FunctionImportName="sci_relatedorgsinsert" FunctionName="ScivalModel.Store.sci_relatedorgsinsert" />
+    <FunctionImportMapping FunctionImportName="sci_related_vendor_dml_prc" FunctionName="ScivalModel.Store.sci_related_vendor_dml_prc" />
+    <FunctionImportMapping FunctionImportName="sci_taxids" FunctionName="ScivalModel.Store.sci_taxids" />
+    <FunctionImportMapping FunctionImportName="SCI_UPD_OPP_DATE_FLG" FunctionName="ScivalModel.Store.SCI_UPD_OPP_DATE_FLG" />
+  </EntityContainerMapping>
+</Mapping>

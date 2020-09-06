@@ -1,0 +1,5 @@
+CREATE TABLE `about` (
+  `ABOUT_ID` bigint NOT NULL,
+  `FUNDINGBODY_ID` bigint DEFAULT NULL,
+  PRIMARY KEY (`ABOUT_ID`)
+);

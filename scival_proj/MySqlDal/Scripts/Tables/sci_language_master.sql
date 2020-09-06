@@ -1,0 +1,10 @@
+CREATE TABLE `sci_language_master` (
+  `LANGUAGE_ID` bigint NOT NULL,
+  `LANGUAGE_GROUP_ID` bigint DEFAULT NULL,
+  `LANGUAGE_NAME` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `LANGUAGE_CODE` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `CODE_LENGTH` bigint DEFAULT NULL,
+  `PRIORITY` bigint DEFAULT NULL,
+  `CREATED_DATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`LANGUAGE_ID`)
+);

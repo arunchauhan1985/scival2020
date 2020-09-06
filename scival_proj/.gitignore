@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Scival/v16/Server/sqlite3
+/DatabaseGenerator/bin/Debug
+/DatabaseGenerator/obj/Debug
+/Scival/bin/Debug

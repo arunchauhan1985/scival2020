@@ -1,0 +1,2199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ScivalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="award_master">
+    <Key>
+      <PropertyRef Name="AWARDID" />
+    </Key>
+    <Property Name="AWARDID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODYID" Type="Int64" />
+    <Property Name="AWARDNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CREATEDDATE" Type="DateTime" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CYCLECOMPLETIONDATE" Type="DateTime" />
+    <Property Name="CYCLECOMPLETEDBY" Type="Int64" />
+    <Property Name="LASTUPDATEDBY" Type="Int64" />
+    <Property Name="CYCLE" Type="Int64" />
+    <Property Name="STATUSCODE" Type="Int64" />
+    <Property Name="RUSH" Type="Int64" />
+    <Property Name="RUSHBY" Type="Int64" />
+    <Property Name="ALLOCATIONMODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ISAUTOMATED" Type="Int64" />
+    <Property Name="ISOUTOFCMS" Type="Int64" />
+    <Property Name="OUTOFCMSCOMPLETIONDATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="fundingbody_master">
+    <Key>
+      <PropertyRef Name="FUNDINGBODY_ID" />
+    </Key>
+    <Property Name="FUNDINGBODY_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODYNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CREATEDDATE" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CYCLECOMPLETIONDATE" Type="DateTime" />
+    <Property Name="CYCLECOMPLETEDBY" Type="Int64" />
+    <Property Name="LASTUPDATEDDATE" Type="DateTime" />
+    <Property Name="LASTUPDATEDBY" Type="Int64" />
+    <Property Name="CYCLE" Type="Int64" />
+    <Property Name="STATUSCODE" Type="Int64" />
+    <Property Name="RUSH" Type="Int64" />
+    <Property Name="RUSHBY" Type="Int64" />
+    <Property Name="ALLOCATIONMODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ISOPORTUNITY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="DUEDATE" Type="DateTime" />
+    <Property Name="ISVIEWED" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="BATCHNO" Type="Int64" />
+    <Property Name="BATCHRECIEVEDATE" Type="DateTime" />
+    <Property Name="SUBTYPE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="HIDDEN_FLAG" Type="Int64" />
+  </EntityType>
+  <EntityType Name="oppotunity">
+    <Key>
+      <PropertyRef Name="OPPORTUNITY_ID" />
+    </Key>
+    <Property Name="OPPORTUNITY_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITYSTATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODYOPPORTUNITYID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LIMITEDSUBMISSION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TRUSTING" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NEWINVESTIGATOR" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="COLLECTIONCODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="HIDDEN" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LOIDATE" Type="DateTime" />
+    <Property Name="DUEDATE" Type="DateTime" />
+    <Property Name="ELIGIBILITYCATEGORY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LINKTOFULLTEXT" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FIRSTPOSTDATE" Type="DateTime" />
+    <Property Name="LASTMODIFIEDPOSTDATE" Type="DateTime" />
+    <Property Name="NUMBEROFAWARDS" Type="Int64" />
+    <Property Name="DURATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LIMITEDSUBMISSIONDESCRIPTION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RAWTEXT" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ELIGIBILITYDESCRIPTION" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DUEDATEDESCRIPTION" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ID" Type="Int64" />
+    <Property Name="RECORDSOURCE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="EXPIRATIONDATE" Type="DateTime" />
+    <Property Name="DATE_FLAG" Type="Int64" />
+    <Property Name="LOI_MANDATORY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="REPEATINGOPPORTUNITY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PREPROPOSALMANDATORY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LANG" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_modules">
+    <Key>
+      <PropertyRef Name="MODULEID" />
+    </Key>
+    <Property Name="MODULEID" Type="Int64" Nullable="false" />
+    <Property Name="MODULENAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_opp_loi_duedate_detail">
+    <Key>
+      <PropertyRef Name="O_ID" />
+    </Key>
+    <Property Name="O_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="LOI_DUE_DATE" Type="DateTime" />
+    <Property Name="DATE_TYPE" Type="Int32" />
+    <Property Name="SEQUENCE_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" />
+    <Property Name="DATE_REMARKS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LANG" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_tasks">
+    <Key>
+      <PropertyRef Name="TASKID" />
+    </Key>
+    <Property Name="TASKID" Type="Int64" Nullable="false" />
+    <Property Name="TASKNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_usermaster">
+    <Key>
+      <PropertyRef Name="USERID" />
+    </Key>
+    <Property Name="USERID" Type="Int64" Nullable="false" />
+    <Property Name="USERNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="EMPCODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CONTACTNO" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ISACTIVE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CREATEDDATE" Type="DateTime" Nullable="false" />
+    <Property Name="CREADTEDBY" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_version">
+    <Key>
+      <PropertyRef Name="VERSION_ID" />
+    </Key>
+    <Property Name="VERSION_ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RELEASE_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sci_workflow">
+    <Key>
+      <PropertyRef Name="WORKFLOWID" />
+    </Key>
+    <Property Name="WORKFLOWID" Type="Int64" Nullable="false" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="ID" Type="Int64" />
+    <Property Name="CYCLE" Type="Int64" />
+    <Property Name="TEMPLATEID" Type="Int64" />
+    <Property Name="TASKID" Type="Int64" />
+    <Property Name="SEQUENCE" Type="Int64" />
+    <Property Name="STARTDATE" Type="DateTime" />
+    <Property Name="STARTBY" Type="Int64" />
+    <Property Name="COMPLETEDDATE" Type="DateTime" />
+    <Property Name="COMPLETEDBY" Type="Int64" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="ASSIGNBY" Type="Int64" />
+    <Property Name="ASSIGNDATE" Type="DateTime" />
+    <Property Name="STATUSID" Type="Int64" />
+  </EntityType>
+  <EntityContainer Name="ScivalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="award_master" EntityType="Self.award_master" />
+    <EntitySet Name="fundingbody_master" EntityType="Self.fundingbody_master" />
+    <EntitySet Name="oppotunities" EntityType="Self.oppotunity" />
+    <EntitySet Name="sci_modules" EntityType="Self.sci_modules" />
+    <EntitySet Name="sci_opp_loi_duedate_detail" EntityType="Self.sci_opp_loi_duedate_detail" />
+    <EntitySet Name="sci_tasks" EntityType="Self.sci_tasks" />
+    <EntitySet Name="sci_usermaster" EntityType="Self.sci_usermaster" />
+    <EntitySet Name="sci_version" EntityType="Self.sci_version" />
+    <EntitySet Name="sci_workflow" EntityType="Self.sci_workflow" />
+    <FunctionImport Name="sci_proc_updateexpirealert" />
+    <EntitySet Name="opportunity_master" EntityType="ScivalModel.opportunity_master" />
+    <EntitySet Name="sci_expire_alert" EntityType="ScivalModel.sci_expire_alert" />
+    <EntitySet Name="sci_moduletaskconfig" EntityType="ScivalModel.sci_moduletaskconfig" />
+    <EntitySet Name="sci_usertask" EntityType="ScivalModel.sci_usertask" />
+    <FunctionImport Name="sci_proc_gettaskforuser" ReturnType="Collection(ScivalModel.sci_proc_gettaskforuser_Result3)">
+      <Parameter Name="USER_ID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="userassignments" EntityType="ScivalModel.userassignment" />
+    <EntitySet Name="fundingbodies" EntityType="ScivalModel.fundingbody" />
+    <FunctionImport Name="sci_opaw_tasklist">
+      <Parameter Name="pUserId" Mode="In" Type="Int64" />
+      <Parameter Name="pModuleId" Mode="In" Type="Int64" />
+      <Parameter Name="pTaskId" Mode="In" Type="Int64" />
+      <Parameter Name="pAllocation" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sci_fundingbodyurlinsert">
+      <Parameter Name="pOrgDbId" Mode="In" Type="Int32" />
+      <Parameter Name="pUserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="sci_urlretain" EntityType="ScivalModel.sci_urlretain" />
+    <EntitySet Name="sci_urls" EntityType="ScivalModel.sci_urls" />
+    <EntitySet Name="sci_groupurl" EntityType="ScivalModel.sci_groupurl" />
+    <EntitySet Name="awards" EntityType="ScivalModel.award" />
+    <EntitySet Name="abouts" EntityType="ScivalModel.about" />
+    <EntitySet Name="classificationgroups" EntityType="ScivalModel.classificationgroup" />
+    <EntitySet Name="contactinfoes" EntityType="ScivalModel.contactinfo" />
+    <EntitySet Name="contacts" EntityType="ScivalModel.contact" />
+    <EntitySet Name="fundedprogramstypes" EntityType="ScivalModel.fundedprogramstype" />
+    <EntitySet Name="relatedorgs" EntityType="ScivalModel.relatedorg" />
+    <EntitySet Name="fundingpolicies" EntityType="ScivalModel.fundingpolicy" />
+    <EntitySet Name="sci_expired_opplist" EntityType="ScivalModel.sci_expired_opplist" />
+    <EntitySet Name="sci_urlmaster" EntityType="ScivalModel.sci_urlmaster" />
+    <EntitySet Name="temp_scivalurl" EntityType="ScivalModel.temp_scivalurl" />
+    <FunctionImport Name="dummy_tasklist_new">
+      <Parameter Name="pUserId" Mode="In" Type="Int32" />
+      <Parameter Name="pModuleId" Mode="In" Type="Int32" />
+      <Parameter Name="pTaskId" Mode="In" Type="Int32" />
+      <Parameter Name="pCycle" Mode="In" Type="Int32" />
+      <Parameter Name="pAllocation" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_aw_awexist">
+      <Parameter Name="p_fundingbodyid" Mode="In" Type="Int32" />
+      <Parameter Name="p_taskid" Mode="In" Type="Int32" />
+      <Parameter Name="p_updateflag" Mode="In" Type="Int32" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_expiredetail">
+      <Parameter Name="pUserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_opaw_tasklist1">
+      <Parameter Name="pUserId" Mode="In" Type="Int64" />
+      <Parameter Name="pModuleId" Mode="In" Type="Int64" />
+      <Parameter Name="pTaskId" Mode="In" Type="Int64" />
+      <Parameter Name="pAllocation" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_opexist">
+      <Parameter Name="P_FUNDINGBODYID" Mode="In" Type="Int32" />
+      <Parameter Name="p_taskid" Mode="In" Type="Int32" />
+      <Parameter Name="p_updateflag" Mode="In" Type="Int32" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_proc_backtask">
+      <Parameter Name="P_USERID" Mode="In" Type="Int32" />
+      <Parameter Name="P_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_moduleid" Mode="In" Type="Int32" />
+      <Parameter Name="P_taskid" Mode="In" Type="Int32" />
+      <Parameter Name="P_CYCLE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_proc_dummy_tasklist">
+      <Parameter Name="pUserId" Mode="In" Type="Int64" />
+      <Parameter Name="pModuleId" Mode="In" Type="Int64" />
+      <Parameter Name="pTaskId" Mode="In" Type="Int64" />
+      <Parameter Name="pAllocation" Mode="In" Type="Int64" />
+      <Parameter Name="pCycle" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sci_proc_gettaskforuser1" ReturnType="Collection(ScivalModel.sci_proc_gettaskforuser1_Result)">
+      <Parameter Name="USER_ID" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="sci_proc_tasklist_new">
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+      <Parameter Name="P_moduleid" Mode="In" Type="Int32" />
+      <Parameter Name="P_taskid" Mode="In" Type="Int32" />
+      <Parameter Name="P_CYCLE" Mode="In" Type="Int32" />
+      <Parameter Name="P_ALLOCATION" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_proc_updateexpirealert1" />
+    <EntitySet Name="sci_defaulttemplate" EntityType="ScivalModel.sci_defaulttemplate" />
+    <EntitySet Name="sci_workflowtemplate" EntityType="ScivalModel.sci_workflowtemplate" />
+    <EntitySet Name="changehistories" EntityType="ScivalModel.changehistory" />
+    <EntitySet Name="sci_related_opportunity" EntityType="ScivalModel.sci_related_opportunity" />
+    <EntitySet Name="synopses" EntityType="ScivalModel.synopsis" />
+    <EntitySet Name="opp_subjectmatter" EntityType="ScivalModel.opp_subjectmatter" />
+    <EntitySet Name="awardceilings" EntityType="ScivalModel.awardceiling" />
+    <EntitySet Name="eligibilityclassifications" EntityType="ScivalModel.eligibilityclassification" />
+    <EntitySet Name="eligibilitydescriptions" EntityType="ScivalModel.eligibilitydescription" />
+    <EntitySet Name="estimatedamountdescriptions" EntityType="ScivalModel.estimatedamountdescription" />
+    <EntitySet Name="estimatedfundings" EntityType="ScivalModel.estimatedfunding" />
+    <EntitySet Name="limitedsubmissiondescriptions" EntityType="ScivalModel.limitedsubmissiondescription" />
+    <EntitySet Name="opportunity_location" EntityType="ScivalModel.opportunity_location" />
+    <EntitySet Name="sci_timesheetremarks" EntityType="ScivalModel.sci_timesheetremarks" />
+    <EntitySet Name="sci_timesheet" EntityType="ScivalModel.sci_timesheet" />
+    <EntitySet Name="awardees" EntityType="ScivalModel.awardee" />
+    <EntitySet Name="awardmanagers" EntityType="ScivalModel.awardmanager" />
+    <EntitySet Name="relateditems" EntityType="ScivalModel.relateditem" />
+    <EntitySet Name="relatedprograms" EntityType="ScivalModel.relatedprogram" />
+    <EntitySet Name="sci_scholarly_output" EntityType="ScivalModel.sci_scholarly_output" />
+    <EntitySet Name="amounts" EntityType="ScivalModel.amount" />
+    <EntitySet Name="award_location" EntityType="ScivalModel.award_location" />
+    <EntitySet Name="classifications" EntityType="ScivalModel.classification" />
+    <EntitySet Name="fundedprojectdetails" EntityType="ScivalModel.fundedprojectdetail" />
+    <EntitySet Name="instalmentandamounts" EntityType="ScivalModel.instalmentandamount" />
+    <EntitySet Name="keywords" EntityType="ScivalModel.keyword" />
+    <EntitySet Name="researchoutcomes" EntityType="ScivalModel.researchoutcome" />
+    <EntitySet Name="revisionhistories" EntityType="ScivalModel.revisionhistory" />
+    <EntitySet Name="sci_asjcdescription" EntityType="ScivalModel.sci_asjcdescription" />
+    <EntitySet Name="sci_countrycodes" EntityType="ScivalModel.sci_countrycodes" />
+    <EntitySet Name="sci_language_master" EntityType="ScivalModel.sci_language_master" />
+    <EntitySet Name="sci_statecodes" EntityType="ScivalModel.sci_statecodes" />
+    <EntitySet Name="classifications1" EntityType="ScivalModel.classification1" />
+    <EntitySet Name="fundedsubprojects" EntityType="ScivalModel.fundedsubproject" />
+    <EntitySet Name="links" EntityType="ScivalModel.link" />
+    <EntitySet Name="relatedfundingbodies" EntityType="ScivalModel.relatedfundingbody" />
+    <EntitySet Name="awardfloors" EntityType="ScivalModel.awardfloor" />
+    <EntitySet Name="fundingbodyamounts" EntityType="ScivalModel.fundingbodyamount" />
+    <EntitySet Name="installments" EntityType="ScivalModel.installment" />
+    <EntitySet Name="keyword1" EntityType="ScivalModel.keyword1" />
+    <EntitySet Name="orgs" EntityType="ScivalModel.org" />
+    <EntitySet Name="sci_currencytype" EntityType="ScivalModel.sci_currencytype" />
+    <EntitySet Name="totalamounts" EntityType="ScivalModel.totalamount" />
+    <EntitySet Name="tracking_award" EntityType="ScivalModel.tracking_award" />
+    <EntitySet Name="tracking_fb" EntityType="ScivalModel.tracking_fb" />
+    <EntitySet Name="tracking_log" EntityType="ScivalModel.tracking_log" />
+    <EntitySet Name="tracking_opp" EntityType="ScivalModel.tracking_opp" />
+    <EntitySet Name="establishmentinfoes" EntityType="ScivalModel.establishmentinfo" />
+    <EntitySet Name="items" EntityType="ScivalModel.item" />
+    <EntitySet Name="publicationdatas" EntityType="ScivalModel.publicationdata" />
+    <EntitySet Name="sci_language_detail" EntityType="ScivalModel.sci_language_detail" />
+    <EntitySet Name="sci_group_url_detail" EntityType="ScivalModel.sci_group_url_detail" />
+    <EntitySet Name="createddates" EntityType="ScivalModel.createddate" />
+    <EntitySet Name="fbprogresses" EntityType="ScivalModel.fbprogress" />
+    <EntitySet Name="subtypes" EntityType="ScivalModel.subtype" />
+    <EntitySet Name="temptable_subregion" EntityType="ScivalModel.temptable_subregion" />
+    <EntitySet Name="sci_fundedprogramstypelist" EntityType="ScivalModel.sci_fundedprogramstypelist" />
+    <EntitySet Name="sci_related_orgs_vendor" EntityType="ScivalModel.sci_related_orgs_vendor" />
+    <EntitySet Name="sci_userlog" EntityType="ScivalModel.sci_userlog" />
+    <EntitySet Name="sci_xml_limits" EntityType="ScivalModel.sci_xml_limits" />
+    <EntitySet Name="changes" EntityType="ScivalModel.change" />
+    <FunctionImport Name="sci_op_changehistorylist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="addresses" EntityType="ScivalModel.address" />
+    <EntitySet Name="totalfundings" EntityType="ScivalModel.totalfunding" />
+    <FunctionImport Name="sci_op_changehistoryins">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_opportunity_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_TYPE" Mode="In" Type="String" />
+      <Parameter Name="p_POSTDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="p_CHANGE_TEXT" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_change_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_TrackUnstoppedFbAwardOpp">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_USERID" Mode="In" Type="Int32" />
+      <Parameter Name="P_PAGENAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="sci_classificationstypetype" EntityType="ScivalModel.sci_classificationstypetype" />
+    <FunctionImport Name="sci_classificationlist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_CLASSIFICATIONUPDEL">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INSDEL" Mode="In" Type="Int32" />
+      <Parameter Name="P_TYPE" Mode="In" Type="String" />
+      <Parameter Name="P_FREQUENCY" Mode="In" Type="Int32" />
+      <Parameter Name="P_CODE" Mode="In" Type="String" />
+      <Parameter Name="P_CLASSIFICATION_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_CLASSIFICATIONS_ID" Mode="In" Type="String" />
+      <Parameter Name="O_FREQUENCY" Mode="In" Type="Int32" />
+      <Parameter Name="O_CODE" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="contactnames" EntityType="ScivalModel.contactname" />
+    <FunctionImport Name="sci_contactinsert_s2">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_contactid" Mode="In" Type="Int32" />
+      <Parameter Name="p_type" Mode="In" Type="String" />
+      <Parameter Name="p_title" Mode="In" Type="String" />
+      <Parameter Name="p_telephone" Mode="In" Type="String" />
+      <Parameter Name="p_fax" Mode="In" Type="String" />
+      <Parameter Name="p_email" Mode="In" Type="String" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_website_text" Mode="In" Type="String" />
+      <Parameter Name="p_country" Mode="In" Type="String" />
+      <Parameter Name="p_room" Mode="In" Type="String" />
+      <Parameter Name="p_street" Mode="In" Type="String" />
+      <Parameter Name="p_state" Mode="In" Type="String" />
+      <Parameter Name="p_city" Mode="In" Type="String" />
+      <Parameter Name="p_postalcode" Mode="In" Type="String" />
+      <Parameter Name="p_prefix" Mode="In" Type="String" />
+      <Parameter Name="p_givenname" Mode="In" Type="String" />
+      <Parameter Name="p_middlename" Mode="In" Type="String" />
+      <Parameter Name="p_surname" Mode="In" Type="String" />
+      <Parameter Name="p_suffix" Mode="In" Type="String" />
+      <Parameter Name="p_LANG" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_contactlist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_iteminserttemp5">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_itemid" Mode="In" Type="Int32" />
+      <Parameter Name="p_RELTYPE" Mode="In" Type="String" />
+      <Parameter Name="p_DESCRIPTION" Mode="In" Type="String" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_urltext" Mode="In" Type="String" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_itemlist5">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_OP_estfundingins">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_currency" Mode="In" Type="String" />
+      <Parameter Name="p_amount" Mode="In" Type="String" />
+      <Parameter Name="p_amount_description" Mode="In" Type="String" />
+      <Parameter Name="p_total_amount" Mode="In" Type="Double" />
+      <Parameter Name="p_startdate" Mode="In" Type="DateTime" />
+      <Parameter Name="p_enddate" Mode="In" Type="DateTime" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_url_text" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="PAGE_MODE" Mode="In" Type="Int32" />
+      <Parameter Name="p_SEQUENCE_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_estfundinglist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="page_mode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="sci_binaryrelationtype" EntityType="ScivalModel.sci_binaryrelationtype" />
+    <EntitySet Name="sci_countries" EntityType="ScivalModel.sci_countries" />
+    <EntitySet Name="sci_countrygroup" EntityType="ScivalModel.sci_countrygroup" />
+    <FunctionImport Name="SCI_INDELIGIBILITY_DML_PRC23MA">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_NOT_SPECIFIED" Mode="In" Type="String" />
+      <Parameter Name="P_DEGREE" Mode="In" Type="String" />
+      <Parameter Name="P_GRADUATE" Mode="In" Type="String" />
+      <Parameter Name="P_NEWFACULTY" Mode="In" Type="String" />
+      <Parameter Name="P_UNDERGRADUATE" Mode="In" Type="String" />
+      <Parameter Name="P_NORESTRICTION" Mode="In" Type="String" />
+      <Parameter Name="P_COUNTRY" Mode="In" Type="String" />
+      <Parameter Name="P_CITIZENSHIP_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INDIVIDUALELIGIBILITY_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="P_MODE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_INDELIGIBILITY_DML_PRC24Ap">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_NOT_SPECIFIED" Mode="In" Type="String" />
+      <Parameter Name="P_DEGREE" Mode="In" Type="String" />
+      <Parameter Name="P_GRADUATE" Mode="In" Type="String" />
+      <Parameter Name="P_NEWFACULTY" Mode="In" Type="String" />
+      <Parameter Name="P_UNDERGRADUATE" Mode="In" Type="String" />
+      <Parameter Name="P_NORESTRICTION" Mode="In" Type="String" />
+      <Parameter Name="P_COUNTRY" Mode="In" Type="String" />
+      <Parameter Name="P_CITIZENSHIP_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INDIVIDUALELIGIBILITY_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="P_MODE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_INDELIGIBILITY_DML_PRC_s">
+      <Parameter Name="P_DELETEGROUPID" Mode="In" Type="Int32" />
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_NOT_SPECIFIED" Mode="In" Type="String" />
+      <Parameter Name="P_DEGREE" Mode="In" Type="String" />
+      <Parameter Name="P_GRADUATE" Mode="In" Type="String" />
+      <Parameter Name="P_NEWFACULTY" Mode="In" Type="String" />
+      <Parameter Name="P_UNDERGRADUATE" Mode="In" Type="String" />
+      <Parameter Name="P_NORESTRICTION" Mode="In" Type="String" />
+      <Parameter Name="P_COUNTRY" Mode="In" Type="String" />
+      <Parameter Name="P_CITIZENSHIP_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INDIVIDUALELIGIBILITY_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="P_MODE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_LIMITEDSUBMISSION_DML_PRC">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_NOT_SPECIFIED" Mode="In" Type="String" />
+      <Parameter Name="P_DISABILITIES" Mode="In" Type="String" />
+      <Parameter Name="P_INVITATIONONLY" Mode="In" Type="String" />
+      <Parameter Name="P_MEMBERONLY" Mode="In" Type="String" />
+      <Parameter Name="P_NOMINATIONONLY" Mode="In" Type="String" />
+      <Parameter Name="P_MINORTIES" Mode="In" Type="String" />
+      <Parameter Name="P_WOMEN" Mode="In" Type="String" />
+      <Parameter Name="P_NUMBEROFAPPLICANTSALLOWED" Mode="In" Type="Int32" />
+      <Parameter Name="P_LIMITEDSUBMISSION_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_RESTRICTIONS_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="P_MODE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_eclassificationins">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_TYPE" Mode="In" Type="String" />
+      <Parameter Name="p_ID" Mode="In" Type="String" />
+      <Parameter Name="p_ELIGIBLECLASSIFICATION_TEXT" Mode="In" Type="String" />
+      <Parameter Name="n_TYPE" Mode="In" Type="String" />
+      <Parameter Name="n_ID" Mode="In" Type="String" />
+      <Parameter Name="n_ELIGIBLECLASSIFICATION_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_COUNTRY_CODE" Mode="In" Type="String" />
+      <Parameter Name="P_STATE" Mode="In" Type="String" />
+      <Parameter Name="P_CITY" Mode="In" Type="String" />
+      <Parameter Name="p_region_specific_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_OP_ECLASSIFICATIONLIST">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_eligibilitylist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_ORGNELIGIBILITYY_DML_23MAY">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_NOT_SPECIFIED" Mode="In" Type="String" />
+      <Parameter Name="P_ACADEMIC" Mode="In" Type="String" />
+      <Parameter Name="P_COMMERCIAL" Mode="In" Type="String" />
+      <Parameter Name="P_GOVERNMENT" Mode="In" Type="String" />
+      <Parameter Name="P_NONPROFIT" Mode="In" Type="String" />
+      <Parameter Name="P_SME" Mode="In" Type="String" />
+      <Parameter Name="P_NORESTRICTION" Mode="In" Type="String" />
+      <Parameter Name="P_CITY" Mode="In" Type="String" />
+      <Parameter Name="P_STATE" Mode="In" Type="String" />
+      <Parameter Name="P_COUNTRY" Mode="In" Type="String" />
+      <Parameter Name="P_REGIONSPECIFIC_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_CITIZENSHIP_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_ORGANIZATIONELIGIBILITY_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="P_MODE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_ORGNELIGIBILITYY_DML_25APR">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_NOT_SPECIFIED" Mode="In" Type="String" />
+      <Parameter Name="P_ACADEMIC" Mode="In" Type="String" />
+      <Parameter Name="P_COMMERCIAL" Mode="In" Type="String" />
+      <Parameter Name="P_GOVERNMENT" Mode="In" Type="String" />
+      <Parameter Name="P_NONPROFIT" Mode="In" Type="String" />
+      <Parameter Name="P_SME" Mode="In" Type="String" />
+      <Parameter Name="P_NORESTRICTION" Mode="In" Type="String" />
+      <Parameter Name="P_CITY" Mode="In" Type="String" />
+      <Parameter Name="P_STATE" Mode="In" Type="String" />
+      <Parameter Name="P_COUNTRY" Mode="In" Type="String" />
+      <Parameter Name="P_REGIONSPECIFIC_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_CITIZENSHIP_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_ORGANIZATIONELIGIBILITY_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="P_MODE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_ORGNELIGIBILITYY_DML_S">
+      <Parameter Name="P_DELETEGROUPID" Mode="In" Type="Int32" />
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_NOT_SPECIFIED" Mode="In" Type="String" />
+      <Parameter Name="P_ACADEMIC" Mode="In" Type="String" />
+      <Parameter Name="P_COMMERCIAL" Mode="In" Type="String" />
+      <Parameter Name="P_GOVERNMENT" Mode="In" Type="String" />
+      <Parameter Name="P_NONPROFIT" Mode="In" Type="String" />
+      <Parameter Name="P_SME" Mode="In" Type="String" />
+      <Parameter Name="P_NORESTRICTION" Mode="In" Type="String" />
+      <Parameter Name="P_CITY" Mode="In" Type="String" />
+      <Parameter Name="P_STATE" Mode="In" Type="String" />
+      <Parameter Name="P_COUNTRY" Mode="In" Type="String" />
+      <Parameter Name="P_REGIONSPECIFIC_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_CITIZENSHIP_TEXT" Mode="In" Type="String" />
+      <Parameter Name="P_ELIGIBILITYCLASSIFICATION_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_ORGANIZATIONELIGIBILITY_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="P_MODE" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="sci_typeidvalues" EntityType="ScivalModel.sci_typeidvalues" />
+    <EntitySet Name="award_tables" EntityType="ScivalModel.award_tables" />
+    <EntitySet Name="recurrings" EntityType="ScivalModel.recurring" />
+    <EntitySet Name="sci_column_master" EntityType="ScivalModel.sci_column_master" />
+    <EntitySet Name="sci_tran_type_master" EntityType="ScivalModel.sci_tran_type_master" />
+    <FunctionImport Name="LoadLanguageData" />
+    <FunctionImport Name="opprotunity_loi_status">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_AWNEW">
+      <Parameter Name="P_FUNDINGBODYID" Mode="In" Type="Int32" />
+      <Parameter Name="P_USERID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_inserttimesheet41">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_OP_OPNEW">
+      <Parameter Name="P_FUNDINGBODYID" Mode="In" Type="Int32" />
+      <Parameter Name="P_USERID" Mode="In" Type="Int32" />
+      <Parameter Name="x_WORKFLOWID" Mode="Out" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_OP_OPPORTUNITYINS">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_FUNDINGBODYOPPORTUNITYID" Mode="In" Type="String" />
+      <Parameter Name="P_LIMITEDSUBMISSION" Mode="In" Type="String" />
+      <Parameter Name="P_TRUSTING" Mode="In" Type="String" />
+      <Parameter Name="P_COLLECTIONCODE" Mode="In" Type="String" />
+      <Parameter Name="P_HIDDEN" Mode="In" Type="String" />
+      <Parameter Name="P_NAME" Mode="In" Type="String" />
+      <Parameter Name="P_DUEDATEDESCRIPTION" Mode="In" Type="String" />
+      <Parameter Name="P_ELIGIBILITYDESCRIPTION" Mode="In" Type="String" />
+      <Parameter Name="P_ELIGIBILITYCATEGORY" Mode="In" Type="String" />
+      <Parameter Name="P_LINKTOFULLTEXT" Mode="In" Type="String" />
+      <Parameter Name="P_OPPORTUNITYSTATUS" Mode="In" Type="String" />
+      <Parameter Name="P_NUMBEROFAWARDS" Mode="In" Type="Int32" />
+      <Parameter Name="P_DURATION" Mode="In" Type="String" />
+      <Parameter Name="P_LIMITEDSUBMISSIONDESCRIPTION" Mode="In" Type="String" />
+      <Parameter Name="P_RAWTEXT" Mode="In" Type="String" />
+      <Parameter Name="p_id" Mode="In" Type="String" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_recordsource" Mode="In" Type="String" />
+      <Parameter Name="p_loi_mandatory" Mode="In" Type="String" />
+      <Parameter Name="p_preProposalMandatory" Mode="In" Type="String" />
+      <Parameter Name="p_repeatingOpportunity" Mode="In" Type="String" />
+      <Parameter Name="p_langRSource" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_relatedopplist_prc">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_pageurls">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_pagename" Mode="In" Type="String" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_rel_opportunity_dml_prc5">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_oppdbid" Mode="In" Type="String" />
+      <Parameter Name="p_RELTYPE" Mode="In" Type="Int32" />
+      <Parameter Name="p_Desc" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_timesheetstop">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+      <Parameter Name="p_transitionalid" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_remarks" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_timesheetstopcontinue_QA">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+      <Parameter Name="p_transitionalid" Mode="In" Type="Int32" />
+      <Parameter Name="p_remarks" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_timesheetstoP_CONTINUE">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+      <Parameter Name="p_transitionalid" Mode="In" Type="Int32" />
+      <Parameter Name="p_remarks" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="asjc_description_prc" ReturnType="Collection(ScivalModel.asjc_description_prc_Result)" />
+    <FunctionImport Name="awardssource_dml_prc">
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_status" Mode="In" Type="String" />
+      <Parameter Name="p_lastvisited" Mode="In" Type="DateTime" />
+      <Parameter Name="p_Workflow_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_award_source_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="awardssource_dml_prc_5">
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_status" Mode="In" Type="String" />
+      <Parameter Name="p_lastvisited" Mode="In" Type="DateTime" />
+      <Parameter Name="p_Workflow_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="p_name" Mode="In" Type="String" />
+      <Parameter Name="p_Frequency" Mode="In" Type="String" />
+      <Parameter Name="p_date_captureStart" Mode="In" Type="DateTime" />
+      <Parameter Name="p_date_captureEnd" Mode="In" Type="DateTime" />
+      <Parameter Name="p_Comment" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_award_source_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="fundingbodysource_dml_prc_5">
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_status" Mode="In" Type="String" />
+      <Parameter Name="p_Workflow_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="p_name" Mode="In" Type="String" />
+      <Parameter Name="p_Frequency" Mode="In" Type="String" />
+      <Parameter Name="p_date_captureStart" Mode="In" Type="DateTime" />
+      <Parameter Name="p_date_captureEnd" Mode="In" Type="DateTime" />
+      <Parameter Name="p_Comment" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_opp_source_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="get_funding_details">
+      <Parameter Name="P_WFID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Get_GroupCountries_prc1" ReturnType="Collection(ScivalModel.Get_GroupCountries_prc1_Result)">
+      <Parameter Name="p_countrygroupid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="get_opportunity_dateins_data5">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="opportunitiessource_dml_prc_5">
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_status" Mode="In" Type="String" />
+      <Parameter Name="p_Workflow_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="p_name" Mode="In" Type="String" />
+      <Parameter Name="p_Frequency" Mode="In" Type="String" />
+      <Parameter Name="p_date_captureStart" Mode="In" Type="DateTime" />
+      <Parameter Name="p_date_captureEnd" Mode="In" Type="DateTime" />
+      <Parameter Name="p_Comment" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_opp_source_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="opportunity_location_insupdel">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_country" Mode="In" Type="String" />
+      <Parameter Name="p_room" Mode="In" Type="String" />
+      <Parameter Name="p_street" Mode="In" Type="String" />
+      <Parameter Name="p_city" Mode="In" Type="String" />
+      <Parameter Name="p_state" Mode="In" Type="String" />
+      <Parameter Name="p_postalcode" Mode="In" Type="String" />
+      <Parameter Name="p_location_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="opportunity_location_insup_DEL">
+      <Parameter Name="P_DELETEGROUPID" Mode="In" Type="Int32" />
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_country" Mode="In" Type="String" />
+      <Parameter Name="p_room" Mode="In" Type="String" />
+      <Parameter Name="p_street" Mode="In" Type="String" />
+      <Parameter Name="p_city" Mode="In" Type="String" />
+      <Parameter Name="p_state" Mode="In" Type="String" />
+      <Parameter Name="p_postalcode" Mode="In" Type="String" />
+      <Parameter Name="p_location_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="opportunity_location_list">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="publicationsource_dml_prc_5">
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_status" Mode="In" Type="String" />
+      <Parameter Name="p_Workflow_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+      <Parameter Name="p_name" Mode="In" Type="String" />
+      <Parameter Name="p_Frequency" Mode="In" Type="String" />
+      <Parameter Name="p_date_captureStart" Mode="In" Type="DateTime" />
+      <Parameter Name="p_date_captureEnd" Mode="In" Type="DateTime" />
+      <Parameter Name="p_Comment" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_opp_source_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="save_funding_prc3">
+      <Parameter Name="P_fundingBodyProjectId_f" Mode="In" Type="String" />
+      <Parameter Name="P_Amount_f" Mode="In" Type="Double" />
+      <Parameter Name="P_ddlCurrency_f" Mode="In" Type="String" />
+      <Parameter Name="P_fundingBodyProjectId_h" Mode="In" Type="String" />
+      <Parameter Name="P_Amount_h" Mode="In" Type="Double" />
+      <Parameter Name="P_ddlCurrency_h" Mode="In" Type="String" />
+      <Parameter Name="P_acronym" Mode="In" Type="String" />
+      <Parameter Name="P_SrtDate" Mode="In" Type="DateTime" />
+      <Parameter Name="P_EndDateDate" Mode="In" Type="DateTime" />
+      <Parameter Name="P_Status" Mode="In" Type="String" />
+      <Parameter Name="P_link" Mode="In" Type="String" />
+      <Parameter Name="P_postofficeboxn" Mode="In" Type="String" />
+      <Parameter Name="P_Street" Mode="In" Type="String" />
+      <Parameter Name="P_locality" Mode="In" Type="String" />
+      <Parameter Name="P_region" Mode="In" Type="String" />
+      <Parameter Name="P_PostalCode" Mode="In" Type="String" />
+      <Parameter Name="P_COUNTRY" Mode="In" Type="String" />
+      <Parameter Name="P_COLUMN_DESC" Mode="In" Type="String" />
+      <Parameter Name="P_LANGUAGE_NAME" Mode="In" Type="String" />
+      <Parameter Name="P_COLUMN_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_TRAN_TYPE_ID" Mode="In" Type="Int32" />
+      <Parameter Name="P_WFID" Mode="In" Type="Int32" />
+      <Parameter Name="P_pagemode" Mode="In" Type="Int32" />
+      <Parameter Name="P_mode" Mode="In" Type="Int32" />
+      <Parameter Name="P_SEQUENCE_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sciFundedProgramType">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_id" Mode="In" Type="String" />
+      <Parameter Name="p_typeid" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_oldtypeid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sciFundedProgramType_win">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_id" Mode="In" Type="String" />
+      <Parameter Name="p_typeid" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_oldtypeid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_auto_lead_relorgs_prc">
+      <Parameter Name="p_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_moduleid" Mode="In" Type="Int32" />
+      <Parameter Name="p_flag" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_awardstatisticsinsert">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_currency" Mode="In" Type="String" />
+      <Parameter Name="p_totalfunding_text" Mode="In" Type="String" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_link_text" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_AWARDSTATISTICSlist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_ADDRESSINSDEL">
+      <Parameter Name="P_AFFILIATION_ID_IN" Mode="In" Type="Int32" />
+      <Parameter Name="P_FLAG_IN" Mode="In" Type="Int32" />
+      <Parameter Name="P_COUNTRY_IN" Mode="In" Type="String" />
+      <Parameter Name="P_ROOM_IN" Mode="In" Type="String" />
+      <Parameter Name="P_STREET_IN" Mode="In" Type="String" />
+      <Parameter Name="P_CITY_IN" Mode="In" Type="String" />
+      <Parameter Name="P_STATE_IN" Mode="In" Type="String" />
+      <Parameter Name="P_POSTALCODE_IN" Mode="In" Type="String" />
+      <Parameter Name="P_OLD_COUNTRY_IN" Mode="In" Type="String" />
+      <Parameter Name="P_OLD_ROOM_IN" Mode="In" Type="String" />
+      <Parameter Name="P_OLD_STREET_IN" Mode="In" Type="String" />
+      <Parameter Name="P_OLD_CITY_IN" Mode="In" Type="String" />
+      <Parameter Name="P_OLD_STATE_IN" Mode="In" Type="String" />
+      <Parameter Name="P_OLD_POSTALCODE_IN" Mode="In" Type="String" />
+      <Parameter Name="P_STATUS_OUT" Mode="Out" Type="Int32" />
+      <Parameter Name="P_ERROR_OUT" Mode="Out" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_ADDRESSLIST">
+      <Parameter Name="P_AFFILIATION_ID_IN" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_AWARDEEINSDEL_41">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INSDEL" Mode="In" Type="Int32" />
+      <Parameter Name="P_TYPE" Mode="In" Type="String" />
+      <Parameter Name="P_SCOPUSAUTHORID" Mode="In" Type="Int32" />
+      <Parameter Name="P_externalRes_Id" Mode="In" Type="String" />
+      <Parameter Name="P_ORCID" Mode="In" Type="String" />
+      <Parameter Name="P_INDEXEDNAME" Mode="In" Type="String" />
+      <Parameter Name="P_GIVENNAME" Mode="In" Type="String" />
+      <Parameter Name="P_INITIALS" Mode="In" Type="String" />
+      <Parameter Name="P_SURNAME" Mode="In" Type="String" />
+      <Parameter Name="p_AWARDEE_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_currency" Mode="In" Type="String" />
+      <Parameter Name="p_amount" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_AWARDEEINSDEL_50">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INSDEL" Mode="In" Type="Int32" />
+      <Parameter Name="P_TYPE" Mode="In" Type="String" />
+      <Parameter Name="P_SCOPUSAUTHORID" Mode="In" Type="Int32" />
+      <Parameter Name="P_externalRes_Id" Mode="In" Type="String" />
+      <Parameter Name="P_ORCID" Mode="In" Type="String" />
+      <Parameter Name="P_INDEXEDNAME" Mode="In" Type="String" />
+      <Parameter Name="P_GIVENNAME" Mode="In" Type="String" />
+      <Parameter Name="P_INITIALS" Mode="In" Type="String" />
+      <Parameter Name="P_SURNAME" Mode="In" Type="String" />
+      <Parameter Name="p_AWARDEE_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_currency" Mode="In" Type="String" />
+      <Parameter Name="p_amount" Mode="In" Type="Int32" />
+      <Parameter Name="P_link" Mode="In" Type="String" />
+      <Parameter Name="P_DUNS" Mode="In" Type="String" />
+      <Parameter Name="P_ROR" Mode="In" Type="String" />
+      <Parameter Name="P_WIKIDATA" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_Aw_awardeelist50">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_aw_awradins50">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_FUNDINGBODYAWARDID" Mode="In" Type="String" />
+      <Parameter Name="p_TYPE" Mode="In" Type="String" />
+      <Parameter Name="p_TRUSTING" Mode="In" Type="String" />
+      <Parameter Name="p_COLLECTIONCODE" Mode="In" Type="String" />
+      <Parameter Name="p_HIDDEN" Mode="In" Type="String" />
+      <Parameter Name="p_NAME" Mode="In" Type="String" />
+      <Parameter Name="p_STARTDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="p_LASTAMENDEDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="p_ENDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="p_ABSTRACT" Mode="In" Type="String" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_recordsource" Mode="In" Type="String" />
+      <Parameter Name="p_AwardNoticeDate" Mode="In" Type="DateTime" />
+      <Parameter Name="p_PublishedDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_FAXINSDEL">
+      <Parameter Name="P_AFFILIATIONID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INSDEL" Mode="In" Type="Int32" />
+      <Parameter Name="P_FAX" Mode="In" Type="String" />
+      <Parameter Name="X_FAX" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_faxlist">
+      <Parameter Name="P_AFFILIATIONID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_INSTITUTIONINSDEL41">
+      <Parameter Name="P_AWARDEEID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INSDEL" Mode="In" Type="Int32" />
+      <Parameter Name="P_SCOPUSINSTITUTIONID" Mode="In" Type="Int32" />
+      <Parameter Name="P_ORG" Mode="In" Type="String" />
+      <Parameter Name="P_DEPT" Mode="In" Type="String" />
+      <Parameter Name="P_STARTDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="P_ENDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="P_EMAIL" Mode="In" Type="String" />
+      <Parameter Name="P_WEBPAGE" Mode="In" Type="String" />
+      <Parameter Name="P_EXTAFFI_Id" Mode="In" Type="String" />
+      <Parameter Name="P_AFFILIATION_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_INSTITUTIONINSDEL50">
+      <Parameter Name="P_AWARDEEID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INSDEL" Mode="In" Type="Int32" />
+      <Parameter Name="P_SCOPUSINSTITUTIONID" Mode="In" Type="Int32" />
+      <Parameter Name="P_ORG" Mode="In" Type="String" />
+      <Parameter Name="P_DEPT" Mode="In" Type="String" />
+      <Parameter Name="P_STARTDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="P_ENDDATE" Mode="In" Type="DateTime" />
+      <Parameter Name="P_EMAIL" Mode="In" Type="String" />
+      <Parameter Name="P_WEBPAGE" Mode="In" Type="String" />
+      <Parameter Name="P_EXTAFFI_Id" Mode="In" Type="String" />
+      <Parameter Name="P_awardeePersonId" Mode="In" Type="String" />
+      <Parameter Name="P_familyName" Mode="In" Type="String" />
+      <Parameter Name="P_fundingBodyPersonId" Mode="In" Type="String" />
+      <Parameter Name="P_givenName" Mode="In" Type="String" />
+      <Parameter Name="P_ORCID" Mode="In" Type="String" />
+      <Parameter Name="P_initials" Mode="In" Type="String" />
+      <Parameter Name="P_role" Mode="In" Type="String" />
+      <Parameter Name="P_name" Mode="In" Type="String" />
+      <Parameter Name="P_AFFILIATION_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_INSTITUTIONLIST">
+      <Parameter Name="P_AWARDEEID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_aw_managerlist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_aw_QCcheckxml50_4">
+      <Parameter Name="p_tran_type_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_aw_research_output">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_TELINSDEL">
+      <Parameter Name="P_AFFILIATIONID" Mode="In" Type="Int32" />
+      <Parameter Name="P_INSDEL" Mode="In" Type="Int32" />
+      <Parameter Name="P_TELEPHONE" Mode="In" Type="String" />
+      <Parameter Name="X_TELEPHONE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_AW_TELlist">
+      <Parameter Name="P_AFFILIATIONID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_CheckOppStatus">
+      <Parameter Name="p_WorkflowID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_check_award_duplicate">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+      <Parameter Name="p_transitionalid" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_QueryMode" Mode="In" Type="Int32" />
+      <Parameter Name="p_TaskName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_classificationinsert">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_type" Mode="In" Type="String" />
+      <Parameter Name="p_FREQUENCY" Mode="In" Type="Int32" />
+      <Parameter Name="p_CODE" Mode="In" Type="String" />
+      <Parameter Name="p_CLASSIFICATION_TEXT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_CURRENCYTYPElist" />
+    <FunctionImport Name="sci_establishmentinsert">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_ESTABLISHMENTDATE" Mode="In" Type="String" />
+      <Parameter Name="p_ESTABLISHMENTCITY" Mode="In" Type="String" />
+      <Parameter Name="p_ESTABLISHMENTSTATE" Mode="In" Type="String" />
+      <Parameter Name="p_ESTABLISHMENTCOUNTRYCODE" Mode="In" Type="String" />
+      <Parameter Name="p_ESTABLISHMENTDESCRIPTION" Mode="In" Type="String" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_establishmentlist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_fiscalclosedate">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+      <Parameter Name="p_FINANCIALINFO_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_fiscalclosedate_column" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="sci_FundedProgramTypelist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_fundingbase_41">
+      <Parameter Name="p_FUNDINGBODYID" Mode="InOut" Type="Int32" />
+      <Parameter Name="p_ORGDBID" Mode="In" Type="Int32" />
+      <Parameter Name="p_TYPE" Mode="In" Type="String" />
+      <Parameter Name="p_TRUSTING" Mode="In" Type="String" />
+      <Parameter Name="p_COUNTRY" Mode="In" Type="String" />
+      <Parameter Name="p_STATE" Mode="In" Type="String" />
+      <Parameter Name="p_COLLECTIONCODE" Mode="In" Type="String" />
+      <Parameter Name="p_HIDDEN" Mode="In" Type="String" />
+      <Parameter Name="p_CANONICALNAME" Mode="In" Type="String" />
+      <Parameter Name="p_PREFERREDORGNAME" Mode="In" Type="String" />
+      <Parameter Name="p_CONTEXTNAME" Mode="In" Type="String" />
+      <Parameter Name="p_ABBREVNAME" Mode="In" Type="String" />
+      <Parameter Name="p_ELIGIBILITYDESCRIPTION" Mode="In" Type="String" />
+      <Parameter Name="p_IDsubtypeid" Mode="In" Type="String" />
+      <Parameter Name="p_SUBTYPE_TEXT" Mode="In" Type="String" />
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+      <Parameter Name="p_projectname" Mode="In" Type="String" />
+      <Parameter Name="p_recordsource" Mode="In" Type="String" />
+      <Parameter Name="p_awardsuccesrate" Mode="In" Type="Double" />
+      <Parameter Name="p_comment_desc" Mode="In" Type="String" />
+      <Parameter Name="p_defunct" Mode="In" Type="String" />
+      <Parameter Name="p_crossrefid" Mode="In" Type="String" />
+      <Parameter Name="P_extendedRecord" Mode="In" Type="String" />
+      <Parameter Name="p_capop" Mode="In" Type="String" />
+      <Parameter Name="p_oppsup" Mode="In" Type="String" />
+      <Parameter Name="p_CapAwards" Mode="In" Type="String" />
+      <Parameter Name="p_AwardsSup" Mode="In" Type="String" />
+      <Parameter Name="p_tierinfo" Mode="In" Type="String" />
+      <Parameter Name="p_profit" Mode="In" Type="String" />
+      <Parameter Name="p_oppFrequency" Mode="In" Type="String" />
+      <Parameter Name="p_awFrequency" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_getfiscalclosedate">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_GetHiddenStatus">
+      <Parameter Name="p_WorkId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_GetLanguageDetails">
+      <Parameter Name="p_langLength" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_GETOPPORTUNITYDATES_5">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_gettaxids">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_gettaxidtype" />
+    <FunctionImport Name="sci_GetWorkFlowDetails">
+      <Parameter Name="p_WorkflowId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_iteminserttemp">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_itemid" Mode="In" Type="Int32" />
+      <Parameter Name="p_RELTYPE" Mode="In" Type="String" />
+      <Parameter Name="p_DESCRIPTION" Mode="In" Type="String" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_urltext" Mode="In" Type="String" />
+      <Parameter Name="p_lang" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_itemlist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_language_detail_dml_prc">
+      <Parameter Name="tran_id_in" Mode="In" Type="Int32" />
+      <Parameter Name="scival_id_in" Mode="In" Type="Int32" />
+      <Parameter Name="column_desc_in" Mode="In" Type="String" />
+      <Parameter Name="column_id_in" Mode="In" Type="Int32" />
+      <Parameter Name="moduleid_in" Mode="In" Type="String" />
+      <Parameter Name="language_id_in" Mode="In" Type="Int32" />
+      <Parameter Name="tran_type_id_in" Mode="In" Type="Int32" />
+      <Parameter Name="flag_in" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_managerinsdel_1">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_contactid" Mode="In" Type="Int32" />
+      <Parameter Name="p_type" Mode="In" Type="String" />
+      <Parameter Name="p_title" Mode="In" Type="String" />
+      <Parameter Name="p_telephone" Mode="In" Type="String" />
+      <Parameter Name="p_fax" Mode="In" Type="String" />
+      <Parameter Name="p_email" Mode="In" Type="String" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_website_text" Mode="In" Type="String" />
+      <Parameter Name="p_MANAGERID" Mode="In" Type="Int32" />
+      <Parameter Name="p_country" Mode="In" Type="String" />
+      <Parameter Name="p_room" Mode="In" Type="String" />
+      <Parameter Name="p_street" Mode="In" Type="String" />
+      <Parameter Name="p_state" Mode="In" Type="String" />
+      <Parameter Name="p_city" Mode="In" Type="String" />
+      <Parameter Name="p_postalcode" Mode="In" Type="String" />
+      <Parameter Name="p_prefix" Mode="In" Type="String" />
+      <Parameter Name="p_givenname" Mode="In" Type="String" />
+      <Parameter Name="p_middlename" Mode="In" Type="String" />
+      <Parameter Name="p_surname" Mode="In" Type="String" />
+      <Parameter Name="p_suffix" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_mandatory_section">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_delete_date_prc">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="p_date_type" Mode="In" Type="Int32" />
+      <Parameter Name="p_sequence_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_OP_ESTFUNDINGINS_y">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_currency" Mode="In" Type="String" />
+      <Parameter Name="p_amount" Mode="In" Type="String" />
+      <Parameter Name="p_amount_description" Mode="In" Type="String" />
+      <Parameter Name="p_total_amount" Mode="In" Type="Double" />
+      <Parameter Name="p_startdate" Mode="In" Type="DateTime" />
+      <Parameter Name="p_enddate" Mode="In" Type="DateTime" />
+      <Parameter Name="p_url" Mode="In" Type="String" />
+      <Parameter Name="p_url_text" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="Int32" />
+      <Parameter Name="PAGE_MODE" Mode="In" Type="Int32" />
+      <Parameter Name="p_SEQUENCE_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_opportunity_dateins_50">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="P_date" Mode="In" Type="DateTime" />
+      <Parameter Name="P_date_type" Mode="In" Type="Int32" />
+      <Parameter Name="P_date_sequence" Mode="In" Type="Int32" />
+      <Parameter Name="p_date_remarks" Mode="In" Type="String" />
+      <Parameter Name="p_date_Lang" Mode="In" Type="String" />
+      <Parameter Name="p_URL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_OP_OPPORTUNITY_date_del">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_QCcheck_final_S50_Final">
+      <Parameter Name="p_tran_type_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_recurringIns">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+      <Parameter Name="p_recurring" Mode="In" Type="String" />
+      <Parameter Name="P_UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_OP_RELATEDORGLIST_y">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_relatedprogeam">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_op_relatedprogeamins">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_HIERARCHY" Mode="In" Type="String" />
+      <Parameter Name="p_RELATEDPROGRAMTEXT" Mode="In" Type="String" />
+      <Parameter Name="p_RELTYPE" Mode="In" Type="String" />
+      <Parameter Name="x_id" Mode="In" Type="Int32" />
+      <Parameter Name="x_RELTYPE" Mode="In" Type="String" />
+      <Parameter Name="x_RELATEDPROGRAMTEXT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_OP_RELORGINS_yy">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_amount" Mode="In" Type="Double" />
+      <Parameter Name="p_currency" Mode="In" Type="String" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_HIERARCHY" Mode="In" Type="String" />
+      <Parameter Name="p_orgdbid" Mode="In" Type="String" />
+      <Parameter Name="p_RELTYPE" Mode="In" Type="String" />
+      <Parameter Name="p_relatedorgsid" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_PROC_AWARDBASE">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_PROC_AWARDPROGRESS">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_proc_fundingbodyprogres_S5">
+      <Parameter Name="p_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_Publication_out_insupdel">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_publication_ID" Mode="In" Type="Int32" />
+      <Parameter Name="p_FundingBodyProjectId" Mode="In" Type="String" />
+      <Parameter Name="p_PublishedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="p_PublicationURL" Mode="In" Type="String" />
+      <Parameter Name="p_PublicationOutputId" Mode="In" Type="Int32" />
+      <Parameter Name="p_IngestionId" Mode="In" Type="String" />
+      <Parameter Name="p_JournalTitle" Mode="In" Type="String" />
+      <Parameter Name="p_Journalidentifier" Mode="In" Type="String" />
+      <Parameter Name="p_Authors" Mode="In" Type="String" />
+      <Parameter Name="p_Description" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_relatedorglist">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sci_relatedorgsinsert">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_HIERARCHY" Mode="In" Type="String" />
+      <Parameter Name="p_orgdbid" Mode="In" Type="String" />
+      <Parameter Name="p_RELTYPE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_related_vendor_dml_prc">
+      <Parameter Name="p_rel_orgs_vendorid" Mode="In" Type="Int32" />
+      <Parameter Name="p_vendor_id" Mode="In" Type="Int32" />
+      <Parameter Name="p_vendor_fundingbody_name" Mode="In" Type="String" />
+      <Parameter Name="p_mode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sci_taxids">
+      <Parameter Name="p_workflowid" Mode="In" Type="Int32" />
+      <Parameter Name="p_insdel" Mode="In" Type="Int32" />
+      <Parameter Name="p_type" Mode="In" Type="String" />
+      <Parameter Name="p_taxids_text" Mode="In" Type="String" />
+      <Parameter Name="p_userid" Mode="In" Type="Int32" />
+      <Parameter Name="p_FINANCIALINFO_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SCI_UPD_OPP_DATE_FLG">
+      <Parameter Name="P_WORKFLOWID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sci_proc_gettaskforuser_Result" />
+  <EntityType Name="opportunity_master">
+    <Key>
+      <PropertyRef Name="OPPORTUNITYID" />
+    </Key>
+    <Property Name="OPPORTUNITYID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODYID" Type="Int64" />
+    <Property Name="OPPORTUNITYNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CREATEDDATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="CYCLECOMPLETIONDATE" Type="DateTime" />
+    <Property Name="CYCLECOMPLETEDBY" Type="Int64" />
+    <Property Name="LASTUPDATEDDATE" Type="DateTime" />
+    <Property Name="LASTUPDATEDBY" Type="Int64" />
+    <Property Name="CYCLE" Type="Int64" />
+    <Property Name="STATUSCODE" Type="Int64" />
+    <Property Name="RUSH" Type="Int64" />
+    <Property Name="RUSHBY" Type="Int64" />
+    <Property Name="ALLOCATIONMODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ISAUTOMATED" Type="Int64" />
+  </EntityType>
+  <EntityType Name="sci_expire_alert">
+    <Key>
+      <PropertyRef Name="OPPORTUNITYID" />
+    </Key>
+    <Property Name="OPPORTUNITYID" Type="Int64" Nullable="false" />
+    <Property Name="DUEDATE" Type="DateTime" />
+    <Property Name="CREATEDDATE" Type="DateTime" />
+    <Property Name="FLAG" Type="Int64" />
+  </EntityType>
+  <EntityType Name="sci_moduletaskconfig">
+    <Key>
+      <PropertyRef Name="MODULEID" />
+      <PropertyRef Name="TASKID" />
+    </Key>
+    <Property Name="MODULEID" Type="Int64" Nullable="false" />
+    <Property Name="TASKID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_usertask">
+    <Key>
+      <PropertyRef Name="USERID" />
+      <PropertyRef Name="TASKID" />
+      <PropertyRef Name="MODULEID" />
+    </Key>
+    <Property Name="USERID" Type="Int64" Nullable="false" />
+    <Property Name="TASKID" Type="Int64" Nullable="false" />
+    <Property Name="MODULEID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="sci_proc_gettaskforuser_Result1" />
+  <ComplexType Name="sci_proc_gettaskforuser_Result2" />
+  <ComplexType Name="sci_proc_gettaskforuser_Result3" />
+  <EntityType Name="userassignment">
+    <Key>
+      <PropertyRef Name="AID" />
+    </Key>
+    <Property Name="AID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODYID" Type="Int64" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="TASKID" Type="Int64" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="ASSIGNEDBY" Type="Int64" />
+    <Property Name="ASSIGNDATE" Type="DateTime" />
+    <Property Name="CYCLE" Type="Int64" />
+    <Property Name="OPPORTUNITYID" Type="Int64" />
+    <Property Name="AWARDID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="fundingbody">
+    <Key>
+      <PropertyRef Name="FUNDINGBODY_ID" />
+    </Key>
+    <Property Name="FUNDINGBODY_ID" Type="Int64" Nullable="false" />
+    <Property Name="ORGDBID" Type="Int32" />
+    <Property Name="TYPE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TRUSTING" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="COLLECTIONCODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="HIDDEN" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CANONICALNAME" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="PREFERREDORGNAME" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="CONTEXTNAME" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ABBREVNAME" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ELIGIBILITYDESCRIPTION" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="RECORDSOURCE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AWARDSUCCESRATE" Type="Decimal" />
+    <Property Name="COMMENT_DESC" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="DEFUNCT" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CROSSREFID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="EXTENDEDRECORD" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CAPTUREAWARDS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CAPTUREOPPORTUNITIES" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TIERINFO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AWARDSSUPPLIER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OPPORTUNITIESSUPPLIER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AWARDSFREQUENCY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OPPORTUNITIESFREQUENCY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PROFIT" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_urlretain">
+    <Key>
+      <PropertyRef Name="ORGDBID" />
+    </Key>
+    <Property Name="ORGDBID" Type="Int64" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="GROUPCOUNTER" Type="Int64" />
+    <Property Name="BATCH" Type="Int64" />
+    <Property Name="URLID" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_urls">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="PAGENAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="URL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="ISACTIVE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="DELETEDBY" Type="Int64" />
+  </EntityType>
+  <EntityType Name="sci_groupurl">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="URLID" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="CREATEDATE" Type="DateTime" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="BATCH" Type="Int64" />
+    <Property Name="GROUP_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="award">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODYAWARDID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TRUSTING" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="COLLECTIONCODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="HIDDEN" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="STARTDATE" Type="DateTime" />
+    <Property Name="LASTAMENDEDDATE" Type="DateTime" />
+    <Property Name="ENDDATE" Type="DateTime" />
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="ABSTRACT" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="RECORDSOURCE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AWARDNOTICEDATE" Type="DateTime" />
+    <Property Name="APTARAIDENTIFIER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="about">
+    <Key>
+      <PropertyRef Name="ABOUT_ID" />
+    </Key>
+    <Property Name="ABOUT_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="classificationgroup">
+    <Key>
+      <PropertyRef Name="CLASSIFICATIONGROUP_ID" />
+    </Key>
+    <Property Name="CLASSIFICATIONGROUP_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="contactinfo">
+    <Key>
+      <PropertyRef Name="CONTACTINFO_ID" />
+    </Key>
+    <Property Name="CONTACTINFO_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="CONTACTS_ID" />
+    </Key>
+    <Property Name="CONTACTS_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="fundedprogramstype">
+    <Key>
+      <PropertyRef Name="FUNDEDPROGRAMSTYPES_ID" />
+    </Key>
+    <Property Name="FUNDEDPROGRAMSTYPES_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="relatedorg">
+    <Key>
+      <PropertyRef Name="RELATEDORGS_ID" />
+    </Key>
+    <Property Name="HIERARCHY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="RELATEDORGS_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="fundingpolicy">
+    <Key>
+      <PropertyRef Name="FUNDINGPOLICY_ID" />
+    </Key>
+    <Property Name="FUNDINGPOLICY_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sci_expired_opplist">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="MODULENAME" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="OPPNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="FUNDINGBODYNAME" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="TASKNAME" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="TASKID" Type="Int64" />
+    <Property Name="CYCLE" Type="Int64" />
+    <Property Name="DUEDATE" Type="DateTime" />
+    <Property Name="CID" Type="Int64" />
+    <Property Name="LOGDATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FLAG" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_urlmaster">
+    <Key>
+      <PropertyRef Name="URLID" />
+    </Key>
+    <Property Name="ORGDBID" Type="Int64" />
+    <Property Name="URLID" Type="Int64" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="STATUS" Type="Int64" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="CREATEDBY" Type="Int64" />
+    <Property Name="RETAIN_DELETEBY" Type="Int64" />
+    <Property Name="LASTUPDATEDBY" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" />
+    <Property Name="RETAIN_DELETEDATE" Type="DateTime" />
+    <Property Name="LASTUPDATEDDATE" Type="DateTime" />
+    <Property Name="BATCH" Type="Int64" />
+  </EntityType>
+  <EntityType Name="temp_scivalurl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="URL" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="sci_proc_gettaskforuser1_Result" />
+  <EntityType Name="sci_defaulttemplate">
+    <Key>
+      <PropertyRef Name="TEMPLATEID" />
+    </Key>
+    <Property Name="MODULEID" Type="Int64" Nullable="false" />
+    <Property Name="TEMPLATEID" Type="Int64" Nullable="false" />
+    <Property Name="ACTIVE" Type="Int64" Nullable="false" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="UPDATEDDATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sci_workflowtemplate">
+    <Key>
+      <PropertyRef Name="TEMPLATEID" />
+    </Key>
+    <Property Name="TEMPLATEID" Type="Int64" Nullable="false" />
+    <Property Name="TASKID" Type="Int64" />
+    <Property Name="SEQUENCE" Type="Int64" />
+  </EntityType>
+  <EntityType Name="changehistory">
+    <Key>
+      <PropertyRef Name="CHANGEHISTORY_ID" />
+    </Key>
+    <Property Name="CHANGEHISTORY_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="sci_related_opportunity">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="REL_OPP_ID" Type="Int64" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="RELATED_OPP_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OPPORTUNITYNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="RELAION_NAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="synopsis">
+    <Key>
+      <PropertyRef Name="SYNOPSIS_ID" />
+    </Key>
+    <Property Name="SYNOPSIS_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="RELATEDITEMS_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="opp_subjectmatter">
+    <Key>
+      <PropertyRef Name="SUBJECTMATTER_ID" />
+    </Key>
+    <Property Name="SUBJECTMATTER_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="awardceiling">
+    <Key>
+      <PropertyRef Name="AWARDCEILING_TEXT" />
+    </Key>
+    <Property Name="CURRENCY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AWARDCEILING_TEXT" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="eligibilityclassification">
+    <Key>
+      <PropertyRef Name="ELIGIBILITYCLASSIFICATION_ID" />
+    </Key>
+    <Property Name="TYPE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ID" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ELIGIBILITYCLASSIFICATION_TEXT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="REGION_SPECIFIC_ID" Type="Int64" />
+    <Property Name="ELIGIBILITYCLASSIFICATION_ID" Type="Int64" Nullable="false" />
+    <Property Name="LANG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="eligibilitydescription">
+    <Key>
+      <PropertyRef Name="ELIGIBILITYDESCRIPTION_ID" />
+    </Key>
+    <Property Name="ELIGIBILITYDESCRIPTION_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="estimatedamountdescription">
+    <Key>
+      <PropertyRef Name="ESTIMATEDAMOUNTDESCRIPTION_ID" />
+    </Key>
+    <Property Name="ESTIMATEDAMOUNTDESCRIPTION_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="estimatedfunding">
+    <Key>
+      <PropertyRef Name="OPPORTUNITY_ID" />
+    </Key>
+    <Property Name="CURRENCY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ESTIMATEDFUNDING_TEXT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" Nullable="false" />
+    <Property Name="AMOUNT_DESCRIPTION" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="limitedsubmissiondescription">
+    <Key>
+      <PropertyRef Name="LIMITEDSUBMISSIONDESC_ID" />
+    </Key>
+    <Property Name="LIMITEDSUBMISSIONDESC_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="opportunity_location">
+    <Key>
+      <PropertyRef Name="LOCATION_ID" />
+    </Key>
+    <Property Name="LOCATION_ID" Type="Int64" Nullable="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ROOM" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="STREET" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="POSTALCODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sci_timesheetremarks">
+    <Key>
+      <PropertyRef Name="TRANSITIONALID" />
+    </Key>
+    <Property Name="WORKFLOWID" Type="Int64" />
+    <Property Name="TRANSITIONALID" Type="Int64" Nullable="false" />
+    <Property Name="STATUSCODE" Type="Int64" />
+    <Property Name="REMARKS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="sci_timesheet">
+    <Key>
+      <PropertyRef Name="TRANSITIONALID" />
+    </Key>
+    <Property Name="TRANSITIONALID" Type="Int64" Nullable="false" />
+    <Property Name="WORKFLOWID" Type="Int64" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="ID" Type="Int64" />
+    <Property Name="TASKID" Type="Int64" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="CYCLEID" Type="Int64" />
+    <Property Name="STATUSCODE" Type="Int64" />
+    <Property Name="STARTDATE" Type="DateTime" />
+    <Property Name="ENDDATE" Type="DateTime" />
+    <Property Name="IDLETIME" Type="Int64" />
+    <Property Name="ISERROR" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="awardee">
+    <Key>
+      <PropertyRef Name="AWARDEES_ID" />
+    </Key>
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="AWARDEES_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="awardmanager">
+    <Key>
+      <PropertyRef Name="AWARDMANAGERS_ID" />
+    </Key>
+    <Property Name="AWARDMANAGERS_ID" Type="Int64" Nullable="false" />
+    <Property Name="AWARD_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="relateditem">
+    <Key>
+      <PropertyRef Name="RELATEDITEMS_ID" />
+    </Key>
+    <Property Name="RELATEDITEMS_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="AWARD_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="relatedprogram">
+    <Key>
+      <PropertyRef Name="RELATEDPROGRAMS_ID" />
+    </Key>
+    <Property Name="HIERARCHY" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="RELATEDPROGRAMS_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="AWARD_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="sci_scholarly_output">
+    <Key>
+      <PropertyRef Name="SCHOLARLY_ID" />
+    </Key>
+    <Property Name="SCHOLARLY_ID" Type="Int64" Nullable="false" />
+    <Property Name="OUTPUT_ITEM_TYPE" Type="Int64" />
+    <Property Name="ITEM_TYPE_TYPE" Type="Int64" />
+    <Property Name="RELATION_TYPE" Type="Int64" />
+    <Property Name="ITEM_TYPE_TEXT" Type="String" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="amount">
+    <Key>
+      <PropertyRef Name="AMOUNT_TEXT" />
+      <PropertyRef Name="AWARD_ID" />
+    </Key>
+    <Property Name="CURRENCY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AMOUNT_TEXT" Type="Int64" Nullable="false" />
+    <Property Name="AWARD_ID" Type="Int64" Nullable="false" />
+    <Property Name="AWARDEE_ID" Type="Int64" />
+    <Property Name="CREATE_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="award_location">
+    <Key>
+      <PropertyRef Name="LOCATION_ID" />
+    </Key>
+    <Property Name="LOCATION_ID" Type="Int64" Nullable="false" />
+    <Property Name="COUNTRYTEST" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ROOM" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="STREET" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="POSTALCODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="classification">
+    <Key>
+      <PropertyRef Name="CLASSIFICATIONS_ID" />
+    </Key>
+    <Property Name="TYPE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CLASSIFICATIONS_ID" Type="Int64" Nullable="false" />
+    <Property Name="CLASSIFICATIONGROUP_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="fundedprojectdetail">
+    <Key>
+      <PropertyRef Name="FUND_ID" />
+    </Key>
+    <Property Name="FUND_ID" Type="Int64" Nullable="false" />
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="ACRONYM" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BUDGET_AMOUNT" Type="Int64" />
+    <Property Name="BUDGET_CURRENCY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ENDDATE" Type="DateTime" />
+    <Property Name="FUNDINGBODYPROJECTID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="STARTDATE" Type="DateTime" />
+    <Property Name="STATUS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LOCALITY" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="POSTALCODE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="REGION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="STREET" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="POSTOFFICEBOXNUMBER" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LINK" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="instalmentandamount">
+    <Key>
+      <PropertyRef Name="INSTALLMENTANDAMOUNT_ID" />
+    </Key>
+    <Property Name="INSTALLMENTANDAMOUNT_ID" Type="Int64" Nullable="false" />
+    <Property Name="AWARD_ID" Type="Int64" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="keyword">
+    <Key>
+      <PropertyRef Name="KEYWORDS_ID" />
+    </Key>
+    <Property Name="KEYWORDS_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="AWARD_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="researchoutcome">
+    <Key>
+      <PropertyRef Name="RESEARCHOUTCOME_ID" />
+    </Key>
+    <Property Name="RESEARCHOUTCOME_ID" Type="Int64" Nullable="false" />
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="revisionhistory">
+    <Key>
+      <PropertyRef Name="REVISIONHISTORY_ID" />
+    </Key>
+    <Property Name="STATUS" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="REVISIONHISTORY_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" />
+    <Property Name="AWARD_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="sci_asjcdescription">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="DETAIL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_countrycodes">
+    <Key>
+      <PropertyRef Name="COUNTRYID" />
+    </Key>
+    <Property Name="COUNTRYID" Type="Int64" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="LCODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="SCODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="REGION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SUBREGION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_language_master">
+    <Key>
+      <PropertyRef Name="LANGUAGE_ID" />
+    </Key>
+    <Property Name="LANGUAGE_ID" Type="Int64" Nullable="false" />
+    <Property Name="LANGUAGE_GROUP_ID" Type="Int64" />
+    <Property Name="LANGUAGE_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LANGUAGE_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CODE_LENGTH" Type="Int64" />
+    <Property Name="PRIORITY" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sci_statecodes">
+    <Key>
+      <PropertyRef Name="STATEID" />
+    </Key>
+    <Property Name="STATEID" Type="Int64" Nullable="false" />
+    <Property Name="COUNTRYID" Type="Int64" />
+    <Property Name="NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="classification1">
+    <Key>
+      <PropertyRef Name="CLASSIFICATIONS_ID" />
+    </Key>
+    <Property Name="FREQUENCY" Type="Int64" Nullable="false" />
+    <Property Name="CODE" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CLASSIFICATION_TEXT" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CLASSIFICATIONS_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fundedsubproject">
+    <Key>
+      <PropertyRef Name="FUND_ID" />
+    </Key>
+    <Property Name="SUBFUND_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUND_ID" Type="Int64" Nullable="false" />
+    <Property Name="AWARD_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODYPROJECTID" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AMOUNT" Type="Int64" />
+    <Property Name="CURRENCY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="link">
+    <Key>
+      <PropertyRef Name="ITEM_ID" />
+    </Key>
+    <Property Name="URL" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="LINK_TEXT" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ITEM_ID" Type="Int64" Nullable="false" />
+    <Property Name="AWARDSTATISTICS_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="relatedfundingbody">
+    <Key>
+      <PropertyRef Name="RELATEDORGSSS_ID" />
+    </Key>
+    <Property Name="HIERARCHY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RELEATEDFUNDINGBODIES_ID" Type="Int64" />
+    <Property Name="AWARD_ID" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RELATEDORGSSS_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="awardfloor">
+    <Key>
+      <PropertyRef Name="CURRENCY" />
+      <PropertyRef Name="OPPORTUNITY_ID" />
+    </Key>
+    <Property Name="CURRENCY" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ESTIMATEDFUNDING_TEXT" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fundingbodyamount">
+    <Key>
+      <PropertyRef Name="AMOUNT" />
+      <PropertyRef Name="RELEATEDFUNDINGBODIES_ID" />
+    </Key>
+    <Property Name="AMOUNT" Type="Decimal" Nullable="false" />
+    <Property Name="CURRENCY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RELEATEDFUNDINGBODIES_ID" Type="Int64" Nullable="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="installment">
+    <Key>
+      <PropertyRef Name="INSTALLMENTANDAMOUNT_ID" />
+    </Key>
+    <Property Name="INSTALLMENTANDAMOUNT_ID" Type="Int64" Nullable="false" />
+    <Property Name="INSTALLMENTSTART_DATE" Type="DateTime" />
+    <Property Name="INSTALLMENTEND_DATE" Type="DateTime" />
+    <Property Name="AMOUNT" Type="Decimal" />
+    <Property Name="CURRENCY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" />
+    <Property Name="SEQUENCE_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="keyword1">
+    <Key>
+      <PropertyRef Name="KEYWORDS_ID" />
+    </Key>
+    <Property Name="KEYWORD_COLUMN" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="KEYWORDS_ID" Type="Int64" Nullable="false" />
+    <Property Name="LANG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="org">
+    <Key>
+      <PropertyRef Name="ORGDBID" />
+    </Key>
+    <Property Name="ORGDBID" Type="Int64" Nullable="false" />
+    <Property Name="RELTYPE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ORG_TEXT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="RELATEDORGS_ID" Type="Int64" />
+    <Property Name="LANG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AFFLIATION_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="sci_currencytype">
+    <Key>
+      <PropertyRef Name="CODE" />
+    </Key>
+    <Property Name="CODE" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="VALUE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="totalamount">
+    <Key>
+      <PropertyRef Name="INSTALLMENTANDAMOUNT_ID" />
+    </Key>
+    <Property Name="INSTALLMENTANDAMOUNT_ID" Type="Int64" Nullable="false" />
+    <Property Name="AMOUNT" Type="Decimal" />
+    <Property Name="CURRENCY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="tracking_award">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="Int64" Nullable="false" />
+    <Property Name="WORKFLOWID" Type="Int64" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="PAGENAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="AWARDID" Type="Int64" />
+    <Property Name="TRACKINGDATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STOP_STATUS" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tracking_fb">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="Int64" Nullable="false" />
+    <Property Name="WORKFLOWID" Type="Int64" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="PAGENAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="FUNDINGBODYID" Type="Int64" />
+    <Property Name="TRACKINGDATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STOP_STATUS" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tracking_log">
+    <Key>
+      <PropertyRef Name="TLOGID" />
+    </Key>
+    <Property Name="TLOGID" Type="Int64" Nullable="false" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="TASKID" Type="Int64" />
+    <Property Name="SEQUENCE" Type="Int64" />
+    <Property Name="STARTDATE" Type="DateTime" />
+    <Property Name="STARTBY" Type="Int64" />
+    <Property Name="COMPLETEDDATE" Type="DateTime" />
+    <Property Name="COMPLETEDBY" Type="Int64" />
+    <Property Name="STATUSID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="tracking_opp">
+    <Key>
+      <PropertyRef Name="TID" />
+    </Key>
+    <Property Name="TID" Type="Int64" Nullable="false" />
+    <Property Name="WORKFLOWID" Type="Int64" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="PAGENAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="OPPORTUNITYID" Type="Int64" />
+    <Property Name="TRACKINGDATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STOP_STATUS" Type="Int64" />
+  </EntityType>
+  <EntityType Name="establishmentinfo">
+    <Key>
+      <PropertyRef Name="FUNDINGBODY_ID" />
+    </Key>
+    <Property Name="ESTABLISHMENTDATE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ESTABLISHMENTCITY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ESTABLISHMENTSTATE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ESTABLISHMENTCOUNTRYCODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ESTABLISHMENTDESCRIPTION" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Decimal" Nullable="false" />
+    <Property Name="LANG" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="item">
+    <Key>
+      <PropertyRef Name="ITEM_ID" />
+    </Key>
+    <Property Name="RELTYPE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="ITEM_ID" Type="Decimal" Nullable="false" />
+    <Property Name="GEOSCOPE_ID" Type="Decimal" />
+    <Property Name="APPINFO_ID" Type="Decimal" />
+    <Property Name="ABOUT_ID" Type="Decimal" />
+    <Property Name="RELATEDITEMS_ID" Type="Decimal" />
+    <Property Name="SYNOPSIS_ID" Type="Decimal" />
+    <Property Name="SUBJECTMATTER_ID" Type="Decimal" />
+    <Property Name="LANG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FUNDINGPOLICY_ID" Type="Decimal" />
+    <Property Name="ELIGIBILITYDESCRIPTION_ID" Type="Decimal" />
+    <Property Name="ESTIMATEDAMOUNTDESCRIPTION_ID" Type="Decimal" />
+    <Property Name="LIMITEDSUBMISSIONDESC_ID" Type="Decimal" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="publicationdata">
+    <Key>
+      <PropertyRef Name="PUBLICATION_ID" />
+    </Key>
+    <Property Name="PUBLICATION_ID" Type="Decimal" Nullable="false" />
+    <Property Name="AWARD_ID" Type="Decimal" />
+    <Property Name="INGESTIONID" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="PUBLICATIONOUTPUTID" Type="Decimal" />
+    <Property Name="PUBLISHEDDATE" Type="DateTime" />
+    <Property Name="CREATEDON" Type="DateTime" />
+    <Property Name="LASTUPDATEON" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PUBLICATION_AUTHOR" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="JOURNAL_IDENTIFIER" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="PUBLICATION_URL" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="FUNDINGBODYPROJECTID" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="PUB_DESCRIPTION" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="BULKAWID" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_language_detail">
+    <Key>
+      <PropertyRef Name="TRAN_ID" />
+    </Key>
+    <Property Name="TRAN_ID" Type="Decimal" Nullable="false" />
+    <Property Name="SCIVAL_ID" Type="Decimal" />
+    <Property Name="COLUMN_DESC" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="COLUMN_ID" Type="Decimal" />
+    <Property Name="MODULEID" Type="Decimal" />
+    <Property Name="LANGUAGE_ID" Type="Decimal" />
+    <Property Name="TRAN_TYPE_ID" Type="Decimal" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="sci_group_url_detail">
+    <Key>
+      <PropertyRef Name="GROUP_ID" />
+    </Key>
+    <Property Name="GROUP_ID" Type="Int64" Nullable="false" />
+    <Property Name="URL_NUMBER" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="createddate">
+    <Key>
+      <PropertyRef Name="VERSION" />
+    </Key>
+    <Property Name="VERSION" Type="Int64" Nullable="false" />
+    <Property Name="CREATEDDATE_TEXT" Type="DateTime" />
+    <Property Name="REVISIONHISTORY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="fbprogress">
+    <Key>
+      <PropertyRef Name="FUNDINGBODY_ID" />
+    </Key>
+    <Property Name="FUNDINGBODY_ID" Type="Int64" Nullable="false" />
+    <Property Name="FUNDINGBODYNAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="FBUPDATE" Type="DateTime" />
+    <Property Name="FBSTATUS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="OPUPDATE" Type="DateTime" />
+    <Property Name="OPSTATUS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AWUPDATE" Type="DateTime" />
+    <Property Name="AWSTATUS" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="subtype">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="SUBTYPE_TEXT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="FUNDINGBODY_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="temptable_subregion">
+    <Key>
+      <PropertyRef Name="REGION" />
+    </Key>
+    <Property Name="COUNTRYNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ALPHA_2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ALPHA_3" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="REGION" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SUBREGION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_fundedprogramstypelist">
+    <Key>
+      <PropertyRef Name="TYPEID" />
+    </Key>
+    <Property Name="TYPEID" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FUNDEDPROGRAMTYPESTEXT" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_related_orgs_vendor">
+    <Key>
+      <PropertyRef Name="REL_ORGS_VENDORID" />
+    </Key>
+    <Property Name="REL_ORGS_VENDORID" Type="Int64" Nullable="false" />
+    <Property Name="VENDOR_ID" Type="Int64" />
+    <Property Name="VENDOR_FUNDINGBODY_NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CREATED_DATE" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="sci_userlog">
+    <Key>
+      <PropertyRef Name="WORKFLOWID" />
+    </Key>
+    <Property Name="WORKFLOWID" Type="Int64" Nullable="false" />
+    <Property Name="MODULEID" Type="Int64" />
+    <Property Name="ID" Type="Int64" />
+    <Property Name="CYCLEID" Type="Int64" />
+    <Property Name="PAGENAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="CREATEDDATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ACTION" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_xml_limits">
+    <Key>
+      <PropertyRef Name="NAME" />
+    </Key>
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LIMITS" Type="Int64" />
+  </EntityType>
+  <EntityType Name="change">
+    <Key>
+      <PropertyRef Name="CHANGE_ID" />
+    </Key>
+    <Property Name="TYPE" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="POSTDATE" Type="DateTime" />
+    <Property Name="VERSION" Type="Int64" Nullable="false" />
+    <Property Name="CHANGE_TEXT" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="CHANGEHISTORY_ID" Type="Int64" />
+    <Property Name="POSTDATE_IS_SAVE" Type="Int64" />
+    <Property Name="CREATED_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CHANGE_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="COUNTRYTEST" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="ROOM" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="STREET" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CITY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="STATE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="POSTALCODE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_ID" Type="Int64" />
+    <Property Name="AWARDMANAGER_ID" Type="Int64" />
+    <Property Name="AFFILIATION_ID" Type="Int64" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="totalfunding">
+    <Key>
+      <PropertyRef Name="TOTALFUNDING_TEXT" />
+    </Key>
+    <Property Name="CURRENCY" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="TOTALFUNDING_TEXT" Type="Int64" Nullable="false" />
+    <Property Name="AWARDSTATISTICS_ID" Type="Int64" />
+  </EntityType>
+  <EntityType Name="sci_classificationstypetype">
+    <Key>
+      <PropertyRef Name="VALUE" />
+    </Key>
+    <Property Name="VALUE" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="contactname">
+    <Key>
+      <PropertyRef Name="CONTACT_ID" />
+    </Key>
+    <Property Name="PREFIX" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="GIVENNAME" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="MIDDLENAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="SURNAME" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="SUFFIX" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CONTACT_ID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sci_binaryrelationtype">
+    <Key>
+      <PropertyRef Name="VALUE" />
+    </Key>
+    <Property Name="VALUE" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_countries">
+    <Key>
+      <PropertyRef Name="COUNTRY_ID" />
+    </Key>
+    <Property Name="COUNTRY_ID" Type="Int64" Nullable="false" />
+    <Property Name="COUNTRYGROUP_ID" Type="Int64" />
+    <Property Name="COUNTRY_NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRY_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_countrygroup">
+    <Key>
+      <PropertyRef Name="COUNTRYGROUP_ID" />
+    </Key>
+    <Property Name="COUNTRYGROUP_ID" Type="Int64" Nullable="false" />
+    <Property Name="COUNTRYGROUP_NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="COUNTRYGROUP_STATUS" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_typeidvalues">
+    <Key>
+      <PropertyRef Name="TYPE" />
+    </Key>
+    <Property Name="VALUE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="TYPE" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="award_tables">
+    <Key>
+      <PropertyRef Name="KEY" />
+    </Key>
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="SEQUENCE" Type="Int64" Nullable="false" />
+    <Property Name="KEY" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PAGENAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="MAPTABLE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="FLAG" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="recurring">
+    <Key>
+      <PropertyRef Name="REC_ID" />
+    </Key>
+    <Property Name="REC_ID" Type="Int64" Nullable="false" />
+    <Property Name="OPPORTUNITY_ID" Type="Int64" Nullable="false" />
+    <Property Name="RECURRING_STATUS" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="USERID" Type="Int64" />
+    <Property Name="REC_DATE" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="sci_column_master">
+    <Key>
+      <PropertyRef Name="COLUMN_ID" />
+    </Key>
+    <Property Name="COLUMN_ID" Type="Int64" Nullable="false" />
+    <Property Name="COLUMN_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="sci_tran_type_master">
+    <Key>
+      <PropertyRef Name="TRAN_TYPE_ID" />
+    </Key>
+    <Property Name="TRAN_TYPE_ID" Type="Int64" Nullable="false" />
+    <Property Name="TRAN_NAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="asjc_description_prc_Result" />
+  <ComplexType Name="Get_GroupCountries_prc1_Result" />
+</Schema>

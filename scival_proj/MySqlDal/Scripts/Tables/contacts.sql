@@ -1,0 +1,5 @@
+CREATE TABLE `contacts` (
+  `CONTACTS_ID` bigint NOT NULL,
+  `FUNDINGBODY_ID` bigint DEFAULT NULL,
+  PRIMARY KEY (`CONTACTS_ID`)
+);

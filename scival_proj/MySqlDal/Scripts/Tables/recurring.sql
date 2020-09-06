@@ -1,0 +1,8 @@
+CREATE TABLE `recurring` (
+  `REC_ID` bigint NOT NULL,
+  `OPPORTUNITY_ID` bigint NOT NULL,
+  `RECURRING_STATUS` varchar(6) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `USERID` bigint DEFAULT NULL,
+  `REC_DATE` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`REC_ID`)
+);

@@ -1,0 +1,12 @@
+CREATE TABLE `sci_opp_loi_duedate_detail` (
+  `O_ID` bigint NOT NULL,
+  `OPPORTUNITY_ID` bigint DEFAULT NULL,
+  `LOI_DUE_DATE` date DEFAULT NULL,
+  `DATE_TYPE` int DEFAULT NULL,
+  `SEQUENCE_ID` bigint DEFAULT NULL,
+  `CREATED_DATE` date DEFAULT NULL,
+  `DATE_REMARKS` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `LANG` varchar(200) DEFAULT NULL,
+  `URL` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`O_ID`)
+);

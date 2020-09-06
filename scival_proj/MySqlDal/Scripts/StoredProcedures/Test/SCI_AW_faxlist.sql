@@ -1,0 +1,9 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SCI_AW_faxlist`(
+   P_AFFILIATIONID       INTEGER
+)
+BEGIN
+      SELECT   *
+        FROM   fax
+       WHERE   AFFILIATION_ID = P_AFFILIATIONID;
+
+END

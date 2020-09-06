@@ -1,0 +1,781 @@
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\ScivalWebApi.dll.config
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\ScivalWebApi.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\ScivalWebApi.pdb
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\csc.exe
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\csc.exe.config
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\csc.rsp
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\csi.exe
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\csi.exe.config
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\csi.rsp
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.AppContext.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Collections.Immutable.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Console.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Globalization.Calendars.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.IO.Compression.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.IO.FileSystem.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Net.Http.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Net.Sockets.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Reflection.Metadata.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.ValueTuple.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Xml.XPath.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\vbc.exe
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\vbc.exe.config
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\vbc.rsp
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\VBCSCompiler.exe
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\roslyn\VBCSCompiler.exe.config
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\BouncyCastle.Crypto.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\EntityFramework.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\EntityFramework.SqlServer.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Google.Protobuf.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\K4os.Hash.xxHash.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\MySql.Data.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\MySql.Data.EntityFramework.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\MySqlDal.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Newtonsoft.Json.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Renci.SshNet.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Buffers.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Memory.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Numerics.Vectors.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Web.Http.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Web.Http.WebHost.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Ubiety.Dns.Core.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Zstandard.Net.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\MySqlDal.pdb
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\MySqlDal.dll.config
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\EntityFramework.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\EntityFramework.SqlServer.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Google.Protobuf.pdb
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Google.Protobuf.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\K4os.Hash.xxHash.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\MySql.Data.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\MySql.Data.EntityFramework.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Renci.SshNet.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Buffers.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Memory.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Numerics.Vectors.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Newtonsoft.Json.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Web.Http.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\System.Web.Http.WebHost.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csprojAssemblyReference.cache
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csproj.CopyComplete
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.dll
+D:\Umesh Wani\Freelance\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.pdb
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\ScivalWebApi.dll.config
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\ScivalWebApi.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\ScivalWebApi.pdb
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\csc.exe
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\csc.exe.config
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\csc.rsp
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\csi.exe
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\csi.exe.config
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\csi.rsp
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.Managed.Core.targets
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\Microsoft.Win32.Primitives.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.AppContext.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Collections.Immutable.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Console.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Globalization.Calendars.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.IO.Compression.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.IO.Compression.ZipFile.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.IO.FileSystem.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Net.Http.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Net.Sockets.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Reflection.Metadata.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Threading.Tasks.Extensions.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.ValueTuple.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Xml.XmlDocument.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Xml.XPath.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\vbc.exe
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\vbc.exe.config
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\vbc.rsp
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\VBCSCompiler.exe
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\roslyn\VBCSCompiler.exe.config
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\BouncyCastle.Crypto.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\EntityFramework.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\EntityFramework.SqlServer.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Google.Protobuf.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\K4os.Hash.xxHash.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\MySql.Data.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\MySql.Data.EntityFramework.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\MySqlDal.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Newtonsoft.Json.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Renci.SshNet.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Buffers.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Memory.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Numerics.Vectors.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Web.Http.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Web.Http.WebHost.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Ubiety.Dns.Core.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Zstandard.Net.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\MySqlDal.pdb
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\MySqlDal.dll.config
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\EntityFramework.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\EntityFramework.SqlServer.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Google.Protobuf.pdb
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Google.Protobuf.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\K4os.Hash.xxHash.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\MySql.Data.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\MySql.Data.EntityFramework.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Renci.SshNet.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Buffers.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Memory.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Numerics.Vectors.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Newtonsoft.Json.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Web.Http.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\System.Web.Http.WebHost.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csprojAssemblyReference.cache
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csproj.CoreCompileInputs.cache
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csproj.CopyComplete
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.pdb
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\ScivalWebApi.dll.config
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\ScivalWebApi.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\ScivalWebApi.pdb
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\csc.exe
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\csc.exe.config
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\csc.rsp
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\csi.exe
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\csi.exe.config
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\csi.rsp
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.AppContext.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Collections.Immutable.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Console.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Globalization.Calendars.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.IO.Compression.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.IO.FileSystem.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Net.Http.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Net.Sockets.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.ValueTuple.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Xml.XPath.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\vbc.exe
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\vbc.exe.config
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\vbc.rsp
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\VBCSCompiler.exe
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\roslyn\VBCSCompiler.exe.config
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Microsoft.Win32.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\netstandard.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.AppContext.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Collections.Concurrent.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Collections.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Collections.NonGeneric.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Collections.Specialized.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.ComponentModel.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.ComponentModel.EventBasedAsync.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.ComponentModel.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.ComponentModel.TypeConverter.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Console.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Data.Common.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Diagnostics.Contracts.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Diagnostics.Debug.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Diagnostics.FileVersionInfo.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Diagnostics.Process.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Diagnostics.StackTrace.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Diagnostics.TextWriterTraceListener.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Diagnostics.Tools.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Diagnostics.TraceSource.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Diagnostics.Tracing.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Drawing.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Dynamic.Runtime.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Globalization.Calendars.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Globalization.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Globalization.Extensions.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.Compression.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.Compression.ZipFile.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.FileSystem.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.FileSystem.DriveInfo.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.FileSystem.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.FileSystem.Watcher.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.IsolatedStorage.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.MemoryMappedFiles.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.Pipes.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.IO.UnmanagedMemoryStream.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Linq.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Linq.Expressions.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Linq.Parallel.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Linq.Queryable.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.Http.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.NameResolution.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.NetworkInformation.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.Ping.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.Requests.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.Security.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.Sockets.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.WebHeaderCollection.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.WebSockets.Client.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.WebSockets.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.ObjectModel.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Reflection.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Reflection.Extensions.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Reflection.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Resources.Reader.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Resources.ResourceManager.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Resources.Writer.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.VisualC.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.Extensions.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.Handles.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.InteropServices.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.Numerics.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.Serialization.Formatters.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.Serialization.Json.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.Serialization.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.Serialization.Xml.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Security.Claims.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Security.Cryptography.Algorithms.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Security.Cryptography.Csp.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Security.Cryptography.Encoding.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Security.Cryptography.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Security.Cryptography.X509Certificates.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Security.Principal.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Security.SecureString.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Text.Encoding.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Text.Encoding.Extensions.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Text.RegularExpressions.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Threading.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Threading.Overlapped.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Threading.Tasks.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Threading.Tasks.Parallel.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Threading.Thread.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Threading.ThreadPool.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Threading.Timer.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.ValueTuple.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Xml.ReaderWriter.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Xml.XDocument.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Xml.XmlDocument.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Xml.XmlSerializer.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Xml.XPath.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Xml.XPath.XDocument.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\BouncyCastle.Crypto.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\EntityFramework.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\EntityFramework.SqlServer.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Google.Protobuf.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\K4os.Hash.xxHash.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\MySql.Data.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\MySql.Data.EntityFramework.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\MySqlDal.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Newtonsoft.Json.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Renci.SshNet.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Buffers.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Memory.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Numerics.Vectors.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Web.Http.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Web.Http.WebHost.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Ubiety.Dns.Core.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Zstandard.Net.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Net.Http.Formatting.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\MySqlDal.pdb
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\MySqlDal.dll.config
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\EntityFramework.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\EntityFramework.SqlServer.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Google.Protobuf.pdb
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Google.Protobuf.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\K4os.Hash.xxHash.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\MySql.Data.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\MySql.Data.EntityFramework.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Renci.SshNet.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Buffers.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Memory.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Numerics.Vectors.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Newtonsoft.Json.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Web.Http.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\System.Web.Http.WebHost.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project2020\NewProject\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csprojResolveAssemblyReference.cache
+D:\Project2020\NewProject\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csproj.CoreCompileInputs.cache
+D:\Project2020\NewProject\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.dll
+D:\Project2020\NewProject\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.pdb
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\ScivalWebApi.dll.config
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\ScivalWebApi.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\ScivalWebApi.pdb
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\csc.exe
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\csc.exe.config
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\csc.rsp
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\csi.exe
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\csi.exe.config
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\csi.rsp
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.Managed.Core.targets
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\Microsoft.Win32.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.AppContext.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Collections.Immutable.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Console.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Globalization.Calendars.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.IO.Compression.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.IO.Compression.ZipFile.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.IO.FileSystem.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Net.Http.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Net.Sockets.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Reflection.Metadata.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Text.Encoding.CodePages.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Threading.Tasks.Extensions.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.ValueTuple.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Xml.ReaderWriter.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Xml.XmlDocument.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Xml.XPath.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\System.Xml.XPath.XDocument.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\vbc.exe
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\vbc.exe.config
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\vbc.rsp
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\VBCSCompiler.exe
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\roslyn\VBCSCompiler.exe.config
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Microsoft.Win32.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\netstandard.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.AppContext.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Collections.Concurrent.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Collections.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Collections.NonGeneric.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Collections.Specialized.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.ComponentModel.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.ComponentModel.EventBasedAsync.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.ComponentModel.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.ComponentModel.TypeConverter.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Console.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Data.Common.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Diagnostics.Contracts.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Diagnostics.Debug.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Diagnostics.FileVersionInfo.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Diagnostics.Process.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Diagnostics.StackTrace.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Diagnostics.TextWriterTraceListener.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Diagnostics.Tools.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Diagnostics.TraceSource.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Diagnostics.Tracing.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Drawing.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Dynamic.Runtime.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Globalization.Calendars.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Globalization.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Globalization.Extensions.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.Compression.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.Compression.ZipFile.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.FileSystem.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.FileSystem.DriveInfo.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.FileSystem.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.FileSystem.Watcher.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.IsolatedStorage.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.MemoryMappedFiles.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.Pipes.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.IO.UnmanagedMemoryStream.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Linq.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Linq.Expressions.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Linq.Parallel.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Linq.Queryable.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.Http.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.NameResolution.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.NetworkInformation.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.Ping.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.Requests.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.Security.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.Sockets.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.WebHeaderCollection.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.WebSockets.Client.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Net.WebSockets.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.ObjectModel.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Reflection.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Reflection.Extensions.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Reflection.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Resources.Reader.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Resources.ResourceManager.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Resources.Writer.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.VisualC.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.Extensions.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.Handles.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.InteropServices.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.Numerics.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.Serialization.Formatters.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.Serialization.Json.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.Serialization.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.Serialization.Xml.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Security.Claims.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Security.Cryptography.Algorithms.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Security.Cryptography.Csp.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Security.Cryptography.Encoding.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Security.Cryptography.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Security.Cryptography.X509Certificates.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Security.Principal.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Security.SecureString.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Text.Encoding.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Text.Encoding.Extensions.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Text.RegularExpressions.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Threading.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Threading.Overlapped.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Threading.Tasks.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Threading.Tasks.Parallel.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Threading.Thread.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Threading.ThreadPool.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Threading.Timer.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.ValueTuple.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Xml.ReaderWriter.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Xml.XDocument.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Xml.XmlDocument.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Xml.XmlSerializer.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Xml.XPath.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Xml.XPath.XDocument.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\BouncyCastle.Crypto.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\EntityFramework.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\EntityFramework.SqlServer.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Google.Protobuf.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\K4os.Hash.xxHash.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\MySql.Data.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\MySql.Data.EntityFramework.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\MySqlDal.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Newtonsoft.Json.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Renci.SshNet.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Buffers.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Memory.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Numerics.Vectors.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Web.Http.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Web.Http.WebHost.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Ubiety.Dns.Core.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Zstandard.Net.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\MySqlDal.pdb
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\MySqlDal.dll.config
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\EntityFramework.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\EntityFramework.SqlServer.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Google.Protobuf.pdb
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Google.Protobuf.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\K4os.Hash.xxHash.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\MySql.Data.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\MySql.Data.EntityFramework.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Renci.SshNet.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Buffers.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Memory.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Numerics.Vectors.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Newtonsoft.Json.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Web.Http.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\System.Web.Http.WebHost.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\sci\FromGaurav\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csprojAssemblyReference.cache
+E:\sci\FromGaurav\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csproj.CoreCompileInputs.cache
+E:\sci\FromGaurav\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.csproj.CopyComplete
+E:\sci\FromGaurav\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\obj\Debug\ScivalWebApi.pdb
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Newtonsoft.Json.Schema.dll
+E:\sci\FromGaurav\Scival\ScivalWebApi\bin\Newtonsoft.Json.Schema.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\ScivalWebApi.dll.config
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\ScivalWebApi.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\ScivalWebApi.pdb
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\csc.exe
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\csc.exe.config
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\csc.rsp
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\csi.exe
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\csi.exe.config
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\csi.rsp
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.Managed.Core.targets
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\Microsoft.Win32.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.AppContext.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Collections.Immutable.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Console.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Globalization.Calendars.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.IO.Compression.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.IO.Compression.ZipFile.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.IO.FileSystem.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Net.Http.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Net.Sockets.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Reflection.Metadata.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Threading.Tasks.Extensions.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.ValueTuple.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Xml.XmlDocument.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Xml.XPath.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\vbc.exe
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\vbc.exe.config
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\vbc.rsp
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\VBCSCompiler.exe
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\roslyn\VBCSCompiler.exe.config
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Microsoft.Win32.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\netstandard.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.AppContext.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Collections.Concurrent.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Collections.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Collections.NonGeneric.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Collections.Specialized.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.ComponentModel.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.ComponentModel.EventBasedAsync.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.ComponentModel.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.ComponentModel.TypeConverter.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Console.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Data.Common.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Diagnostics.Contracts.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Diagnostics.Debug.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Diagnostics.FileVersionInfo.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Diagnostics.Process.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Diagnostics.StackTrace.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Diagnostics.TextWriterTraceListener.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Diagnostics.Tools.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Diagnostics.TraceSource.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Diagnostics.Tracing.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Drawing.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Dynamic.Runtime.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Globalization.Calendars.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Globalization.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Globalization.Extensions.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.Compression.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.Compression.ZipFile.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.FileSystem.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.FileSystem.DriveInfo.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.FileSystem.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.FileSystem.Watcher.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.IsolatedStorage.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.MemoryMappedFiles.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.Pipes.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.IO.UnmanagedMemoryStream.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Linq.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Linq.Expressions.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Linq.Parallel.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Linq.Queryable.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.Http.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.NameResolution.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.NetworkInformation.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.Ping.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.Requests.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.Security.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.Sockets.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.WebHeaderCollection.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.WebSockets.Client.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Net.WebSockets.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.ObjectModel.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Reflection.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Reflection.Extensions.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Reflection.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Resources.Reader.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Resources.ResourceManager.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Resources.Writer.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.CompilerServices.VisualC.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.Extensions.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.Handles.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.InteropServices.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.Numerics.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.Serialization.Formatters.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.Serialization.Json.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.Serialization.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.Serialization.Xml.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Security.Claims.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Security.Cryptography.Algorithms.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Security.Cryptography.Csp.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Security.Cryptography.Encoding.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Security.Cryptography.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Security.Cryptography.X509Certificates.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Security.Principal.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Security.SecureString.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Text.Encoding.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Text.Encoding.Extensions.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Text.RegularExpressions.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Threading.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Threading.Overlapped.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Threading.Tasks.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Threading.Tasks.Parallel.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Threading.Thread.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Threading.ThreadPool.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Threading.Timer.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.ValueTuple.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Xml.ReaderWriter.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Xml.XDocument.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Xml.XmlDocument.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Xml.XmlSerializer.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Xml.XPath.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Xml.XPath.XDocument.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\BouncyCastle.Crypto.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\EntityFramework.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\EntityFramework.SqlServer.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Google.Protobuf.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\K4os.Compression.LZ4.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\K4os.Hash.xxHash.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\MySql.Data.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\MySql.Data.EntityFramework.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\MySqlDal.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Newtonsoft.Json.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Renci.SshNet.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Buffers.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Memory.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Numerics.Vectors.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Web.Http.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Web.Http.WebHost.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Ubiety.Dns.Core.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Zstandard.Net.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Newtonsoft.Json.Schema.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\MySqlDal.pdb
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\MySqlDal.dll.config
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\EntityFramework.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\EntityFramework.SqlServer.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Google.Protobuf.pdb
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Google.Protobuf.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\K4os.Compression.LZ4.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\K4os.Compression.LZ4.Streams.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\K4os.Hash.xxHash.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\MySql.Data.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\MySql.Data.EntityFramework.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Renci.SshNet.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Buffers.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Memory.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Numerics.Vectors.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Newtonsoft.Json.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Web.Http.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\System.Web.Http.WebHost.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\bin\Newtonsoft.Json.Schema.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\obj\Debug\ScivalWebApi.csprojAssemblyReference.cache
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\obj\Debug\ScivalWebApi.csproj.CoreCompileInputs.cache
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\obj\Debug\ScivalWebApi.csproj.CopyComplete
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\obj\Debug\ScivalWebApi.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalWebApi\obj\Debug\ScivalWebApi.pdb

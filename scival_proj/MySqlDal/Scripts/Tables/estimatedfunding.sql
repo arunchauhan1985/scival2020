@@ -1,0 +1,7 @@
+CREATE TABLE `estimatedfunding` (
+  `CURRENCY` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `ESTIMATEDFUNDING_TEXT` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `OPPORTUNITY_ID` bigint NOT NULL,
+  `AMOUNT_DESCRIPTION` varchar(3000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  PRIMARY KEY (`OPPORTUNITY_ID`)
+);

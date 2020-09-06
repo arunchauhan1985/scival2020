@@ -1,0 +1,2113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Elsevier shared Grant schema elements
+     Version 3.0.0r4
+    
+     Copyright © 2008–2017 Elsevier B.V.
+     This is open access material under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+-->
+<!--
+     Version 3.0.0r4  6 April 2017  [JMi]
+
+     Version 3.0.0r3  20 March 2017  [JMi]
+     
+     Version 3.0.0r2  21 February 2017  [JMi]
+     
+     Version 3.0.0r1  17 February 2017  [JMi]
+     Changes with respect to v2.0.0:
+     - Added optional element award/scholarlyOutput
+     
+     Version 2.0.0  20 October 2014  [JMi]
+
+     Version 1.4.0p1  29 January 2014  JMi
+
+     Version 1.4.0  17 January 2014  JMi
+     - Made elements tns:abstract and tns:name of (new) type tns:StringWithLanguageType
+       and changed the occurrence indicator
+    
+     Version 1.2.1  20 August 2012  JMi
+     - Added optional element recordSource
+     - Added optional element NIHData with 15 optional (new) elements
+     - Added optional element orgCountry
+-->
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elsevier.com/xml/schema/grant/grant-3.0"
+    targetNamespace="http://www.elsevier.com/xml/schema/grant/grant-3.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <!--<include schemaLocation="common30.xsd"/>-->
+    <import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+    
+    <annotation>
+        <documentation> This schema represents a past award within SciVal Funding. Author: Sanjeev Rao s.rao@paritycomputing.com </documentation>
+        <documentation> This version 1.2 of the schema updated by MRu, 30-Dec-10 </documentation>
+        <documentation>Further updates to 1.2 in February 2011 and July 2012 (JMi)</documentation>
+        <documentation>Version 1.4.0p1 (JMi, 29 January 2014)</documentation>
+        <documentation>Version 2.0.0 (JMi, 20 October 2014)</documentation>
+        <documentation>Version 3.0.0r2 (JMi, 21 February 2017)></documentation>
+    </annotation>
+
+    <element name="awards" type="tns:AwardsType"/>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AwardsType">
+        <sequence>
+            <element name="award" type="tns:AwardType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AwardType">
+        <sequence>
+            <element name="revisionHistory" type="tns:StatusAndRevisionHistoryType" nillable="true" minOccurs="0"/>
+            <element name="recordSource" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>Source used to obtain award information.</documentation>
+                </annotation>
+            </element>
+            <element name="name" type="tns:StringWithLanguageType" maxOccurs="unbounded"/>
+            <element name="NIHData" type="tns:NIHDataType" minOccurs="0">
+                <annotation>
+                    <documentation>NIH RePORTER additions.</documentation>
+                </annotation>
+            </element>
+            <element name="orgCountry" type="string" minOccurs="0"/>
+            <element name="startDate" type="date" nillable="true" minOccurs="0">
+                <annotation>
+                    <documentation>Logical start date from external source</documentation>
+                </annotation>
+            </element>
+            <element name="lastAmendedDate" type="date" nillable="true" minOccurs="0">
+                <annotation>
+                    <documentation>Logical last amended date from external source</documentation>
+                </annotation>
+            </element>
+            <element name="endDate" type="date" nillable="true" minOccurs="0">
+                <annotation>
+                    <documentation>Logical end date from external source</documentation>
+                </annotation>
+            </element>
+            <element name="amount" type="tns:AmountType" nillable="true" minOccurs="0"/>
+            <element name="abstract" type="tns:StringWithLanguageType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="classificationGroup" type="tns:ClassificationGroupType" nillable="true" minOccurs="0"/>
+            <element name="keywords" type="tns:KeywordsType" nillable="true" minOccurs="0"/>
+            <element name="awardees" type="tns:AwardeesType" nillable="true" minOccurs="0"/>
+            <element name="awardManagers" type="tns:AwardManagersType" nillable="true" minOccurs="0"/>
+            <element name="relatedPrograms" type="tns:RelatedProgramsType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="relatedFundingBodies" type="tns:MicroRelatedFundingBodiesType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="relatedItems" type="tns:MiniRelatedItemsType" minOccurs="0"/>
+            <element name="scholarlyOutput" type="tns:ScholarlyOutputType" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="integer" use="required"/>
+        <attribute name="fundingBodyAwardId" type="string" use="required"/>
+        <attribute name="type" type="tns:FundingTypeIDsType" use="required"/>
+        <attribute name="trusting" type="boolean" use="optional"/>
+        <attribute name="collectionCode" type="string" use="optional"/>
+        <attribute name="hidden" type="boolean" default="false" use="optional"/>
+    </complexType>
+
+    <complexType name="NIHDataType">
+        <sequence>
+            <element name="applicationID" type="string" minOccurs="0"/>
+            <element name="FOANumber" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>Funding Opportunity Announcement Number.</documentation>
+                </annotation>
+            </element>
+            <element name="fundingICs" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>Funding Institute/Center. See also http://grants.nih.gov/grants/glossary.htm#I</documentation>
+                </annotation>
+            </element>
+            <element name="orgDuns" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>The unique number provided by Dun &amp; Bradstreet to all Federal government contractors and grantees in US. See
+                        also http://fedgov.dnb.com/webform/</documentation>
+                </annotation>
+            </element>
+            <element name="orgDept" type="string" minOccurs="0"/>
+            <element name="piID" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>Principal Investigator ID assigned by NIH to awardee.</documentation>
+                </annotation>
+            </element>
+            <element name="projectStartDate" type="date" nillable="true" minOccurs="0"/>
+            <element name="projectEndDate" type="date" nillable="true" minOccurs="0"/>
+            <element name="supportYears" type="positiveInteger" minOccurs="0">
+                <annotation>
+                    <documentation>Number of years this NIT award is supported. Minimum is 1.</documentation>
+                </annotation>
+            </element>
+            <element name="subProjectID" type="string" minOccurs="0"/>
+            <element name="totalCostSubProject" type="tns:AmountType" nillable="true" minOccurs="0"/>
+            <element name="coreProjectNumber" type="string" minOccurs="0"/>
+            <element name="educationInstituteType" type="string" minOccurs="0"/>
+            <element name="awardNoticeDate" type="date" minOccurs="0"/>
+            <element name="studySection" type="string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <!-- oooooooooooooooooooooooooooooooooooooooocommon30.xsdoooooooooooooooooooooooooooooooooooooo -->
+
+    <complexType name="AddressType">
+        <sequence>
+            <element name="room" type="string" minOccurs="0"/>
+            <element name="street" type="string" minOccurs="0"/>
+            <element name="city" type="string"/>
+            <element name="state" type="string" minOccurs="0"/>
+            <element name="postalCode" type="string" minOccurs="0"/>
+            <element name="country" type="string">
+                <annotation>
+                    <documentation>Country name as per ISO 3166. There will be no name variations. See
+                        http://www.iso.org/iso/country_codes/iso_3166_code_lists/english_country_names_and_code_elements.htm</documentation>
+                </annotation>
+            </element>
+        </sequence>
+        <attribute name="country" type="tns:CountryCodeType" use="required">
+            <annotation>
+                <documentation>ISO 3166 country code</documentation>
+            </annotation>
+        </attribute>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AffiliationsType">
+        <sequence>
+            <element name="affiliation" type="tns:AffiliationType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AffiliationType">
+        <sequence>
+            <element name="org" type="string"/>
+            <element name="dept" type="string" minOccurs="0"/>
+            <element name="startDate" type="date" minOccurs="0"/>
+            <element name="endDate" type="date" minOccurs="0"/>
+            <element name="address" type="tns:AddressType" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="telephone" type="string" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="fax" type="string" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="email" type="string" minOccurs="0"/>
+            <element name="webpage" type="string" minOccurs="0"/>
+        </sequence>
+        <attribute name="ScopusInstitutionID" type="integer" use="optional"/>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="AmountDecimalType">
+        <restriction base="decimal">
+            <fractionDigits value="2"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AmountType">
+        <simpleContent>
+            <extension base="tns:IntegerAndNotSpecifiedType">
+                <attribute name="currency" type="tns:CurrencyType" use="optional" default="USD"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <simpleType name="IntegerAndNotSpecifiedType">
+        <union memberTypes="integer tns:NotSpecifiedType"/>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AwardeeNameType">
+        <sequence>
+            <element name="indexedName" type="string"/>
+            <element name="givenName" type="string" minOccurs="0"/>
+            <element name="initials" type="string" minOccurs="0"/>
+            <element name="surname" type="string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AwardeesType">
+        <sequence>
+            <element name="awardee" type="tns:AwardeeType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AwardeeType">
+        <sequence>
+            <element name="awardeeName" type="tns:AwardeeNameType"/>
+            <element name="awardeeInstitution" type="tns:AffiliationsType"/>
+        </sequence>
+        <attribute name="id" type="string" use="optional"/>
+        <attribute name="type" type="tns:AwardeeTypeType" use="required"/>
+        <attribute name="ScopusAuthorID" type="integer" use="optional"/>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="AwardeeTypeType">
+        <restriction base="string">
+            <enumeration value="PI">
+                <annotation>
+                    <documentation>Primary Investigator</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="coPI">
+                <annotation>
+                    <documentation>Co Investigator</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="investigator">
+                <annotation>
+                    <documentation>Investigator. PI and coPIs are legally responsible and typically are senior people. An investigator is an
+                        acknowledged helping hand who has no legal responsibility.</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="institution">
+                <annotation>
+                    <documentation>An institution as awardee.</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AwardManagersType">
+        <sequence>
+            <element name="awardManager" type="tns:ContactType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AwardStatisticsType">
+        <sequence>
+            <element name="totalFunding" type="tns:AmountType" nillable="true" minOccurs="0" maxOccurs="1"/>
+            <element name="link" type="tns:LinkType" nillable="true" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="BinaryRelationType">
+        <restriction base="string">
+            <enumeration value="about"/>
+            <enumeration value="acknowledgedBy"/>
+            <enumeration value="administeredBy"/>
+            <enumeration value="affiliatedWith"/>
+            <enumeration value="applicationInfoFor"/>
+            <enumeration value="backgroundInfoFor"/>
+            <enumeration value="continuationOf"/>
+            <enumeration value="continuedAs"/>
+            <enumeration value="formerlyIncluding"/>
+            <enumeration value="formerlyKnownAs"/>
+            <enumeration value="fundedBy"/>
+            <enumeration value="grantedBy"/>
+            <enumeration value="incorporatedInto"/>
+            <enumeration value="incorporates"/>
+            <enumeration value="isRelatedTo"/>
+            <enumeration value="isReplacedBy"/>
+            <enumeration value="issuedBy"/>
+            <enumeration value="jointlyOwnedBy"/>
+            <enumeration value="mergedWith"/>
+            <enumeration value="mergerOf"/>
+            <enumeration value="operatedBy"/>
+            <enumeration value="originatedFrom"/>
+            <enumeration value="partOf"/>
+            <enumeration value="relevantTo"/>
+            <enumeration value="renamedAs"/>
+            <enumeration value="replaces"/>
+            <enumeration value="resultedIn"/>
+            <enumeration value="similarTo"/>
+            <enumeration value="solicitedBy"/>
+            <enumeration value="splitFrom"/>
+            <enumeration value="splitInto"/>
+            <enumeration value="sponsoredBy"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="OpportunitiesRelationsType">
+        <restriction base="tns:BinaryRelationType">
+            <enumeration value="isRelatedTo"/>
+            <enumeration value="isReplacedBy"/>
+            <enumeration value="replaces"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="ScholarlyOutputRelationsType">
+        <restriction base="tns:BinaryRelationType">
+            <enumeration value="resultedIn"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="ChangeHistoryType">
+        <sequence>
+            <element name="change" type="tns:ChangeType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="ChangeType">
+        <simpleContent>
+            <extension base="string">
+                <annotation>
+                    <documentation>This is the 'before' content, not 'after' content.</documentation>
+                </annotation>
+                <attribute name="type" type="string" use="required"/>
+                <attribute name="postDate" type="date" use="required"/>
+                <attribute name="version" type="integer" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="ClassificationGroupType">
+        <sequence minOccurs="0">
+            <element name="classifications" type="tns:ClassificationsType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="ClassificationsType">
+        <sequence>
+            <element name="classification" type="tns:ClassificationType" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="type" type="tns:ClassificationsTypeType" use="required"/>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="ClassificationsTypeType">
+        <restriction base="string">
+            <enumeration value="ASJC"/>
+            <enumeration value="CFDA"/>
+            <enumeration value="INDEL"/>
+            <enumeration value="Grants.gov"/>
+            <enumeration value="NIHspendingCategory"/>
+            <enumeration value="orgSpecific"/>
+            <enumeration value="StudySection"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="ClassificationType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="frequency" type="integer" use="required"/>
+                <attribute name="code" type="string" use="optional"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="ClassificationTypeIDValues">
+        <union memberTypes="tns:ClassificationTypeIDValuesType tns:NotSpecifiedType tns:CountryCodeType"/>
+    </simpleType>
+    <simpleType name="ClassificationTypeIDValuesType">
+        <restriction base="token">
+            <enumeration value="academic">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Academic Institution'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="commercial">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Commercial Organization'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="degree">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Ph.D./M.D. other professional'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="disabilities">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Persons with Disabilities'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="government">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Local or State Government'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="graduate">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Graduate Student'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="minorities">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Underrepresented Minorities'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="newfaculty">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='New Faculty/New Investigator'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="nonprofit">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Non Profit Organization'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="norestr">
+                <annotation>
+                    <documentation>type='citizenship'; eligibilityClassification='No country-related restrictions'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="regionspecific">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Region restrictions'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="sme">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Small and Medium Enterprise'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="undergraduate">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Undergraduate Student'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="women">
+                <annotation>
+                    <documentation>type='restrictions'; eligibilityClassification='Women'</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="ContactListType">
+        <sequence>
+            <element name="contact" type="tns:ContactType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="ContactType">
+        <sequence>
+            <element name="contactName" type="tns:VisibleNameType" nillable="true" minOccurs="0"/>
+            <element name="title" type="string" nillable="true" minOccurs="0"/>
+            <element name="telephone" type="string" nillable="true" minOccurs="0"/>
+            <element name="fax" type="string" nillable="true" minOccurs="0"/>
+            <element name="email" type="string" nillable="true" minOccurs="0"/>
+            <element name="website" type="tns:LinkType" nillable="true" minOccurs="0"/>
+            <element name="address" type="tns:AddressType" nillable="true" minOccurs="0"/>
+        </sequence>
+        <attribute name="type" type="string" use="optional"/>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="CountryCodeType">
+        <restriction base="string">
+            <pattern value="[a-z][a-z][a-z]"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <annotation>
+        <documentation> This schema represents currencies within the Grants Optimizer. Author: Sanjeev Rao s.rao@paritycomputing.com </documentation>
+    </annotation>
+
+    <simpleType name="CurrencyType">
+        <union memberTypes="tns:CurrencyType-ISO4217 tns:CurrencyType-Legacy"/>
+    </simpleType>
+    <simpleType name="CurrencyType-ISO4217">
+        <restriction base="string">
+            <enumeration value="AED">
+                <annotation>
+                    <documentation>United Arab Emirates dirham</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="AFN">
+                <annotation>
+                    <documentation>Afghan afghani</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ALL">
+                <annotation>
+                    <documentation>Albanian lek</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="AMD">
+                <annotation>
+                    <documentation>Armenian dram</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ANG">
+                <annotation>
+                    <documentation>Netherlands Antillean guilder</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="AOA">
+                <annotation>
+                    <documentation>Angolan kwanza</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ARS">
+                <annotation>
+                    <documentation>Argentine peso</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="AUD">
+                <annotation>
+                    <documentation>Australian dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="AWG">
+                <annotation>
+                    <documentation>Aruban florin</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="AZN">
+                <annotation>
+                    <documentation>Azerbaijani manat</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BAM">
+                <annotation>
+                    <documentation>Bosnia and Herzegovina convertible mark</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BBD">
+                <annotation>
+                    <documentation>Barbados dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BDT">
+                <annotation>
+                    <documentation>Bangladeshi taka</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BGN">
+                <annotation>
+                    <documentation>Bulgarian lev</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BHD">
+                <annotation>
+                    <documentation>Bahraini dinar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BIF">
+                <annotation>
+                    <documentation>Burundian franc</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BMD">
+                <annotation>
+                    <documentation>Bermudian dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BND">
+                <annotation>
+                    <documentation>Brunei dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BOB">
+                <annotation>
+                    <documentation>Boliviano</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BOV">
+                <annotation>
+                    <documentation>Bolivian Mvdol (funds code)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BRL">
+                <annotation>
+                    <documentation>Brazilian real</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BSD">
+                <annotation>
+                    <documentation>Bahamian dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BTN">
+                <annotation>
+                    <documentation>Bhutanese ngultrum</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BWP">
+                <annotation>
+                    <documentation>Botswana pula</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BYN">
+                <annotation>
+                    <documentation>New Belarusian ruble</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BYR">
+                <annotation>
+                    <documentation>Belarusian ruble</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BZD">
+                <annotation>
+                    <documentation>Belize dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CAD">
+                <annotation>
+                    <documentation>Canadian dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CDF">
+                <annotation>
+                    <documentation>Congolese franc</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CHE">
+                <annotation>
+                    <documentation>WIR Euro (complementary currency)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CHF">
+                <annotation>
+                    <documentation>Swiss franc</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CHW">
+                <annotation>
+                    <documentation>WIR Franc (complementary currency)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CLF">
+                <annotation>
+                    <documentation>Unidad de Fomento (funds code)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CLP">
+                <annotation>
+                    <documentation>Chilean peso</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CNY">
+                <annotation>
+                    <documentation>Chinese yuan</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="COP">
+                <annotation>
+                    <documentation>Colombian peso</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="COU">
+                <annotation>
+                    <documentation>Unidad de Valor Real (UVR) (funds code)[7]</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CRC">
+                <annotation>
+                    <documentation>Costa Rican colon</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CUC">
+                <annotation>
+                    <documentation>Cuban convertible peso</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CUP">
+                <annotation>
+                    <documentation>Cuban peso</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CVE">
+                <annotation>
+                    <documentation>Cape Verde escudo</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CZK">
+                <annotation>
+                    <documentation>Czech koruna</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DJF">
+                <annotation>
+                    <documentation>Djiboutian franc</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DKK">
+                <annotation>
+                    <documentation>Danish krone</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DOP">
+                <annotation>
+                    <documentation>Dominican peso</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DZD">
+                <annotation>
+                    <documentation>Algerian dinar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="EGP">
+                <annotation>
+                    <documentation>Egyptian pound</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ERN">
+                <annotation>
+                    <documentation>Eritrean nakfa</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ETB">
+                <annotation>
+                    <documentation>Ethiopian birr</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="EUR">
+                <annotation>
+                    <documentation>Euro</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="FJD">
+                <annotation>
+                    <documentation>Fiji dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="FKP">
+                <annotation>
+                    <documentation>Falkland Islands pound</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="GBP">
+                <annotation>
+                    <documentation>Pound sterling</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="GEL">
+                <annotation>
+                    <documentation>Georgian lari</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="GHS">
+                <annotation>
+                    <documentation>Ghanaian cedi</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="GIP">
+                <annotation>
+                    <documentation>Gibraltar pound</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="GMD">
+                <annotation>
+                    <documentation>Gambian dalasi</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="GNF">
+                <annotation>
+                    <documentation>Guinean franc</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="GTQ">
+                <annotation>
+                    <documentation>Guatemalan quetzal</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="GYD">
+                <annotation>
+                    <documentation>Guyanese dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="HKD">
+                <annotation>
+                    <documentation>Hong Kong dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="HNL">
+                <annotation>
+                    <documentation>Honduran lempira</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="HRK">
+                <annotation>
+                    <documentation>Croatian kuna</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="HTG">
+                <annotation>
+                    <documentation>Haitian gourde</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="HUF">
+                <annotation>
+                    <documentation>Hungarian forint</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="IDR">
+                <annotation>
+                    <documentation>Indonesian rupiah</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ILS">
+                <annotation>
+                    <documentation>Israeli new shekel</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="INR">
+                <annotation>
+                    <documentation>Indian rupee</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="IQD">
+                <annotation>
+                    <documentation>Iraqi dinar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="IRR">
+                <annotation>
+                    <documentation>Iranian rial</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ISK">
+                <annotation>
+                    <documentation>Icelandic króna</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="JMD">
+                <annotation>
+                    <documentation>Jamaican dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="JOD">
+                <annotation>
+                    <documentation>Jordanian dinar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="JPY">
+                <annotation>
+                    <documentation>Japanese yen</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="KES">
+                <annotation>
+                    <documentation>Kenyan shilling</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="KGS">
+                <annotation>
+                    <documentation>Kyrgyzstani som</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="KHR">
+                <annotation>
+                    <documentation>Cambodian riel</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="KMF">
+                <annotation>
+                    <documentation>Comoro franc</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="KPW">
+                <annotation>
+                    <documentation>North Korean won</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="KRW">
+                <annotation>
+                    <documentation>South Korean won</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="KWD">
+                <annotation>
+                    <documentation>Kuwaiti dinar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="KYD">
+                <annotation>
+                    <documentation>Cayman Islands dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="KZT">
+                <annotation>
+                    <documentation>Kazakhstani tenge</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="LAK">
+                <annotation>
+                    <documentation>Lao kip</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="LBP">
+                <annotation>
+                    <documentation>Lebanese pound</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="LKR">
+                <annotation>
+                    <documentation>Sri Lankan rupee</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="LRD">
+                <annotation>
+                    <documentation>Liberian dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="LSL">
+                <annotation>
+                    <documentation>Lesotho loti</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="LYD">
+                <annotation>
+                    <documentation>Libyan dinar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MAD">
+                <annotation>
+                    <documentation>Moroccan dirham</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MDL">
+                <annotation>
+                    <documentation>Moldovan leu</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MGA">
+                <annotation>
+                    <documentation>Malagasy ariary</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MKD">
+                <annotation>
+                    <documentation>Macedonian denar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MMK">
+                <annotation>
+                    <documentation>Myanmar kyat</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MNT">
+                <annotation>
+                    <documentation>Mongolian tögrög</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MOP">
+                <annotation>
+                    <documentation>Macanese pataca</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MRO">
+                <annotation>
+                    <documentation>Mauritanian ouguiya</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MUR">
+                <annotation>
+                    <documentation>Mauritian rupee</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MVR">
+                <annotation>
+                    <documentation>Maldivian rufiyaa</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MWK">
+                <annotation>
+                    <documentation>Malawian kwacha</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MXN">
+                <annotation>
+                    <documentation>Mexican peso</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MXV">
+                <annotation>
+                    <documentation>Mexican Unidad de Inversion (UDI) (funds code)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MYR">
+                <annotation>
+                    <documentation>Malaysian ringgit</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MZN">
+                <annotation>
+                    <documentation>Mozambican metical</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="NAD">
+                <annotation>
+                    <documentation>Namibian dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="NGN">
+                <annotation>
+                    <documentation>Nigerian naira</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="NIO">
+                <annotation>
+                    <documentation>Nicaraguan córdoba</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="NOK">
+                <annotation>
+                    <documentation>Norwegian krone</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="NPR">
+                <annotation>
+                    <documentation>Nepalese rupee</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="NZD">
+                <annotation>
+                    <documentation>New Zealand dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="OMR">
+                <annotation>
+                    <documentation>Omani rial</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PAB">
+                <annotation>
+                    <documentation>Panamanian balboa</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PEN">
+                <annotation>
+                    <documentation>Peruvian Sol</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PGK">
+                <annotation>
+                    <documentation>Papua New Guinean kina</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PHP">
+                <annotation>
+                    <documentation>Philippine peso</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PKR">
+                <annotation>
+                    <documentation>Pakistani rupee</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PLN">
+                <annotation>
+                    <documentation>Polish z?oty</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PYG">
+                <annotation>
+                    <documentation>Paraguayan guaraní</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="QAR">
+                <annotation>
+                    <documentation>Qatari riyal</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RON">
+                <annotation>
+                    <documentation>Romanian leu</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RSD">
+                <annotation>
+                    <documentation>Serbian dinar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RUB">
+                <annotation>
+                    <documentation>Russian ruble</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="RWF">
+                <annotation>
+                    <documentation>Rwandan franc</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SAR">
+                <annotation>
+                    <documentation>Saudi riyal</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SBD">
+                <annotation>
+                    <documentation>Solomon Islands dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SCR">
+                <annotation>
+                    <documentation>Seychelles rupee</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SDG">
+                <annotation>
+                    <documentation>Sudanese pound</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SEK">
+                <annotation>
+                    <documentation>Swedish krona/kronor</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SGD">
+                <annotation>
+                    <documentation>Singapore dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SHP">
+                <annotation>
+                    <documentation>Saint Helena pound</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SLL">
+                <annotation>
+                    <documentation>Sierra Leonean leone</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SOS">
+                <annotation>
+                    <documentation>Somali shilling</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SRD">
+                <annotation>
+                    <documentation>Surinamese dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SSP">
+                <annotation>
+                    <documentation>South Sudanese pound</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="STD">
+                <annotation>
+                    <documentation>São Tomé and Príncipe dobra</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SVC">
+                <annotation>
+                    <documentation>Salvadoran colón</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SYP">
+                <annotation>
+                    <documentation>Syrian pound</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SZL">
+                <annotation>
+                    <documentation>Swazi lilangeni</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="THB">
+                <annotation>
+                    <documentation>Thai baht</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="TJS">
+                <annotation>
+                    <documentation>Tajikistani somoni</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="TMT">
+                <annotation>
+                    <documentation>Turkmenistani manat</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="TND">
+                <annotation>
+                    <documentation>Tunisian dinar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="TOP">
+                <annotation>
+                    <documentation>Tongan pa?anga</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="TRY">
+                <annotation>
+                    <documentation>Turkish lira</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="TTD">
+                <annotation>
+                    <documentation>Trinidad and Tobago dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="TWD">
+                <annotation>
+                    <documentation>New Taiwan dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="TZS">
+                <annotation>
+                    <documentation>Tanzanian shilling</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="UAH">
+                <annotation>
+                    <documentation>Ukrainian hryvnia</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="UGX">
+                <annotation>
+                    <documentation>Ugandan shilling</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="USD">
+                <annotation>
+                    <documentation>United States dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="USN">
+                <annotation>
+                    <documentation>United States dollar (next day) (funds code)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="UYI">
+                <annotation>
+                    <documentation>Uruguay Peso en Unidades Indexadas (URUIURUI) (funds code)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="UYU">
+                <annotation>
+                    <documentation>Uruguayan peso</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="UZS">
+                <annotation>
+                    <documentation>Uzbekistan som</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="VEF">
+                <annotation>
+                    <documentation>Venezuelan bolívar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="VND">
+                <annotation>
+                    <documentation>Vietnamese dong</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="VUV">
+                <annotation>
+                    <documentation>Vanuatu vatu</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="WST">
+                <annotation>
+                    <documentation>Samoan tala</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XAF">
+                <annotation>
+                    <documentation>CFA franc BEAC</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XAG">
+                <annotation>
+                    <documentation>Silver (one troy ounce)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XAU">
+                <annotation>
+                    <documentation>Gold (one troy ounce)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XBA">
+                <annotation>
+                    <documentation>European Composite Unit (EURCO) (bond market unit)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XBB">
+                <annotation>
+                    <documentation>European Monetary Unit (E.M.U.-6) (bond market unit)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XBC">
+                <annotation>
+                    <documentation>European Unit of Account 9 (E.U.A.-9) (bond market unit)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XBD">
+                <annotation>
+                    <documentation>European Unit of Account 17 (E.U.A.-17) (bond market unit)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XCD">
+                <annotation>
+                    <documentation>East Caribbean dollar</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XDR">
+                <annotation>
+                    <documentation>Special drawing rights</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XOF">
+                <annotation>
+                    <documentation>CFA franc BCEAO</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XPD">
+                <annotation>
+                    <documentation>Palladium (one troy ounce)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XPF">
+                <annotation>
+                    <documentation>CFP franc (franc Pacifique)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XPT">
+                <annotation>
+                    <documentation>Platinum (one troy ounce)</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XSU">
+                <annotation>
+                    <documentation>SUCRE</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XTS">
+                <annotation>
+                    <documentation>Code reserved for testing purposes</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XUA">
+                <annotation>
+                    <documentation>ADB Unit of Account</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="XXX">
+                <annotation>
+                    <documentation>No currency</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="YER">
+                <annotation>
+                    <documentation>Yemeni rial</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ZAR">
+                <annotation>
+                    <documentation>South African rand</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ZMW">
+                <annotation>
+                    <documentation>Zambian kwacha</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ZWL">
+                <annotation>
+                    <documentation>Zimbabwean dollar A/10</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <simpleType name="CurrencyType-Legacy">
+        <restriction base="string">
+            <enumeration value="ATS">
+                <annotation>
+                    <documentation>Austria Schillings</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="BEF">
+                <annotation>
+                    <documentation>Belgium Francs</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="CYP">
+                <annotation>
+                    <documentation>Cyprus Pounds</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="DEM">
+                <annotation>
+                    <documentation>Germany Deutsche Marks</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="EEK">
+                <annotation>
+                    <documentation>Estonia Krooni</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ESP">
+                <annotation>
+                    <documentation>Spain Pesetas</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="FIM">
+                <annotation>
+                    <documentation>Finland Markkaa</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="FRF">
+                <annotation>
+                    <documentation>France Francs</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="GRD">
+                <annotation>
+                    <documentation>Greece Drachmae</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="IEP">
+                <annotation>
+                    <documentation>Ireland Pounds</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ITL">
+                <annotation>
+                    <documentation>Italy Lire</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="LUF">
+                <annotation>
+                    <documentation>Luxembourg Francs</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="MTL">
+                <annotation>
+                    <documentation>Malta Liri</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="NLG">
+                <annotation>
+                    <documentation>Netherlands Guilders</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="PTE">
+                <annotation>
+                    <documentation>Portugal Escudos</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ROL">
+                <annotation>
+                    <documentation>Romania Lei</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SIT">
+                <annotation>
+                    <documentation>Slovenia Tolars</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="SKK">
+                <annotation>
+                    <documentation>Slovakia Koruny</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="VEB">
+                <annotation>
+                    <documentation>Venezuela Bolivares</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="ZMK">
+                <annotation>
+                    <documentation>Zambia Kwacha</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <simpleType name="CurrencyAndNotSpecifiedType">
+        <union memberTypes="tns:CurrencyType tns:NotSpecifiedType"/>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="EligibilityClassificationType">
+        <annotation>
+            <documentation>Attributes city, state and country are only to be used if attribute type="regionspecific"</documentation>
+        </annotation>
+        <simpleContent>
+            <extension base="string">
+                <attribute name="type" type="tns:TypeIDValuesAndNotSpecifiedType" use="required"/>
+                <attribute name="id" type="tns:ClassificationTypeIDValues" use="required"/>
+                <attribute name="city" type="string" use="optional"/>
+                <attribute name="state" type="string" use="optional"/>
+                <attribute name="country" type="tns:CountryCodeType" use="optional"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="EstablishmentInfoType">
+        <sequence>
+            <element name="establishmentDate" type="gYear" nillable="true" minOccurs="0"/>
+            <element name="establishmentCity" type="string" nillable="true" minOccurs="0"/>
+            <element name="establishmentState" type="string" nillable="true" minOccurs="0"/>
+            <element name="establishmentCountryCode" type="tns:CountryCodeType" nillable="true" minOccurs="0">
+                <annotation>
+                    <documentation>ISO 3166 country code</documentation>
+                </annotation>
+            </element>
+            <element name="establishmentDescription" type="string" nillable="true" minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="FinancialInfoType">
+        <sequence>
+            <element name="taxIds" type="tns:TaxIDType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="fiscalCloseDate" type="gMonthDay" nillable="true" minOccurs="0" maxOccurs="unbounded">
+                <annotation>
+                    <documentation>See http://books.xmlschemata.org/relaxng/ch19-77119.html for examples</documentation>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="FundedProgramsTypesType">
+        <sequence>
+            <element name="fundedProgramsType" type="tns:FundedProgramsTypeType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="FundedProgramsTypeType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="id" type="tns:FundingTypeIDsType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <complexType name="OpportunitiesFundedProgramsTypeType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="id" type="tns:OpportunitiesFundingTypeIDsAndNotSpecifiedType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="fundingBodyProgramID">
+        <restriction base="string"/>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="FundingBodySubTypeIDsType">
+        <restriction base="string">
+            <enumeration value="academ">
+                <annotation>
+                    <documentation>@type='private sector'; subType='academic'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="asssoc">
+                <annotation>
+                    <documentation>@type='private sector'; subType='professional associations and societies'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="corpor">
+                <annotation>
+                    <documentation>@type='private sector'; subType='corporate'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="founda">
+                <annotation>
+                    <documentation>@type='private sector'; subType='foundation'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="govfed">
+                <annotation>
+                    <documentation>@type='government'; subType='federal'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="govnon">
+                <annotation>
+                    <documentation>@type='government'; subType='government non-federal'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="intern">
+                <annotation>
+                    <documentation>@type='private sector'; subType='international'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="othern">
+                <annotation>
+                    <documentation>@type='private sector'; subType='other non-profit'</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="FundingBodySubTypesType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="id" type="tns:FundingBodySubTypeIDsType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="FundingBodyTypeIDsType">
+        <restriction base="string">
+            <enumeration value="gov">
+                <annotation>
+                    <documentation>@type='Government'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="pri">
+                <annotation>
+                    <documentation>@type='Private sector'</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="FundingTypeIDsType">
+        <restriction base="string">
+            <enumeration value="career">
+                <annotation>
+                    <documentation>fundingType='Career Development Grants'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="community">
+                <annotation>
+                    <documentation>fundingType='Community Service Grants'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="conf">
+                <annotation>
+                    <documentation>fundingType='Conference/Travel Grants'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="coop">
+                <annotation>
+                    <documentation>fundingType='Cooperative Agreements/Contracts'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="equip">
+                <annotation>
+                    <documentation>fundingType='Equipment /Facilities Grants'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="fellow">
+                <annotation>
+                    <documentation>fundingType='Fellowships'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="project">
+                <annotation>
+                    <documentation>fundingType='Program Project/Center Grants'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="research">
+                <annotation>
+                    <documentation>fundingType='Research Grants'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="training">
+                <annotation>
+                    <documentation>fundingType='Training Grants'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="nonmon">
+                <annotation>
+                    <documentation>fundingType='Non-monetary Awards'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="prize">
+                <annotation>
+                    <documentation>fundingType='Prizes'</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <simpleType name="OpportunitiesFundingTypeIDsType">
+        <restriction base="string">
+            <enumeration value="artistic">
+                <annotation>
+                    <documentation>fundingType='Artistic Pursuit'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="conf">
+                <annotation>
+                    <documentation>fundingType='Meeting or conference or seminar'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="construction">
+                <annotation>
+                    <documentation>fundingType='Facility Construction or Operation'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="contract">
+                <annotation>
+                    <documentation>fundingType='Contract or Tender'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="coop">
+                <annotation>
+                    <documentation>fundingType='Collaboration or Cooperative Agreement Agreements/Contracts'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="dissthesis">
+                <annotation>
+                    <documentation>fundingType='Dissertation or Thesis'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="equip">
+                <annotation>
+                    <documentation>fundingType='Equipment or Materials Acquisition or facility Use'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="postaward">
+                <annotation>
+                    <documentation>fundingType='Postdoctoral Award'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="program">
+                <annotation>
+                    <documentation>fundingType='Program or Curriculum Development or Provision'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="prize">
+                <annotation>
+                    <documentation>fundingType='Prize or award'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="publishing">
+                <annotation>
+                    <documentation>fundingType='Publishing or Editorial'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="research">
+                <annotation>
+                    <documentation>fundingType='Research'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="training">
+                <annotation>
+                    <documentation>fundingType='Training, scholarship, or fellowship'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="travel">
+                <annotation>
+                    <documentation>fundingType='Travel'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="visit">
+                <annotation>
+                    <documentation>fundingType='Visiting Personnel'</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="OpportunitiesFundingTypeIDsAndNotSpecifiedType">
+        <union memberTypes="tns:OpportunitiesFundingTypeIDsType tns:NotSpecifiedType"/>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="HierarchyType">
+        <restriction base="string">
+            <enumeration value="lead"/>
+            <enumeration value="component"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="KeywordsType">
+        <sequence minOccurs="0">
+            <element name="keyword" type="string" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute ref="xml:lang" use="optional" default="en"/>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="LinkType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="url" type="string" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="MicroOrgBodyType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="orgDbId" type="integer" use="required"/>
+                <attribute name="relType" type="tns:BinaryRelationType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="MicroOpportunityListItemType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="id" type="integer" use="required"/>
+                <attribute name="relType" type="tns:OpportunitiesRelationsType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <complexType name="MicroProgramListItemType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="id" type="integer" use="required"/>
+                <attribute name="relType" type="tns:BinaryRelationType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="MicroRelatedFundingBodiesType">
+        <sequence minOccurs="0">
+            <element name="org" type="tns:MicroOrgBodyType" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="hierarchy" type="tns:HierarchyType" use="optional"/>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="MiniRelatedItemsType">
+        <sequence>
+            <element name="item" type="tns:MiniRelatedItemType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="MiniRelatedItemType">
+        <sequence>
+            <element name="link" type="tns:LinkType"/>
+            <element name="description" type="string" nillable="true" minOccurs="0"/>
+        </sequence>
+        <attribute name="relType" type="tns:BinaryRelationType" use="optional"/>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="OpportunityDatesType">
+        <sequence>
+            <element name="opportunityDate" type="tns:OpportunityDateType" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="OpportunityDateType">
+        <sequence>
+            <element name="date" type="tns:DateType" nillable="true"/>
+            <element name="description" type="string" nillable="true" minOccurs="0"/>
+        </sequence>
+    </complexType>
+    <complexType name="DateType">
+        <simpleContent>
+            <extension base="tns:DateFormatType">
+                <attribute name="type" type="tns:DateTypesType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <simpleType name="DateFormatType">
+        <union memberTypes="date tns:OngoingType tns:NotSpecifiedType"/>
+    </simpleType>
+    <simpleType name="DateTypesType">
+        <restriction base="string">
+            <enumeration value="DueDate"/>
+            <enumeration value="ExpirationDate"/>
+            <enumeration value="FirstPostDate"/>
+            <enumeration value="LastModifiedPostDate"/>
+            <enumeration value="LoiDate"/>
+            <enumeration value="OpenDate"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="OpportunityStatusType">
+        <restriction base="string">
+            <enumeration value="active"/>
+            <enumeration value="inactive"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="PercentageType">
+        <restriction base="double">
+            <minInclusive value="-100.00"/>
+            <maxInclusive value="100.00"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="ProgramStatusType">
+        <restriction base="string">
+            <enumeration value="active"/>
+            <enumeration value="expired"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="RelatedOpportunitiesType">
+        <sequence>
+            <element name="relatedOpportunity" type="tns:MicroOpportunityListItemType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="RelatedProgramsType">
+        <sequence minOccurs="0">
+            <element name="relatedProgram" type="tns:MicroProgramListItemType" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="hierarchy" type="tns:HierarchyType" use="optional"/>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="RevisionDateType">
+        <simpleContent>
+            <extension base="dateTime">
+                <attribute name="version" type="integer" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="simpleAddressType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="country" type="tns:CountryCodeType" use="optional"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="ScholarlyOutputType">
+        <sequence>
+            <element name="item" type="tns:ScholarlyOutputItemType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="ScholarlyOutputItemType">
+        <sequence>
+            <element name="doi" type="string" nillable="true" minOccurs="0"/>
+            <element name="pubmedId" type="string" nillable="true" minOccurs="0"/>
+            <element name="itemId" type="string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="relType" type="tns:ScholarlyOutputRelationsType" use="optional"/>
+        <attribute name="type" type="tns:ScholarlyOutputItemTypeType" use="optional"/>
+    </complexType>
+    <simpleType name="ScholarlyOutputItemTypeType">
+        <restriction base="string">
+            <enumeration value="journalArticle"/>
+            <enumeration value="other"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="SponsoringProgramType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="id" type="integer" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <annotation>
+        <documentation> This schema represents status and revision history of various types within the Grants Optimizer. Author: Sanjeev Rao
+            s.rao@paritycomputing.com </documentation>
+    </annotation>
+    <complexType name="StatusAndRevisionHistoryType">
+        <sequence>
+            <element name="revisedDate" type="tns:RevisionDateType" minOccurs="0"/>
+            <element name="createdDate" type="tns:RevisionDateType"/>
+        </sequence>
+        <attribute name="status" type="tns:StatusType" use="required"/>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="StatusType">
+        <annotation>
+            <documentation> If StatusAndRevisionHistoryType/RevisionDateType/version == 1, status = 'new'. If version greater than 1, status =
+                'update'. </documentation>
+        </annotation>
+        <restriction base="string">
+            <enumeration value="delete"/>
+            <enumeration value="new"/>
+            <enumeration value="update"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="StringWithLanguageType">
+        <simpleContent>
+            <extension base="string">
+                <attribute ref="xml:lang" use="optional" default="en"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="SubTypesType">
+        <sequence>
+            <element name="subType" type="tns:FundingBodySubTypesType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="TaxIDType">
+        <simpleContent>
+            <extension base="string">
+                <attribute name="type" type="tns:TaxIdTypeType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="TaxIdTypeType">
+        <restriction base="string">
+            <enumeration value="in/PAN"/>
+            <enumeration value="us/EIN"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="TypeIDValues">
+        <restriction base="string">
+            <enumeration value="citizenship">
+                <annotation>
+                    <documentation>@type='citizenship'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="regionspecific">
+                <annotation>
+                    <documentation>@type='regionspecific'</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="restrictions">
+                <annotation>
+                    <documentation>@type='restrictions'</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <simpleType name="TypeIDValuesAndNotSpecifiedType">
+        <union memberTypes="tns:TypeIDValues tns:NotSpecifiedType"/>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="TypeValues">
+        <restriction base="string">
+            <enumeration value="academic degree"/>
+            <enumeration value="academic rank"/>
+            <enumeration value="restrictions"/>
+        </restriction>
+    </simpleType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="VisibleNameType">
+        <sequence>
+            <element name="prefix" type="string" minOccurs="0"/>
+            <element name="givenName" type="string"/>
+            <element name="middleName" type="string" minOccurs="0"/>
+            <element name="surname" type="string"/>
+            <element name="suffix" type="string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <simpleType name="NotSpecifiedType">
+        <restriction base="string">
+            <enumeration value="not-specified"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="OngoingType">
+        <restriction base="string">
+            <enumeration value="ongoing"/>
+        </restriction>
+    </simpleType>
+
+</schema>

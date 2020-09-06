@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Elsevier GWH-MHub enrichment request schema
+     Version 2.0.0r3
+
+     Copyright © 2012-2014 Elsevier B.V.
+     This is open access material under the CC BY license (http://creativecommons.org/licenses/by/3.0/).
+-->
+<!--
+     Version 2.0.0r3  26 September 2014  [JMi]
+
+     Version 2.0.0r2  3 September 2014  [JMi]
+
+     Version 2.0.0r1  8 August 2014  [JMi]
+
+     Version 1.4.0p1  29 January 2014  JMi
+
+     Version 1.4.0  14 January 2014  JMi
+     - Made element tns:name of (new) type tns:StringWithLanguageType
+       and changed the occurrence indicator
+     - Using Grant 1.4 namespace
+     
+     Version 1.1 updated by GWH team
+     - Added optional element recordSource
+     - Added optional element NIHData with 15 optional (new) elements
+     - Added optional element orgCountry
+-->
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.elsevier.com/xml/schema/grant/grant-2.0"
+    targetNamespace="http://www.elsevier.com/xml/schema/grant/grant-2.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <include schemaLocation="common20.xsd"/>
+    <annotation>
+        <documentation>This schema document represents the request format of the awards that will be sent to mhub for enrichment. gwhmhub-request.xsd
+            is just the same as award schema with 2 added attributes "clientId" and "versionId"</documentation>
+    </annotation>
+    <element name="request" type="tns:requestType"/>
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="requestType">
+        <sequence>
+            <element name="awards" type="tns:AwardsType"/>
+        </sequence>
+    </complexType>
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AwardsType">
+        <sequence>
+            <element name="award" type="tns:AwardType" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+    <complexType name="AwardType">
+        <sequence>
+            <element name="revisionHistory" type="tns:StatusAndRevisionHistoryType" nillable="true" minOccurs="0"/>
+            <element name="recordSource" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>Source used to obtain award information.</documentation>
+                </annotation>
+            </element>
+            <element name="name" type="tns:StringWithLanguageType" maxOccurs="unbounded"/>
+            <element name="NIHData" type="tns:NIHDataType" minOccurs="0">
+                <annotation>
+                    <documentation>NIH RePORTER additions.</documentation>
+                </annotation>
+            </element>
+            <element name="orgCountry" type="string" minOccurs="0"/>
+            <element name="startDate" type="date" nillable="true" minOccurs="0">
+                <annotation>
+                    <documentation>Logical start date from external source</documentation>
+                </annotation>
+            </element>
+            <element name="lastAmendedDate" type="date" nillable="true" minOccurs="0">
+                <annotation>
+                    <documentation>Logical last amended date from external source</documentation>
+                </annotation>
+            </element>
+            <element name="endDate" type="date" nillable="true" minOccurs="0">
+                <annotation>
+                    <documentation>Logical end date from external source</documentation>
+                </annotation>
+            </element>
+            <element name="amount" type="tns:AmountType" nillable="true" minOccurs="0"/>
+            <element name="abstract" type="string" nillable="true" minOccurs="0"/>
+            <element name="classificationGroup" type="tns:ClassificationGroupType" nillable="true" minOccurs="0"/>
+            <element name="keywords" type="tns:KeywordsType" nillable="true" minOccurs="0"/>
+            <element name="awardees" type="tns:AwardeesType" nillable="true" minOccurs="0"/>
+            <element name="awardManagers" type="tns:AwardManagersType" nillable="true" minOccurs="0"/>
+            <element name="relatedPrograms" type="tns:RelatedProgramsType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="relatedFundingBodies" type="tns:MicroRelatedFundingBodiesType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="relatedItems" type="tns:MiniRelatedItemsType" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="integer" use="required"/>
+
+        <attribute name="clientId" type="integer" use="required"/>
+        <attribute name="versionId" type="integer" use="required"/>
+
+        <attribute name="fundingBodyAwardId" type="string" use="required"/>
+        <attribute name="type" type="tns:FundingTypeIDsType" use="required"/>
+        <attribute name="trusting" type="boolean" use="optional"/>
+        <attribute name="collectionCode" type="string" use="optional"/>
+        <attribute name="hidden" type="boolean" default="false" use="optional"/>
+    </complexType>
+    <complexType name="NIHDataType">
+        <sequence>
+            <element name="applicationID" type="string" minOccurs="0"/>
+            <element name="FOANumber" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>Funding Opportunity Announcement Number.</documentation>
+                </annotation>
+            </element>
+            <element name="fundingICs" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>Funding Institute/Center. See also http://grants.nih.gov/grants/glossary.htm#I</documentation>
+                </annotation>
+            </element>
+            <element name="orgDuns" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>The unique number provided by Dun and Bradstreet to all Federal government contractors and grantees in US. See also
+                        http://fedgov.dnb.com/webform/</documentation>
+                </annotation>
+            </element>
+            <element name="orgDept" type="string" minOccurs="0"/>
+            <element name="piID" type="string" minOccurs="0">
+                <annotation>
+                    <documentation>Principal Investigator ID assigned by NIH to awardee.</documentation>
+                </annotation>
+            </element>
+            <element name="projectStartDate" type="date" nillable="true" minOccurs="0"/>
+            <element name="projectEndDate" type="date" nillable="true" minOccurs="0"/>
+            <element name="supportYears" type="positiveInteger" minOccurs="0">
+                <annotation>
+                    <documentation>Number of years this NIT award is supported. Minimum is 1.</documentation>
+                </annotation>
+            </element>
+            <element name="subProjectID" type="string" minOccurs="0"/>
+            <element name="totalCostSubProject" type="tns:AmountType" nillable="true" minOccurs="0"/>
+            <element name="coreProjectNumber" type="string" minOccurs="0"/>
+            <element name="educationInstituteType" type="string" minOccurs="0"/>
+            <element name="awardNoticeDate" type="date" minOccurs="0"/>
+            <element name="studySection" type="string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+</schema>

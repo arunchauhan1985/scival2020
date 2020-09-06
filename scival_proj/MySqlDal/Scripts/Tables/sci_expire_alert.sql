@@ -1,0 +1,7 @@
+CREATE TABLE `sci_expire_alert` (
+  `OPPORTUNITYID` bigint NOT NULL,
+  `DUEDATE` datetime DEFAULT NULL,
+  `CREATEDDATE` datetime DEFAULT NULL,
+  `FLAG` bigint DEFAULT NULL,
+  PRIMARY KEY (`OPPORTUNITYID`)
+);

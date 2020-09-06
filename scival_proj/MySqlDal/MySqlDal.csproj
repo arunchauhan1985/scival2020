@@ -1,0 +1,773 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9126C3F5-81F3-4E7D-BB5B-9C8ABB072873}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MySqlDal</RootNamespace>
+    <AssemblyName>MySqlDal</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.12.2.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.12.2\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.EntityFramework.8.0.21\lib\net452\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json.Schema, Version=3.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.Schema.3.0.13\lib\net45\Newtonsoft.Json.Schema.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.6.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.6\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.6\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.6\lib\net45\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.6\lib\net45\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.21\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="address.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="amount.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="asjc_description_prc_Result.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="award.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="awardceiling.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="awardee.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="awardfloor.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="awardmanager.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="award_location.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="award_master.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="award_tables.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="change.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="changehistory.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="classification.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="classification1.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="classificationgroup.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="contact.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="contactinfo.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="contactname.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="createddate.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataOpertation\AwardDataOperations.cs" />
+    <Compile Include="DataOpertation\AwardJson_Model.cs" />
+    <Compile Include="DataOpertation\CommonDataOperation.cs" />
+    <Compile Include="DataOpertation\CustomClasses.cs" />
+    <Compile Include="DataOpertation\DashboardDataOperations.cs" />
+    <Compile Include="DataOpertation\FB_JSON_Model.cs" />
+    <Compile Include="DataOpertation\FundingBodyDataOperations.cs" />
+    <Compile Include="DataOpertation\GetJsonData.cs" />
+    <Compile Include="DataOpertation\JsonModel.cs" />
+    <Compile Include="DataOpertation\OpportunityDataOperations.cs" />
+    <Compile Include="DataOpertation\Opp_jsonModel.cs" />
+    <Compile Include="DataOpertation\ScivalEntitiesInstance.cs" />
+    <Compile Include="DataOpertation\Transform.cs" />
+    <Compile Include="DataOpertation\WebWatcherDataOperation.cs" />
+    <Compile Include="DataOpertation\WrapperClass.cs" />
+    <Compile Include="DataOpertation\XmlJsonOperation.cs" />
+    <Compile Include="DataOpertation\XmlDataOperations.cs" />
+    <Compile Include="eligibilityclassification.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="eligibilitydescription.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="establishmentinfo.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="estimatedamountdescription.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="estimatedfunding.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fbprogress.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fundedprogramstype.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fundedprojectdetail.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fundedsubproject.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fundingbody.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fundingbodyamount.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fundingbody_master.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="fundingpolicy.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Get_GroupCountries_prc1_Result.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="installment.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="instalmentandamount.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="item.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="keyword.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="keyword1.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="limitedsubmissiondescription.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="link.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="opportunity_location.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="opportunity_master.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oppotunity.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="opp_subjectmatter.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="org.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataOpertation\TaskDataOperation.cs" />
+    <Compile Include="publicationdata.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="recurring.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="relatedfundingbody.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="relateditem.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="relatedorg.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Error\ScivalDataException.cs" />
+    <Compile Include="relatedprogram.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Replace.cs" />
+    <Compile Include="researchoutcome.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="revisionhistory.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScivalModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScivalModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScivalModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ScivalModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScivalModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sci_asjcdescription.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_binaryrelationtype.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_classificationstypetype.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_column_master.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_countries.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_countrycodes.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_countrygroup.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_currencytype.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_defaulttemplate.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_expired_opplist.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_expire_alert.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_fundedprogramstypelist.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_groupurl.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_group_url_detail.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_language_detail.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_language_master.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_modules.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_moduletaskconfig.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_opp_loi_duedate_detail.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_proc_gettaskforuser1_Result.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_proc_gettaskforuser_Result.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_proc_gettaskforuser_Result1.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_proc_gettaskforuser_Result2.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_proc_gettaskforuser_Result3.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_related_opportunity.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_related_orgs_vendor.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_scholarly_output.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_statecodes.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_tasks.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_timesheet.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_timesheetremarks.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_tran_type_master.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_typeidvalues.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_urlmaster.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_urlretain.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_urls.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_userlog.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_usermaster.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_usertask.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_version.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_workflow.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_workflowtemplate.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sci_xml_limits.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="subtype.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="synopsis.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temptable_subregion.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="temp_scivalurl.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="totalamount.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="totalfunding.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tracking_award.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tracking_fb.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tracking_log.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tracking_opp.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="userassignment.cs">
+      <DependentUpon>ScivalModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="ScivalModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ScivalModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ScivalModel.edmx.diagram">
+      <DependentUpon>ScivalModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScivalModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScivalModel.edmx</DependentUpon>
+      <LastGenOutput>ScivalModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ScivalModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScivalModel.edmx</DependentUpon>
+      <LastGenOutput>ScivalModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\Functions\string_splitter.sql" />
+    <Content Include="Scripts\StoredProcedures\asjc_description_prc.sql" />
+    <Content Include="Scripts\StoredProcedures\awardssource_dml_prc.sql" />
+    <Content Include="Scripts\StoredProcedures\awardssource_dml_prc_5.sql" />
+    <Content Include="Scripts\StoredProcedures\award_location_insupdel.sql" />
+    <Content Include="Scripts\StoredProcedures\award_location_list.sql" />
+    <Content Include="Scripts\StoredProcedures\Chk_ValidText.sql" />
+    <Content Include="Scripts\StoredProcedures\dummy_tasklist_new.sql" />
+    <Content Include="Scripts\StoredProcedures\fundingbodysource_dml_prc_5.sql" />
+    <Content Include="Scripts\StoredProcedures\get_funding_details.sql" />
+    <Content Include="Scripts\StoredProcedures\Get_GroupCountries_prc1.sql" />
+    <Content Include="Scripts\StoredProcedures\get_opportunity_dateins_data5.sql" />
+    <Content Include="Scripts\StoredProcedures\LoadLanguageData.sql" />
+    <Content Include="Scripts\StoredProcedures\opportunitiessource_dml_prc_5.sql" />
+    <Content Include="Scripts\StoredProcedures\opportunity_location_insupdel.sql" />
+    <Content Include="Scripts\StoredProcedures\opportunity_location_insup_DEL.sql" />
+    <Content Include="Scripts\StoredProcedures\opportunity_location_list.sql" />
+    <Content Include="Scripts\StoredProcedures\opprotunity_loi_status.sql" />
+    <Content Include="Scripts\StoredProcedures\publicationsource_dml_prc_5.sql" />
+    <Content Include="Scripts\StoredProcedures\save_funding_prc3.sql" />
+    <Content Include="Scripts\StoredProcedures\sciFundedProgramType.sql" />
+    <Content Include="Scripts\StoredProcedures\sciFundedProgramType_win.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_auto_lead_relorgs_prc.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_awardstatisticsinsert.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_AWARDSTATISTICSlist.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_ADDRESSINSDEL.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_ADDRESSLIST.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_AWARDEEINSDEL_41.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_AWARDEEINSDEL_50.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_Aw_awardeelist50.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_aw_awexist.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_AWNEW.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_aw_awradins50.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_FAXINSDEL.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_faxlist.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_INSTITUTIONINSDEL41.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_INSTITUTIONINSDEL50.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_INSTITUTIONLIST.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_aw_managerlist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_aw_QCcheckxml50_4.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_aw_research_output.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_TELINSDEL.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_AW_TELlist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_CheckOppStatus.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_check_award_duplicate.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_classificationinsert.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_classificationlist.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_CLASSIFICATIONUPDEL.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_contactinsert_s2.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_contactlist.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_CURRENCYTYPElist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_establishmentinsert.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_establishmentlist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_expiredetail.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_fiscalclosedate.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_FundedProgramTypelist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_fundingbase_41.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_fundingbodyurlinsert.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_getfiscalclosedate.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_GetHiddenStatus.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_GetLanguageDetails.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_GETOPPORTUNITYDATES_5.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_gettaxids.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_gettaxidtype.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_GetWorkFlowDetails.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_INDELIGIBILITY_DML_PRC23MA.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_INDELIGIBILITY_DML_PRC24Ap.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_INDELIGIBILITY_DML_PRC_s.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_inserttimesheet41.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_iteminserttemp.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_iteminserttemp5.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_itemlist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_itemlist5.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_language_detail_dml_prc.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_LIMITEDSUBMISSION_DML_PRC.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_managerinsdel_1.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_mandatory_section.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_opaw_tasklist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_changehistoryins.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_changehistorylist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_delete_date_prc.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_eclassificationins.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_OP_ECLASSIFICATIONLIST.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_eligibilitylist.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_OP_estfundingins.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_OP_ESTFUNDINGINS_y.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_estfundinglist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_opexist.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_OP_OPNEW.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_OP_OPPORTUNITYINS.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_opportunity_dateins_50.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_OP_OPPORTUNITY_date_del.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_QCcheck_final_S50_Final.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_recurringIns.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_relatedopplist_prc.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_OP_RELATEDORGLIST_y.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_relatedprogeam.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_op_relatedprogeamins.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_OP_RELORGINS_yy.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_ORGNELIGIBILITYY_DML_23MAY.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_ORGNELIGIBILITYY_DML_25APR.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_ORGNELIGIBILITYY_DML_S.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_pageurls.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_PROC_AWARDBASE.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_PROC_AWARDPROGRESS.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_proc_backtask.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_proc_dummy_tasklist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_proc_fundingbodyprogres_S5.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_proc_gettaskforuser.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_proc_tasklist_new.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_proc_updateexpirealert.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_Publication_out_insupdel.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_relatedorglist.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_relatedorgsinsert.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_related_vendor_dml_prc.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_rel_opportunity_dml_prc5.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_taxids.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_timesheetstop.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_timesheetstopcontinue_QA.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_timesheetstoP_CONTINUE.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_TrackUnstoppedFbAwardOpp.sql" />
+    <Content Include="Scripts\StoredProcedures\SCI_UPD_OPP_DATE_FLG.sql" />
+    <Content Include="Scripts\StoredProcedures\sci_urllinks.sql" />
+    <Content Include="Scripts\StoredProcedures\update_award_title.sql" />
+    <Content Include="Scripts\StoredProcedures\update_fbdetails_multilanguage.sql" />
+    <Content Include="Scripts\Tables\about.sql" />
+    <Content Include="Scripts\Tables\address.sql" />
+    <Content Include="Scripts\Tables\amount.sql" />
+    <Content Include="Scripts\Tables\award.sql" />
+    <Content Include="Scripts\Tables\awardceiling.sql" />
+    <Content Include="Scripts\Tables\awardees.sql" />
+    <Content Include="Scripts\Tables\awardfloor.sql" />
+    <Content Include="Scripts\Tables\awardmanagers.sql" />
+    <Content Include="Scripts\Tables\award_location.sql" />
+    <Content Include="Scripts\Tables\award_master.sql" />
+    <Content Include="Scripts\Tables\award_tables.sql" />
+    <Content Include="Scripts\Tables\change.sql" />
+    <Content Include="Scripts\Tables\changehistory.sql" />
+    <Content Include="Scripts\Tables\classification.sql" />
+    <Content Include="Scripts\Tables\classificationgroup.sql" />
+    <Content Include="Scripts\Tables\classifications.sql" />
+    <Content Include="Scripts\Tables\contactinfo.sql" />
+    <Content Include="Scripts\Tables\contactname.sql" />
+    <Content Include="Scripts\Tables\contacts.sql" />
+    <Content Include="Scripts\Tables\createddate.sql" />
+    <Content Include="Scripts\Tables\eligibilityclassification.sql" />
+    <Content Include="Scripts\Tables\eligibilitydescription.sql" />
+    <Content Include="Scripts\Tables\establishmentinfo.sql" />
+    <Content Include="Scripts\Tables\estimatedamountdescription.sql" />
+    <Content Include="Scripts\Tables\estimatedfunding.sql" />
+    <Content Include="Scripts\Tables\fbprogress.sql" />
+    <Content Include="Scripts\Tables\fundedprogramstypes.sql" />
+    <Content Include="Scripts\Tables\FUNDEDPROJECTDETAIL.sql" />
+    <Content Include="Scripts\Tables\fundedsubproject.sql" />
+    <Content Include="Scripts\Tables\fundingbody.sql" />
+    <Content Include="Scripts\Tables\fundingbodyamount.sql" />
+    <Content Include="Scripts\Tables\fundingbody_master.sql" />
+    <Content Include="Scripts\Tables\fundingpolicy.sql" />
+    <Content Include="Scripts\Tables\installment.sql" />
+    <Content Include="Scripts\Tables\instalmentandamount.sql" />
+    <Content Include="Scripts\Tables\item.sql" />
+    <Content Include="Scripts\Tables\keyword.sql" />
+    <Content Include="Scripts\Tables\keywords.sql" />
+    <Content Include="Scripts\Tables\limitedsubmissiondescription.sql" />
+    <Content Include="Scripts\Tables\link.sql" />
+    <Content Include="Scripts\Tables\opportunity_location.sql" />
+    <Content Include="Scripts\Tables\opportunity_master.sql" />
+    <Content Include="Scripts\Tables\oppotunity.sql" />
+    <Content Include="Scripts\Tables\opp_subjectmatter.sql" />
+    <Content Include="Scripts\Tables\org.sql" />
+    <Content Include="Scripts\Tables\PUBLICATIONDATA.sql" />
+    <Content Include="Scripts\Tables\recurring.sql" />
+    <Content Include="Scripts\Tables\relatedfundingbodies.sql" />
+    <Content Include="Scripts\Tables\relateditems.sql" />
+    <Content Include="Scripts\Tables\relatedorgs.sql" />
+    <Content Include="Scripts\Tables\relatedprograms.sql" />
+    <Content Include="Scripts\Tables\researchoutcome.sql" />
+    <Content Include="Scripts\Tables\revisionhistory.sql" />
+    <Content Include="Scripts\Tables\SCI_ASJCDESCRIPTION.sql" />
+    <Content Include="Scripts\Tables\sci_binaryrelationtype.sql" />
+    <Content Include="Scripts\Tables\sci_classificationstypetype.sql" />
+    <Content Include="Scripts\Tables\sci_column_master.sql" />
+    <Content Include="Scripts\Tables\sci_countries.sql" />
+    <Content Include="Scripts\Tables\sci_countrycodes.sql" />
+    <Content Include="Scripts\Tables\sci_countrygroup.sql" />
+    <Content Include="Scripts\Tables\sci_currencytype.sql" />
+    <Content Include="Scripts\Tables\sci_defaulttemplate.sql" />
+    <Content Include="Scripts\Tables\sci_expired_opplist.sql" />
+    <Content Include="Scripts\Tables\sci_expire_alert.sql" />
+    <Content Include="Scripts\Tables\sci_fundedprogramstypelist.sql" />
+    <Content Include="Scripts\Tables\sci_groupurl.sql" />
+    <Content Include="Scripts\Tables\sci_group_url_detail.sql" />
+    <Content Include="Scripts\Tables\sci_language_detail.sql" />
+    <Content Include="Scripts\Tables\sci_language_master.sql" />
+    <Content Include="Scripts\Tables\sci_modules.sql" />
+    <Content Include="Scripts\Tables\sci_moduletaskconfig.sql" />
+    <Content Include="Scripts\Tables\sci_opp_loi_duedate_detail.sql" />
+    <Content Include="Scripts\Tables\sci_related_opportunity.sql" />
+    <Content Include="Scripts\Tables\sci_related_orgs_vendor.sql" />
+    <Content Include="Scripts\Tables\sci_scholarly_output.sql" />
+    <Content Include="Scripts\Tables\sci_statecodes.sql" />
+    <Content Include="Scripts\Tables\sci_tasks.sql" />
+    <Content Include="Scripts\Tables\sci_timesheet.sql" />
+    <Content Include="Scripts\Tables\sci_timesheetremarks.sql" />
+    <Content Include="Scripts\Tables\sci_tran_type_master.sql" />
+    <Content Include="Scripts\Tables\sci_typeidvalues.sql" />
+    <Content Include="Scripts\Tables\sci_urlmaster.sql" />
+    <Content Include="Scripts\Tables\sci_urlretain.sql" />
+    <Content Include="Scripts\Tables\sci_urls.sql" />
+    <Content Include="Scripts\Tables\sci_userlog.sql" />
+    <Content Include="Scripts\Tables\sci_usermaster.sql" />
+    <Content Include="Scripts\Tables\sci_usertask.sql" />
+    <Content Include="Scripts\Tables\sci_version.sql" />
+    <Content Include="Scripts\Tables\sci_workflow.sql" />
+    <Content Include="Scripts\Tables\sci_workflowtemplate.sql" />
+    <Content Include="Scripts\Tables\sci_xml_limits.sql" />
+    <Content Include="Scripts\Tables\subtype.sql" />
+    <Content Include="Scripts\Tables\synopsis.sql" />
+    <Content Include="Scripts\Tables\temptable_subregion.sql" />
+    <Content Include="Scripts\Tables\temp_scivalurl.sql" />
+    <Content Include="Scripts\Tables\totalamount.sql" />
+    <Content Include="Scripts\Tables\totalfunding.sql" />
+    <Content Include="Scripts\Tables\tracking_award.sql" />
+    <Content Include="Scripts\Tables\tracking_fb.sql" />
+    <Content Include="Scripts\Tables\tracking_log.sql" />
+    <Content Include="Scripts\Tables\tracking_opp.sql" />
+    <Content Include="Scripts\Tables\userassignment.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

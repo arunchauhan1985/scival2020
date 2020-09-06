@@ -1,0 +1,246 @@
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.dll.config
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.dll
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.pdb
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\MySqlDal.dll
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.dll
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Extensions.dll
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.dll
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Primitives.dll
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\System.Web.Http.dll
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\EntityFramework.dll
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\MySqlDal.pdb
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\MySqlDal.dll.config
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.xml
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.xml
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\System.Web.Http.xml
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\bin\Debug\EntityFramework.xml
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csprojAssemblyReference.cache
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CopyComplete
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.dll
+D:\Umesh Wani\Freelance\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.pdb
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.dll.config
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.pdb
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\MySqlDal.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Extensions.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Primitives.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Web.Http.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\MySql.Data.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\EntityFramework.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\Google.Protobuf.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\Zstandard.Net.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\BouncyCastle.Crypto.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\Ubiety.Dns.Core.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\Renci.SshNet.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Memory.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Buffers.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Numerics.Vectors.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\MySqlDal.pdb
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\MySqlDal.dll.config
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Web.Http.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\MySql.Data.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\EntityFramework.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\Google.Protobuf.pdb
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\Google.Protobuf.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\Renci.SshNet.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Memory.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Buffers.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Numerics.Vectors.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csprojAssemblyReference.cache
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CoreCompileInputs.cache
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CopyComplete
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.dll
+F:\NEHA IMP DOC\PROJECTS\SVGSItSolutions\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.pdb
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.dll.config
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.pdb
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\MySqlDal.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Net.Http.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Extensions.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Primitives.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Net.Http.WebRequest.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Web.Http.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\MySql.Data.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\EntityFramework.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\Google.Protobuf.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\Zstandard.Net.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\BouncyCastle.Crypto.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\Ubiety.Dns.Core.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\Renci.SshNet.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Buffers.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\netstandard.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Memory.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Numerics.Vectors.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\MySqlDal.pdb
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\MySqlDal.dll.config
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Net.Http.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Net.Http.WebRequest.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Web.Http.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\MySql.Data.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\EntityFramework.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\Renci.SshNet.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Buffers.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Memory.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\bin\Debug\System.Numerics.Vectors.xml
+D:\Project2020\NewProject\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csprojResolveAssemblyReference.cache
+D:\Project2020\NewProject\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CoreCompileInputs.cache
+D:\Project2020\NewProject\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.dll
+D:\Project2020\NewProject\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.pdb
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.dll.config
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\ScivalApiCall.pdb
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\MySqlDal.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Extensions.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Primitives.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Web.Http.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\MySql.Data.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\EntityFramework.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\Google.Protobuf.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\Zstandard.Net.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\BouncyCastle.Crypto.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\Ubiety.Dns.Core.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\Renci.SshNet.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Buffers.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\netstandard.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Memory.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Numerics.Vectors.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\MySqlDal.pdb
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\MySqlDal.dll.config
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Web.Http.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\MySql.Data.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\EntityFramework.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\Renci.SshNet.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Buffers.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Memory.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\System.Numerics.Vectors.xml
+E:\sci\FromGaurav\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csprojAssemblyReference.cache
+E:\sci\FromGaurav\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CoreCompileInputs.cache
+E:\sci\FromGaurav\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CopyComplete
+E:\sci\FromGaurav\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\obj\Debug\ScivalApiCall.pdb
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.Schema.dll
+E:\sci\FromGaurav\Scival\ScivalApiCall\bin\Debug\Newtonsoft.Json.Schema.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\ScivalApiCall.dll.config
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\ScivalApiCall.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\ScivalApiCall.pdb
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySqlDal.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Newtonsoft.Json.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Net.Http.Extensions.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Net.Http.Primitives.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Web.Http.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Newtonsoft.Json.Schema.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySql.Data.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\EntityFramework.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Google.Protobuf.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Zstandard.Net.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\BouncyCastle.Crypto.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Ubiety.Dns.Core.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Renci.SshNet.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Buffers.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\netstandard.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Memory.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Numerics.Vectors.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySqlDal.pdb
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySqlDal.dll.config
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Newtonsoft.Json.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Web.Http.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Newtonsoft.Json.Schema.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySql.Data.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\EntityFramework.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Renci.SshNet.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Buffers.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Memory.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Numerics.Vectors.xml
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.csprojAssemblyReference.cache
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CoreCompileInputs.cache
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CopyComplete
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.dll
+E:\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.pdb
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\ScivalApiCall.dll.config
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\ScivalApiCall.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\ScivalApiCall.pdb
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySqlDal.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Newtonsoft.Json.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Net.Http.Extensions.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Net.Http.Primitives.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Web.Http.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Newtonsoft.Json.Schema.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySql.Data.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\EntityFramework.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Google.Protobuf.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Zstandard.Net.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\BouncyCastle.Crypto.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Ubiety.Dns.Core.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Renci.SshNet.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Buffers.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\netstandard.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Memory.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Numerics.Vectors.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySqlDal.pdb
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySqlDal.dll.config
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Newtonsoft.Json.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Net.Http.Formatting.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Web.Http.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Newtonsoft.Json.Schema.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\MySql.Data.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\EntityFramework.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.Streams.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\Renci.SshNet.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Buffers.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Compression.LZ4.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\K4os.Hash.xxHash.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Memory.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\bin\Debug\System.Numerics.Vectors.xml
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.csprojAssemblyReference.cache
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CoreCompileInputs.cache
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.csproj.CopyComplete
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.dll
+F:\Edrive\sci\FromGaurav\Scival\Scival-02-09-2020\ScivalApiCall\obj\Debug\ScivalApiCall.pdb

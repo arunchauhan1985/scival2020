@@ -1,0 +1,7 @@
+CREATE TABLE `link` (
+  `URL` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `LINK_TEXT` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  `ITEM_ID` bigint NOT NULL,
+  `AWARDSTATISTICS_ID` bigint DEFAULT NULL,
+  PRIMARY KEY (`ITEM_ID`)
+);

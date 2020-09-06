@@ -1,0 +1,12 @@
+CREATE TABLE `sci_related_opportunity` (
+  `REL_OPP_ID` bigint DEFAULT NULL,
+  `OPPORTUNITY_ID` bigint DEFAULT NULL,
+  `RELATED_OPP_ID` bigint DEFAULT NULL,
+  `CREATED_DATE` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `OPPORTUNITYNAME` varchar(2000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `RELAION_NAME` varchar(1000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  `ID` bigint NOT NULL,
+  `AWARD_ID` bigint DEFAULT NULL,
+  `DESCRIPTION` varchar(4000) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '',
+  PRIMARY KEY (`ID`)
+);

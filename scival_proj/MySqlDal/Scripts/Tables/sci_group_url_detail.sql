@@ -1,0 +1,6 @@
+CREATE TABLE `sci_group_url_detail` (
+  `GROUP_ID` bigint NOT NULL,
+  `URL_NUMBER` bigint DEFAULT NULL,
+  `CREATED_DATE` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`GROUP_ID`)
+);
