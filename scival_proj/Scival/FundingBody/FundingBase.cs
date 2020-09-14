@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySqlDal;
+using MySqlDal.DataOpertation;
 using MySqlDalAL;
 using Newtonsoft.Json;
 
@@ -102,7 +103,10 @@ namespace Scival.FundingBody
         {
             ((HandledMouseEventArgs)e).Handled = true;
         }
-
+        public string GetFundingBodyJson(string FundingBodyId)
+        {
+            return FundingBodyDataOperations.GetFundingBodyMainJson(Convert.ToInt64(FundingBodyId));
+        }
         public void LoadBaseValue()
         {
             InputXmlPath = Path.GetDirectoryName(Application.ExecutablePath);
@@ -121,6 +125,9 @@ namespace Scival.FundingBody
                     
                     if (dsFunding != null)
                     {
+                        var FundingBodyId = dsFunding.Tables[1].Rows[0]["FUNDINGBODY_ID"].ToString();
+                        var FundingBodyMainJson = GetFundingBodyJson(FundingBodyId);
+                        DefaultFBModel model = JsonConvert.DeserializeObject<DefaultFBModel>(FundingBodyMainJson);
                         if (SharedObjects.TaskId == 1 && SharedObjects.Cycle == 0)
                         {
                             SharedObjects.TRAN_TYPE_ID = 0;  // New FB
@@ -157,7 +164,8 @@ namespace Scival.FundingBody
                         ddl_profit.Items.Insert(0, "--Select Profit--");
                         ddl_profit.Items.Insert(1, "False");
                         ddl_profit.Items.Insert(2, "True");
-                        ddl_profit.SelectedIndex = 0;
+                        ddl_profit.SelectedIndex = model.profitabilityType.ToLower() == "true" ? 2 : 1;
+
 
                         ddl_opportunitiesFrequency.Items.Insert(0, "--Select OpportunitiesFrequency--");
                         ddl_opportunitiesFrequency.Items.Insert(1, "weekly");

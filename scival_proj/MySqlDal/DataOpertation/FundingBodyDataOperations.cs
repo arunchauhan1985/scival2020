@@ -13,7 +13,7 @@ namespace MySqlDal
         static Replace r = new Replace();
         static List<DashboardTask> dashBoardDetailsTaskList = null;
         static List<DashboardRemark> dashBoardDetailsRemarkList = null;
-        
+
 
         private static int GetUserAssignmentCount(Int64 userId, Int64 moduleId)
         {
@@ -155,6 +155,33 @@ namespace MySqlDal
             return dashboardDetailUserFunding;
         }
 
+        public static string GetFundingBodyMainJson(long FBID)
+        {
+            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+            DataTable dt = new DataTable();
+            try
+            {
+                string Query = "select DATAJSON from scival.fundingbody_main where FUNDINGBODY_ID='" + FBID + "';";
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                MyAdapter.SelectCommand = MyCommand2;
+                DataTable dTable = new DataTable();
+                MyAdapter.Fill(dTable);
+                dt = dTable;
+                return Convert.ToString(dt.Rows[0][0]);
+                // MyConn2.Close();
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                MyConn2.Close();
+            }
+        }
+
         public static List<DashboardTask> GetDashBoardDetailsTaskList()
         {
             return dashBoardDetailsTaskList;
@@ -212,7 +239,7 @@ namespace MySqlDal
 
         public static DataSet updateAwardlist(Int64 WFId, Int64 pagemode, Int64 AWARD_SOURCE_ID, string Status, string LASTVISITED, string URl, string p_lang)
         {
-          var parameters = new List<MySqlParameter>
+            var parameters = new List<MySqlParameter>
             {
                 new MySqlParameter("p_url", URl),
                 new MySqlParameter("p_status", Status),
@@ -220,7 +247,7 @@ namespace MySqlDal
                 new MySqlParameter("p_Workflow_id", WFId),
                 new MySqlParameter("p_lang", p_lang),
                new MySqlParameter("p_mode", pagemode),
-               new MySqlParameter("p_award_source_id", pagemode),    
+               new MySqlParameter("p_award_source_id", pagemode),
             };
             var estFundings = CommonDataOperation.ExecuteStoredProcedure("awardssource_dml_prc", parameters);
             estFundings.Tables[0].TableName = "ItemListDisplay";
@@ -230,7 +257,7 @@ namespace MySqlDal
         public static DataSet updateAwardlist5(Int64 WFId, Int64 pagemode, Int64 AWARD_SOURCE_ID, string Status, string LASTVISITED,
             string URl, string p_lang, string name, string Frequency, string date_captureStart, string date_captureEnd, string Comment)
         {
-           
+
             var parameters = new List<MySqlParameter>
             {
                 new MySqlParameter("p_url", URl),
@@ -590,7 +617,7 @@ namespace MySqlDal
                     try
                     {
                         var parameters = new List<MySqlParameter>
-                         {  
+                         {
                         new MySqlParameter("p_FUNDINGBODYID", FundingBody.Rows[x]["FUNDINGBODY_ID"].ToString()),
                            new MySqlParameter("p_ORGDBID", FundingBody.Rows[x]["ORGDBID"].ToString()),
                            new MySqlParameter("p_TYPE", FundingBody.Rows[x]["type"].ToString()),
@@ -957,7 +984,7 @@ namespace MySqlDal
 
         public static DataSet GetVendorFundingbody(int? rel_orgs_vendorid, int? VendorId, string FBName, string mode)
         {
-           var parameters = new List<MySqlParameter>
+            var parameters = new List<MySqlParameter>
             {
                 new MySqlParameter("p_rel_orgs_vendorid", rel_orgs_vendorid),
                 new MySqlParameter("p_vendor_id", VendorId),
@@ -1035,13 +1062,13 @@ namespace MySqlDal
             DataTable dt = new DataTable();
             try
             {
-                string Query = "select type,value from scival.identifier where FUNDINGBODY_ID='"+P_fundingBodyProjectId+"';";
+                string Query = "select type,value from scival.identifier where FUNDINGBODY_ID='" + P_fundingBodyProjectId + "';";
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
                 MyAdapter.SelectCommand = MyCommand2;
                 DataTable dTable = new DataTable();
                 MyAdapter.Fill(dTable);
-                dt = dTable; 
+                dt = dTable;
             }
             catch (Exception ex)
             {
@@ -1059,7 +1086,7 @@ namespace MySqlDal
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try
-            { 
+            {
                 string Query = "select ESTABLISHMENTDATE,ESTABLISHMENTCOUNTRYCODE,ESTABLISHMENTDESCRIPTION, LANG from scival.identifier where FUNDINGBODY_ID='" + P_fundingBodyProjectId + "';";
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
@@ -1067,12 +1094,13 @@ namespace MySqlDal
                 DataTable dTable = new DataTable();
                 MyAdapter.Fill(dTable);
                 dt = dTable;
-               // MyConn2.Close();
+                // MyConn2.Close();
             }
             catch (Exception ex)
             {
             }
-            finally {
+            finally
+            {
                 MyConn2.Close();
             }
             return dt;
@@ -1161,9 +1189,9 @@ namespace MySqlDal
             DataTable dt = new DataTable();
             try
             {
-                
+
                 string Query = "SELECT it.RELTYPE, it.DESCRIPTION, it.ITEM_ID, it.ABOUT_ID id, ch.FUNDINGBODY_ID, l.URL, l.LINK_TEXT, AWARDSTATISTICS_ID, IT.LANG FROM   scival.item it, scival.about ch, scival.link l WHERE it.about_id = ch.about_id AND l.item_id = it.item_id AND ch.FUNDINGBODY_ID ='" + P_fundingBodyProjectId + "';";
-                
+
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
                 MyAdapter.SelectCommand = MyCommand2;
@@ -1182,9 +1210,9 @@ namespace MySqlDal
                         items.Rows[items.Rows.Count - 1][1] = row[1].ToString();
                         items.Rows[items.Rows.Count - 1][2] = row[5].ToString();
                     }
-                }           
+                }
                 dt = dTable;
-               // MyConn2.Close();
+                // MyConn2.Close();
             }
             catch (Exception ex)
             {
