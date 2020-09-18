@@ -2,42 +2,45 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MySqlDal;
+using MySqlDal.DataOpertation;
+using MySqlDalAL;
 
 namespace JSONTransformation
 {
     class GetJsonData
     {
-        public List<DAL.preferredName> getPreferredNames()
+        public List<preferredName> getPreferredNames()
         {
-            List<DAL.preferredName> preferredNames = new List<DAL.preferredName>();
+            List<preferredName> preferredNames = new List<preferredName>();
 
             return preferredNames;
         }
 
-        public List<DAL.alternateName> getAlternateNames()
+        public List<alternateName> getAlternateNames()
         {
-            List<DAL.alternateName> alternateNames = new List<DAL.alternateName>();
+            List<alternateName> alternateNames = new List<alternateName>();
 
             return alternateNames;
         }
 
-        public List<DAL.abbrevName> getAbbrevNames()
+        public List<abbrevName> getAbbrevNames()
         {
-            List<DAL.abbrevName> abbrevNames = new List<DAL.abbrevName>();
+            List<abbrevName> abbrevNames = new List<abbrevName>();
 
             return abbrevNames;
         }
 
-        public List<DAL.acronym> getacronymNames()
+        public List<acronym> getacronymNames()
         {
-            List<DAL.acronym> acronymNames = new List<DAL.acronym>();
+            List<acronym> acronymNames = new List<acronym>();
 
             return acronymNames;
         }
 
-        public List<DAL.relation> getrelations()
+        public List<relation> getrelations()
         {
-            List<DAL.relation> relation = new List<DAL.relation>();
+            List<relation> relation = new List<relation>();
 
             return relation;
         }

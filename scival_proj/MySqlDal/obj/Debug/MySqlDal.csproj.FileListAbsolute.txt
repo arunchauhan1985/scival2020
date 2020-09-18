@@ -981,8 +981,8 @@ D:\Github\scival2020\scival_proj\MySqlDal\bin\Debug\System.Web.WebPages.Deployme
 D:\Github\scival2020\scival_proj\MySqlDal\bin\Debug\System.Web.WebPages.Razor.xml
 D:\Github\scival2020\scival_proj\MySqlDal\bin\Debug\WebMatrix.Data.xml
 D:\Github\scival2020\scival_proj\MySqlDal\bin\Debug\WebMatrix.WebData.xml
-D:\Github\scival2020\scival_proj\MySqlDal\obj\Debug\MySqlDal.csprojAssemblyReference.cache
 D:\Github\scival2020\scival_proj\MySqlDal\obj\Debug\MySqlDal.csproj.CoreCompileInputs.cache
 D:\Github\scival2020\scival_proj\MySqlDal\obj\Debug\MySqlDal.csproj.CopyComplete
 D:\Github\scival2020\scival_proj\MySqlDal\obj\Debug\MySqlDal.dll
 D:\Github\scival2020\scival_proj\MySqlDal\obj\Debug\MySqlDal.pdb
+D:\Github\scival2020\scival_proj\MySqlDal\obj\Debug\MySqlDal.csprojAssemblyReference.cache

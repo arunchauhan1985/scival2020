@@ -7,7 +7,7 @@ using System.Configuration;
 using System.Web;
 using System.ComponentModel;
 
-namespace DAL 
+namespace MySqlDal.DataOpertation
 {
    public class FB_JSON_Model
     {

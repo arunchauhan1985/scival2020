@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 using MySqlDal;
+using MySqlDalAL;
 
 namespace Scival.FundingBody
 {
@@ -295,13 +296,84 @@ namespace Scival.FundingBody
 
                         if (r.chk_OtherLang(ddlLangContact.SelectedValue.ToString().Trim().ToLower()) == true)
                         {
+                            DataTable dtFundingBody = new DataTable();
+                            dtFundingBody.Columns.Add("FUNDINGBODY_ID");
+                            DataTable dt_contactInfo = new DataTable();
+                            dt_contactInfo.Columns.Add("COUNTRYTEST");
+                            dt_contactInfo.Columns.Add("city");
+                            dt_contactInfo.Columns.Add("COUNTRY");
+                            dt_contactInfo.Columns.Add("postalcode");
+                            dt_contactInfo.Columns.Add("room");
+                            dt_contactInfo.Columns.Add("state");
+                            dt_contactInfo.Columns.Add("street");
+                            dt_contactInfo.Columns.Add("url");
+
+                            DataRow fbr = dtFundingBody.NewRow();
+                            fbr["FUNDINGBODY_ID"] = SharedObjects.ID;
+                            dtFundingBody.Rows.Add(fbr);
+                            
+                            DataRow dt = dt_contactInfo.NewRow();
+                            dt["COUNTRYTEST"] = Country;
+                            dt["city"] = r.ConvertTextToUnicode(TextCity.Text.Trim());
+                            dt["COUNTRY"] = Country;
+                            dt["postalcode"] = TextPostalCode.Text.Trim();
+                            dt["room"] = r.ConvertTextToUnicode(TextRoom.Text.Trim());
+                            dt["state"] = state;
+                            dt["street"] = r.ConvertTextToUnicode(TextStreet.Text.Trim());
+                            dt["url"] = TextURL.Text.Trim();
+                            dt_contactInfo.Rows.Add(dt);
+
+                            string json = FundingBodyDataOperations.GetFundingBodyMainJson(SharedObjects.ID);
+                            XmlJsonOperation xmlJsonOperation = new XmlJsonOperation();
+                            string updatedJSON = xmlJsonOperation.saveContactInfo("", dt_contactInfo, dtFundingBody, json);
+                            string Loginid = "0";
+
+                            Loginid = Convert.ToString(SharedObjects.User.USERID);
+                            FundingBodyDataOperations.saveandUpdateJSONinTable(SharedObjects.ID.ToString(), updatedJSON, "", "", Convert.ToString(Loginid), DateTime.Now.ToString(), 2);
+
+
                             dsresult = FundingBodyDataOperations.SaveAndDeleteContactsLIst(WFID, pagemode, 0, 0, r.ConvertTextToUnicode(TextType.Text.Trim()), r.ConvertTextToUnicode(TextTitle.Text.Trim()), TextTelephone.Text.Trim(), TextFax.Text.Trim(), r.ConvertTextToUnicode(TextEmail.Text.Trim()), r.ConvertTextToUnicode(TextURL.Text.Trim()), r.ConvertTextToUnicode(LinkText), Country, r.ConvertTextToUnicode(TextRoom.Text.Trim()), r.ConvertTextToUnicode(TextStreet.Text.Trim()), state, r.ConvertTextToUnicode(TextCity.Text.Trim()), TextPostalCode.Text.Trim(), r.ConvertTextToUnicode(TextPrefix.Text.Trim()), r.ConvertTextToUnicode(TextGivenName.Text.Trim()), r.ConvertTextToUnicode(TextMiddleName.Text.Trim()), r.ConvertTextToUnicode(TextSurName.Text.Trim()), r.ConvertTextToUnicode(TextSuffix.Text.Trim()), ddlLangContact.SelectedValue.ToString());
                         }
                         else
                         {
+                            DataTable dtFundingBody = new DataTable();
+                            dtFundingBody.Columns.Add("FUNDINGBODY_ID");
+                            DataTable dt_contactInfo = new DataTable();
+                            dt_contactInfo.Columns.Add("COUNTRYTEST");
+                            dt_contactInfo.Columns.Add("city");
+                            dt_contactInfo.Columns.Add("COUNTRY");
+                            dt_contactInfo.Columns.Add("postalcode");
+                            dt_contactInfo.Columns.Add("room");
+                            dt_contactInfo.Columns.Add("state");
+                            dt_contactInfo.Columns.Add("street");
+                            dt_contactInfo.Columns.Add("url");
+
+                            DataRow fbr = dtFundingBody.NewRow();
+                            fbr["FUNDINGBODY_ID"] = SharedObjects.ID;
+                            dtFundingBody.Rows.Add(fbr);
+
+                            DataRow dt = dt_contactInfo.NewRow();
+                            dt["COUNTRYTEST"] = Country;
+                            dt["city"] = r.ConvertTextToUnicode(TextCity.Text.Trim());
+                            dt["COUNTRY"] = Country;
+                            dt["postalcode"] = TextPostalCode.Text.Trim();
+                            dt["room"] = r.ConvertTextToUnicode(TextRoom.Text.Trim());
+                            dt["state"] = state;
+                            dt["street"] = r.ConvertTextToUnicode(TextStreet.Text.Trim());
+                            dt["url"] = TextURL.Text.Trim();
+                            dt_contactInfo.Rows.Add(dt);
+
+                            string json = FundingBodyDataOperations.GetFundingBodyMainJson(SharedObjects.ID);
+                            XmlJsonOperation xmlJsonOperation = new XmlJsonOperation();
+                            string updatedJSON = xmlJsonOperation.saveContactInfo("", dt_contactInfo, dtFundingBody, json);
+                            string Loginid = "0";
+
+                            Loginid = Convert.ToString(SharedObjects.User.USERID);
+                            FundingBodyDataOperations.saveandUpdateJSONinTable(SharedObjects.ID.ToString(), updatedJSON, "", "", Convert.ToString(Loginid), DateTime.Now.ToString(), 2);
+
+
                             dsresult = FundingBodyDataOperations.SaveAndDeleteContactsLIst(WFID, pagemode, 0, 0, TextType.Text.Trim(), TextTitle.Text.Trim(), TextTelephone.Text.Trim(), TextFax.Text.Trim(), TextEmail.Text.Trim(), TextURL.Text.Trim(), LinkText, Country, TextRoom.Text.Trim(), TextStreet.Text.Trim(), state, TextCity.Text.Trim(), TextPostalCode.Text.Trim(), TextPrefix.Text.Trim(), TextGivenName.Text.Trim(), TextMiddleName.Text.Trim(), TextSurName.Text.Trim(), TextSuffix.Text.Trim(), ddlLangContact.SelectedValue.ToString());
                         }
-
 
                         if (dsresult.Tables["ContactDetails"].Rows.Count > 0)
                         {

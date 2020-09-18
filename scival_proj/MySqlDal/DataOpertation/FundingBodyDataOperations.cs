@@ -157,7 +157,7 @@ namespace MySqlDal
 
         public static string GetFundingBodyMainJson(long FBID)
         {
-            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            string MyConnection2 = "datasource=localhost;username=root;password=root";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try
@@ -181,6 +181,8 @@ namespace MySqlDal
                 MyConn2.Close();
             }
         }
+
+
 
         public static List<DashboardTask> GetDashBoardDetailsTaskList()
         {
@@ -1013,7 +1015,7 @@ namespace MySqlDal
 
         public static void saveandUpdateJSONinTable(string P_fundingBodyProjectId, string P_json, string createdby, string createdTime, string modifiedby, string ModifiedTime, int trigger)
         {
-            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            string MyConnection2 = "datasource=localhost;username=root;password=root";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try
@@ -1057,7 +1059,7 @@ namespace MySqlDal
 
         public static DataTable GetIdentifiers(string P_fundingBodyProjectId)
         {
-            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            string MyConnection2 = "datasource=localhost;username=root;password=root";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try
@@ -1082,7 +1084,7 @@ namespace MySqlDal
 
         public static DataTable GetEstablishmentInfoData(string P_fundingBodyProjectId)
         {
-            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            string MyConnection2 = "datasource=localhost;username=root;password=root";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try
@@ -1108,7 +1110,7 @@ namespace MySqlDal
 
         public static DataTable GetAwardSucessData(string P_fundingBodyProjectId)
         {
-            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            string MyConnection2 = "datasource=localhost;username=root;password=root";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try
@@ -1134,7 +1136,7 @@ namespace MySqlDal
         }
         public static DataTable GetRevisionHostory(string P_fundingBodyProjectId)
         {
-            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            string MyConnection2 = "datasource=localhost;username=root;password=root";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try
@@ -1159,7 +1161,7 @@ namespace MySqlDal
         }
         public static DataTable GetCreateDateData(string P_fundingBodyProjectId)
         {
-            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            string MyConnection2 = "datasource=localhost;username=root;password=root";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try
@@ -1184,7 +1186,7 @@ namespace MySqlDal
 
         public static DataTable GetDescription(string P_fundingBodyProjectId)
         {
-            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            string MyConnection2 = "datasource=localhost;username=root;password=root";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try
@@ -1226,7 +1228,7 @@ namespace MySqlDal
 
         public static DataTable GetAddress(string P_fundingBodyProjectId)
         {
-            string MyConnection2 = "datasource=localhost;username=root;password=mysql@123";
+            string MyConnection2 = "datasource=localhost;username=root;password=root";
             MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
             DataTable dt = new DataTable();
             try

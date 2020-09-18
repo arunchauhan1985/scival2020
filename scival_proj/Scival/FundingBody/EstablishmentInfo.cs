@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using MySqlDal;
+using MySqlDalAL;
+using MySqlDal.DataOpertation;
+using Newtonsoft.Json;
 
 namespace Scival.FundingBody
 {
@@ -259,14 +262,105 @@ namespace Scival.FundingBody
                         string langval = ddlLang_EstInfo.SelectedValue.ToString();
                         DataSet ds = null;
                         langval = Convert.ToString(ddlLang_EstInfo.SelectedValue).ToLower();
+
+                        DataTable dtFundingBody = new DataTable();
+                        dtFundingBody.Columns.Add("FUNDINGBODY_ID");
+                        dtFundingBody.Columns.Add("recordSource");
+
+                        DataTable dt_fundingdescription = new DataTable();
+                        dt_fundingdescription.Columns.Add("ESTABLISHMENTDATE");
+                        dt_fundingdescription.Columns.Add("ESTABLISHMENTCOUNTRYCODE");
+                        dt_fundingdescription.Columns.Add("ESTABLISHMENTDESCRIPTION");
+                        dt_fundingdescription.Columns.Add("LANG");
+
+                        DataRow fbr = dtFundingBody.NewRow();
+                        fbr["FUNDINGBODY_ID"] = SharedObjects.ID;
+                        dtFundingBody.Rows.Add(fbr);
+
+                       
+
+                        //for (int i = 0; i < grdAbout.Rows.Count; i++)
+                        //{
+
+                        //    string RELTYPE = "";
+                        //    if (grdAbout["RelType", 0].Value != null)
+                        //        RELTYPE = grdAbout["RelType", 0].Value.ToString();
+
+                        //    string DESCRIPTION = "";
+                        //    if (grdAbout["Description", 0].Value != null)
+                        //        DESCRIPTION = grdAbout["Description", 0].Value.ToString();
+
+                        //    string URL = "";
+                        //    if (grdAbout["Linkurl", 0].Value != null)
+                        //        URL = grdAbout["Linkurl", 0].Value.ToString();
+
+                        //    string LINKTEXT = "";
+                        //    if (grdAbout["Linktext", 0].Value != null)
+                        //        LINKTEXT = grdAbout["Linktext", 0].Value.ToString();
+
+                        //    string LANG = "";
+                        //    if (grdAbout["lang", 0].Value != null)
+                        //        LANG = grdAbout["lang", 0].Value.ToString();
+                        //    DataRow dr = dt_fundingdescription.NewRow();
+                        //    dr["WFID"] = WFID;
+                        //    dr["PAGEMODE"] = pagemode;
+                        //    dr["WORKMODE"] = 0;
+                        //    dr["RELTYPE"] = RELTYPE;
+                        //    dr["DESCRIPTION"] = DESCRIPTION;
+                        //    dr["URL"] = URL;
+                        //    dr["LINKTEXT"] = LINKTEXT;
+                        //    dr["LANG"] = Convert.ToString(LANG);
+                        //    dt_fundingdescription.Rows.Add(dr);
+                        //}
+                        DataRow dt = dt_fundingdescription.NewRow();
+                        dt["ESTABLISHMENTDATE"] = strdate;
+                        dt["ESTABLISHMENTCOUNTRYCODE"] = strcoountry;
+                        dt["ESTABLISHMENTDESCRIPTION"] = strdesc;
+                        dt["LANG"] = langval;
+                        dt_fundingdescription.Rows.Add(dt);
+
+
                         if (r.chk_OtherLang(langval.ToLower()) == true)
                         {
                             strdesc = r.ConvertTextToUnicode(strdesc);
 
+                            #region Saving JSON Function
+                            string json = FundingBodyDataOperations.GetFundingBodyMainJson(SharedObjects.ID);
+
+                            fbr = dtFundingBody.NewRow();
+                            FB_JSON_Model dataJSON = JsonConvert.DeserializeObject<FB_JSON_Model>(json);
+                            fbr["recordSource"] = dataJSON.homePage;
+                            dtFundingBody.Rows.Add(fbr);
+
+                            XmlJsonOperation xmlJsonOperation = new XmlJsonOperation();
+                            string updatedJSON = xmlJsonOperation.saveEstablishmentInfo("", dt_fundingdescription, dtFundingBody, json);
+                            string Loginid = "0";
+
+                            Loginid = Convert.ToString(SharedObjects.User.USERID);
+                            FundingBodyDataOperations.saveandUpdateJSONinTable(SharedObjects.ID.ToString(), updatedJSON, "", "", Convert.ToString(Loginid), DateTime.Now.ToString(), 2);
+                            #endregion
                             ds = FundingBodyDataOperations.SaveEstablishInfo(workflowid, strdate, strCity, strstate, strcoountry, strdesc, langval);
+                           
+
                         }
                         else
                         {
+                            #region Saving JSON Function
+                            string json = FundingBodyDataOperations.GetFundingBodyMainJson(SharedObjects.ID);
+
+                            fbr = dtFundingBody.NewRow();
+                            FB_JSON_Model dataJSON = JsonConvert.DeserializeObject<FB_JSON_Model>(json);
+                            fbr["recordSource"] = dataJSON.homePage;
+                            dtFundingBody.Rows.Add(fbr);
+
+                            XmlJsonOperation xmlJsonOperation = new XmlJsonOperation();
+                            string updatedJSON = xmlJsonOperation.saveEstablishmentInfo("", dt_fundingdescription, dtFundingBody, json);
+                            string Loginid = "0";
+
+                            Loginid = Convert.ToString(SharedObjects.User.USERID);
+                            FundingBodyDataOperations.saveandUpdateJSONinTable(SharedObjects.ID.ToString(), updatedJSON, "", "", Convert.ToString(Loginid), DateTime.Now.ToString(), 2);
+                            #endregion
+
                             ds = FundingBodyDataOperations.SaveEstablishInfo(workflowid, strdate, strCity, strstate, strcoountry, strdesc, langval);
                         }
 
@@ -293,6 +387,7 @@ namespace Scival.FundingBody
                 }
             }
         }
+
 
         private void button2_Click(object sender, EventArgs e)
         {

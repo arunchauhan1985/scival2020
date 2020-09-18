@@ -5,10 +5,13 @@ using System.Text;
 using System.Data;
 using System.Configuration;
 using System.Web;
+using MySqlDal;
+using MySqlDal.DataOpertation;
+using MySqlDalAL;
 //using System.Object;
 //using System.Attribute;
 //using Newtonsoft.Json.JsonPropertyAttribute;
-namespace DAL
+namespace MySqlDal.DataOpertation
 {
     #region JSON Model is created By Pankaj in JAN 2020..
     public class OPP_jsonModel

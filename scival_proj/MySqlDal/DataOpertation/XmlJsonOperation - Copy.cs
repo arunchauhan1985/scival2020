@@ -178,6 +178,1816 @@ namespace MySqlDalAL
         DataTable dt_AwlicenseInformation = new DataTable();
         #endregion
 
+        #region Publication
+        DataTable dt_lead_has = new DataTable();
+        DataTable dt_name_outcome = new DataTable();
+
+        DataTable dt_outcomeOfPub = new DataTable();
+        #endregion
+
+        #region Variable for Publication JSON
+
+        DataSet Source_PubJson = new DataSet();
+        DataTable dtpub_Title = new DataTable();
+        DataTable dt_PublicationData = new DataTable();
+        DataTable dtpub_identifier = new DataTable();
+        DataTable dtpub_RelatedFunder = new DataTable();
+        DataTable dtpub_Reviseddate = new DataTable();
+        DataTable dtpub_Createddate = new DataTable();
+        DataTable dtpub_LeadFunder = new DataTable();
+        DataTable dtpub_hasFunder = new DataTable();
+
+        public string Publication_stop_check = "0";
+        DataTable dt_identifier_ml = new DataTable();
+
+        #endregion
+
+        #region json genration opp module jan 2020
+        public string JsonCreationFromModel_opp(string XSDPath)
+        {
+            string updatedjson = string.Empty;
+            DAL.Transform XmlTransform = new DAL.Transform("");
+            try
+            {
+                #region JSON genration is created By Pankaj in JAN 2020..
+                OPP_jsonModel opp = new OPP_jsonModel();
+                opp.grantType = dt_grantType.Rows.Count > 0 ? dt_grantType.Rows[0]["ID"].ToString().ToUpper() : "Not Available";
+                opp.title = (from DataRow drtitle in dt_title.Rows
+                             select new title()
+                             {
+                                 language = drtitle["LANG"].ToString(),
+                                 value = drtitle["NAME_TEXT"].ToString().Trim().Replace("\"", "&#x0022;")
+                             }).ToArray();
+
+                opp.contactInformation_OPP = (from DataRow drcontact in dt_contact.Rows
+                                              select new contactInformation_OPP()
+                                              {
+                                                  link = Convert.ToString(dt_website.Rows[0]["url"].ToString()),
+
+                                                  hasPostalAddress = new hasPostalAddress()
+                                                  {
+                                                      addressCountry = dt_address.Rows[0]["COUNTRYTEST"].ToString(),
+                                                      addressRegion = dt_address.Rows[0]["ROOM"].ToString(),
+                                                      addressLocality = dt_address.Rows[0]["city"].ToString() != "" && dt_address.Rows[0]["city"].ToString() != "Not Available" ? dt_address.Rows[0]["city"].ToString() : dt_address.Rows[0]["COUNTRY"].ToString(),
+                                                      addressPostalCode = dt_address.Rows[0]["postalcode"].ToString(),
+                                                      streetAddress = dt_address.Rows[0]["street"].ToString()
+                                                  },
+
+                                                  contactPerson = (from DataRow dr3 in dt_contactName.Rows
+                                                                   select new contactPerson()
+                                                                   {
+
+                                                                       honorific = dr3["PREFIX"].ToString(),
+                                                                       initials = dr3["SUFFIX"].ToString() != "" ? dr3["SUFFIX"].ToString() : CappInitial(dr3["GIVENNAME"].ToString()),
+                                                                       givenName = dr3["GIVENNAME"].ToString(),
+                                                                       middleName = dr3["MIDDLENAME"].ToString(),
+                                                                       familyName = dr3["SURNAME"].ToString(),
+                                                                       emailAddress = dr3["EMAIL"].ToString()
+
+                                                                   }).ToArray(),
+
+                                              }).ToArray();
+
+
+                opp.funderSchemeType = dt_grantType.Rows[0]["TYPE_TEXT"].ToString();
+                opp.fundingBodyOpportunityId = dtOpportunity.Rows[0]["FUNDINGBODYOPPORTUNITYID"].ToString();
+                opp.grantOpportunityId = Convert.ToInt64(dtOpportunity.Rows[0]["id"].ToString());
+                opp.numberOfAwards = Convert.ToInt64(dtOpportunity.Rows[0]["NUMBEROFAWARDS"].ToString() != "" ? dtOpportunity.Rows[0]["NUMBEROFAWARDS"].ToString() : "0");
+                opp.repeatingOpportunity = dtOpportunity.Rows[0]["REPEATINGOPPORTUNITY"].ToString() != "" ? dtOpportunity.Rows[0]["REPEATINGOPPORTUNITY"].ToString() : "false";
+                opp.status = dtOpportunity.Rows[0]["OPPORTUNITYSTATUS"].ToString().ToUpper();
+
+                opp.hasProvenance_OPP = new hasProvenance_OPP()
+                {
+                    contactPoint = "fundingprojectteam@aptaracorp.com",
+                    createdOn = dt_createddate.Rows[0]["CREATEDDATE_TEXT"].ToString(),
+                    defunct = dtOpportunity.Rows[0]["HIDDEN"].ToString(),
+                    derivedFrom = dtOpportunity.Rows[0]["RECORDSOURCE"].ToString(),
+                    hidden = dtOpportunity.Rows[0]["hidden"].ToString(),
+                    lastUpdateOn = dt_reviseddate.Rows.Count > 0 ? dt_reviseddate.Rows[0]["REVISEDDATE_TEXT"].ToString() : "",
+                    status = dt_revisionhistory.Rows[0]["status"].ToString().ToUpper(),
+                    version = dt_reviseddate.Rows.Count > 0 ? dt_reviseddate.Rows[0]["VERSION"].ToString() : dt_createddate.Rows[0]["version"].ToString(),
+                    wasAttributedTo = "SUP002",
+                };
+
+                opp.opportunityLocation = (from DataRow dropploc in dt_opportunityLocation.Rows
+                                           select new opportunityLocation()
+                                           {
+                                               city = dropploc["city"].ToString(),
+                                               country = dropploc["country"].ToString(),
+                                               state = dropploc["state"].ToString()
+
+                                           }).ToArray();
+
+                opp.keyword = (from DataRow drkey in dt_Keyword.Rows
+                               select new DAL.keyword()
+                               {
+                                   language = drkey["LANG"].ToString().Trim(),
+                                   value = drkey["KEYWORD_COLUMN"].ToString().Trim()
+                               }).ToArray();
+
+                opp.synopsis = (from DataRow drsynopsis in dt_synopsis.Rows
+                                select new DAL.synopsis()
+                                {
+                                    abstract_OPP = new abstract_OPP
+                                    {
+                                        language = drsynopsis["LANG"].ToString(),
+                                        value = drsynopsis["description"].ToString()
+                                    },
+                                    source = drsynopsis["URL"].ToString()
+                                }).ToArray();
+
+                opp.subjectMatter = (from DataRow drsubjectm in dt_subjectMatter.Rows
+                                     select new subjectMatter()
+                                     {
+                                         abstract_OPP = new abstract_OPP
+                                         {
+                                             language = drsubjectm["LANG"].ToString(),
+                                             value = drsubjectm["description"].ToString()
+                                         },
+                                         source = drsubjectm["URL"].ToString()
+                                     }).ToArray();
+
+
+                opp.duration = new duration()
+                {
+                    description_OPP = (from DataRow drdescription in dt_Duration.Rows
+                                       select new description_OPP()
+                                       {
+                                           abstract_OPP = new abstract_OPP
+                                           {
+                                               language = drdescription["URL"].ToString().Trim() != "" ? drdescription["LANG"].ToString() : "Not Available",
+                                               value = drdescription["URL"].ToString().Trim() != "" ? (drdescription["description"].ToString().Trim() != "" && drdescription["description"].ToString().Trim() != "Not Available" ? drdescription["description"].ToString().Trim() : "NotAvailable_Duration") : "Not Available"
+                                           },
+                                           source = drdescription["URL"].ToString()
+                                       }).ToArray(),
+                    durationExpression = Convert.ToString(dt_Duration.Rows.Count > 0 ? dt_Duration.Rows[0]["DURATION"].ToString() : "Not Available")
+                };
+
+                opp.homePage = new homePage()
+                {
+
+                    link = Convert.ToString(dt_homePage.Rows.Count > 0 ? dt_homePage.Rows[0]["link"].ToString() : "Not Available"),
+                    modifiedDate = Convert.ToString(dt_homePage.Rows.Count > 0 && dt_homePage.Rows[0]["modifiedDate"].ToString() != "" ? dt_homePage.Rows[0]["modifiedDate"].ToString() : "Not Available"),
+                    publishedDate = Convert.ToString(dt_homePage.Rows.Count > 0 && dt_homePage.Rows[0]["publishedDate"].ToString() != "" ? dt_homePage.Rows[0]["publishedDate"].ToString() : "Not Available"),
+                };
+
+                #region data filter
+
+                DataView dataView = new DataView();
+                DataView dataView1 = new DataView();
+
+                DataTable dt_leadFunder, dt_hasFunder, dt_ReleatedFunders;
+                dt_ReleatedFunders = Source.Tables["OPPORTUNITYXML14"];
+
+                dataView = dt_ReleatedFunders.DefaultView;
+                dataView1 = dt_ReleatedFunders.DefaultView;
+                dataView.RowFilter = "HIERARCHY = 'lead'";
+                dt_leadFunder = dataView.ToTable();
+                dt_hasFunder = dataView1.ToTable();
+                #endregion
+
+                opp.relatedFunder = new relatedFunder()
+                {
+                    leadFunder = new leadFunder()
+                    {
+                        fundingBodyId = Convert.ToInt64(dt_leadFunder.Rows[0]["FUNDINGBODY_ID"].ToString())
+
+                    },
+                    hasFunder = (from DataRow hasFunder in dt_hasFunder.Rows
+                                 select new hasFunder()
+                                 {
+                                     fundingBodyId = Convert.ToInt64(hasFunder["FUNDINGBODY_ID"].ToString())
+                                 }).ToArray(),
+
+                };
+
+                opp.instruction = (from DataRow drinstruction in dt_instruction.Rows
+                                   select new instruction()
+                                   {
+                                       abstract_OPP = new abstract_OPP
+                                       {
+                                           language = drinstruction["URL"].ToString().Trim() != "" ? drinstruction["LANG"].ToString() : "Not Available",
+                                           value = drinstruction["URL"].ToString().Trim() != "" ? (drinstruction["description"].ToString().Trim() != "" && drinstruction["description"].ToString().Trim() != "Not Available" ? drinstruction["description"].ToString().Trim() : "NotAvailable_instruction") : "Not Available"
+                                       },
+                                       source = drinstruction["URL"].ToString()
+                                   }).ToArray();
+
+                opp.licenseInformation = (from DataRow drlicenseInformation in dt_licenseInformation.Rows
+                                          select new licenseInformation()
+                                          {
+                                              abstract_OPP = new abstract_OPP
+                                              {
+                                                  language = drlicenseInformation["URL"].ToString().Trim() != "" ? drlicenseInformation["LANG"].ToString() : "Not Available",
+                                                  value = drlicenseInformation["URL"].ToString().Trim() != "" ? (drlicenseInformation["description"].ToString().Trim() != "" && drlicenseInformation["description"].ToString().Trim() != "Not Available" ? drlicenseInformation["description"].ToString().Trim() : "NotAvailable_licenseInformation") : "Not Available"
+
+                                              },
+                                              source = drlicenseInformation["URL"].ToString()
+                                          }).ToArray();
+
+                opp.classification = (from DataRow drclassification in dt_hasSubject.Rows
+                                      select new DAL.classification()
+                                      {
+                                          type = "Annotation",
+                                          hasSubject = new hasSubject()
+                                          {
+                                              preferredLabel = drclassification["CLASSIFICATION_TEXT"].ToString().Trim(),
+
+                                              identifier_oppclass = new identifiers()
+                                              {
+                                                  type = dt_classfication.Rows[0]["type"].ToString().Trim(),
+
+                                                  value = drclassification["CODE"].ToString().Trim()
+                                              }
+
+                                          }
+
+                                      }).ToArray();
+
+
+
+                opp.associatedAmount = new associatedAmount()
+                {
+                    description_OPP = (from DataRow drdescription in dt_associatedAmount_desc.Rows
+                                       select new description_OPP()
+                                       {
+                                           abstract_OPP = new abstract_OPP
+                                           {
+                                               language = drdescription["URL"].ToString().Trim() != "" ? drdescription["LANG"].ToString() : "Not Available",
+                                               value = drdescription["URL"].ToString().Trim() != "" ? (drdescription["description"].ToString().Trim() != "" && drdescription["description"].ToString().Trim() != "Not Available" ? drdescription["description"].ToString().Trim() : "NotAvailable_associatedAmount") : "Not Available"
+                                           },
+                                           source = drdescription["URL"].ToString()
+                                       }).ToArray(),
+
+                    ceiling = (from DataRow drceiling in dt_ceiling.Rows
+                               select new ceiling()
+                               {
+                                   amount = Convert.ToInt64(drceiling["AWARDCEILING_TEXT"].ToString()),
+                                   currency = drceiling["CURRENCY"].ToString(),
+                               }).ToArray(),
+
+                    estimatedTotal = (from DataRow drestimatedTotal in dt_estimatedTotal.Rows
+                                      select new estimatedTotal()
+                                      {
+                                          amount = Convert.ToInt64(drestimatedTotal["ESTIMATEDFUNDING_TEXT"].ToString()),
+                                          currency = drestimatedTotal["CURRENCY"].ToString(),
+                                      }).ToArray(),
+
+                    floor = (from DataRow drfloor in dt_floor.Rows
+                             select new floor()
+                             {
+                                 amount = Convert.ToInt64(drfloor["awardfloor_text"].ToString()),
+                                 currency = drfloor["CURRENCY"].ToString(),
+                             }).ToArray(),
+                };
+                #endregion
+
+                opp.eligibilityClassification = new eligibilityClassification()
+                {
+                    citizenship = new citizenship()
+                    {
+                        country = (from DataRow dr_citizenship in dt_citizenship.Rows
+
+                                   select dr_citizenship["country"].ToString().ToLower()
+                          ).ToList(),
+
+                        limitation = Convert.ToString(dt_citizenship.Rows.Count > 0 && dt_citizenship.Rows[0]["country"].ToString() != "" ? "LIMITED" : "NOTSPECIFIED")
+                    },
+                    description_OPP = (from DataRow drdescription in dt_ELIGIBILITYDESCRIPTION.Rows
+                                       select new description_OPP()
+                                       {
+                                           abstract_OPP = new abstract_OPP
+                                           {
+                                               language = drdescription["URL"].ToString().Trim() != "" ? drdescription["LANG"].ToString() : "Not Available",
+                                               value = drdescription["URL"].ToString().Trim() != "" ? (drdescription["description"].ToString().Trim() != "" && drdescription["description"].ToString().Trim() != "Not Available" ? drdescription["description"].ToString().Trim() : "NotAvailable_eligibilityClassification") : "Not Available"
+                                           },
+                                           source = drdescription["URL"].ToString()
+                                       }).ToArray(),
+
+                    individualEligibility = new individualEligibility()
+                    {
+                        applicantType = (from DataRow drapplicantType in dt_individualEligibility.Rows
+
+                                         select drapplicantType["applicantType"].ToString().ToUpper()
+                          ).ToList(),
+
+                        limitation = dt_individualEligibility.Rows.Count > 0 ? (dt_individualEligibility.Rows[0]["applicantType"].ToString() != "" || dt_individualEligibility.Rows[0]["degreeRequirement"].ToString() != "" ? "LIMITED" : "NOTSPECIFIED") : "NOTSPECIFIED",
+                        degreeRequirement = (from DataRow drdegreeRequirement in dt_individualEligibility.Rows
+
+                                             select drdegreeRequirement["degreeRequirement"].ToString()
+                          ).ToList(),
+
+                    },
+                    limitedSubmission = new limitedSubmission()
+                    {
+                        description_OPP = (from DataRow drdescription in dt_limitedSubmission.Rows
+                                           select new description_OPP()
+                                           {
+                                               abstract_OPP = new abstract_OPP
+                                               {
+                                                   language = "en",
+                                                   value = drdescription["URL"].ToString().Trim() != "" ? (drdescription["description"].ToString().Trim() != "" && drdescription["description"].ToString().Trim() != "Not Available" ? drdescription["description"].ToString().Trim() : "NotAvailable_limitedSubmission") : "NotAvailable_limitedSubmission"
+                                               },
+                                               source = drdescription["URL"].ToString() != "" ? drdescription["URL"].ToString() : "NotAvailable_limitedSubmission"
+                                           }).ToArray(),
+                        limitation = dt_limitedSubmission.Rows.Count > 0 ? dt_limitedSubmission.Rows[0]["limitation"].ToString().ToUpper() : "NOTSPECIFIED",
+
+                        numberOfApplications = dt_limitedSubmission.Rows.Count > 0 && dt_limitedSubmission.Rows[0]["numberOfApplications"].ToString() != "" ? Convert.ToInt64(dt_limitedSubmission.Rows[0]["numberOfApplications"].ToString()) : -99999999
+
+                    },
+                    organisationEligibility = new organisationEligibility()
+                    {
+                        applicantType = (from DataRow dr_organisationEligibility in dt_organisationEligibility.Rows
+
+                                         select dt_organisationEligibility.Rows.Count > 0 ? dr_organisationEligibility["applicantType"].ToString().ToUpper() : "Not Available"
+              ).ToList(),
+                        limitation = dt_organisationEligibility.Rows.Count > 0 && dt_organisationEligibility.Rows[0]["applicantType"].ToString() != "" ? "LIMITED" : "NOTSPECIFIED",
+                    },
+                    regionSpecific = new regionSpecific()
+                    {
+
+                        limitation = dt_regionSpecific.Rows.Count > 0 && dt_regionSpecific.Rows[0]["country"].ToString() != "" ? "LIMITED" : "NOTSPECIFIED",
+
+                        location = (from DataRow drlocation in dt_regionSpecific.Rows
+                                    select new location()
+                                    {
+                                        city = drlocation["city"].ToString(),
+                                        country = drlocation["country"].ToString().ToLower(),
+                                        state = drlocation["state"].ToString(),
+
+                                    }).ToArray(),
+
+                    },
+                    restrictionScope = new restrictionScope()
+                    {
+                        limitation = dt_restrictionScope.Rows.Count > 0 ? (dt_restrictionScope.Rows[0]["restriction"].ToString() != "" ? "LIMITED" : "NOTSPECIFIED") : "Not Available",
+                        restriction = (from DataRow dr_restrictionScope in dt_restrictionScope.Rows
+
+                                       select dr_restrictionScope["restriction"].ToString()
+                          ).ToList()
+                    }
+                };
+
+
+
+
+
+
+                opp.opportunityDate = new opportunityDate()
+                {
+                    expirationDateDetail =
+                                             new expirationDateDetail()
+                                             {
+
+                                                 date = dt_expirationDateDetail.Rows.Count > 0 ? dt_expirationDateDetail.Rows[0]["date_text"].ToString() : "Not Available",
+                                                 description_exp = new description_exp
+                                                 {
+                                                     abstract_OPP = new abstract_OPP
+                                                     {
+                                                         language = dt_expirationDateDetail.Rows.Count > 0 && dt_expirationDateDetail.Rows[0]["date_text"].ToString() != "" ? (dt_expirationDateDetail.Rows[0]["LANG"].ToString() != "" ? dt_expirationDateDetail.Rows[0]["LANG"].ToString() : "en") : "Not Available",
+                                                         value = dt_expirationDateDetail.Rows.Count > 0 && dt_expirationDateDetail.Rows[0]["date_text"].ToString() != "" ? (dt_expirationDateDetail.Rows[0]["description"].ToString() != "" ? dt_expirationDateDetail.Rows[0]["description"].ToString() : "NotAvailable_ExpDate") : "Not Available",
+
+                                                     },
+                                                     source = dt_expirationDateDetail.Rows.Count > 0 && dt_expirationDateDetail.Rows[0]["URL_expirationDate"].ToString() != "" ? dt_expirationDateDetail.Rows[0]["URL_expirationDate"].ToString() : "Not Available",
+                                                 },
+                                             },
+
+
+                    cycle = (from DataRow drcycle in dt_cycle.Rows
+                             select new cycle()
+                             {
+                                 decision = (from DataRow drdecision in dt_decision.Rows
+                                             select new decision()
+                                             {
+                                                 limitation = dt_decision.Rows.Count > 0 ? drdecision["limitation"].ToString() : "Not Available",
+                                                 date = dt_decision.Rows.Count > 0 ? drdecision["date_text"].ToString() : "Not Available",
+                                                 required = dt_decision.Rows.Count > 0 ? drdecision["required"].ToString() : "Not Available",
+
+                                                 description = new description()
+                                                 {
+                                                     abstracts = new abstracts
+                                                     {
+
+                                                         language = dt_decision.Rows.Count > 0 && drdecision["URL_decisionDate"].ToString() != "" ? (drdecision["LANG"].ToString() != "" ? drdecision["LANG"].ToString() : "en") : "Not Available",
+
+                                                         value = dt_decision.Rows.Count > 0 && drdecision["URL_decisionDate"].ToString() != "" ? (drdecision["description"].ToString() != "" ? drdecision["description"].ToString() : "NotAvailable_decision") : "Not Available",
+
+
+                                                     },
+                                                     source = dt_decision.Rows.Count > 0 ? drdecision["URL_decisionDate"].ToString() : "Not Available",
+
+                                                 }
+
+
+                                             }).ToArray(),
+                                 endDateDetail = (from DataRow drendDateDeatil in dt_endDateDetail.Rows
+                                                  select new endDateDetail()
+                                                  {
+
+                                                      date = dt_endDateDetail.Rows.Count > 0 ? drendDateDeatil["date_text"].ToString() : "Not Available",
+
+                                                      description = new description()
+                                                      {
+                                                          abstracts = new abstracts
+                                                          {
+                                                              language = dt_endDateDetail.Rows.Count > 0 && drendDateDeatil["URL_endDate"].ToString() != "" ? drendDateDeatil["LANG"].ToString() : "Not Available",
+
+                                                              value = dt_endDateDetail.Rows.Count > 0 && drendDateDeatil["URL_endDate"].ToString() != "" ? (drendDateDeatil["description"].ToString() != "" ? drendDateDeatil["description"].ToString() : "NotAvailable_EndDate") : "Not Available",
+
+                                                          },
+                                                          source = dt_endDateDetail.Rows.Count > 0 && drendDateDeatil["URL_endDate"].ToString() != "" ? drendDateDeatil["URL_endDate"].ToString() : "Not Available",
+                                                      },
+                                                  }).ToArray(),
+                                 index = dt_cycle.Rows.Count > 0 ? Convert.ToInt64(dt_cycle.Rows[0]["indexValue"].ToString()) : 1,
+                                 label = dt_cycle.Rows.Count > 0 ? dt_cycle.Rows[0]["label"].ToString() : "Not Available",
+
+                                 letterOfIntent = (from DataRow drletterOfIntent in dt_letterOfIntent.Rows
+                                                   select new letterOfIntent()
+                                                   {
+
+
+                                                       description = new description()
+                                                       {
+                                                           abstracts = new abstracts
+                                                           {
+                                                               language = dt_letterOfIntent.Rows.Count > 0 && drletterOfIntent["URL_LOIDATE"].ToString() != "" ? (drletterOfIntent["LANG"].ToString() != "" ? drletterOfIntent["LANG"].ToString() : "en") : "Not Available",
+
+                                                               value = dt_letterOfIntent.Rows.Count > 0 && drletterOfIntent["URL_LOIDATE"].ToString() != "" ? (drletterOfIntent["description"].ToString() != "" ? drletterOfIntent["description"].ToString() : "NotAvailable_LOI") : "Not Available",
+
+                                                           },
+                                                           source = dt_letterOfIntent.Rows.Count > 0 && drletterOfIntent["URL_LOIDATE"].ToString() != "" ? drletterOfIntent["URL_LOIDATE"].ToString() : "Not Available",
+
+                                                       },
+
+                                                       date = dt_letterOfIntent.Rows.Count > 0 ? drletterOfIntent["date_text"].ToString() : "Not Available",
+                                                       limitation = dt_letterOfIntent.Rows.Count > 0 ? drletterOfIntent["limitation"].ToString() : "Not Available",
+                                                       required = dt_letterOfIntent.Rows.Count > 0 ? drletterOfIntent["required"].ToString() : "Not Available",
+
+                                                   }).ToArray(),
+
+                                 preproposal = (from DataRow drpreproposal in dt_preproposal.Rows
+                                                select new preproposal()
+                                                {
+                                                    description = new description()
+                                                    {
+                                                        abstracts = new abstracts
+                                                        {
+                                                            language = dt_preproposal.Rows.Count > 0 && drpreproposal["URL_preproposalDate"].ToString() != "" ? (drpreproposal["LANG"].ToString() != "" ? drpreproposal["LANG"].ToString() : "en") : "Not Available",
+
+
+                                                            value = dt_preproposal.Rows.Count > 0 && drpreproposal["URL_preproposalDate"].ToString() != "" ? (drpreproposal["description"].ToString() != "" ? drpreproposal["description"].ToString() : "NotAvailable_preproposal") : "Not Available",
+
+
+
+                                                        },
+                                                        source = dt_preproposal.Rows.Count > 0 && drpreproposal["URL_preproposalDate"].ToString() != "" ? drpreproposal["URL_preproposalDate"].ToString() : "Not Available",
+
+
+                                                    },
+
+                                                    date = dt_preproposal.Rows.Count > 0 ? drpreproposal["date_text"].ToString() : "Not Available",
+                                                    limitation = dt_preproposal.Rows.Count > 0 ? drpreproposal["limitation"].ToString() : "Not Available",
+                                                    required = dt_preproposal.Rows.Count > 0 ? drpreproposal["required"].ToString() : "Not Available",
+
+                                                }).ToArray(),
+                                 proposal = (from DataRow drproposal in dt_proposal.Rows
+                                             select new proposal()
+                                             {
+
+                                                 description = new description()
+                                                 {
+                                                     abstracts = new abstracts
+                                                     {
+                                                         language = dt_proposal.Rows.Count > 0 && drproposal["URL_proposalDate"].ToString() != "" ? (drproposal["LANG"].ToString() != "" ? drproposal["LANG"].ToString() : "en") : "Not Available",
+
+                                                         value = dt_proposal.Rows.Count > 0 && drproposal["URL_proposalDate"].ToString() != "" ? (drproposal["description"].ToString() != "" ? drproposal["description"].ToString() : "NotAvailable_proposal") : "Not Available",
+
+
+                                                     },
+                                                     source = dt_proposal.Rows.Count > 0 && drproposal["URL_proposalDate"].ToString() != "" ? drproposal["URL_proposalDate"].ToString() : "Not Available",
+
+                                                 },
+
+                                                 date = dt_proposal.Rows.Count > 0 ? drproposal["date_text"].ToString() : "Not Available",
+                                                 limitation = dt_proposal.Rows.Count > 0 ? drproposal["limitation"].ToString() : "Not Available",
+                                                 required = dt_proposal.Rows.Count > 0 ? drproposal["required"].ToString() : "Not Available",
+                                             }).ToArray(),
+
+                                 startDateDetail = (from DataRow drstartDateDetail in dt_startDateDetail.Rows
+                                                    select new startDateDetail()
+                                                    {
+
+                                                        date = dt_startDateDetail.Rows.Count > 0 ? drstartDateDetail["date_text"].ToString() : "Not Available",
+                                                        description = new description()
+                                                        {
+                                                            abstracts = new abstracts
+                                                            {
+                                                                language = dt_startDateDetail.Rows.Count > 0 && drstartDateDetail["URL_startDate"].ToString() != "" ? (drstartDateDetail["LANG"].ToString() != "" ? drstartDateDetail["LANG"].ToString() : "en") : "Not Available",
+
+                                                                value = dt_startDateDetail.Rows.Count > 0 && drstartDateDetail["URL_startDate"].ToString() != "" ? (drstartDateDetail["description"].ToString() != "" ? drstartDateDetail["description"].ToString() : "NotAvailable_StartdateDetail") : "Not Available",
+
+                                                            },
+
+                                                            source = dt_startDateDetail.Rows.Count > 0 && drstartDateDetail["URL_startDate"].ToString() != "" ? drstartDateDetail["URL_startDate"].ToString() : "Not Available",
+
+                                                        },
+
+                                                    }).ToArray(),
+
+
+                             }).ToArray(),
+
+                };
+
+
+                var settings = new JsonSerializerSettings { Converters = { new ReplacingStringWritingConverter("\r\n", "") } };
+                settings.NullValueHandling = NullValueHandling.Ignore;
+                string json = JsonConvert.SerializeObject(opp, Newtonsoft.Json.Formatting.None, settings);
+                json = json.Replace("\"TypeId\": \"Opportunity, Scival5.0, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\"", "");
+                json = json.Replace("replaces_f", "replaces");
+                json = json.Replace("identifier_oppclass", "identifier");
+                json = json.Replace("contactInformation_OPP", "contactInformation");
+                json = json.Replace("hasProvenance_OPP", "hasProvenance");
+                json = json.Replace("\"false\"", "false");
+                json = json.Replace("\"true\"", "true");
+                json = json.Replace("abstract_OPP", "abstract");
+                json = json.Replace("description_OPP", "description");
+                json = json.Replace("abstracts", "abstract");
+                json = json.Replace("Not Available", "");
+                json = json.Replace("NAOPP", "Not Available");
+                json = json.Replace("NotAvailable_Locality", "Not Available");
+                json = json.Replace("NotAvailable_EndDate", "Not Available");
+                json = json.Replace("NotAvailable_Duration", "Not Available");
+                json = json.Replace("NotAvailable_instruction", "Not Available");
+                json = json.Replace("NotAvailable_licenseInformation", "Not Available");
+                json = json.Replace("NotAvailable_associatedAmount", "Not Available");
+                json = json.Replace("NotAvailable_limitedSubmission", "Not Available");
+                json = json.Replace("NotAvailable_eligibilityClassification", "Not Available");
+                json = json.Replace("NotAvailable_proposal", "Not Available");
+                json = json.Replace("NotAvailable_decision", "Not Available");
+                json = json.Replace("NotAvailable_preproposal", "Not Available");
+                json = json.Replace("NotAvailable_StartdateDetail", "Not Available");
+                json = json.Replace("NotAvailable_LOI", "Not Available");
+                json = json.Replace("-99999999", "");
+                json = json.Replace("description_exp", "description");
+                json = json.Replace("abstract_OPP", "abstract");
+                json = json.Replace("NotAvailable_ExpDate", "Not Available");
+
+
+
+
+
+
+
+
+                //    json = JsonConvert.SerializeObject(opp, Newtonsoft.Json.Formatting.Indented, settings);
+                // json = JsonConvert.SerializeObject(json, Newtonsoft.Json.Formatting.Indented, settings);
+
+
+
+                for (int k = 0; k <= 7; k++)
+                {
+                    json = Remove_NullObjects(json);
+
+                    json = json.Replace("\"\",", "");
+
+                    json = json.Replace("\"\"", "");
+                }
+
+
+
+
+                //  json= Remove_NullObjects(json);
+
+                string json_1 = Regex.Replace(json, @"\t|\n|\r|\r\n", "");
+                json = Regex.Replace(json, @"\r\n?|\n", "");
+                json = json.Trim();
+
+
+
+                //json = json.Trim();
+                //string htmlEs = HtmlDecode(json);
+                //json = jun(htmlEs);
+                #region
+                // string json_2 = Regex.Replace(json, "\"[^\"]*(?:\"\"[^\"]*)*\"", m => m.Value.Replace("\r", "").Replace("\n", ""));
+                json = json.Replace(Environment.NewLine, "").Replace("&#x00a0;", " ").Replace("\r", "").Replace("\n", "").Replace("“", "&#8220;").Replace("”", "&#8221;");
+
+                #region Hex Values which have to replaced into space on 15-Mar-2019
+
+                json = json.Replace("&#x00A0;", " ");
+                json = json.Replace("&#x2002;", " ");
+                json = json.Replace("&#x2003;", " ");
+                json = json.Replace("&#x2004;", " ");
+                json = json.Replace("&#x2005;", " ");
+                json = json.Replace("&#x2006;", " ");
+                json = json.Replace("&#x2007;", " ");
+                json = json.Replace("&#x2008;", " ");
+                json = json.Replace("&#x2009;", " ");
+                json = json.Replace("&#x200A;", " ");
+                json = json.Replace("&#x200B;", " ");
+                json = json.Replace("&#x3000;", " ");
+                json = json.Replace("&#xFEFF;", " ");
+                json = json.Replace("  ", " ");
+                json = json.Replace("   ", " ");
+                json = json.Replace("   ", " ");
+                json = json.Replace("&lrm;", "&#x200E;");
+                json = json.Replace(" & ", "&#x200E;");
+
+
+                #endregion
+                #endregion
+                //updatedjson = json;
+
+                //json = json.Trim();
+                json = Sgml_to_Hexadecimal(json, XSDPath);
+                string json1 = Utf_to_Html(json);
+                json = anyToHex(json1);
+
+                ////string sdf = Hexval(json);
+                ////string htmlEs = HtmlDecode(json);
+                ////json = jun(htmlEs);
+
+                #region Hex Values which have to replaced into space on 15-Mar-2019
+                json = json.Replace("&nbsp;", " ");
+                json = json.Replace("&#x00A0;", " ");
+                json = json.Replace("&#x00a0;", " ");
+                json = json.Replace("&#x2002;", " ");
+                json = json.Replace("&#x2003;", " ");
+                json = json.Replace("&#x2004;", " ");
+                json = json.Replace("&#x2005;", " ");
+                json = json.Replace("&#x2006;", " ");
+                json = json.Replace("&#x2007;", " ");
+                json = json.Replace("&#x2008;", " ");
+                json = json.Replace("&#x2009;", " ");
+                json = json.Replace("&#x200A;", " ");
+                json = json.Replace("&#x200B;", " ");
+                json = json.Replace("&#x3000;", " ");
+                json = json.Replace("&#xFEFF;", " ");
+                json = json.Replace("&#x202f;", " ");
+
+
+                json = json.Replace("&#x202f;", " ");
+                ////////json = json.Replace("&#x22;", "\"");
+
+                json = json.Replace("&#x0022;", "\"");
+                //json = json.Replace("&#x005C;;", "\"");
+                // json = json.Replace("&#x002F;", "\"");
+                json = json.Replace("&#x0008;", " ");
+                json = json.Replace("&#x000C;", " ");
+                json = json.Replace("&#x000A;", " ");
+                json = json.Replace("&#x000D;", " ");
+                json = json.Replace("&#x0009;", " ");
+
+                json = json.Replace("&#x000c;", " ");
+                json = json.Replace("&#x000a;", " ");
+                json = json.Replace("&#x000d;", " ");
+
+                json = json.Replace("  ", " ");
+                json = json.Replace("   ", " ");
+                json = json.Replace("   ", " ");
+                json = json.Replace("&lrm;", "&#x200E;");
+                json = json.Replace(" & ", "&#x200E;");
+                json = json.Replace("&amp;nbsp;", " ");
+                json = json.Replace("&#x0026;nbsp", " ");
+                json = json.Replace("&nbsp", "");
+                json = json.Replace("  ", " ");
+                json = json.Replace("   ", " ");
+
+
+                json = json.Replace("&amp;#x", "&#x");
+                json = json.Replace("&amp;#", "&#");
+                json = json.Replace("&amp;lt;", "&lt;");
+                json = json.Replace("&amp;gt;", "&gt;");
+                json = json.Replace("&AMP ;", "");
+
+
+
+
+                #endregion
+
+                updatedjson = json;
+
+
+
+
+                #region
+                //using (TextReader reader = File.OpenText(@"D:\jsonschema\OpportunityBody_JSON_SCHEMA.json"))
+                //{
+                //    JsonSchema schema_OPP = JsonSchema.Read(new JsonTextReader(reader));
+                //    string oop_String = @"C:\Temp\OPP_JSON_File_501300183222.json";
+                //    string opp_Json = File.ReadAllText(oop_String);
+                //    JObject OPP_JSON_toVal = JObject.Parse(opp_Json);
+                //    IList<string> messages;
+                //    bool valid = OPP_JSON_toVal.IsValid(schema_OPP, out messages);
+
+                //    // do stuff
+                //}
+                #endregion
+
+
+                string is_valid = SchemaValidation(updatedjson, "Opportunity", XSDPath);
+
+                //return is_valid;
+                if (updatedjson.Length > 0)
+                {
+
+                    //opp.grantOpportunityId = Convert.ToInt64(dtOpportunity.Rows[0]["ORGDBID"].ToString());
+                    //opp.grantOpportunityId = dtOpportunity.Rows[0]["id"].ToString();
+
+
+                    if (!(Directory.Exists(@"C:\Temp\VtoolOP")))
+                    {
+                        Directory.CreateDirectory(@"C:\Temp\VtoolOP");
+                    }
+
+                    opp.grantOpportunityId = Convert.ToInt64(dtOpportunity.Rows[0]["opportunity_id"].ToString());
+
+
+
+
+                    string oppID = opp.grantOpportunityId.ToString();
+
+                    #region
+                    string error = "";
+                    File.AppendAllText(@"C:\Temp\VtoolOP\OP_NDJSON_File_.txt", updatedjson + "\r\n");
+                    // File.WriteAllText(@"C:\Temp\VtoolOP\Opp_JSON_File_" + oppID + ".json", updatedjson);
+
+                    /// XmlTransform.StartProcessForVTool_JSON(@"C:\Temp\VtoolOP\Opp_JSON_File_" + oppID + ".json");
+                    //////if (File.Exists(@"C:\Temp\VtoolOP\fp\Opp_JSON_File_" + oppID + "_json_xsl2751_fp.json"))
+                    //////{
+                    //////    String FpJSON = File.ReadAllText(@"C:\Temp\VtoolOP\fp\Opp_JSON_File_" + oppID + "_json_xsl2751_fp.json");
+                    //////    JObject Fp_JSON = JObject.Parse(FpJSON);
+
+                    //////    error = (string)Fp_JSON["fingerprints"]["fingerprint"]["results"]["total-errors"];
+
+                    //////    if (error != "0")
+                    //////    {
+                    //////        File.Delete(@"C:\Temp\VtoolOP\fp\Opp_JSON_File_" + oppID + "_json_xsl2742_fp.json");
+                    //////        File.Delete(@"C:\Temp\VtoolOP\Opp_JSON_File_" + oppID + ".json");
+                    //////        File.Delete(@"C:\Temp\VtoolOP\Opp_JSON_File_" + oppID + ".xml");
+                    //////    }
+
+                    //////}
+                    #endregion
+
+                    Source1.Clear();
+                    //File.WriteAllText(@"C:\Temp\OPP_JSON_File_" + oppID + ".json", updatedjson);
+                    ////if (error == "0")
+                    ////{
+                    ////    File.AppendAllText(@"C:\Temp\VtoolOP\OPP_NDJSON_.txt", updatedjson + "\r\n");
+                    ////}
+                    ////else
+                    ////{
+                    ////    File.AppendAllText(@"C:\Temp\VtoolOP\OPP_NDJSON_Fail_ID_.ndjson", oppID + "\r\n,");
+                    ////}
+                    //File.AppendAllText(@"C:\Temp\OPPNew_NDJSON_FileComma_.ndjson", updatedjson + "\r\n,");
+
+
+                    //throw new Exception("JSON file genrate successfully! for OPP Module & File copied in temp Folder");
+
+                }
+                else
+                {
+                    Source1.Clear();
+                    File.WriteAllText(@"C:\Temp\json_file.txt", "Something went worng..Some required parameter missing during JSON file generation..");
+                }
+                return is_valid;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+                if (updatedjson.Length == 0)
+                {
+                    Source1.Clear();
+                    File.WriteAllText(@"C:\Temp\json_file.txt", "Something went worng..Some required parameter missing during JSON file generation..");
+                    //oErrorLog.WriteErrorLog(ex);
+                    //oErrorLog.WorkProcessLog("Something went worng.");
+                    throw new Exception("Some required parameter missing during JSON file generation.");
+                }
+            }
+        }
+        #endregion
+
+        #region json genration Award module jan 2020
+        public string JsonCreationFromModel_Award(string XSDPath)
+        {
+
+            try
+            {
+                string updatedjson = string.Empty;
+                DAL.Transform XmlTransform = new DAL.Transform("");
+                #region JSON genration is created By Avanish in JAN 2020..
+
+                #region data filter
+
+                DataView dataView = new DataView();
+                DataView dataView1 = new DataView();
+                if (dtAw_RelatedFunder.Rows.Count > 0)
+                {
+                    dataView = dtAw_RelatedFunder.DefaultView;
+                    dataView1 = dtAw_RelatedFunder.DefaultView;
+                    dataView.RowFilter = "HIERARCHY = 'lead'";
+                    dtAw_LeadFunder = dataView.ToTable();
+                    // dataView1.RowFilter = "HIERARCHY = 'component'";
+                    dtAw_hasFunder = dataView1.ToTable();
+                }
+
+
+                #endregion
+
+
+
+                AwardJson_Model Aw = new AwardJson_Model();
+
+                Aw.grantAwardId = Convert.ToInt64(dtAw_Award.Rows.Count > 0 ? dtAw_Award.Rows[0]["grantAwardId"].ToString() : "Not Available_Award");
+                //Aw.grantAwardId = Convert.ToInt64(dtAw_Replication.Rows.Count > 0 ? dtAw_Replication.Rows[0]["Replicated_Id"].ToString() : "Not Available_Award");
+                Aw.fundingBodyAwardId = dtAw_Award.Rows[0]["fundingbodyawardid"].ToString();
+                // Aw.fundingBodyAwardId = dtAw_Replication.Rows[0]["Rep_Awfbid"].ToString();
+                Aw.title = (from DataRow dr3 in dtAw_Title.Rows
+                            select new Title()
+                            {
+                                language = dr3["lang"].ToString(),
+                                value = dr3["name_text"].ToString().Trim()
+                            }).ToList();
+
+                //Aw.title = (from DataRow dr3 in dtAw_Replication.Rows
+                //            select new Title()
+                //            {
+                //                language = "en",
+                //                value = dr3["Rep_Name"].ToString()
+                //            }).ToList();
+
+                //Aw.noticeDate = Convert.ToDateTime(dtAw_Award.Rows.Count > 0? dtAw_Award.Rows[0]["noticeDate"].ToString() : "01-01-1900");
+                Aw.noticeDate = dtAw_Award.Rows.Count > 0 ? dtAw_Award.Rows[0]["noticeDate"].ToString() : "01-01-1900";
+                Aw.startDate = Convert.ToDateTime(dtAw_Award.Rows.Count > 0 && dtAw_Award.Rows[0]["startdate"].ToString() != "" ? dtAw_Award.Rows[0]["startdate"].ToString() : "01-01-1900");
+                Aw.endDate = Convert.ToDateTime(dtAw_Award.Rows.Count > 0 && dtAw_Award.Rows[0]["enddate"].ToString() != "" ? dtAw_Award.Rows[0]["enddate"].ToString() : "01-01-1900");
+                Aw.grantType = dtAw_Award.Rows[0]["grantType"].ToString().ToUpper();
+                //Aw.funderSchemeType = dtAw_Award.Rows.Count > 0 ? dtAw_Award.Rows[0]["funderSchemeType"].ToString() : "Not Available_Award"; 
+                Aw.funderSchemeType = "Standard Grant";
+                Aw.homePage = new HomePage()
+                {
+                    link = dtAw_Award.Rows.Count > 0 ? dtAw_Award.Rows[0]["recordsource"].ToString().Trim() : "Not Available_Award",
+                    // link = dtAw_Replication.Rows.Count > 0 ? dtAw_Replication.Rows[0]["Rep_Url"].ToString() : "Not Available_Award",
+                    publishedDate = Convert.ToDateTime(dtAw_Award.Rows[0]["publishedDate"].ToString().Trim() != "" ? dtAw_Award.Rows[0]["publishedDate"].ToString() : "01-01-1900"),
+                    modifiedDate = Convert.ToDateTime(dtAw_Award.Rows[0]["modifiedDate"].ToString().Trim() != "" ? dtAw_Award.Rows[0]["modifiedDate"].ToString() : "01-01-1900")
+                    //modifiedDate = Convert.ToDateTime(dtAw_Award.Rows[0]["modifiedDate"].ToString())
+                };
+
+
+                Aw.keyword = (from DataRow drkey in dtAW_Keyword.Rows
+                              select new Keyword()
+                              {
+                                  language = drkey["LANG"].ToString(),
+                                  value = drkey["value"].ToString().Trim()
+                              }).ToList();
+
+                Aw.licenseInformation_Aw = (from DataRow drlicenseInformation in dt_AwlicenseInformation.Rows
+                                            select new licenseInformation_Aw()
+                                            {
+                                                abstract_aw = new Abstract()
+                                                {
+                                                    language = drlicenseInformation["URL"].ToString().Trim() != "" ? drlicenseInformation["LANG"].ToString() : "Not Available",
+                                                    value = drlicenseInformation["URL"].ToString().Trim() != "" ? (drlicenseInformation["description"].ToString().Trim() != "" && drlicenseInformation["description"].ToString().Trim() != "Not Available" ? drlicenseInformation["description"].ToString().Trim() : "NotAvailable_licenseInformation") : "Not Available"
+
+                                                },
+                                                source = drlicenseInformation["URL"].ToString()
+                                            }).ToArray();
+
+
+                //DataTable dtAw_haspart = new DataTable();
+
+                //Aw.funds = (from DataRow drfunds in dtAw_funds.Rows
+                //            select new Funds()
+                //            {
+                //                fundingBodyProjectId = "",
+
+                //                hasPart =(from DataRow drhaspart in dtAw_haspart.Rows 
+                //                          select new hasPart()
+                //                          {
+
+                //                          }
+                //            }).ToList();
+
+
+
+                Aw.synopsis = (from DataRow drsynopsis in dtAw_Synopsis.Rows
+                               select new Synopsis()
+                               {
+                                   @abstract = new Abstract
+                                   {
+
+                                       language = drsynopsis["LANG"].ToString(),
+                                       value = drsynopsis["abstract_text"].ToString().Trim()
+                                   },
+
+                                   source = dtAw_Award.Rows.Count > 0 ? dtAw_Award.Rows[0]["recordsource"].ToString().Trim() : "Not Available_Award"
+                                   //source = dtAw_Award.Rows[0]["recordsource"].ToString()
+                               }).ToList();
+
+
+
+
+                Aw.fundingDetail = new FundingDetail()
+                {
+                    installment = (from DataRow dr_installment in dtAw_FundingDetail.Rows
+                                   select new Installment()
+                                   {
+                                       financialYear = Convert.ToInt32(dr_installment["financialYear"].ToString() != "" ? dr_installment["financialYear"].ToString() : "1900"),
+                                       index = Convert.ToInt32(dr_installment["index_txt"].ToString() != "" ? dr_installment["index_txt"].ToString() : "1900"),
+                                       fundedAmount = (from DataRow dr_fundedamount in dtAw_FundingDetail.Rows
+                                                       select new FundedAmount()
+                                                       {
+                                                           amount = dr_fundedamount["AMOUNT"].ToString().Trim() != "" ? Convert.ToInt64(dr_fundedamount["AMOUNT"].ToString()) : -100,
+                                                           currency = dr_fundedamount["inst_CURRENCY"].ToString().Trim() != "" ? dr_fundedamount["inst_CURRENCY"].ToString() : "Not Available_Award"
+                                                       }
+
+                                       ).ToList()
+
+                                   }).ToList(),
+
+                    fundingTotal = (from DataRow dr_fundingTotal in dtAw_FundingDetail.Rows
+                                    select new FundingTotal()
+                                    {
+                                        currency = dr_fundingTotal["CURRENCY"].ToString(),
+                                        amount = Convert.ToInt64(dr_fundingTotal["totalAmount"].ToString()),
+
+
+                                    }).ToList()
+
+                };
+
+
+
+                Aw.classification = (from DataRow drclassification in dtAw_Classification.Rows
+                                     select new Classification()
+                                     {
+                                         //type = dtAw_Classification.Rows[0]["cls_Type"].ToString(),
+                                         type = dtAw_Classification.Rows.Count > 0 ? drclassification["type"].ToString() : "Not Available_Award",
+                                         hasSubject = new HasSubject()
+                                         {
+                                             preferredLabel = drclassification["preferredLabel"].ToString() != "" ? drclassification["preferredLabel"].ToString() : "Not Available_Award",
+                                             orgSpecificClassification = drclassification["orgSpecificClassification"].ToString() != "" ? drclassification["orgSpecificClassification"].ToString() : "Not Available_Award",
+
+                                             identifier = new Identifier()
+                                             {
+                                                 //type = drclassification["type"].ToString().Trim() == "orgSpecific" ? "CFDA" : drclassification["cls_Type"].ToString().Trim(),
+                                                 type = drclassification["value"].ToString() == "" ? "" : drclassification["cls_Type"].ToString().Trim(),
+                                                 value = drclassification["value"].ToString()
+                                             }
+
+                                         }
+
+                                     }).ToList();
+
+
+                Aw.relatedOpportunity = (from DataRow dr_RelatedOpportunity in dtAw_RelatedOpportunity.Rows
+                                         select new RelatedOpportunity()
+                                         {
+                                             grantOpportunityId = Convert.ToInt64(dr_RelatedOpportunity["grantOpportunityId"]),
+                                             fundingBodyOpportunityId = dr_RelatedOpportunity["fundingBodyOpportunityId"].ToString(),
+                                             description = dr_RelatedOpportunity["fundingBodyOpportunityId"].ToString() != "" ? "This opportunity is related to Solicitation " + dtAw_RelatedOpportunity.Rows[0]["fundingBodyOpportunityId"].ToString() : "",
+                                             title = (from DataRow dr_title in dtAw_RelatedOpportunity.Rows
+                                                      select new Title()
+                                                      {
+                                                          value = dr_title["opportunityname"].ToString().Trim(),
+                                                          language = dr_title["lang"].ToString(),
+                                                      }
+                                                       ).ToList()
+
+                                         }).ToList();
+
+
+                Aw.relatedFunder = new RelatedFunder()
+                {
+                    leadFunder = new LeadFunder()
+                    {
+
+                        fundingBodyId = Convert.ToInt64(dtAw_LeadFunder.Rows[0]["fundingBodyId"].ToString()) //dt_leadFunder.Rows[0]["relatedfundingbodies_id"].ToString()
+                    },
+                    hasFunder = (from DataRow drhasFunder in dtAw_hasFunder.Rows
+                                 select new HasFunder()
+                                 {
+
+                                     fundingBodyId = Convert.ToInt64(drhasFunder["fundingBodyId"].ToString())
+                                 }).ToList(),
+
+                };
+
+                //  DataTable dtAw_AwardeeDetail = Source_AwJson.Tables["AwardXML53"];
+                // DataTable dtAw_AffiliationDetail = Source_AwJson.Tables["AwardXML54"];
+                //DataTable dtAw_AwardeeAddress = Source_AwJson.Tables["AwardXML55"];
+
+                //#region Awardee
+                //Aw.awardeeDetail = (from DataRow dr_awardeeDetail in dtAw_AwardeeDetail.Rows
+                //                    select new AwardeeDetail()
+                //                    {
+                //                        role_awardee = dtAw_AwardeeDetail.Rows.Count > 0 ? dtAw_AwardeeDetail.Rows[0]["TYPE"].ToString() : "Not Available_Award",
+                //                        name_awardee = (from DataRow dr_Name in dr_awardeeDetail.Table.Rows
+                //                                select new Name_Awardee()
+                //                                {
+                //                                    value = dr_Name["Name"].ToString(),
+                //                                    language = dr_Name["Name"].ToString().Trim() != "" ? dr_Name["Language"].ToString() : "Not Available_Award"
+
+                //                                }
+
+                //                             ).ToList(),
+                //                        //name = (from DataRow dr_Name in dtAw_AwardeeDetail.Rows
+                //                        //        select new Name()
+                //                        //    {
+                //                        //        value = dr_Name["Name"].ToString(),
+                //                        //        language = dr_Name["Name"].ToString().Trim() != "" ? dr_Name["Language"].ToString() : "Not Available_Award"
+
+                //                        //    }
+
+                //                        //     ).ToList(),
+
+                //                        awardeeAffiliationId = dtAw_AwardeeDetail.Rows.Count > 0 ? dtAw_AwardeeDetail.Rows[0]["awardeeAffiliationId"].ToString() : "Not Available_Award",
+                //                        fundingTotal = (from DataRow dr_fundingTotal in dr_awardeeDetail.Table.Rows
+                //                                        select new FundingTotal()
+                //                                        {
+                //                                            amount = Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()) > 0 ? Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()) : -100,
+                //                                            // amount = Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()),
+                //                                            //  currency = dr_fundingTotal["AMOUNT_TEXT"].ToString().Trim() != "" ? dr_fundingTotal["currency"].ToString() : "Not Available_Award"
+                //                                            currency = Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()) > 0 ? dr_fundingTotal["currency"].ToString() : "Not Available_Award"
+
+                //                                        }
+                //                             ).ToList(),
+
+                //                        // fundingTotal = (from DataRow dr_fundingTotal in dtAw_AwardeeDetail.Rows
+                //                        //                 select new FundingTotal()
+                //                        //                 {
+                //                        //                     amount = Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()),
+                //                        //                     currency = dr_fundingTotal["AMOUNT_TEXT"].ToString().Trim() != "" ? dr_fundingTotal["currency"].ToString() : "Not Available_Award"
+
+                //                        //                 }
+                //                        //).ToList(),
+
+                //                        fundingBodyOrganizationId = dtAw_AwardeeDetail.Rows.Count > 0 ? dtAw_AwardeeDetail.Rows[0]["FBORGANIZATIONID"].ToString() : "Not Available_Award",
+                //                        vatNumber = dtAw_AwardeeDetail.Rows[0]["VATNUMBER"].ToString(),
+                //                        activityType = dtAw_AwardeeDetail.Rows[0]["activityType"].ToString(),
+
+                //                        hasPostalAddress = new HasPostalAddress()
+                //                        {
+                //                            addressCountry = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["COUNTRYTEST"].ToString() : "Not Available_Award",
+                //                            addressRegion = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["CITY"].ToString() : "Not Available_Award",
+                //                            addressLocality = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["ROOM"].ToString() : "Not Available_Award",
+                //                            addressPostalCode = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["POSTALCODE"].ToString() : "Not Available_Award",
+                //                            streetAddress = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["Street"].ToString() : "Not Available_Award"
+
+                //                        },
+
+
+                //                        identifier_awardee = (from DataRow dr_identifier in dt_AwardeeIdentityFier.Rows
+
+                //                                      select new Identifier_awardee()
+                //                                      {
+                //                                          type = dr_identifier["value_text"].ToString() != "" ? dr_identifier["Identifier_text"].ToString() : "Not Available_Award",
+                //                                          value = dr_identifier["value_text"].ToString()
+
+                //                                      }
+                //                             ).ToList(),
+
+                //                        departmentName = (from DataRow dr_departmentName in dr_awardeeDetail.Table.Rows
+                //                                          select new DepartmentName()
+                //                                          {
+
+                //                                              value = dr_departmentName["departmentName"].ToString(),
+                //                                              language = dr_departmentName["departmentName"].ToString() != "" ? "en" : "Not Available_Award"
+
+                //                                          }
+                //                             ).ToList(),
+
+                //                        affiliationOf = (from DataRow dr_affiliationOf in dtAw_AffiliationDetail.Rows
+                //                                         select new AffiliationOf()
+                //                                         {
+                //                                             role = dr_affiliationOf["ROLE"].ToString(),
+
+                //                                             name = (from DataRow dr_Name in dtAw_AffiliationDetail.Rows
+                //                                                     select new Name()
+                //                                                     {
+                //                                                         language = dr_Name["NAME"].ToString() != "" ? "en" : "Not Available_Award",
+                //                                                         value = dr_Name["NAME"].ToString()
+                //                                                     }).ToList(),
+
+                //                                             givenName = dr_affiliationOf["GIVENNAME"].ToString(),
+                //                                             familyName = dr_affiliationOf["FAMILYNAME"].ToString(),
+                //                                             initials = dr_affiliationOf["INITIALS"].ToString(),
+                //                                             emailAddress = dr_affiliationOf["EMAIL"].ToString(),
+                //                                             fundingBodyPersonId = dr_affiliationOf["FUNDINGBODYPERSONID"].ToString(),
+                //                                             awardeePersonId = dr_affiliationOf["AWARDEEPERSONID"].ToString(),
+                //                                             identifier = (from DataRow dr_IdentiAff in dtAw_AffiliationDetail.Rows
+                //                                                           select new Identifier()
+                //                                                           {
+                //                                                               type = dr_IdentiAff["ORCID"].ToString().Trim() != "" ? "ORCID" : "Not Available_Award",
+                //                                                               value = dr_IdentiAff["ORCID"].ToString()
+                //                                                           }).ToList()
+
+                //                                         }
+                //                             ).ToList(),
+
+
+                //                    }
+                //    ).ToList();
+                //#endregion
+                //dt_PublicationData.Select("PUBLICATION_ID = " + pub_id_f)
+                #region
+                Aw.awardeeDetail = (from DataRow dr_awardeeDetail in dtAw_AwardeeDetail.Rows
+                                    select new AwardeeDetail()
+                                    {
+
+                                        role_awardee = dr_awardeeDetail["TYPE"].ToString() != "" ? dr_awardeeDetail["TYPE"].ToString() : "Not Available_Award",
+                                        name_awardee = (from DataRow dr_Name in dtAw_AwardeeDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])
+                                                        select new Name_Awardee()
+                                                        {
+                                                            value = dr_Name["Name"].ToString(),
+                                                            language = dr_Name["Name"].ToString().Trim() != "" ? dr_Name["Language"].ToString() : "Not Available_Award"
+
+                                                        }
+
+                                             ).ToList(),
+                                        //name = (from DataRow dr_Name in dtAw_AwardeeDetail.Rows
+                                        //        select new Name()
+                                        //    {
+                                        //        value = dr_Name["Name"].ToString(),
+                                        //        language = dr_Name["Name"].ToString().Trim() != "" ? dr_Name["Language"].ToString() : "Not Available_Award"
+
+                                        //    }
+
+                                        //     ).ToList(),
+
+                                        //awardeeAffiliationId = dr_awardeeDetail["awardeeAffiliationId"].ToString() != "" ? dr_awardeeDetail["awardeeAffiliationId"].ToString() : "Not Available_Award",
+                                        awardeeAffiliationId = dtAw_Award.Rows[0]["id"].ToString() + "_A_" + Convert.ToString(dtAw_AwardeeDetail.Rows.Count - 1),
+                                        fundingTotal = (from DataRow dr_fundingTotal in dtAw_AwardeeDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])
+                                                        select new FundingTotal()
+                                                        {
+                                                            //amount = Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()),
+                                                            //currency = dr_fundingTotal["AMOUNT_TEXT"].ToString().Trim() != "" ? dr_fundingTotal["currency"].ToString() : "Not Available_Award"
+                                                            amount = Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()) > 0 ? Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()) : -100,
+                                                            currency = Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()) > 0 ? dr_fundingTotal["currency"].ToString() : "Not Available_Award"
+
+
+                                                        }
+                                             ).ToList(),
+
+                                        // fundingTotal = (from DataRow dr_fundingTotal in dtAw_AwardeeDetail.Rows
+                                        //                 select new FundingTotal()
+                                        //                 {
+                                        //                     amount = Convert.ToInt64(dr_fundingTotal["AMOUNT_TEXT"].ToString()),
+                                        //                     currency = dr_fundingTotal["AMOUNT_TEXT"].ToString().Trim() != "" ? dr_fundingTotal["currency"].ToString() : "Not Available_Award"
+
+                                        //                 }
+                                        //).ToList(),
+
+                                        ////////////// fundingBodyOrganizationId = dr_awardeeDetail["FBORGANIZATIONID"].ToString() != "" ? dr_awardeeDetail["FBORGANIZATIONID"].ToString() : "Not Available_Award",
+                                        vatNumber = dr_awardeeDetail["VATNUMBER"].ToString(),
+                                        activityType = dr_awardeeDetail["activityType"].ToString(),
+
+                                        hasPostalAddress = new HasPostalAddress()
+                                        {
+                                            //addressCountry = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["COUNTRYNAME"].ToString() : "Not Available_Award",
+                                            //addressRegion = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["CITY"].ToString() : "Not Available_Award",
+                                            //addressLocality = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["ROOM"].ToString() : "Not Available_Award",
+                                            //addressPostalCode = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["POSTALCODE"].ToString() : "Not Available_Award",
+                                            //streetAddress = dtAw_AwardeeAddress.Rows.Count > 0 ? dtAw_AwardeeAddress.Rows[0]["Street"].ToString() : "Not Available_Award"
+
+                                            addressCountry = dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"]).Count() > 0 ? dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"])[0]["COUNTRYTEST"].ToString() : "Not Available_Award",
+                                            addressRegion = dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"]).Count() > 0 ? dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"])[0]["STATE"].ToString() : "Not Available_Award",
+
+                                            addressLocality = dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"]).Count() > 0 ? dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"])[0]["CITY"].ToString() : "Not Available_Award",
+
+
+                                            addressPostalCode = dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"]).Count() > 0 ? dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"])[0]["POSTALCODE"].ToString() : "Not Available_Award",
+
+                                            streetAddress = dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"]).Count() > 0 ? dtAw_AwardeeAddress.Select("AFFILIATION_ID = " + dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"])[0]["Street"].ToString() : "Not Available_Award",
+
+
+                                            //dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])[0]["AFFILIATION_ID"]
+
+                                        },
+
+
+                                        identifier_awardee = (from DataRow dr_identifier in dt_AwardeeIdentityFier.Rows
+
+                                                              select new Identifier_awardee()
+                                                              {
+                                                                  type = dr_identifier["value_text"].ToString() != "" ? dr_identifier["Identifier_text"].ToString() : "Not Available_Award",
+                                                                  value = dr_identifier["value_text"].ToString()
+
+                                                              }
+                                             ).ToList(),
+
+                                        departmentName = (from DataRow dr_departmentName in dtAw_AwardeeDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])
+                                                          select new DepartmentName()
+                                                          {
+
+                                                              value = dr_departmentName["departmentName"].ToString(),
+                                                              language = dr_departmentName["departmentName"].ToString() != "" ? "en" : "Not Available_Award"
+
+                                                          }
+                                             ).ToList(),
+
+                                        affiliationOf = (from DataRow dr_affiliationOf in dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])
+                                                         select new AffiliationOf()
+                                                         {
+                                                             role = dr_affiliationOf["ROLE"].ToString(),
+
+                                                             name = (from DataRow dr_Name in dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])
+                                                                     select new Name()
+                                                                     {
+                                                                         language = dr_Name["NAME"].ToString() != "" ? "en" : "Not Available_Award",
+                                                                         value = dr_Name["NAME"].ToString()
+                                                                     }).ToList(),
+
+                                                             givenName = dr_affiliationOf["GIVENNAME"].ToString(),
+                                                             familyName = dr_affiliationOf["FAMILYNAME"].ToString(),
+                                                             initials = dr_affiliationOf["INITIALS"].ToString(),
+                                                             emailAddress = dr_affiliationOf["EMAIL"].ToString(),
+                                                             fundingBodyPersonId = dr_affiliationOf["FUNDINGBODYPERSONID"].ToString(),
+                                                             //awardeePersonId = dr_affiliationOf["AWARDEEPERSONID"].ToString(),
+                                                             //awardeePersonId= dtAw_Award.Rows[0]["id"].ToString() + "_P_" + Convert.ToString(dtAw_AffiliationDetail.Rows.Count-1),
+                                                             awardeePersonId = dr_affiliationOf["ROLE"].ToString().Trim() != "" ? dtAw_Award.Rows[0]["id"].ToString() + "_P_" + Convert.ToString(dtAw_AffiliationDetail.Rows.Count - 1) : "",
+                                                             identifier = (from DataRow dr_IdentiAff in dtAw_AffiliationDetail.Select("Awardee_Id = " + dr_awardeeDetail["Awardee_Id"])
+                                                                           select new Identifier()
+                                                                           {
+                                                                               type = dr_IdentiAff["ORCID"].ToString().Trim() != "" ? "ORCID" : "Not Available_Award",
+                                                                               value = dr_IdentiAff["ORCID"].ToString()
+                                                                           }).ToList()
+
+                                                         }
+                                             ).ToList(),
+
+
+                                    }
+                                    ).ToList();
+
+                #endregion
+
+                Aw.funds = (from DataRow dr_funds in dtAw_funds.Rows
+                            select new Funds()
+                            {
+                                fundingBodyProjectId = dr_funds["FUNDINGBODYPROJECTID"].ToString(),
+                                acronym = dr_funds["ACRONYM"].ToString(),
+                                startDate = Convert.ToDateTime(dr_funds["STARTDATE"].ToString()),
+                                endDate = Convert.ToDateTime(dr_funds["ENDDATE"].ToString()),
+                                link = dr_funds["LINK"].ToString(),
+                                status = dr_funds["STATUS"].ToString(),
+                                title = (from DataRow dr_title in dtAw_titleFunds.Rows
+                                         select new Title()
+                                         {
+                                             value = dr_title["value_text"].ToString(),
+                                             language = dr_title["language"].ToString()
+                                         }
+                                         ).ToList(),
+
+                                budget = (from DataRow dr_budget in dtAw_funds.Rows
+                                          select new Budget()
+                                          {
+                                              amount = dr_budget["amount"].ToString(),
+                                              currency = dr_budget["currency"].ToString()
+                                          }
+                                                         ).ToList(),
+
+                                hasPart = (from DataRow dr_hasPart in dtAw_haspart_funds.Rows
+                                           select new HasPart()
+                                           {
+                                               fundingBodyProjectId = dr_hasPart["fundingBodyProjectId"].ToString(),
+                                               budget = (from DataRow dr_budget in dtAw_haspart_funds.Rows
+                                                         select new Budget()
+                                                         {
+                                                             amount = dr_budget["amount"].ToString(),
+                                                             currency = dr_budget["currency"].ToString()
+                                                         }
+                                                         ).ToList(),
+
+
+
+                                           }
+                                          ).ToList(),
+
+                                hasPostalAddress = new HasPostalAddress()
+                                {
+                                    addressCountry = dr_funds["Country"].ToString(),
+                                    addressRegion = dr_funds["Region"].ToString(),
+                                    addressLocality = dr_funds["Locality"].ToString(),
+                                    addressPostalCode = dr_funds["PostalCode"].ToString(),
+                                    streetAddress = dr_funds["street"].ToString()
+                                }
+
+
+
+                            }
+                           ).ToList();
+
+
+                Aw.hasProvenance = new HasProvenance()
+                {
+
+
+                    contactPoint = "fundingprojectteam@aptaracorp.com",
+                    createdOn = Convert.ToDateTime(dtAw_createddate.Rows[0]["CREATEDDATE_TEXT"].ToString()),
+                    defunct = Convert.ToBoolean(dtAw_Award.Rows[0]["defunct"].ToString()),
+
+                    derivedFrom = dtAw_Award.Rows[0]["RECORDSOURCE"].ToString(),
+                    hidden = Convert.ToBoolean(dtAw_Award.Rows[0]["hidden"].ToString()),
+
+                    lastUpdateOn = dtAw_RevisedDate.Rows.Count > 0 ? Convert.ToDateTime(dtAw_RevisedDate.Rows[0]["reviseddate_text"].ToString()) : Convert.ToDateTime("01-01-1900"),
+                    status = dtAw_revisionhistory.Rows[0]["status"].ToString().ToUpper(),
+                    version = dtAw_createddate.Rows[0]["version"].ToString(),
+                    wasAttributedTo = "SUP002",
+                    //wasAttributedTo = "SUP001",
+                    //derivedFrom = "https://grants.nih.gov/funding/SearchGuide/index.html?query=&x=11&y=12#/",
+                    //createdOn = Convert.ToDateTime(DateTime.Now),
+
+                    //contactPoint = "fundingprojectteam@aptaracorp.com",
+                    //status = "NEW",
+                    ////lastUpdateOn = dt_reviseddate.Rows[0]["REVISEDDATE_TEXT"].ToString(),
+                    //version = "1.0",
+                    //hidden = false,
+                    //defunct = false
+
+                };
+
+
+
+                #endregion
+
+                JsonSerializerSettings settings = new JsonSerializerSettings();
+                settings.NullValueHandling = NullValueHandling.Ignore;
+                //settings.TypeNameHandling = TypeNameHandling.Objects;
+
+                string json = JsonConvert.SerializeObject(Aw);
+                //var json = JsonConvert.SerializeObject(Aw, Newtonsoft.Json.Formatting.Indented, settings);
+                json = json.Replace("\"TypeId\": \"DAL.JsonModel.AwardJson_Model, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\"", "");
+
+
+                json = json.Replace("replaces_f", "replaces");
+                json = json.Replace("\"amount\": -100", "");
+                json = json.Replace("\"amount\":-100", "");
+                json = json.Replace("\"financialYear\": -100,", "");
+                json = json.Replace("\"financialYear\":-100,", "");
+                json = json.Replace("\"index\": -100,", "");
+                json = json.Replace("\"index\":-100,", "");
+                json = json.Replace("01-01-1900", "");
+                json = json.Replace("1900-01-01T00:00:00", "");
+                json = json.Replace("-100", "");
+
+                json = json.Replace("role_awardee", "role");
+                json = json.Replace("name_awardee", "name");
+                json = json.Replace("identifier_awardee", "identifier");
+                json = json.Replace("licenseInformation_Aw", "licenseInformation");
+                json = json.Replace("abstract_aw", "abstract");
+
+
+
+
+
+                json = json.Replace("Not Available_Award", "");
+
+
+
+
+                for (int k = 0; k <= 10; k++)
+                {
+                    json = Remove_NullObjects(json);
+
+                    json = json.Replace("\"\",", "");
+
+                    json = json.Replace("\"\"", "");
+                }
+
+
+                #region
+
+                //#region TEST
+
+                //string data = File.ReadAllText(@"D:\Dheeraj_SCIVAL\2020\Feb\19\Publication_Sample\Pub_JSON_File_501401537837.json");
+                //string schema1 = File.ReadAllText(@"C:\Users\a5436\Desktop\JSON_Schemas\PublicationBody_JSON_Schema.json");
+                //var model = JObject.Parse(data);
+                //var json_schema1 = JSchema.Parse(schema1);
+                //IList<string> messages1;
+                //bool valid = model.IsValid(json_schema1, out messages1);
+                //#endregion
+
+                //using (TextReader reader = File.OpenText(@"C:\Users\a5436\Desktop\JSON_Schemas\PublicationBody_JSON_Schema.json"))
+                //{
+                //    string Schemastring = File.ReadAllText(@"C:\Users\a5436\Desktop\JSON_Schemas\PublicationBody_JSON_Schema.json");
+                //    // JSchemaPreloadedResolver resolver = new JSchemaPreloadedResolver();
+                //    // JsonSchema schema_OPP = JsonSchema.Read(new JsonTextReader(reader),new JsonSchemaResolver());
+                //    JsonSchema json_schema = JsonSchema.Parse(Schemastring);
+                //    string oop_String = @"D:\Dheeraj_SCIVAL\2020\Feb\19\Publication_Sample\Pub_JSON_File_501401537837.json";
+                //    //string oppIDs = opp.grantOpportunityId.ToString();
+                //    //string oop_String1 = @"C:\Temp\OPP_JSON_File_";
+                //    // string oop_cmpfile = oop_String1 + oppIDs + ".json";
+                //    // oop_String = oop_cmpfile;
+
+
+                //    string opp_Json = File.ReadAllText(oop_String);
+
+                //    JObject OPP_JSON_toVal = JObject.Parse(opp_Json);
+                //    IList<string> messages;
+                //    //bool valid = OPP_JSON_toVal.IsValid(schema_OPP, out messages);
+                //    bool valid = OPP_JSON_toVal.IsValid(json_schema, out messages);
+
+                //    // do stuff
+                //}
+
+
+                #endregion
+
+
+
+
+                // #endregion
+                json = Regex.Replace(json, @"\t|\n|\r", "");
+                //json = Regex.Replace(json, @"\s+", "");
+                json = json.Trim();
+
+
+                json = Sgml_to_Hexadecimal(json, XSDPath);
+                string json1 = Utf_to_Html(json);
+                json = anyToHex(json1);
+
+                #region Hex Values which have to replaced into space on 15-Mar-2019
+                json = json.Replace("&nbsp;", " ");
+                json = json.Replace("&#x00A0;", " ");
+                json = json.Replace("&#x00a0;", " ");
+                json = json.Replace("&#x2002;", " ");
+                json = json.Replace("&#x2003;", " ");
+                json = json.Replace("&#x2004;", " ");
+                json = json.Replace("&#x2005;", " ");
+                json = json.Replace("&#x2006;", " ");
+                json = json.Replace("&#x2007;", " ");
+                json = json.Replace("&#x2008;", " ");
+                json = json.Replace("&#x2009;", " ");
+                json = json.Replace("&#x200A;", " ");
+                json = json.Replace("&#x200B;", " ");
+                json = json.Replace("&#x3000;", " ");
+                json = json.Replace("&#xFEFF;", " ");
+                json = json.Replace("&#x202f;", " ");
+
+
+                json = json.Replace("&#x202f;", " ");
+                ////////json = json.Replace("&#x22;", "\"");
+
+                ///////json = json.Replace("&#x0022;", "\"");
+                //json = json.Replace("&#x005C;;", "\"");
+                // json = json.Replace("&#x002F;", "\"");
+                json = json.Replace("&#x0008;", " ");
+                json = json.Replace("&#x000C;", " ");
+                json = json.Replace("&#x000A;", " ");
+                json = json.Replace("&#x000D;", " ");
+                json = json.Replace("&#x0009;", " ");
+
+                json = json.Replace("&#x000c;", " ");
+                json = json.Replace("&#x000a;", " ");
+                json = json.Replace("&#x000d;", " ");
+
+                json = json.Replace("  ", " ");
+                json = json.Replace("   ", " ");
+                json = json.Replace("   ", " ");
+                json = json.Replace("&lrm;", "&#x200E;");
+                json = json.Replace(" & ", "&#x200E;");
+                json = json.Replace("&amp;nbsp;", " ");
+                json = json.Replace("&#x0026;nbsp", " ");
+                json = json.Replace("&nbsp", "");
+                json = json.Replace("  ", " ");
+                json = json.Replace("   ", " ");
+
+
+                json = json.Replace("&amp;#x", "&#x");
+                json = json.Replace("&amp;#", "&#");
+                json = json.Replace("&amp;lt;", "&lt;");
+                json = json.Replace("&amp;gt;", "&gt;");
+                json = json.Replace("&AMP ;", "");
+
+
+
+
+                #endregion
+
+                updatedjson = json;
+                string is_valid = SchemaValidation(updatedjson, "Award", XSDPath);
+                if (updatedjson.Length > 0)
+                {
+
+                    string AwID = Aw.grantAwardId.ToString();
+
+                    #region
+                    string error = "";
+                    if (!(Directory.Exists(@"C:\Temp\VtoolAW")))
+                    {
+                        Directory.CreateDirectory(@"C:\Temp\VtoolAW");
+                    }
+
+                    File.AppendAllText(@"C:\Temp\VtoolAW\AW_NDJSON_File_.txt", updatedjson + "\r\n");
+
+                    ///File.WriteAllText(@"C:\Temp\VtoolAw\Aw_JSON_File_" + AwID + ".json", updatedjson);
+                    ////  File.AppendAllText(@"C:\Temp\Aw_NDJSON_File_Sample.ndjson", updatedjson + "\r\n");
+                    //XmlTransform.StartProcessForVTool_JSON(@"C:\Temp\VtoolAw\Aw_JSON_File_" + AwID + ".json");
+                    //if (File.Exists(@"C:\Temp\VtoolAw\fp\Aw_JSON_File_" + AwID + "_json_xsl2742_fp.json"))
+                    //{
+                    //    String FpJSON = File.ReadAllText(@"C:\Temp\VtoolAw\fp\Aw_JSON_File_" + AwID + "_json_xsl2742_fp.json");
+                    //    JObject Fp_JSON = JObject.Parse(FpJSON);
+
+                    //    error = (string)Fp_JSON["fingerprints"]["fingerprint"]["results"]["total-errors"];
+
+
+                    //        File.Delete(@"C:\Temp\VtoolAw\fp\Aw_JSON_File_" + AwID + "_json_xsl2742_fp.json");
+                    //        File.Delete(@"C:\Temp\VtoolAw\Aw_JSON_File_" + AwID + ".json");
+                    //        File.Delete(@"C:\Temp\VtoolAw\Aw_JSON_File_" + AwID + ".xml");
+
+
+                    //}
+                    #endregion
+
+
+
+                    //File.WriteAllText(@"C:\Temp\Aw_JSON_File_" + AwID + ".json", updatedjson);
+
+
+                    if (error == "0")
+                    {
+
+
+                        File.AppendAllText(@"C:\Temp\Aw_NDJSON_File_Sample.ndjson", updatedjson + "\r\n");
+                    }
+                    else
+                    {
+                        File.AppendAllText(@"C:\Temp\Aw_NDJSON_ErrorsIDS_.ndjson", updatedjson + "\r\n");
+                    }
+
+                }
+                else
+                {
+
+                    File.WriteAllText(@"C:\Temp\json_file.txt", "Something went worng..Some required parameter missing during JSON file generation..");
+                }
+                return is_valid;
+            }
+            catch (Exception ex)
+            {
+
+                File.WriteAllText(@"C:\Temp\json_file.txt", "Something went worng..Some required parameter missing during JSON file generation..");
+                //oErrorLog.WriteErrorLog(ex);
+                //oErrorLog.WorkProcessLog("Something went worng.");
+                return ex.Message;
+                throw new Exception("Some required parameter missing during JSON file generation.");
+
+            }
+
+        }
+
+        #endregion
+
+        //#region json genration by pankaj for Publication module Feb 2020
+        //public void JsonCreationFromModel_Publication(DataRow[] dr_PubData_col, DataRow[] drpub_Title_col, DataRow[] drpub_identifier_col, DataTable dtidentifier_Pub, DataRow dr_PubData)
+        //{
+        //    string updatedjson = string.Empty;
+        //    Int64 pub_id = 0;
+        //    DAL.Transform XmlTransform = new DAL.Transform("");
+        //    try
+        //    {
+        //        #region JSON genration is created By Pankaj in Feb 2020..
+        //        pub_id = Convert.ToInt64(dr_PubData["publication_id"].ToString());
+
+        //        Publication_JSONModel pub = new Publication_JSONModel();
+
+        //        // AwardJson_Model aw = new AwardJson_Model();
+
+        //        ///
+
+
+
+        //        #region data filter
+
+        //        DataTable dt_has_Auth = new DataTable();
+        //        dt_has_Auth.Columns.Add("Auth_Name");
+
+        //        // string[] auth_Name = dt_PublicationData.Rows[0]["PUBLICATION_AUTHOR"].ToString().Split(',');
+        //        string[] auth_Name = dr_PubData["PUBLICATION_AUTHOR"].ToString().Split(',');
+        //        for (int i = 0; i < auth_Name.Length; i++)
+        //        {
+        //            string name = auth_Name[i].ToString();
+        //            DataRow dr_Auth = dt_has_Auth.NewRow();
+
+        //            dr_Auth["Auth_Name"] = name;
+        //            dt_has_Auth.Rows.InsertAt(dr_Auth, i);
+
+
+        //        }
+
+        //        DataView dataView = new DataView();
+        //        DataView dataView1 = new DataView();
+        //        dataView = dt_lead_has.DefaultView;
+        //        dataView1 = dt_lead_has.DefaultView;
+        //        //dataView = dtpub_RelatedFunder.DefaultView;
+        //        //dataView1 = dtpub_RelatedFunder.DefaultView;
+        //        dataView.RowFilter = "HIERARCHY = 'lead'";
+        //        dtpub_LeadFunder = dataView.ToTable();
+        //        //dataView1.RowFilter = "HIERARCHY = 'component'";
+        //        dtpub_hasFunder = dataView1.ToTable();
+
+        //        #endregion
+
+
+        //        pub.author = dr_PubData["PUBLICATION_AUTHOR"].ToString();
+
+
+        //        pub.hasAuthor = (from DataRow drhasauthor in dt_has_Auth.Rows
+        //                         select new HasAuthor()
+        //                         {
+        //                             name = drhasauthor["Auth_Name"].ToString()
+
+        //                         }).ToArray();
+
+        //        pub.hasJournal = new HasJournal()
+        //        {
+        //            identifier = new Identifier()
+        //            {
+        //                //type = dtpub_identifier.Rows[0]["type"].ToString(),
+        //                //value = dtpub_identifier.Rows[0]["journal_identifier"].ToString()
+        //                type = drpub_identifier_col[0]["journal_identifier"].ToString() != "" ? drpub_identifier_col[0]["type"].ToString() : "NotAvailable_Pub",
+        //                value = drpub_identifier_col[0]["journal_identifier"].ToString()
+        //            },
+        //            title = (from DataRow drtitle in drpub_identifier_col
+        //                     select new title()
+        //                     {
+        //                         language = drtitle["IDENTIFIER_TITLE"].ToString() != "" ? drtitle["lang"].ToString() : "NotAvailable_Pub",
+        //                         value = drtitle["IDENTIFIER_TITLE"].ToString()
+        //                     }).ToArray()
+        //        };
+
+
+
+
+
+        //        pub.HasProvenance = new HasProvenance()
+        //        {
+        //            wasAttributedTo = "SUP002",
+        //            //derivedFrom = "https://grants.nih.gov/funding/SearchGuide/index.html?query=&x=11&y=12#/",
+        //            derivedFrom = dtAw_Award.Rows[0]["RECORDSOURCE"].ToString(),
+        //            createdOn = Convert.ToDateTime(dt_createddate.Rows[0]["CREATEDDATE_TEXT"].ToString()),
+        //            //createdOn = Convert.ToDateTime("2009-07-06T18:53:11"),
+
+        //            contactPoint = "fundingprojectteam@aptaracorp.com",
+        //            status = "NEW",
+        //            lastUpdateOn = dt_reviseddate.Rows.Count > 0 && dt_reviseddate.Rows[0]["REVISEDDATE_TEXT"].ToString() != "" ? Convert.ToDateTime(dt_reviseddate.Rows[0]["REVISEDDATE_TEXT"].ToString()) : Convert.ToDateTime("01-01-1900"),
+        //            version = "0",
+        //            hidden = false,
+        //            defunct = false
+
+        //        };
+        //        pub.Identifier_P = (from DataRow dridentifier in dtidentifier_Pub.Rows
+        //                            select new Identifier_Pub()
+        //                            {
+        //                                type = dridentifier["Value"].ToString() != "" ? dridentifier["Type"].ToString() : "NotAvailable_Pub",
+        //                                value = dridentifier["Value"].ToString()
+        //                            }).ToArray();
+
+        //        pub.title = (from DataRow drtitle in drpub_Title_col
+        //                     select new Title_Pub()
+        //                     {
+        //                         language = drtitle["TITLE"].ToString() != "" ? drtitle["lang"].ToString() : "NotAvailable_Pub",
+        //                         value = drtitle["TITLE"].ToString()
+        //                     }).ToArray();
+
+
+
+        //        pub.publicationOutputId = Convert.ToInt64(dr_PubData["publication_id"].ToString());
+        //        pub.publicationURL = dr_PubData["PUBLICATION_URL"].ToString();
+        //        pub.publishedDate = dr_PubData["PUBLISHEDDATE"].ToString();
+
+        //        pub.relatedAward = new RelatedAward()
+        //        {
+        //            outcomeOf = (from DataRow drhasFunder in dt_lead_has.Select("hierarchy ='lead'")
+        //                         select new outcomeOf()
+        //                         {
+        //                             description = dt_outcomeOfPub.Rows[0]["description"].ToString(),
+        //                             //fundingBodyAwardId = "",
+        //                             fundingBodyAwardId = dtAw_Award.Rows[0]["fundingbodyawardid"].ToString(),
+        //                             fundingBodyProjectId = dt_outcomeOfPub.Rows[0]["fundingBodyProjectId"].ToString(),
+        //                             //grantAwardId = 1,
+        //                             grantAwardId = Convert.ToInt64(dtAw_Award.Rows[0]["grantAwardId"].ToString()),
+
+
+
+        //                             title = (from DataRow drtitle in dt_name_outcome.Rows
+        //                                      select new title()
+        //                                      {
+        //                                          language = drtitle["lang"].ToString(),
+        //                                          value = drtitle["name_text"].ToString()
+        //                                      }).ToArray(),
+
+        //                         }).ToArray(),
+
+
+        //        };
+
+
+        //        pub.relatedFunder = new RelatedFunder_Pub()
+        //        {
+        //            leadFunder = new LeadFunder_Pub()
+        //            {
+
+        //                fundingBodyId = Convert.ToInt64(dtpub_LeadFunder.Rows[0]["fundingBodyId"].ToString())
+        //            },
+        //            hasFunder = (from DataRow drhasFunder in dtpub_hasFunder.Rows
+        //                         select new HasFunder_Pub()
+        //                         {
+        //                             fundingBodyId = Convert.ToInt64(drhasFunder["fundingBodyId"].ToString())
+        //                         }).ToArray(),
+
+        //        };
+
+
+
+
+
+        //        JsonSerializerSettings settings = new JsonSerializerSettings();
+        //        settings.NullValueHandling = NullValueHandling.Ignore;
+        //        //settings.TypeNameHandling = TypeNameHandling.Objects;
+
+        //        var json = JsonConvert.SerializeObject(pub);
+        //        json = JsonConvert.SerializeObject(pub, Newtonsoft.Json.Formatting.None, settings);
+        //        // var json = JsonConvert.SerializeObject(pub, Newtonsoft.Json.Formatting.Indented, settings);
+        //        json = json.Replace("\"TypeId\": \"DAL.Publication_JSONModel, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null\"", "");
+
+
+        //        json = json.Replace("Identifier_P", "identifier");
+        //        json = json.Replace("HasProvenance_pub", "hasProvenance");
+        //        json = json.Replace("LeadFunder_Pub", "LeadFunder");
+        //        json = json.Replace("RelatedFunder_Pub", "RelatedFunder");
+        //        json = json.Replace("Title_Pub", "title");
+        //        json = json.Replace("01-01-1900", "");
+        //        json = json.Replace("1900-01-01T00:00:00", "");
+        //        json = json.Replace("HasProvenance", "hasProvenance");
+        //        json = json.Replace("NotAvailable_Pub", "");
+
+
+        //        for (int k = 0; k <= 10; k++)
+        //        {
+        //            json = Remove_NullObjects(json);
+
+        //            json = json.Replace("\"\",", "");
+
+        //            json = json.Replace("\"\"", "");
+        //        }
+
+        //        json = Regex.Replace(json, @"\n|\r", "");
+        //        json = json.Trim();
+        //        updatedjson = json;
+        //        if (updatedjson.Length > 0)
+        //        {
+
+        //            string PubID = Convert.ToString(pub_id); // dtAw_Award.Rows[0]["grantAwardId"].ToString();
+
+        //            #region
+        //            string error = "";
+        //            if (!(Directory.Exists(@"C:\Temp\VtoolPub")))
+        //            {
+        //                Directory.CreateDirectory(@"C:\Temp\VtoolPub");
+        //            }
+
+
+        //            File.AppendAllText(@"C:\Temp\VtoolPUB\PUB_NDJSON_File_" + ".txt", updatedjson + "\r\n");
+
+        //            #endregion
+        //            if (error == "0")
+        //            {
+        //                //// File.AppendAllText(@"C:\Temp\Pub_NDJSON_File_" + ".ndjson", updatedjson + "\r\n");
+        //            }
+        //            else
+        //            {
+        //                /// File.AppendAllText(@"C:\Temp\Pub_NDJSON_ERROR_" + ".txt", PubID + "\r\n");
+        //            }
+        //            // Clear_DataSet_Aw();
+
+        //            //throw new Exception("JSON file genrate successfully! for Publication Module & File copied in temp Folder");
+
+        //        }
+        //        else
+        //        {
+        //            Clear_DataSet_Aw();
+        //            Source_PubJson.Clear();
+        //            File.WriteAllText(@"C:\Temp\json_file.txt", "Something went worng..Some required parameter missing during JSON file generation..");
+        //        }
+        //        #endregion
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        if (updatedjson.Length == 0)
+        //        {
+        //            Clear_DataSet_Aw();
+
+        //            Source_PubJson.Clear();
+        //            File.WriteAllText(@"C:\Temp\json_file.txt", "Something went worng..Some required parameter missing during JSON file generation..");
+        //            //oErrorLog.WriteErrorLog(ex);
+        //            //oErrorLog.WorkProcessLog("Something went worng.");
+        //            throw new Exception("Some required parameter missing during JSON file generation.");
+        //        }
+        //    }
+        //}
+        //#endregion
+
         private DataSet GetOppotunityXSDSchema(String XsdPath)
         {
             try
@@ -701,7 +2511,7 @@ namespace MySqlDalAL
 
         #endregion
 
-        public string Add_Items_JSON(string XSDPath, DataTable dt_item, DataTable dtFundingBody, string inputJson, long pagemode)
+        public string Add_description_JSON(string XSDPath, DataTable dt_item, DataTable dtFundingBody, string inputJson)
         {
             DAL.Transform XmlTransform = new DAL.Transform("");
             string updatedjson = string.Empty;
@@ -709,42 +2519,21 @@ namespace MySqlDalAL
             {
                 FB_JSON_Model fb = new FB_JSON_Model();
                 FB_JSON_Model dataJSON = JsonConvert.DeserializeObject<FB_JSON_Model>(inputJson);
-
-                #region Page Mode 1
-                if (pagemode == 1)
+                fb.description = (from DataRow dr3 in dt_item.Rows
+                                  select new description()
+                                  {
+                                      abstracts = new abstracts { language = dr3["LANG"].ToString(), value = dr3["DESCRIPTION"].ToString() },
+                                      source = dr3["URL"].ToString()
+                                  }).ToArray();
+                var existingData = dataJSON.description;
+                int countItem = existingData.Count();
+                if (countItem == 0)
                 {
-                    fb.description = (from DataRow dr3 in dt_item.Rows
-                                      select new description()
-                                      {
-                                          abstracts = new abstracts { language = dr3["LANG"].ToString(), value = dr3["DESCRIPTION"].ToString() },
-                                          source = dr3["URL"].ToString()
-                                      }).ToArray();
-                    var existingData = dataJSON.description;
-                    int countItem = existingData.Count();
                     dataJSON.description = fb.description;
                 }
-                #endregion
-
-                #region Page Mode 4
-                if (pagemode == 4)
-                {
-                    fb.awardSuccessRate = new awardSuccessRate()
-                    {
-                        description = (from DataRow dr3 in dt_item.Rows
-                                       select new description()
-                                       {
-                                           abstracts = new abstracts { language = dr3["LANG"].ToString(), value = dr3["DESCRIPTION"].ToString() },
-                                           source = dr3["URL"].ToString()
-                                       }).ToArray(),
-
-                        //percentage = 99
-                        percentage = dtFundingBody.Rows[0]["AWARDSUCCESSRATE"].ToString() != "" ? Convert.ToInt32(dtFundingBody.Rows[0]["AWARDSUCCESSRATE"].ToString()) : 0,
-                    };
-                    var existingData = dataJSON.awardSuccessRate;
-                    dataJSON.awardSuccessRate = fb.awardSuccessRate;
+                else { 
+                //dataJSON.description
                 }
-                #endregion
-
                 string newJson = JsonConvert.SerializeObject(dataJSON);
                 var settings = new JsonSerializerSettings { Converters = { new ReplacingStringWritingConverter("\r\n", "") } };
                 settings.NullValueHandling = NullValueHandling.Ignore;
@@ -756,99 +2545,7 @@ namespace MySqlDalAL
             }
             catch (Exception ex)
             {
-                return inputJson;
-                if (updatedjson.Length == 0)
-                {
-                    File.WriteAllText(@"C:\Temp\json_file.txt", "Something went worng..Some required parameter missing during JSON file generation..");
-                    throw new Exception("Some required parameter missing during JSON file generation.");
-                }
-            }
-        }
-
-        public string saveEstablishmentInfo(string XSDPath, DataTable dt_item, DataTable dtFundingBody, string inputJson)
-        {
-            DAL.Transform XmlTransform = new DAL.Transform("");
-            string updatedjson = string.Empty;
-            try
-            {
-                FB_JSON_Model fb = new FB_JSON_Model();
-                FB_JSON_Model dataJSON = JsonConvert.DeserializeObject<FB_JSON_Model>(inputJson);
-
-                fb.establishment = new establishment()
-                {
-                    establishmentYear = dt_item.Rows.Count > 0 ? (dt_item.Rows[0]["ESTABLISHMENTDATE"].ToString() != "" ? Convert.ToInt32(dt_item.Rows[0]["ESTABLISHMENTDATE"].ToString()) : -99999999) : -99999999,
-                    //establishmentYear = 1990,
-                    country = dt_item.Rows.Count > 0 ? dt_item.Rows[0]["ESTABLISHMENTCOUNTRYCODE"].ToString() : "",
-
-                    description = (from DataRow dr3 in dt_item.Rows
-                                   select new description()
-                                   {
-                                       abstracts = new abstracts { language = dr3["LANG"].ToString(), value = dr3["ESTABLISHMENTDESCRIPTION"].ToString() },
-                                       //26nov 2019//source = dr3["URL"].ToString()
-                                       source = dtFundingBody.Rows[0]["recordSource"].ToString()
-                                   }).ToArray()
-
-                };
-                dataJSON.establishment = fb.establishment;
-                string newJson = JsonConvert.SerializeObject(dataJSON);
-                var settings = new JsonSerializerSettings { Converters = { new ReplacingStringWritingConverter("\r\n", "") } };
-                settings.NullValueHandling = NullValueHandling.Ignore;
-                string json = JsonConvert.SerializeObject(dataJSON, Newtonsoft.Json.Formatting.None, settings);
-
-                settings.NullValueHandling = NullValueHandling.Ignore;
-                var myJson = JsonConvert.SerializeObject(dataJSON, settings);
-                return GetJSONFB(myJson, json, XSDPath, updatedjson, dtFundingBody, dataJSON);
-            }
-            catch (Exception ex)
-            {
-                return inputJson;
-                if (updatedjson.Length == 0)
-                {
-                    File.WriteAllText(@"C:\Temp\json_file.txt", "Something went worng..Some required parameter missing during JSON file generation..");
-                    throw new Exception("Some required parameter missing during JSON file generation.");
-                }
-            }
-        }
-
-        public string saveContactInfo(string XSDPath, DataTable dt_item, DataTable dtFundingBody, string inputJson)
-        {
-            DAL.Transform XmlTransform = new DAL.Transform("");
-            string updatedjson = string.Empty;
-            try
-            {
-                FB_JSON_Model fb = new FB_JSON_Model();
-                FB_JSON_Model dataJSON = JsonConvert.DeserializeObject<FB_JSON_Model>(inputJson);
-
-                fb.contactInformation = new contactInformation()
-                {
-                    link = Convert.ToString(dt_website.Rows[0]["url"].ToString()),
-
-                    hasPostalAddress = new hasPostalAddress()
-                    {
-                        addressCountry = dt_item.Rows[0]["COUNTRYTEST"].ToString(),
-                        addressLocality = dt_item.Rows[0]["city"].ToString() != "Not Available" && dt_item.Rows[0]["city"].ToString().Trim() != "" ? dt_item.Rows[0]["city"].ToString().Trim() : dt_item.Rows[0]["COUNTRY"].ToString(),
-
-                        // addressLocality = "Not Available1",
-                        addressPostalCode = dt_item.Rows[0]["postalcode"].ToString(),
-                        postOfficeBoxNumber = dt_item.Rows[0]["room"].ToString(),
-                        //addressRegion = dt_address.Rows[0]["country"].ToString(),
-                        addressRegion = dt_item.Rows[0]["state"].ToString(),
-                        streetAddress = dt_item.Rows[0]["street"].ToString(),
-                    }
-                };
-                dataJSON.contactInformation = fb.contactInformation;
-                string newJson = JsonConvert.SerializeObject(dataJSON);
-                var settings = new JsonSerializerSettings { Converters = { new ReplacingStringWritingConverter("\r\n", "") } };
-                settings.NullValueHandling = NullValueHandling.Ignore;
-                string json = JsonConvert.SerializeObject(dataJSON, Newtonsoft.Json.Formatting.None, settings);
-
-                settings.NullValueHandling = NullValueHandling.Ignore;
-                var myJson = JsonConvert.SerializeObject(dataJSON, settings);
-                return GetJSONFB(myJson, json, XSDPath, updatedjson, dtFundingBody, dataJSON);
-            }
-            catch (Exception ex)
-            {
-                return inputJson;
+                return ex.Message;
                 if (updatedjson.Length == 0)
                 {
                     File.WriteAllText(@"C:\Temp\json_file.txt", "Something went worng..Some required parameter missing during JSON file generation..");
@@ -1100,7 +2797,7 @@ namespace MySqlDalAL
                     Directory.CreateDirectory(@"C:\Temp\VtoolFB");
                 }
                 string error = "";
-                fb.fundingBodyId = Convert.ToInt64(dtFundingBody.Rows[0]["FUNDINGBODY_ID"].ToString());
+                fb.fundingBodyId = Convert.ToInt64(dtFundingBody.Rows[0]["ORGDBID"].ToString());
 
                 string FBID = fb.fundingBodyId.ToString();
 
@@ -1113,8 +2810,6 @@ namespace MySqlDalAL
             }
             return updatedjson;
         }
-
-        
 
 
         public string JsonCreationFromModel_FBAll(string XSDPath, DataTable dtFundingBody, DataTable dt_preferredorgname, DataTable dt_contextname, DataTable dt_abbrevname, DataTable dt_acronym, DataTable dt_subType, DataTable dt_identifier, DataTable dt_fundingdescription, DataTable dt_website, DataTable dt_establishmentInfo, DataTable dt_address, DataTable dt_awardSuccessRatedesc, DataTable dt_revisionhistory, DataTable dt_createddate, DataTable dt_reviseddate)
@@ -3028,15 +4723,15 @@ namespace MySqlDalAL
             dtAw_createddate.Clear();
             dt_AwlicenseInformation.Clear();
 
-            //dt_PublicationData.Clear();
-            //dtpub_Title.Clear();
-            //dtpub_identifier.Clear();
-            //dtpub_hasFunder.Clear();
-            //dt_identifier_ml.Clear();
-            //dt_lead_has.Clear();
-            //dt_name_outcome.Clear();
-            ////dt_createddate.Clear(); 
-            //dt_outcomeOfPub.Clear();
+            dt_PublicationData.Clear();
+            dtpub_Title.Clear();
+            dtpub_identifier.Clear();
+            dtpub_hasFunder.Clear();
+            dt_identifier_ml.Clear();
+            dt_lead_has.Clear();
+            dt_name_outcome.Clear();
+            //dt_createddate.Clear(); 
+            dt_outcomeOfPub.Clear();
             dtAw_Replication.Clear();
         }
 

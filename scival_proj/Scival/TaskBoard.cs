@@ -988,8 +988,9 @@ namespace Scival
                 SharedObjects.TaskId = 2;
                 SharedObjects.Cycle = 0;
                 SharedObjects.TRAN_TYPE_ID = 1;
-               // SharedObjects.Allocation = 0;
+                // SharedObjects.Allocation = 0;
 
+                //dummyTaskList = TaskDataOperation.GetDummyTaskList(SharedObjects.User.USERID, SharedObjects.ModuleId, 2, 1, SharedObjects.Allocation);
                 dummyTaskList = TaskDataOperation.GetDummyTaskList(SharedObjects.User.USERID, SharedObjects.ModuleId, 2, 1, SharedObjects.Allocation);
 
                 foreach (DummyTaskList dummyTask in dummyTaskList)

@@ -7,15 +7,13 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using MySqlDal;
-using MySqlDal.DataOpertation;
 using MySqlDalAL;
 using Newtonsoft.Json;
 
 namespace Scival.FundingBody
 {
     public partial class FundingBase : UserControl
-    {
-        #region Init Variables
+    {        
         Replace r = new Replace();
         private FundingBody m_parent;
         Regex pattern = new Regex(@"([?]|[#]|[*]|[<]|[>])");
@@ -27,42 +25,6 @@ namespace Scival.FundingBody
         int UpdateContTID = 0;
         string InputXmlPath = string.Empty;
         ErrorLog oErrorLog = new ErrorLog();
-        #endregion
-
-        #region variable declaration
-        System.Collections.Generic.Dictionary<string, DataTable> dtTables = new System.Collections.Generic.Dictionary<string, DataTable>();
-        DataTable dt_preferredorgname = new DataTable();
-        DataTable dt_acronym = new DataTable();
-        DataTable dt_abbrevname = new DataTable();
-        DataTable dt_contextname = new DataTable();
-        DataTable dt_subType = new DataTable();
-        DataTable dt_website = new DataTable();
-        DataTable dt_contact = new DataTable();
-        DataTable dt_address = new DataTable();
-        DataTable dt_establishmentInfo = new DataTable();
-        DataTable dt_fundingPolicy = new DataTable();
-        DataTable dt_fundingPolicy_Deatails = new DataTable();
-        DataTable dt_createddate = new DataTable();
-        DataTable dt_reviseddate = new DataTable();
-        DataTable dt_revisionhistory = new DataTable();
-        DataTable dt_link = new DataTable();
-        DataTable dt_OPPORTUNITIESSOURCE = new DataTable();
-        DataTable dt_publicationDataset = new DataTable();
-        DataTable dt_awardSSOURCE = new DataTable();
-        DataTable dt_fundingBodyDataset = new DataTable();
-
-        DataTable dt_identifier = new DataTable();
-        DataTable dt_fundingdescription = new DataTable();
-        DataTable dt_awardSuccessRatedesc = new DataTable();
-        DataTable dt_releatedorgs = new DataTable();
-
-        StringBuilder jsondata = new StringBuilder();
-        string P_fundingBodyProjectId = null;
-        string createdby = "1";
-        string createdTime = DateTime.Now.ToString();
-        string ModifiedTime = "";
-        string modifiedBy = null;
-        #endregion
 
         public FundingBase(FundingBody frm)
         {
@@ -75,7 +37,6 @@ namespace Scival.FundingBody
             pnlURL.Controls.Add(objPage);
         }
 
-        #region Init Controls
         void ddlDefunct_MouseWheel(object sender, MouseEventArgs e)
         {
             ((HandledMouseEventArgs)e).Handled = true;
@@ -141,35 +102,250 @@ namespace Scival.FundingBody
         {
             ((HandledMouseEventArgs)e).Handled = true;
         }
-        public string GetFundingBodyJson(string FundingBodyId)
-        {
-            return FundingBodyDataOperations.GetFundingBodyMainJson(Convert.ToInt64(FundingBodyId));
-        }
-        #endregion
 
-        
         public void LoadBaseValue()
         {
             InputXmlPath = Path.GetDirectoryName(Application.ExecutablePath);
             lblMsg.Visible = false;
 
-            if (SharedObjects.User.USERID != 0)
-            { 
+            if (SharedObjects.User.USERID == 0)
+            {
+
+            }
+            else
+            {
                 try
                 {
                     DataSet dsFunding = SharedObjects.StartWork;
+
+                    
                     if (dsFunding != null)
                     {
-                        var FundingBodyId = dsFunding.Tables[1].Rows[0]["FUNDINGBODY_ID"].ToString();
-                        var FundingBodyMainJson = GetFundingBodyJson(FundingBodyId);
-                        DefaultFBModel model = JsonConvert.DeserializeObject<DefaultFBModel>(FundingBodyMainJson);
+                        if (SharedObjects.TaskId == 1 && SharedObjects.Cycle == 0)
+                        {
+                            SharedObjects.TRAN_TYPE_ID = 0;  // New FB
+                        }
+                        else if (SharedObjects.TaskId == 2 && SharedObjects.Cycle > 0)
+                        {
+                            SharedObjects.TRAN_TYPE_ID = 1;   // Update FB
+                        }
+                        else if (SharedObjects.TaskId == 2 && SharedObjects.Cycle == 0)
+                        {
+                            SharedObjects.TRAN_TYPE_ID = 0;    // QA FB
+                        }
 
-                        DataRow dr = PopulateDatainControls(dsFunding, model);
+                        #region Populate Country Data in Drop down ddlCountry
+                        DataTable temp = dsFunding.Tables["Country"].Copy();
+
+                        DataRow dr = temp.NewRow();
+                        dr["LCODE"] = "SelectCountry";
+                        dr["NAME"] = "--Select Country--";
+                        temp.Rows.InsertAt(dr, 0);
+
+                        ddlCountry.DataSource = temp;
+                        ddlCountry.ValueMember = "LCODE";
+                        ddlCountry.DisplayMember = "NAME";
+                        #endregion
+
+                        #region Populate SubType Data in Drop Down ddlsubType
+                        ddlsubType.Items.Insert(0, "--Select SubType--");
+                        ddlsubType.SelectedIndex = 0;
+                        #endregion
+
+                        #region Populate Trusting Data in Drop Down ddlTrusting
+                        ddlTrusting.Items.Insert(0, "--Select Trusting--");
+                        ddlTrusting.Items.Insert(1, "False");
+                        ddlTrusting.Items.Insert(2, "True");
+                        ddlTrusting.SelectedIndex = 0;
+                        #endregion
+
+                        #region Populate Profit Data in Drop Down ddl_profit
+                        ddl_profit.Items.Insert(0, "--Select Profit--");
+                        ddl_profit.Items.Insert(1, "False");
+                        ddl_profit.Items.Insert(2, "True");
+                        ddl_profit.SelectedIndex = 0;
+                        #endregion
+
+                        #region Populate OpportunitiesFrequency Data in Drop Down ddl_opportunitiesFrequency
+                        ddl_opportunitiesFrequency.Items.Insert(0, "--Select OpportunitiesFrequency--");
+                        ddl_opportunitiesFrequency.Items.Insert(1, "weekly");
+                        ddl_opportunitiesFrequency.Items.Insert(2, "monthly");
+                        ddl_opportunitiesFrequency.Items.Insert(3, "yearly");
+                        ddl_opportunitiesFrequency.SelectedIndex = 0;
+
+                        Y_opportunitiesFrequency.Items.Insert(0, "--Select Month--");
+                        Y_opportunitiesFrequency.Items.Insert(1, "January");
+                        Y_opportunitiesFrequency.Items.Insert(2, "Februray");
+                        Y_opportunitiesFrequency.Items.Insert(3, "March");
+
+                        Y_opportunitiesFrequency.Items.Insert(4, "April");
+                        Y_opportunitiesFrequency.Items.Insert(5, "May");
+                        Y_opportunitiesFrequency.Items.Insert(6, "June");
+                        Y_opportunitiesFrequency.Items.Insert(7, "July");
+
+                        Y_opportunitiesFrequency.Items.Insert(8, "August");
+                        Y_opportunitiesFrequency.Items.Insert(9, "September");
+                        Y_opportunitiesFrequency.Items.Insert(10, "October");
+                        Y_opportunitiesFrequency.Items.Insert(11, "November");
+                        Y_opportunitiesFrequency.Items.Insert(12, "December");
+
+                        Y_opportunitiesFrequency.SelectedIndex = 0;
+                        #endregion
+
+                        #region Populate AwardsFrequency Data in Drop Down ddl_awardsFrequency
+                        ddl_awardsFrequency.Items.Insert(0, "--Select AwardsFrequency--");
+                        ddl_awardsFrequency.Items.Insert(1, "weekly");
+                        ddl_awardsFrequency.Items.Insert(2, "monthly");
+                        ddl_awardsFrequency.Items.Insert(3, "yearly");
+                        ddl_awardsFrequency.SelectedIndex = 0;
+                        Y_awardsFrequency.Items.Insert(0, "--Select Month--");
+                        Y_awardsFrequency.Items.Insert(1, "January");
+                        Y_awardsFrequency.Items.Insert(2, "Februray");
+                        Y_awardsFrequency.Items.Insert(3, "March");
+
+                        Y_awardsFrequency.Items.Insert(4, "April");
+                        Y_awardsFrequency.Items.Insert(5, "May");
+                        Y_awardsFrequency.Items.Insert(6, "June");
+                        Y_awardsFrequency.Items.Insert(7, "July");
+
+                        Y_awardsFrequency.Items.Insert(8, "August");
+                        Y_awardsFrequency.Items.Insert(9, "September");
+                        Y_awardsFrequency.Items.Insert(10, "October");
+                        Y_awardsFrequency.Items.Insert(11, "November");
+                        Y_awardsFrequency.Items.Insert(12, "December");
+
+                        Y_awardsFrequency.SelectedIndex = 0;
+
+
+                        #endregion
+
+                        #region Populate FundingBodyTypes Data in Drop Down ddlType
+                        temp = dsFunding.Tables["FundingBodyTypes"].Copy();
+                        dr = temp.NewRow();
+                        dr["VALUE"] = "SelectType";
+                        dr["TYPE"] = "--Select Type--";
+                        temp.Rows.InsertAt(dr, 0);
+
+                        ddlType.DataSource = temp;
+                        ddlType.ValueMember = "VALUE";
+                        ddlType.DisplayMember = "TYPE";
+                        #endregion
+
+                        #region Populate LanguageTable Data in Drop Down ddlLangCanonicalName
+                        DataTable tempCanon = dsFunding.Tables["LanguageTable"].Copy();
+                        dr = tempCanon.NewRow();
+                        dr["LANGUAGE_CODE"] = "SelectLanguage";
+                        dr["LANGUAGE_NAME"] = "--Select Language--";
+                        tempCanon.Rows.InsertAt(dr, 0);
+
+                        ddlLangCanonicalName.DataSource = tempCanon;
+                        ddlLangCanonicalName.ValueMember = "LANGUAGE_CODE";
+                        ddlLangCanonicalName.DisplayMember = "LANGUAGE_NAME";
+                        ddlLangCanonicalName.SelectedIndex = 18;
+                        #endregion
+
+                        #region Populate LanguageTable Data in Drop Down ddlLangPreferredOrgName
+                        DataTable tempPref = dsFunding.Tables["LanguageTable"].Copy();
+                        dr = tempPref.NewRow();
+                        dr["LANGUAGE_CODE"] = "SelectLanguage";
+                        dr["LANGUAGE_NAME"] = "--Select Language--";
+                        tempPref.Rows.InsertAt(dr, 0);
+
+                        ddlLangPreferredOrgName.DataSource = tempPref;
+                        ddlLangPreferredOrgName.ValueMember = "LANGUAGE_CODE";
+                        ddlLangPreferredOrgName.DisplayMember = "LANGUAGE_NAME";
+                        ddlLangPreferredOrgName.SelectedIndex = 18;
+                        #endregion
+
+                        #region Populate LanguageTable Data in Drop Down ddlLangContextName
+                        DataTable tempCont = dsFunding.Tables["LanguageTable"].Copy();
+                        dr = tempCont.NewRow();
+                        dr["LANGUAGE_CODE"] = "SelectLanguage";
+                        dr["LANGUAGE_NAME"] = "--Select Language--";
+                        tempCont.Rows.InsertAt(dr, 0);
+
+                        ddlLangContextName.DataSource = tempCont;
+                        ddlLangContextName.ValueMember = "LANGUAGE_CODE";
+                        ddlLangContextName.DisplayMember = "LANGUAGE_NAME";
+                        ddlLangContextName.SelectedIndex = 18;
+                        #endregion
+
+                        #region Populate LanguageTable Data in Drop Down ddlLangAbbreviation
+                        DataTable tempAbbr = dsFunding.Tables["LanguageTable"].Copy();
+                        dr = tempAbbr.NewRow();
+                        dr["LANGUAGE_CODE"] = "SelectLanguage";
+                        dr["LANGUAGE_NAME"] = "--Select Language--";
+                        tempAbbr.Rows.InsertAt(dr, 0);
+
+                        ddlLangAbbreviation.DataSource = tempAbbr;
+                        ddlLangAbbreviation.ValueMember = "LANGUAGE_CODE";
+                        ddlLangAbbreviation.DisplayMember = "LANGUAGE_NAME";
+                        ddlLangAbbreviation.SelectedIndex = 18;
+                        #endregion
+
+                        txtCollCode.Text = "Aptara";
+
+                        #region Hidden Information
+                        ddlHidden.Items.Insert(0, "--Select Hidden--");
+                        ddlHidden.Items.Insert(1, "False");
+                        ddlHidden.Items.Insert(2, "True");
+                        ddlHidden.SelectedIndex = 0;
+                        #endregion
+
+                        #region Defunct
+                        ddlDefunct.Items.Insert(0, "--Select Defunct--");
+                        ddlDefunct.Items.Insert(1, "False");
+                        ddlDefunct.Items.Insert(2, "True");
+                        ddlDefunct.SelectedIndex = 0;
+                        #endregion
+
+                        #region Populate Extended Record
+                        ddlextendedRecord.Items.Insert(0, "--Select Extended Record--");
+                        ddlextendedRecord.Items.Insert(1, "False");
+                        ddlextendedRecord.Items.Insert(2, "True");
+                        ddlextendedRecord.SelectedIndex = 0;
+                        #endregion
+
+                        #region Populate Opportunities
+                        ddlCOpp.Items.Insert(0, "--Select Capture Opportunities--");
+                        ddlCOpp.Items.Insert(1, "False");
+                        ddlCOpp.Items.Insert(2, "True");
+                        ddlCOpp.SelectedIndex = 0;
+                        #endregion
+
+                        #region Capture Awards
+                        ddlCAwards.Items.Insert(0, "--Select Capture Awards--");
+                        ddlCAwards.Items.Insert(1, "False");
+                        ddlCAwards.Items.Insert(2, "True");
+                        ddlCAwards.SelectedIndex = 0;
+                        #endregion
+
+                        #region Populate  Tier Info
+                        ddlTierInfo.Items.Insert(0, "--Select Tier Info--");
+                        ddlTierInfo.Items.Insert(1, "1");
+                        ddlTierInfo.Items.Insert(2, "2");
+                        ddlTierInfo.Items.Insert(3, "3");
+                        ddlTierInfo.Items.Insert(4, "4");
+                        ddlTierInfo.SelectedIndex = 0;
+                        #endregion
+
+                        #region Populate LanguageTable Data in Drop Down ddlLangAcronym
+                        DataTable tempAcro = dsFunding.Tables["LanguageTable"].Copy();
+                        dr = tempAcro.NewRow();
+                        dr["LANGUAGE_CODE"] = "SelectLanguage";
+                        dr["LANGUAGE_NAME"] = "--Select Language--";
+                        tempAcro.Rows.InsertAt(dr, 0);
+
+                        ddlLangAcronym.DataSource = tempAbbr;
+                        ddlLangAcronym.ValueMember = "LANGUAGE_CODE";
+                        ddlLangAcronym.DisplayMember = "LANGUAGE_NAME";
+                        ddlLangAcronym.SelectedIndex = 18;
+                        #endregion
+
 
                         if (dsFunding.Tables["FundingBodyTable"].Rows.Count > 0)
                         {
                             SharedObjects.IsFundingBaseFilled = true;
-
                             ddlType.SelectedValue = Convert.ToString(dsFunding.Tables["FundingBodyTable"].Rows[0]["TYPE"]);
 
                             DataTable dtSubType = dsFunding.Tables["FundingBodySubTypes"].DefaultView.ToTable();
@@ -526,6 +702,8 @@ namespace Scival.FundingBody
                             }
                         }
                     }
+                    
+
                 }
                 catch (Exception ex)
                 {
@@ -534,280 +712,52 @@ namespace Scival.FundingBody
             }
         }
 
-        public DataRow PopulateDatainControls(DataSet dsFunding, DefaultFBModel model)
-        {
-            if (SharedObjects.TaskId == 1 && SharedObjects.Cycle == 0)
-            {
-                SharedObjects.TRAN_TYPE_ID = 0;  // New FB
-            }
-            else if (SharedObjects.TaskId == 2 && SharedObjects.Cycle > 0)
-            {
-                SharedObjects.TRAN_TYPE_ID = 1;   // Update FB
-            }
-            else if (SharedObjects.TaskId == 2 && SharedObjects.Cycle == 0)
-            {
-                SharedObjects.TRAN_TYPE_ID = 0;    // QA FB
-            }
-
-            #region Populate Country Data in Drop down ddlCountry
-            DataTable temp = dsFunding.Tables["Country"].Copy();
-
-            DataRow dr = temp.NewRow();
-            dr["LCODE"] = "SelectCountry";
-            dr["NAME"] = "--Select Country--";
-            temp.Rows.InsertAt(dr, 0);
-
-            ddlCountry.DataSource = temp;
-            ddlCountry.ValueMember = "LCODE";
-            ddlCountry.DisplayMember = "NAME";
-            #endregion
-
-            #region Populate SubType Data in Drop Down ddlsubType
-            ddlsubType.Items.Insert(0, "--Select SubType--");
-            ddlsubType.SelectedIndex = 0;
-            #endregion
-
-            #region Populate Trusting Data in Drop Down ddlTrusting
-            ddlTrusting.Items.Insert(0, "--Select Trusting--");
-            ddlTrusting.Items.Insert(1, "False");
-            ddlTrusting.Items.Insert(2, "True");
-            ddlTrusting.SelectedIndex = 0;
-            #endregion
-
-            #region Populate Profit Data in Drop Down ddl_profit
-            ddl_profit.Items.Insert(0, "--Select Profit--");
-            ddl_profit.Items.Insert(1, "False");
-            ddl_profit.Items.Insert(2, "True");
-            ddl_profit.SelectedIndex = model.profitabilityType.ToLower() == "true" ? 2 : 1;
-            ddl_profit.SelectedIndex = 0;
-            #endregion
-
-            #region Populate OpportunitiesFrequency Data in Drop Down ddl_opportunitiesFrequency
-            ddl_opportunitiesFrequency.Items.Insert(0, "--Select OpportunitiesFrequency--");
-            ddl_opportunitiesFrequency.Items.Insert(1, "weekly");
-            ddl_opportunitiesFrequency.Items.Insert(2, "monthly");
-            ddl_opportunitiesFrequency.Items.Insert(3, "yearly");
-            ddl_opportunitiesFrequency.SelectedIndex = 0;
-
-            Y_opportunitiesFrequency.Items.Insert(0, "--Select Month--");
-            Y_opportunitiesFrequency.Items.Insert(1, "January");
-            Y_opportunitiesFrequency.Items.Insert(2, "Februray");
-            Y_opportunitiesFrequency.Items.Insert(3, "March");
-
-            Y_opportunitiesFrequency.Items.Insert(4, "April");
-            Y_opportunitiesFrequency.Items.Insert(5, "May");
-            Y_opportunitiesFrequency.Items.Insert(6, "June");
-            Y_opportunitiesFrequency.Items.Insert(7, "July");
-
-            Y_opportunitiesFrequency.Items.Insert(8, "August");
-            Y_opportunitiesFrequency.Items.Insert(9, "September");
-            Y_opportunitiesFrequency.Items.Insert(10, "October");
-            Y_opportunitiesFrequency.Items.Insert(11, "November");
-            Y_opportunitiesFrequency.Items.Insert(12, "December");
-
-            Y_opportunitiesFrequency.SelectedIndex = 0;
-            #endregion
-
-            #region Populate AwardsFrequency Data in Drop Down ddl_awardsFrequency
-            ddl_awardsFrequency.Items.Insert(0, "--Select AwardsFrequency--");
-            ddl_awardsFrequency.Items.Insert(1, "weekly");
-            ddl_awardsFrequency.Items.Insert(2, "monthly");
-            ddl_awardsFrequency.Items.Insert(3, "yearly");
-            ddl_awardsFrequency.SelectedIndex = 0;
-            Y_awardsFrequency.Items.Insert(0, "--Select Month--");
-            Y_awardsFrequency.Items.Insert(1, "January");
-            Y_awardsFrequency.Items.Insert(2, "Februray");
-            Y_awardsFrequency.Items.Insert(3, "March");
-
-            Y_awardsFrequency.Items.Insert(4, "April");
-            Y_awardsFrequency.Items.Insert(5, "May");
-            Y_awardsFrequency.Items.Insert(6, "June");
-            Y_awardsFrequency.Items.Insert(7, "July");
-
-            Y_awardsFrequency.Items.Insert(8, "August");
-            Y_awardsFrequency.Items.Insert(9, "September");
-            Y_awardsFrequency.Items.Insert(10, "October");
-            Y_awardsFrequency.Items.Insert(11, "November");
-            Y_awardsFrequency.Items.Insert(12, "December");
-
-            Y_awardsFrequency.SelectedIndex = 0;
-
-
-            #endregion
-
-            #region Populate FundingBodyTypes Data in Drop Down ddlType
-            temp = dsFunding.Tables["FundingBodyTypes"].Copy();
-            dr = temp.NewRow();
-            dr["VALUE"] = "SelectType";
-            dr["TYPE"] = "--Select Type--";
-            temp.Rows.InsertAt(dr, 0);
-
-            ddlType.DataSource = temp;
-            ddlType.ValueMember = "VALUE";
-            ddlType.DisplayMember = "TYPE";
-            #endregion
-
-            #region Populate LanguageTable Data in Drop Down ddlLangCanonicalName
-            DataTable tempCanon = dsFunding.Tables["LanguageTable"].Copy();
-            dr = tempCanon.NewRow();
-            dr["LANGUAGE_CODE"] = "SelectLanguage";
-            dr["LANGUAGE_NAME"] = "--Select Language--";
-            tempCanon.Rows.InsertAt(dr, 0);
-
-            ddlLangCanonicalName.DataSource = tempCanon;
-            ddlLangCanonicalName.ValueMember = "LANGUAGE_CODE";
-            ddlLangCanonicalName.DisplayMember = "LANGUAGE_NAME";
-            ddlLangCanonicalName.SelectedIndex = 18;
-            #endregion
-
-            #region Populate LanguageTable Data in Drop Down ddlLangPreferredOrgName
-            DataTable tempPref = dsFunding.Tables["LanguageTable"].Copy();
-            dr = tempPref.NewRow();
-            dr["LANGUAGE_CODE"] = "SelectLanguage";
-            dr["LANGUAGE_NAME"] = "--Select Language--";
-            tempPref.Rows.InsertAt(dr, 0);
-
-            ddlLangPreferredOrgName.DataSource = tempPref;
-            ddlLangPreferredOrgName.ValueMember = "LANGUAGE_CODE";
-            ddlLangPreferredOrgName.DisplayMember = "LANGUAGE_NAME";
-            ddlLangPreferredOrgName.SelectedIndex = 18;
-            #endregion
-
-            #region Populate LanguageTable Data in Drop Down ddlLangContextName
-            DataTable tempCont = dsFunding.Tables["LanguageTable"].Copy();
-            dr = tempCont.NewRow();
-            dr["LANGUAGE_CODE"] = "SelectLanguage";
-            dr["LANGUAGE_NAME"] = "--Select Language--";
-            tempCont.Rows.InsertAt(dr, 0);
-
-            ddlLangContextName.DataSource = tempCont;
-            ddlLangContextName.ValueMember = "LANGUAGE_CODE";
-            ddlLangContextName.DisplayMember = "LANGUAGE_NAME";
-            ddlLangContextName.SelectedIndex = 18;
-            #endregion
-
-            #region Populate LanguageTable Data in Drop Down ddlLangAbbreviation
-            DataTable tempAbbr = dsFunding.Tables["LanguageTable"].Copy();
-            dr = tempAbbr.NewRow();
-            dr["LANGUAGE_CODE"] = "SelectLanguage";
-            dr["LANGUAGE_NAME"] = "--Select Language--";
-            tempAbbr.Rows.InsertAt(dr, 0);
-
-            ddlLangAbbreviation.DataSource = tempAbbr;
-            ddlLangAbbreviation.ValueMember = "LANGUAGE_CODE";
-            ddlLangAbbreviation.DisplayMember = "LANGUAGE_NAME";
-            ddlLangAbbreviation.SelectedIndex = 18;
-            #endregion
-
-
-            txtCollCode.Text = "Aptara";
-
-            #region Hidden Information
-            ddlHidden.Items.Insert(0, "--Select Hidden--");
-            ddlHidden.Items.Insert(1, "False");
-            ddlHidden.Items.Insert(2, "True");
-            ddlHidden.SelectedIndex = 0;
-            #endregion
-
-            #region Defunct
-            ddlDefunct.Items.Insert(0, "--Select Defunct--");
-            ddlDefunct.Items.Insert(1, "False");
-            ddlDefunct.Items.Insert(2, "True");
-            ddlDefunct.SelectedIndex = 0;
-            #endregion
-
-            #region Populate Extended Record
-            ddlextendedRecord.Items.Insert(0, "--Select Extended Record--");
-            ddlextendedRecord.Items.Insert(1, "False");
-            ddlextendedRecord.Items.Insert(2, "True");
-            ddlextendedRecord.SelectedIndex = 0;
-            #endregion
-
-            #region Populate Opportunities
-            ddlCOpp.Items.Insert(0, "--Select Capture Opportunities--");
-            ddlCOpp.Items.Insert(1, "False");
-            ddlCOpp.Items.Insert(2, "True");
-            ddlCOpp.SelectedIndex = 0;
-            #endregion
-
-            #region Capture Awards
-            ddlCAwards.Items.Insert(0, "--Select Capture Awards--");
-            ddlCAwards.Items.Insert(1, "False");
-            ddlCAwards.Items.Insert(2, "True");
-            ddlCAwards.SelectedIndex = 0;
-            #endregion
-
-            #region Populate  Tier Info
-            ddlTierInfo.Items.Insert(0, "--Select Tier Info--");
-            ddlTierInfo.Items.Insert(1, "1");
-            ddlTierInfo.Items.Insert(2, "2");
-            ddlTierInfo.Items.Insert(3, "3");
-            ddlTierInfo.Items.Insert(4, "4");
-            ddlTierInfo.SelectedIndex = 0;
-            #endregion
-
-            #region Populate LanguageTable Data in Drop Down ddlLangAcronym
-            DataTable tempAcro = dsFunding.Tables["LanguageTable"].Copy();
-            dr = tempAcro.NewRow();
-            dr["LANGUAGE_CODE"] = "SelectLanguage";
-            dr["LANGUAGE_NAME"] = "--Select Language--";
-            tempAcro.Rows.InsertAt(dr, 0);
-
-            ddlLangAcronym.DataSource = tempAbbr;
-            ddlLangAcronym.ValueMember = "LANGUAGE_CODE";
-            ddlLangAcronym.DisplayMember = "LANGUAGE_NAME";
-            ddlLangAcronym.SelectedIndex = 18;
-            #endregion
-
-            return dr;
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                #region variable declaration
-                dtTables = new System.Collections.Generic.Dictionary<string, DataTable>();
-                dt_preferredorgname = new DataTable();
-                dt_acronym = new DataTable();
-                dt_abbrevname = new DataTable();
-                dt_contextname = new DataTable();
-                dt_subType = new DataTable();
-                dt_website = new DataTable();
-                dt_contact = new DataTable();
-                dt_address = new DataTable();
-                dt_establishmentInfo = new DataTable();
-                dt_fundingPolicy = new DataTable();
-                dt_fundingPolicy_Deatails = new DataTable();
-                dt_createddate = new DataTable();
-                dt_reviseddate = new DataTable();
-                dt_revisionhistory = new DataTable();
-                dt_link = new DataTable();
-                dt_OPPORTUNITIESSOURCE = new DataTable();
-                dt_publicationDataset = new DataTable();
-                dt_awardSSOURCE = new DataTable();
-                dt_fundingBodyDataset = new DataTable();
+                System.Collections.Generic.Dictionary<string, DataTable> dtTables = new System.Collections.Generic.Dictionary<string, DataTable>();
+                DataTable dt_preferredorgname = new DataTable();
+                DataTable dt_acronym = new DataTable();
+                DataTable dt_abbrevname = new DataTable();
+                DataTable dt_contextname = new DataTable();
+                DataTable dt_subType = new DataTable();
+                DataTable dt_website = new DataTable();
+                DataTable dt_contact = new DataTable();
+                DataTable dt_address = new DataTable();
+                DataTable dt_establishmentInfo = new DataTable();
+                DataTable dt_fundingPolicy = new DataTable();
+                DataTable dt_fundingPolicy_Deatails = new DataTable();
+                DataTable dt_createddate = new DataTable();
+                DataTable dt_reviseddate = new DataTable();
+                DataTable dt_revisionhistory = new DataTable();
+                DataTable dt_link = new DataTable();
+                DataTable dt_OPPORTUNITIESSOURCE = new DataTable();
+                DataTable dt_publicationDataset = new DataTable();
+                DataTable dt_awardSSOURCE = new DataTable();
+                DataTable dt_fundingBodyDataset = new DataTable();
 
-                dt_identifier = new DataTable();
-                dt_fundingdescription = new DataTable();
-                dt_awardSuccessRatedesc = new DataTable();
-                dt_releatedorgs = new DataTable();
+                DataTable dt_identifier = new DataTable();
+                DataTable dt_fundingdescription = new DataTable();
+                DataTable dt_awardSuccessRatedesc = new DataTable();
+                DataTable dt_releatedorgs = new DataTable();
 
-                jsondata = new StringBuilder();
-                P_fundingBodyProjectId = null;
-                createdby = "1";
-                createdTime = DateTime.Now.ToString();
-                ModifiedTime = "";
-                modifiedBy = null;
-                #endregion
+                StringBuilder jsondata = new StringBuilder();
+                string P_fundingBodyProjectId=null;
+                string createdby = "1";
+                string createdTime = DateTime.Now.ToString();
+                string ModifiedTime = "";
+                string modifiedBy = null;
 
                 #region Save FundingBody data
                 InputXmlPath = Path.GetDirectoryName(Application.ExecutablePath);
                 lblMsg.Visible = false;
                 Regex intRgx = new Regex(@"^[0-9]+");
                 Regex strRgx = new Regex(@"[A-Za-z ]");
-                string orgName = Regex.Replace(txtPreOrgName.Text, @"[A-Za-z ]", "");
+                string orgName = Regex.Replace(txtPreOrgName.Text,@"[A-Za-z ]", "");
                 string preferedOrgName = "", opportunitiesFrequency = "", awardsFrequency = "", Profit = "";
+
                 if (ddl_opportunitiesFrequency.SelectedIndex == 3)
                 {
                     if (Y_opportunitiesFrequency.SelectedIndex == 0)
@@ -848,7 +798,7 @@ namespace Scival.FundingBody
                 {
                     Profit = ddl_profit.SelectedItem.ToString();
                 }
-
+                
                 dt_preferredorgname.Columns.Add("lang");
                 dt_preferredorgname.Columns.Add("preferredorgname_text");
                 if (dtGridPreOrg.Rows.Count > 0)
@@ -984,8 +934,6 @@ namespace Scival.FundingBody
                         dtResult.Columns.Add("status");//31
                         dtResult.Columns.Add("country");//32
                         #endregion
-
-
 
                         DataRow dr = dtResult.NewRow();
                         dr[0] = fundindID;
@@ -1145,7 +1093,9 @@ namespace Scival.FundingBody
                         #region Create JSON using Data Table
                         XmlJsonOperation xmlJsonOperation = new XmlJsonOperation();
 
-                        string json = xmlJsonOperation.JsonCreationFromModel_FundingBody(@"", dtResult, dt_preferredorgname, dt_contextname, dt_abbrevname, dt_acronym, dt_subType, dt_identifier, dt_fundingdescription, dt_website, dt_establishmentInfo, dt_address, dt_awardSuccessRatedesc, dt_revisionhistory, dt_createddate, dt_reviseddate);
+                         string json= xmlJsonOperation.JsonCreationFromModel_FB(@"", dtResult, dt_preferredorgname, dt_contextname, dt_abbrevname, dt_acronym, dt_subType, dt_identifier, dt_fundingdescription, dt_website, dt_establishmentInfo, dt_address, dt_awardSuccessRatedesc, dt_revisionhistory, dt_createddate, dt_reviseddate);
+
+                        // string json = xmlJsonOperation.JsonCreationFromModel_FBAll(@"", dtResult, dt_preferredorgname, dt_contextname, dt_abbrevname, dt_acronym, dt_subType, dt_identifier, dt_fundingdescription, dt_website, dt_establishmentInfo, dt_address, dt_awardSuccessRatedesc, dt_revisionhistory, dt_createddate, dt_reviseddate);
                         #endregion
                         FundingBodyDataOperations.saveandUpdateJSONinTable(fundindID, json, Convert.ToString(Loginid), DateTime.Now.ToString(), "", "", 1);
 

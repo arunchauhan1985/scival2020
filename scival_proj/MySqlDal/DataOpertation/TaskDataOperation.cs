@@ -93,6 +93,16 @@ namespace MySqlDal
             return dummyTaskList;
         }
 
+        public static List<DummyTaskList> GetDummyTaskListJSON(Int64 userId, Int64 moduleId, Int64 taskId, Int32 cycle, Int64 allocation)
+        {
+            var dummyTaskList = ScivalEntities.Database.SqlQuery<DummyTaskList>("CALL dummy_tasklist_new(@pUserId,@pModuleId,@pTaskId,@pCycle,@pAllocation)",
+                new MySqlParameter("pUserId", userId), new MySqlParameter("pModuleId", moduleId), new MySqlParameter("pTaskId", taskId), new MySqlParameter("pCycle", cycle),
+                new MySqlParameter("pAllocation", allocation)).ToList();
+
+            return dummyTaskList;
+        }
+
+
         public static List<ExpiryDetail> GetUserExpireDetails(Int64 userId)
         {
             var expireDetailList = ScivalEntities.Database.SqlQuery<ExpiryDetail>("CALL sci_expiredetail(@pUserId)", new MySqlParameter("pUserId", userId)).ToList();

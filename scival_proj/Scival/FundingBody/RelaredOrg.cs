@@ -275,11 +275,13 @@ namespace Scival.FundingBody
                 lblMsg.Visible = false;
                 string strHierarchy = string.Empty;
 
-                if (ddlHerchy.SelectedValue.ToString() != "SelectHirarchy")
-                    strHierarchy = ddlHerchy.SelectedValue.ToString();
-                else
-                    strHierarchy = "";
-
+                if (ddlHerchy.SelectedItem != null)
+                {
+                    if (ddlHerchy.SelectedItem.ToString() != "SelectHirarchy")
+                        strHierarchy = ddlHerchy.SelectedItem.ToString();
+                    else
+                        strHierarchy = "";
+                }
                 DataSet dsRelatedOrgs = FundingBodyDataOperations.SaveAndDeleteRelatedOrgs(workflowid, 2, strHierarchy, "", "");
 
                 for (int intCount = 0; intCount < dsRelatedOrgs.Tables["FundingBody"].Rows.Count; intCount++)
@@ -607,7 +609,7 @@ namespace Scival.FundingBody
                 FBName_difflang = "";
                 InputXmlPath = Path.GetDirectoryName(Application.ExecutablePath);
                 lblVMsg.Visible = false;
-                string VReltype = ddlVreltype.SelectedValue.ToString();
+                string VReltype = ddlVreltype.SelectedItem.ToString();
 
                 if (VReltype == "SelectRelType")
                 {
